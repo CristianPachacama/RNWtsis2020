@@ -1,0 +1,79 @@
+\newtheoremstyle{estiloejemplo}%
+    {9pt}{9pt}%
+    {}%
+    {0pt}%
+    {\bfseries\scshape}{.}%
+    { }%
+    {}
+
+\theoremstyle{estiloejemplo}
+    \newtheorem{ejemplo}{Ejemplo}
+    \newtheorem*{observacion}{Observación}
+
+\newtheoremstyle{estiloteorema}%
+    {9pt}{9pt}%
+    {\slshape}%
+    {0pt}%
+    {\bfseries\scshape}{.}%
+    { }%
+    {}
+
+\theoremstyle{estiloteorema}
+    \newtheorem{definicion}{Definición}[chapter]
+    \newtheorem{axioma}{Axioma}
+    \newtheorem{teorema}{Teorema}[chapter]
+    \newtheorem{corolario}[teorema]{Corolario}
+    \newtheorem{proposicion}[teorema]{Proposición}
+    \newtheorem{lema}[teorema]{Lema}
+
+\renewcommand{\emph}{\textit}
+
+\newcommand{\funcion}[5]{%
+{\setlength{\arraycolsep}{2pt}
+\begin{array}{r@{}ccl}
+#1\colon & #2 & \longrightarrow & #3\\
+& #4 & \longmapsto & #5
+\end{array}}}
+
+\newcommand{\func}[3]{%
+#1\colon  #2  \to  #3
+}
+
+\newcommand{\cl}[1]{\overline{#1}}
+
+% --- Conjuntos
+%\newcommand{\reales}{\mathbb{R}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\indic}{\mathbbm{1}}
+%\newcommand{\N}{\omega}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\Kp}{\mathscr{K}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\OR}{\bm{OR}}
+
+\newcommand{\norma}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\producto}[2]{\left\langle #1 , #2\right\rangle}
+
+%\renewcommand{\baselinestretch}{1.5}
+
+% --- Sucesiones
+\newcommand{\suc}[2][n]{\left(#2\right)_{#1\in\N}}
+\newcommand{\ssuc}[2][n]{(#2)_{#1\in\N}}
+
+% --- Comentario
+\newcommand{\comentario}[1]{{\color{red!50!black}\textsf{#1}}}
+\newenvironment{Comentario}{
+    \bgroup
+    \color{red!50!black}
+    \sffamily
+    }
+    {
+    \egroup
+    }
+
+\setlist[itemize,1]{label=$\bullet$}
+
+\allowdisplaybreaks 

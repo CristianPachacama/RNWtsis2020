@@ -1,0 +1,13 @@
+
+\begin{agradecimiento}
+
+A mi familia, ya que su cariño y apoyo me llevaron a donde ahora estoy.  
+A mis grandes amigos Lissette, Edison, Andrea, Madelin y Tatiana por tan memorables momentos.
+
+A mi tutora Adriana por ser una guía y apoyarme desde el primer momento a alcanzar esta meta, gracias por depositar su confianza en mi.
+A los profesores Erwin Jimenez, Luis Horna, y de manera especial a Juan Carlos Trujillo quienes hicieron nacer en mi la pasión por la Matemática, pasión que espero inspirar a más generaciones de estudiantes. 
+
+Finalmente, a grandes matemáticos de la historia como George Cantor,  Simeón Poisson , Abraham Wald, y Karl Pearson, cuyo trabajo me inspiró a profundizar en el conocimiento de esta bella ciencia.
+
+
+\end{agradecimiento}

@@ -1,0 +1,209 @@
+% --- Identificación
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{FormatoEpn}[2013/10/20]
+
+% Paquete creado para el formato de las tesis de pregrado
+% de la Facultad de Ciencias de la EPN.
+% por: Andrés Merino
+
+% --- Paquetes requeridos
+
+\RequirePackage[latin9]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english,spanish,es-tabla]{babel}
+
+
+\RequirePackage{ifthen}
+
+\RequirePackage{fancyhdr}
+\RequirePackage{setspace}
+\RequirePackage{textcase}
+\RequirePackage[obeyspaces,spaces]{url}
+
+\RequirePackage[labelfont={bf}]{caption}
+
+\RequirePackage[colorlinks,linkcolor=black,urlcolor=black,citecolor=black,breaklinks=true,bookmarks=true]{hyperref}
+
+\RequirePackage[a4paper,top=3cm,bottom=2.5cm,left=3cm,right=2.5cm]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{multirow}
+\RequirePackage{rotating}
+\RequirePackage{float}
+\RequirePackage{varwidth}
+
+% --- Variables
+
+\newcommand{\titulo}[1]%
+  {\newcommand\@titulo{#1}}
+
+\newcommand{\carrera}[1]%
+  {\newcommand\@carrera{#1}}
+
+\newcommand{\autor}[1]%
+  {\newcommand\@autor{#1}}
+\newcommand{\correoautor}[1]%
+  {\newcommand\@correoautor{#1}}
+
+\newcommand{\director}[1]%
+  {\newcommand\@director{#1}}
+\newcommand{\correodirector}[1]%
+  {\newcommand\@correodirector{#1}}
+
+\newcommand\@codirector{}
+\newcommand{\codirector}[1]%
+  {\renewcommand\@codirector{#1}}
+\newcommand{\correocodirector}[1]%
+  {\newcommand\@correocodirector{#1}}
+
+\newcommand{\fecha}[1]%
+  {\newcommand\@fecha{#1}}
+
+% --- Portadilla
+
+\newcommand\portadilla{%
+    \thispagestyle{empty}
+    \vspace*{\fill}
+    \begin{center}
+        {\LARGE\textbf{ESCUELA POLITÉCNICA NACIONAL}}\\[4\baselineskip]
+        {\Large \MakeTextUppercase{FACULTAD DE CIENCIAS}}\\[4\baselineskip]
+        {\begin{spacing}{1.1}\large \MakeTextUppercase{\@titulo}\end{spacing}}\vspace{4\baselineskip}
+        TRABAJO DE TITULACIÓN PREVIO A LA OBTENCIÓN DEL TÍTULO DE \MakeTextUppercase{\@carrera}\\[\baselineskip]
+        PROYECTO DE INVESTIGACIÓN\\[4\baselineskip]
+        \MakeTextUppercase{\@autor}\\[0.1\baselineskip]
+        {\@correoautor}\\[4\baselineskip]
+        Directora: \MakeTextUppercase{\@director}\\[0.1\baselineskip]
+        {\@correodirector}\\[2\baselineskip]
+        \ifthenelse{\equal{\@codirector}{}}{\vspace{4\baselineskip}}
+            {Codirector: \MakeTextUppercase{\@codirector}\\[0.1\baselineskip]
+            {\@correocodirector}\\[5\baselineskip]}
+        \MakeTextUppercase{\@fecha}
+    \end{center}
+    \vspace*{\fill}
+    \newpage
+}
+
+% --- Declaración
+
+\newcommand{\declaracion}{
+    \setlength{\parskip}{0.3\baselineskip}
+    \setstretch{1.3}
+    \thispagestyle{empty}
+    \vspace*{\fill}
+    \begin{center}
+        \textbf{DECLARACIÓN}
+    \end{center}
+
+    \vspace{2\baselineskip}
+    Yo, \MakeTextUppercase{\@autor}, declaro bajo juramento que el trabajo aquí descrito es de mi autoría; que no ha sido previamente presentado para ningún grado o calificación profesional; y que he consultado las referencias bibliográficas que se incluyen en este documento.\\[1\baselineskip]
+
+    A través de la presente declaración cedo mis derechos de propiedad intelectual, correspondientes a este trabajo, a la Escuela Politécnica Nacional, según lo establecido por la Ley de Propiedad Intelectual, por su Reglamento y por la normatividad institucional vigente.\\[4\baselineskip]
+
+    \begin{center}
+    	%\includegraphics[height=3\baselineskip]{firmaCP3} \par  %%%%%%%%%%%%%%%%%%%%%%%%%%%% -------------------- Firma
+        \settowidth{\unitlength}{\@autor}
+        \rule{\unitlength}{0.4pt}\\
+        \@autor
+    \end{center}
+    \vspace*{\fill}
+    \newpage
+
+}
+
+% --- Certificación
+
+\newcommand{\certificacion}{
+    \thispagestyle{empty}
+    \vspace*{\fill}
+    \begin{center}
+        \textbf{CERTIFICACIÓN}
+    \end{center}
+
+    \vspace{2\baselineskip}
+    \ifthenelse{\equal{\@codirector}{}}{
+    Certifico que el presente trabajo fue desarrollado por \MakeTextUppercase{\@autor}, bajo mi supervisión.\\[4\baselineskip]
+
+    \begin{raggedleft}
+    %\includegraphics[height=3\baselineskip]{firmaAU3} \par  %%%%%%%%%%%%%%%%%%%%%%%%%%%% -------------------- Firma
+    \settowidth{\unitlength}{\@director}
+    \rule{\unitlength}{0.4pt}\\
+    \@director\\
+    Directora del Proyecto
+
+    \end{raggedleft}
+    }
+    {
+    Certificamos que el presente trabajo fue desarrollado por \MakeTextUppercase{\@autor}, bajo nuestra supervisión.\\[4\baselineskip]
+
+    \begin{raggedleft}
+    \settowidth{\unitlength}{\@director}
+    \rule{\unitlength}{0.4pt}\\
+    \@director\\
+    Director del Proyecto
+
+    \vspace{5\baselineskip}
+    \settowidth{\unitlength}{\@codirector}
+    \rule{\unitlength}{0.4pt}\\
+    \@codirector\\
+    Codirector del Proyecto
+
+    \end{raggedleft}
+    }
+    \vspace*{\fill}
+    \newpage
+}
+
+% --- Agradecimiento
+\newenvironment{agradecimiento}{
+    \thispagestyle{empty}
+    \vspace*{\stretch{1}}
+    \begin{center}
+        \textbf{AGRADECIMIENTOS}
+    \end{center}
+
+    \vspace{2\baselineskip}
+}
+{
+    \vspace*{\stretch{2}}
+    \newpage
+}
+
+% --- Dedicatoria
+\newenvironment{dedicatoria}{
+    \thispagestyle{empty}
+    \vspace*{\stretch{1}}
+    \begin{raggedleft}
+        \textbf{DEDICATORIA}
+
+        \itshape
+        \vspace{1\baselineskip}
+}
+{
+
+    \end{raggedleft}
+    \vspace*{\stretch{3}}
+    \newpage
+}
+
+% --- Encabezado y Pie de página
+
+\pagestyle{plain}
+
+%Imágenes
+\newcommand{\imagen}[2]{%
+\includegraphics[#2]{Imagenes/#1}%
+} % \newcommand{\imagen}
+
+\newcommand{\figura}[4]{%
+\begin{figure}%[t]%
+\begin{center}%
+\imagen{#1}{#2}%
+\caption{#4} \label{#3}%
+\end{center}%
+\end{figure}%
+} % \newcommand{\figura}
+
+
+%Permita partir los "display"
+%\allowdisplaybreaks
+
+% --- Espacio interlineado

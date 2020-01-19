@@ -1,0 +1,1425 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Anderson%
+}{%
+Anderson%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+anderson2003multivariate}
+\APACinsertmetastar {%
+anderson2003multivariate}%
+\begin{APACrefauthors}%
+Anderson, T\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2003}.
+\newblock
+\APACrefbtitle {An introduction to multivariate statistical analysis} {An
+  introduction to multivariate statistical analysis}\ (\PrintOrdinal{3}\ \BEd).
+\newblock
+\APACaddressPublisher{}{Wiley series in probability and mathematical
+  statistics}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Borg%
+\ \BBA {} Groenen%
+}{%
+Borg%
+\ \BBA {} Groenen%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+borg2003modern}
+\APACinsertmetastar {%
+borg2003modern}%
+\begin{APACrefauthors}%
+Borg, I.%
+\BCBT {}\ \BBA {} Groenen, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Modern multidimensional scaling: Theory and
+  applications} {Modern multidimensional scaling: Theory and
+  applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Educational Measurement}{40}{3}{277--280}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bosq%
+}{%
+Bosq%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+bosq2012linear}
+\APACinsertmetastar {%
+bosq2012linear}%
+\begin{APACrefauthors}%
+Bosq, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2012}.
+\newblock
+\APACrefbtitle {Linear processes in function spaces: theory and applications}
+  {Linear processes in function spaces: theory and applications}\ (\BVOL~149).
+\newblock
+\APACaddressPublisher{}{Springer Science \& Business Media}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Box%
+, Jenkins%
+\BCBL {}\ \BBA {} Reinsel%
+}{%
+Box%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1970}}%
+}]{%
+box1970time}
+\APACinsertmetastar {%
+box1970time}%
+\begin{APACrefauthors}%
+Box, G\BPBI E.%
+, Jenkins, G\BPBI M.%
+\BCBL {}\ \BBA {} Reinsel, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1970}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Time series analysis: forecasting and control Holden-day
+  San Francisco} {Time series analysis: forecasting and control holden-day san
+  francisco}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{BoxTime Series Analysis: Forecasting and Control Holden
+  Day1970}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Box%
+, Jenkins%
+, Reinsel%
+\BCBL {}\ \BBA {} Ljung%
+}{%
+Box%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+box2015time}
+\APACinsertmetastar {%
+box2015time}%
+\begin{APACrefauthors}%
+Box, G\BPBI E.%
+, Jenkins, G\BPBI M.%
+, Reinsel, G\BPBI C.%
+\BCBL {}\ \BBA {} Ljung, G\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2015}.
+\newblock
+\APACrefbtitle {Time series analysis: forecasting and control} {Time series
+  analysis: forecasting and control}.
+\newblock
+\APACaddressPublisher{}{John Wiley \& Sons}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Caiado%
+, Crato%
+\BCBL {}\ \BBA {} Pe{\~n}a%
+}{%
+Caiado%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+caiado2006periodogram}
+\APACinsertmetastar {%
+caiado2006periodogram}%
+\begin{APACrefauthors}%
+Caiado, J.%
+, Crato, N.%
+\BCBL {}\ \BBA {} Pe{\~n}a, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A periodogram-based metric for time series
+  classification} {A periodogram-based metric for time series
+  classification}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computational Statistics \& Data
+  Analysis}{50}{10}{2668--2684}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Capa~Santos%
+}{%
+Capa~Santos%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+capa2016seriest}
+\APACinsertmetastar {%
+capa2016seriest}%
+\begin{APACrefauthors}%
+Capa~Santos, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2016}.
+\newblock
+\APACrefbtitle {Series temporales: la ciencia y el arte de la modelación y los
+  pronósticos} {Series temporales: la ciencia y el arte de la modelación y los
+  pronósticos}.
+\newblock
+\APACaddressPublisher{}{Escuela Politécnica Nacional}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cardot%
+, Ferraty%
+\BCBL {}\ \BBA {} Sarda%
+}{%
+Cardot%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1999}}%
+}]{%
+cardot1999functional}
+\APACinsertmetastar {%
+cardot1999functional}%
+\begin{APACrefauthors}%
+Cardot, H.%
+, Ferraty, F.%
+\BCBL {}\ \BBA {} Sarda, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Functional linear model} {Functional linear
+  model}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistics \& Probability Letters}{45}{1}{11--22}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cardot%
+, Ferraty%
+\BCBL {}\ \BBA {} Sarda%
+}{%
+Cardot%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2003}}%
+}]{%
+cardot2003spline}
+\APACinsertmetastar {%
+cardot2003spline}%
+\begin{APACrefauthors}%
+Cardot, H.%
+, Ferraty, F.%
+\BCBL {}\ \BBA {} Sarda, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Spline estimators for the functional linear model}
+  {Spline estimators for the functional linear model}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Statistica Sinica}{}{}{571--591}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chatfield%
+}{%
+Chatfield%
+}{%
+{\protect \APACyear {1996}}%
+}]{%
+chatfield1996}
+\APACinsertmetastar {%
+chatfield1996}%
+\begin{APACrefauthors}%
+Chatfield, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1996}.
+\newblock
+\APACrefbtitle {The analysis of time series: an introduction} {The analysis of
+  time series: an introduction}\ (\PrintOrdinal{5}\ \BEd).
+\newblock
+\APACaddressPublisher{}{Chapman and Hall/CRC}.
+\newblock
+\begin{APACrefURL}
+  \url{http://gen.lib.rus.ec/book/index.php?md5=6544B01C91B53D8C283389551CCA53D2}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chouakria%
+\ \BBA {} Nagabhushan%
+}{%
+Chouakria%
+\ \BBA {} Nagabhushan%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+chouakria2007adaptive}
+\APACinsertmetastar {%
+chouakria2007adaptive}%
+\begin{APACrefauthors}%
+Chouakria, A\BPBI D.%
+\BCBT {}\ \BBA {} Nagabhushan, P\BPBI N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Adaptive dissimilarity index for measuring time series
+  proximity} {Adaptive dissimilarity index for measuring time series
+  proximity}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Advances in Data Analysis and
+  Classification}{1}{1}{5--21}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cleveland%
+, Cleveland%
+, McRae%
+\BCBL {}\ \BBA {} Terpenning%
+}{%
+Cleveland%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1990}}%
+}]{%
+cleveland1990stl}
+\APACinsertmetastar {%
+cleveland1990stl}%
+\begin{APACrefauthors}%
+Cleveland, R\BPBI B.%
+, Cleveland, W\BPBI S.%
+, McRae, J\BPBI E.%
+\BCBL {}\ \BBA {} Terpenning, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {STL: A Seasonal-Trend Decomposition} {Stl: A
+  seasonal-trend decomposition}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Official Statistics}{6}{1}{3--73}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Coombs%
+}{%
+Coombs%
+}{%
+{\protect \APACyear {1950}}%
+}]{%
+coombs1950psychological}
+\APACinsertmetastar {%
+coombs1950psychological}%
+\begin{APACrefauthors}%
+Coombs, C\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1950}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Psychological scaling without a unit of measurement.}
+  {Psychological scaling without a unit of measurement.}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychological review}{57}{3}{145}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Corduas%
+\ \BBA {} Piccolo%
+}{%
+Corduas%
+\ \BBA {} Piccolo%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+corduas2008time}
+\APACinsertmetastar {%
+corduas2008time}%
+\begin{APACrefauthors}%
+Corduas, M.%
+\BCBT {}\ \BBA {} Piccolo, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Time series clustering and classification by the
+  autoregressive metric} {Time series clustering and classification by the
+  autoregressive metric}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computational statistics \& data
+  analysis}{52}{4}{1860--1872}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cox%
+\ \BBA {} Cox%
+}{%
+Cox%
+\ \BBA {} Cox%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+cox2000multidimensional}
+\APACinsertmetastar {%
+cox2000multidimensional}%
+\begin{APACrefauthors}%
+Cox, T\BPBI F.%
+\BCBT {}\ \BBA {} Cox, M\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2000}.
+\newblock
+\APACrefbtitle {Multidimensional scaling} {Multidimensional scaling}.
+\newblock
+\APACaddressPublisher{}{Chapman and hall/CRC}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dauxois%
+, Pousse%
+\BCBL {}\ \BBA {} Romain%
+}{%
+Dauxois%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1982}}%
+}]{%
+dauxois1982asymptotic}
+\APACinsertmetastar {%
+dauxois1982asymptotic}%
+\begin{APACrefauthors}%
+Dauxois, J.%
+, Pousse, A.%
+\BCBL {}\ \BBA {} Romain, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1982}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Asymptotic theory for the principal component analysis
+  of a vector random function: some applications to statistical inference}
+  {Asymptotic theory for the principal component analysis of a vector random
+  function: some applications to statistical inference}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of multivariate analysis}{12}{1}{136--154}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Diggle%
+\ \BBA {} Al~Wasel%
+}{%
+Diggle%
+\ \BBA {} Al~Wasel%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+diggle1997spectral}
+\APACinsertmetastar {%
+diggle1997spectral}%
+\begin{APACrefauthors}%
+Diggle, P\BPBI J.%
+\BCBT {}\ \BBA {} Al~Wasel, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Spectral analysis of replicated biomedical time series}
+  {Spectral analysis of replicated biomedical time series}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series C
+  (Applied Statistics)}{46}{1}{31--71}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Diggle%
+\ \BBA {} Fisher%
+}{%
+Diggle%
+\ \BBA {} Fisher%
+}{%
+{\protect \APACyear {1991}}%
+}]{%
+diggle1991nonparametric}
+\APACinsertmetastar {%
+diggle1991nonparametric}%
+\begin{APACrefauthors}%
+Diggle, P\BPBI J.%
+\BCBT {}\ \BBA {} Fisher, N\BPBI I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1991}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Nonparametric comparison of cumulative periodograms}
+  {Nonparametric comparison of cumulative periodograms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Applied Statistics}{}{}{423--434}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Duda%
+, Hart%
+, Stork%
+\BCBL {}\ \protect \BOthers {.}}{%
+Duda%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2001}}%
+}]{%
+duda2001pattern}
+\APACinsertmetastar {%
+duda2001pattern}%
+\begin{APACrefauthors}%
+Duda, R\BPBI O.%
+, Hart, P\BPBI E.%
+, Stork, D\BPBI G.%
+\BCBL {}\ \BOthersPeriod {.}\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Pattern classification} {Pattern classification}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Computational Intelligence and
+  Applications}{1}{}{335--339}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fraley%
+\ \BBA {} Raftery%
+}{%
+Fraley%
+\ \BBA {} Raftery%
+}{%
+{\protect \APACyear {1998}}%
+}]{%
+fraley1998many}
+\APACinsertmetastar {%
+fraley1998many}%
+\begin{APACrefauthors}%
+Fraley, C.%
+\BCBT {}\ \BBA {} Raftery, A\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1998}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {How many clusters? Which clustering method? Answers via
+  model-based cluster analysis} {How many clusters? which clustering method?
+  answers via model-based cluster analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The computer journal}{41}{8}{578--588}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fu%
+}{%
+Fu%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+fu2011review}
+\APACinsertmetastar {%
+fu2011review}%
+\begin{APACrefauthors}%
+Fu, T\BHBI c.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A review on time series data mining} {A review on time
+  series data mining}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Engineering Applications of Artificial
+  Intelligence}{24}{1}{164--181}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Galeano%
+\ \BBA {} Pe{\~n}a%
+}{%
+Galeano%
+\ \BBA {} Pe{\~n}a%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+galeano2000multivariate}
+\APACinsertmetastar {%
+galeano2000multivariate}%
+\begin{APACrefauthors}%
+Galeano, P.%
+\BCBT {}\ \BBA {} Pe{\~n}a, D\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multivariate analysis in vector time series}
+  {Multivariate analysis in vector time series}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Resenhas do Instituto de Matem{\'a}tica e
+  Estat{\'\i}stica da Universidade de S{\~a}o Paulo}{4}{4}{383--403}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Guttman%
+}{%
+Guttman%
+}{%
+{\protect \APACyear {1968}}%
+}]{%
+guttman1968general}
+\APACinsertmetastar {%
+guttman1968general}%
+\begin{APACrefauthors}%
+Guttman, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1968}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A general nonmetric technique for finding the smallest
+  coordinate space for a configuration of points} {A general nonmetric
+  technique for finding the smallest coordinate space for a configuration of
+  points}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychometrika}{33}{4}{469--506}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hall%
+, Horowitz%
+\BCBL {}\ \protect \BOthers {.}}{%
+Hall%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2007}}%
+}]{%
+hall2007methodology}
+\APACinsertmetastar {%
+hall2007methodology}%
+\begin{APACrefauthors}%
+Hall, P.%
+, Horowitz, J\BPBI L.%
+\BCBL {}\ \BOthersPeriod {.}\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Methodology and convergence rates for functional linear
+  regression} {Methodology and convergence rates for functional linear
+  regression}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Annals of Statistics}{35}{1}{70--91}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hall%
+\ \BBA {} Hosseini-Nasab%
+}{%
+Hall%
+\ \BBA {} Hosseini-Nasab%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+hall2006properties}
+\APACinsertmetastar {%
+hall2006properties}%
+\begin{APACrefauthors}%
+Hall, P.%
+\BCBT {}\ \BBA {} Hosseini-Nasab, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {On properties of functional principal components
+  analysis} {On properties of functional principal components analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series B
+  (Statistical Methodology)}{68}{1}{109--126}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hall%
+\ \BBA {} Hosseini-Nasab%
+}{%
+Hall%
+\ \BBA {} Hosseini-Nasab%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+hall2009theory}
+\APACinsertmetastar {%
+hall2009theory}%
+\begin{APACrefauthors}%
+Hall, P.%
+\BCBT {}\ \BBA {} Hosseini-Nasab, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Theory for high-order bounds in functional principal
+  components analysis} {Theory for high-order bounds in functional principal
+  components analysis}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Mathematical Proceedings of the Cambridge Philosophical
+  Society} {Mathematical proceedings of the cambridge philosophical society}\
+  (\BVOL~146, \BPGS\ 225--256).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hotelling%
+}{%
+Hotelling%
+}{%
+{\protect \APACyear {1933}}%
+}]{%
+hotelling1933analysis}
+\APACinsertmetastar {%
+hotelling1933analysis}%
+\begin{APACrefauthors}%
+Hotelling, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1933}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Analysis of a complex of statistical variables into
+  principal components.} {Analysis of a complex of statistical variables into
+  principal components.}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of educational psychology}{24}{6}{417}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Johnson%
+\ \BBA {} Wichern%
+}{%
+Johnson%
+\ \BBA {} Wichern%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+johnson2004multivariate}
+\APACinsertmetastar {%
+johnson2004multivariate}%
+\begin{APACrefauthors}%
+Johnson, R\BPBI A.%
+\BCBT {}\ \BBA {} Wichern, D\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multivariate analysis} {Multivariate analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Encyclopedia of Statistical Sciences}{8}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jolliffe%
+}{%
+Jolliffe%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+jolliffe2011principal}
+\APACinsertmetastar {%
+jolliffe2011principal}%
+\begin{APACrefauthors}%
+Jolliffe, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2011}.
+\newblock
+\APACrefbtitle {Principal component analysis} {Principal component analysis}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kassambara%
+}{%
+Kassambara%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+kassambara2017practical}
+\APACinsertmetastar {%
+kassambara2017practical}%
+\begin{APACrefauthors}%
+Kassambara, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2017}.
+\newblock
+\APACrefbtitle {Practical Guide To Principal Component Methods in R: PCA, M
+  (CA), FAMD, MFA, HCPC, factoextra} {Practical guide to principal component
+  methods in r: Pca, m (ca), famd, mfa, hcpc, factoextra}\ (\BVOL~2).
+\newblock
+\APACaddressPublisher{}{STHDA}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kassambara%
+\ \BBA {} Mundt%
+}{%
+Kassambara%
+\ \BBA {} Mundt%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+factoext2017r}
+\APACinsertmetastar {%
+factoext2017r}%
+\begin{APACrefauthors}%
+Kassambara, A.%
+\BCBT {}\ \BBA {} Mundt, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {factoextra: Extract and Visualize the Results of
+  Multivariate Data Analyses} {factoextra: Extract and visualize the results of
+  multivariate data analyses}{\BBCQ}\ [\bibcomputersoftwaremanual].
+\newblock
+\APACrefnote{R package version 1.0.5}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kaufman%
+\ \BBA {} Rousseeuw%
+}{%
+Kaufman%
+\ \BBA {} Rousseeuw%
+}{%
+{\protect \APACyear {1986}}%
+}]{%
+kaufman1986clustering}
+\APACinsertmetastar {%
+kaufman1986clustering}%
+\begin{APACrefauthors}%
+Kaufman, L.%
+\BCBT {}\ \BBA {} Rousseeuw, P\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Clustering large data sets} {Clustering large data
+  sets}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Pattern Recognition in Practice, Volume II} {Pattern
+  recognition in practice, volume ii}\ (\BPGS\ 425--437).
+\newblock
+\APACaddressPublisher{}{Elsevier}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kaufman%
+\ \BBA {} Rousseeuw%
+}{%
+Kaufman%
+\ \BBA {} Rousseeuw%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+kaufman1990finding}
+\APACinsertmetastar {%
+kaufman1990finding}%
+\begin{APACrefauthors}%
+Kaufman, L.%
+\BCBT {}\ \BBA {} Rousseeuw, P\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1990}.
+\newblock
+\APACrefbtitle {Finding Groups in Data: An Introduction to Cluster Analysis}
+  {Finding groups in data: An introduction to cluster analysis}.
+\newblock
+\APACaddressPublisher{}{John Wiley \& Sons Inc.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kerr%
+\ \BBA {} Churchill%
+}{%
+Kerr%
+\ \BBA {} Churchill%
+}{%
+{\protect \APACyear {2001}}%
+}]{%
+kerr2001bootstrapping}
+\APACinsertmetastar {%
+kerr2001bootstrapping}%
+\begin{APACrefauthors}%
+Kerr, M\BPBI K.%
+\BCBT {}\ \BBA {} Churchill, G\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Bootstrapping cluster analysis: assessing the
+  reliability of conclusions from microarray experiments} {Bootstrapping
+  cluster analysis: assessing the reliability of conclusions from microarray
+  experiments}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proceedings of the National Academy of
+  Sciences}{98}{16}{8961--8965}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kruskal%
+}{%
+Kruskal%
+}{%
+{\protect \APACyear {1964}}%
+}]{%
+kruskal1964multidimensional}
+\APACinsertmetastar {%
+kruskal1964multidimensional}%
+\begin{APACrefauthors}%
+Kruskal, J\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1964}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multidimensional scaling by optimizing goodness of fit
+  to a nonmetric hypothesis} {Multidimensional scaling by optimizing goodness
+  of fit to a nonmetric hypothesis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychometrika}{29}{1}{1--27}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Liao%
+}{%
+Liao%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+liao2005clustering}
+\APACinsertmetastar {%
+liao2005clustering}%
+\begin{APACrefauthors}%
+Liao, T\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Clustering of time series data survey} {Clustering of
+  time series data survey}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Pattern recognition}{38}{11}{1857--1874}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Maechler%
+, Rousseeuw%
+, Struyf%
+, Hubert%
+\BCBL {}\ \BBA {} Hornik%
+}{%
+Maechler%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+clust2019r}
+\APACinsertmetastar {%
+clust2019r}%
+\begin{APACrefauthors}%
+Maechler, M.%
+, Rousseeuw, P.%
+, Struyf, A.%
+, Hubert, M.%
+\BCBL {}\ \BBA {} Hornik, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {cluster: Cluster Analysis Basics and Extensions}
+  {cluster: Cluster analysis basics and extensions}{\BBCQ}\
+  [\bibcomputersoftwaremanual].
+\newblock
+\APACrefnote{R package version 2.0.9 --- For new features, see the 'Changelog'
+  file (in the package source)}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Maharaj%
+}{%
+Maharaj%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+maharaj2000cluster}
+\APACinsertmetastar {%
+maharaj2000cluster}%
+\begin{APACrefauthors}%
+Maharaj, E\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Cluster of time series} {Cluster of time series}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Classification}{17}{2}{297--314}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Novales%
+}{%
+Novales%
+}{%
+{\protect \APACyear {1993}}%
+}]{%
+novales1993econometria}
+\APACinsertmetastar {%
+novales1993econometria}%
+\begin{APACrefauthors}%
+Novales, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1993}{}{}.
+\newblock
+\APACrefbtitle {ECONOMETRIA. Segunda Edici{\'o}n, EDITORIAL McGRAW--HILL.}
+  {Econometria. segunda edici{\'o}n, editorial mcgraw--hill.}
+\newblock
+\APACaddressPublisher{}{INTERAMERICANA DE ESPA{\~N}A, SA}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pankratz%
+}{%
+Pankratz%
+}{%
+{\protect \APACyear {1991}}%
+}]{%
+pankratz2012forecasting}
+\APACinsertmetastar {%
+pankratz2012forecasting}%
+\begin{APACrefauthors}%
+Pankratz, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1991}.
+\newblock
+\APACrefbtitle {Forecasting with dynamic regression models} {Forecasting with
+  dynamic regression models}\ (\BVOL~935).
+\newblock
+\APACaddressPublisher{}{John Wiley \& Sons}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pearson%
+}{%
+Pearson%
+}{%
+{\protect \APACyear {1901}}%
+}]{%
+pearson1901liii}
+\APACinsertmetastar {%
+pearson1901liii}%
+\begin{APACrefauthors}%
+Pearson, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1901}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {LIII. On lines and planes of closest fit to systems of
+  points in space} {Liii. on lines and planes of closest fit to systems of
+  points in space}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The London, Edinburgh, and Dublin Philosophical
+  Magazine and Journal of Science}{2}{11}{559--572}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Piccolo%
+}{%
+Piccolo%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+piccolo1990distance}
+\APACinsertmetastar {%
+piccolo1990distance}%
+\begin{APACrefauthors}%
+Piccolo, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A distance measure for classifying ARIMA models} {A
+  distance measure for classifying arima models}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Time Series Analysis}{11}{2}{153--164}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ramsey%
+\ \BBA {} Silverman%
+}{%
+Ramsey%
+\ \BBA {} Silverman%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+ramsey1997functional}
+\APACinsertmetastar {%
+ramsey1997functional}%
+\begin{APACrefauthors}%
+Ramsey, J\BPBI O.%
+\BCBT {}\ \BBA {} Silverman, B\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1997}.
+\newblock
+\APACrefbtitle {Functional data analysis} {Functional data analysis}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ramsey%
+\ \BBA {} Silverman%
+}{%
+Ramsey%
+\ \BBA {} Silverman%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+ramsay2005functional2}
+\APACinsertmetastar {%
+ramsay2005functional2}%
+\begin{APACrefauthors}%
+Ramsey, J\BPBI O.%
+\BCBT {}\ \BBA {} Silverman, B\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2005}.
+\newblock
+\APACrefbtitle {Functional Data Analysis} {Functional data analysis}.
+\newblock
+\APACaddressPublisher{}{Springer Series in Statistics}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rao%
+}{%
+Rao%
+}{%
+{\protect \APACyear {1958}}%
+}]{%
+rao1958some}
+\APACinsertmetastar {%
+rao1958some}%
+\begin{APACrefauthors}%
+Rao, C\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1958}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Some statistical methods for comparison of growth
+  curves} {Some statistical methods for comparison of growth curves}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biometrics}{14}{1}{1--17}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ross%
+}{%
+Ross%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+ross2006simulation}
+\APACinsertmetastar {%
+ross2006simulation}%
+\begin{APACrefauthors}%
+Ross, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simulation} {Simulation}.{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rousseeuw%
+\ \BBA {} Kaufman%
+}{%
+Rousseeuw%
+\ \BBA {} Kaufman%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+rousseeuw1990finding}
+\APACinsertmetastar {%
+rousseeuw1990finding}%
+\begin{APACrefauthors}%
+Rousseeuw, P\BPBI J.%
+\BCBT {}\ \BBA {} Kaufman, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Finding groups in data} {Finding groups in data}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Series in Probability \& Mathematical Statistics
+  1990-34 (1)}{}{}{111--112}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{RStudio, Inc}%
+}{%
+{RStudio, Inc}%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+shiny}
+\APACinsertmetastar {%
+shiny}%
+\begin{APACrefauthors}%
+{RStudio, Inc}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Easy web applications in R.} {Easy web applications in
+  r.}{\BBCQ}\ [\bibcomputersoftwaremanual].
+\newblock
+\APACrefnote{URL: \url{http://www.rstudio.com/shiny/}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Salvador%
+\ \BBA {} Chan%
+}{%
+Salvador%
+\ \BBA {} Chan%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+salvador2004determining}
+\APACinsertmetastar {%
+salvador2004determining}%
+\begin{APACrefauthors}%
+Salvador, S.%
+\BCBT {}\ \BBA {} Chan, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Determining the number of clusters/segments in
+  hierarchical clustering/segmentation algorithms} {Determining the number of
+  clusters/segments in hierarchical clustering/segmentation algorithms}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Tools with Artificial Intelligence, 2004. ICTAI 2004.
+  16th IEEE International Conference on} {Tools with artificial intelligence,
+  2004. ictai 2004. 16th ieee international conference on}\ (\BPGS\ 576--584).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shumway%
+\ \BBA {} Stoffer%
+}{%
+Shumway%
+\ \BBA {} Stoffer%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+shumway2017time}
+\APACinsertmetastar {%
+shumway2017time}%
+\begin{APACrefauthors}%
+Shumway, R\BPBI H.%
+\BCBT {}\ \BBA {} Stoffer, D\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2017}.
+\newblock
+\APACrefbtitle {Time series analysis and its applications: with R examples}
+  {Time series analysis and its applications: with r examples}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Stevens%
+}{%
+Stevens%
+}{%
+{\protect \APACyear {1946}}%
+}]{%
+stevens1946theory}
+\APACinsertmetastar {%
+stevens1946theory}%
+\begin{APACrefauthors}%
+Stevens, S\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1946}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {On the theory of scales of measurement Science} {On the
+  theory of scales of measurement science}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{New series}{103}{2684}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Struzik%
+\ \BBA {} Siebes%
+}{%
+Struzik%
+\ \BBA {} Siebes%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+struzik1999haar}
+\APACinsertmetastar {%
+struzik1999haar}%
+\begin{APACrefauthors}%
+Struzik, Z\BPBI R.%
+\BCBT {}\ \BBA {} Siebes, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Haar wavelet transform in the time series similarity
+  paradigm} {The haar wavelet transform in the time series similarity
+  paradigm}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {European Conference on Principles of Data Mining and
+  Knowledge Discovery} {European conference on principles of data mining and
+  knowledge discovery}\ (\BPGS\ 12--22).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tibshirani%
+, Walther%
+\BCBL {}\ \BBA {} Hastie%
+}{%
+Tibshirani%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2001}}%
+}]{%
+tibshirani2001estimating}
+\APACinsertmetastar {%
+tibshirani2001estimating}%
+\begin{APACrefauthors}%
+Tibshirani, R.%
+, Walther, G.%
+\BCBL {}\ \BBA {} Hastie, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Estimating the number of clusters in a data set via the
+  gap statistic} {Estimating the number of clusters in a data set via the gap
+  statistic}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of the Royal Statistical Society: Series B
+  (Statistical Methodology)}{63}{2}{411--423}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Torgerson%
+}{%
+Torgerson%
+}{%
+{\protect \APACyear {1958}}%
+}]{%
+torgerson1958theory}
+\APACinsertmetastar {%
+torgerson1958theory}%
+\begin{APACrefauthors}%
+Torgerson, W\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1958}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Theory and methods of scaling.} {Theory and methods of
+  scaling.}{\BBCQ}
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tucker%
+}{%
+Tucker%
+}{%
+{\protect \APACyear {1958}}%
+}]{%
+tucker1958determination}
+\APACinsertmetastar {%
+tucker1958determination}%
+\begin{APACrefauthors}%
+Tucker, L\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1958}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Determination of parameters of a functional relation by
+  factor analysis} {Determination of parameters of a functional relation by
+  factor analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Psychometrika}{23}{1}{19--23}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

@@ -1,0 +1,74 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Estaciones de Medici\'on de Caudales\relax }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Estaciones de Medici\'on de Variables Clim\'aticas\relax }}{8}{figure.caption.8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Descomposici\'on STL-Loess de Serie\relax }}{18}{figure.caption.18}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Serie Corregida\relax }}{20}{figure.caption.20}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces MDS - Representaci\'on en $R^2$ de $D$}}{45}{figure.caption.33}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Cl\'usters generados con PAM\relax }}{46}{figure.caption.34}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Cl\'usters generados con CLARA \relax }}{46}{figure.caption.35}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces N\'umero \'Optimo de Clusters \relax }}{47}{figure.caption.36}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Representaci\'on de Cl\'usters en $\PazoBB {R}^2$ \relax }}{48}{figure.caption.37}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Representaci\'on Geogr\'afica de Cl\'usters\relax }}{49}{figure.caption.38}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Acercamiento a Cl\'uster (representaci\'on Geogr\'afica)\relax }}{49}{figure.caption.39}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Series de Tiempo del Cl\'uster 1\relax }}{50}{figure.caption.40}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Series de Tiempo del Cl\'uster 2\relax }}{50}{figure.caption.41}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Series de Tiempo del Cl\'uster 3\relax }}{51}{figure.caption.42}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Series de Tiempo del Cl\'uster 4\relax }}{51}{figure.caption.43}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces ACPF del Series del Cl\'uster 1\relax }}{53}{figure.caption.44}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Superficie de Covarianza Estimada (Cl\'uster 1)\relax }}{53}{figure.caption.45}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Serie de Tiempo Clim\'atica\relax }}{55}{figure.caption.48}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Serie de Tiempo Clim\'atica Corregida\relax }}{55}{figure.caption.49}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Caudal - Cl\'uster 1\relax }}{56}{figure.caption.50}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Funci\'on de Autocorrelaci\'on Caudal - Cl\'uster 1\relax }}{57}{figure.caption.51}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces D(Caudal,12) - Cl\'uster 1\relax }}{58}{figure.caption.52}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Funci\'on de Autocorrelaci\'on D(Caudal,12) - Cl\'uster 1\relax }}{58}{figure.caption.53}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(5,0,0)(0,1,0)\relax }}{60}{figure.caption.56}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(0,1,0)\relax }}{61}{figure.caption.59}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(1,1,0)\relax }}{63}{figure.caption.62}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Caudal - Estaci\'on Machadinho\relax }}{65}{figure.caption.64}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Series Clim\'aticas - Estaci\'on Campos Novos\relax }}{66}{figure.caption.65}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Autocorrelaci\'on - Caudal\relax }}{67}{figure.caption.67}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Autocorrelaci\'on Precipitaci\'on\relax }}{68}{figure.caption.68}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Autocorrelaci\'on Temperatura M\'axima\relax }}{69}{figure.caption.69}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Autocorrelaci\'on Temperatura M\IeC {\'\i }nima\relax }}{69}{figure.caption.70}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Autocorrelaci\'on Humedad Relativa\relax }}{70}{figure.caption.71}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Series Blanqueadas\relax }}{71}{figure.caption.72}
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Corrleaciones Cruzadas - Variables Ex\'ogenas\relax }}{72}{figure.caption.73}
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Corrleaciones Cruzadas - Caudal vs. Variables Ex\'ogenas\relax }}{73}{figure.caption.74}
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Residuos SARMA(1,0)(2,1) - Precipitaci\'on\relax }}{75}{figure.caption.78}
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Residuos SARMA(4,0)(0,2) - Temperatura M\'axima\relax }}{77}{figure.caption.81}
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Residuos SARMA(2,2)(2,1) - Temperatura M\IeC {\'\i }nima\relax }}{78}{figure.caption.84}
+\contentsline {figure}{\numberline {3.36}{\ignorespaces Residuos SARMA(2,0)(3,0) - Humedad Relativa\relax }}{80}{figure.caption.87}
+\contentsline {figure}{\numberline {3.37}{\ignorespaces Coeficientes $v_j$ estimados - Precipitaci\'on\relax }}{82}{figure.caption.88}
+\contentsline {figure}{\numberline {3.38}{\ignorespaces Coeficientes $v_j$ estimados - Temperatura M\'axima\relax }}{83}{figure.caption.89}
+\contentsline {figure}{\numberline {3.39}{\ignorespaces Coeficientes $v_j$ estimados - Temperatura M\IeC {\'\i }nima \relax }}{84}{figure.caption.90}
+\contentsline {figure}{\numberline {3.40}{\ignorespaces Coeficientes $v_j$ estimados - Humedad Relativa \relax }}{85}{figure.caption.91}
+\contentsline {figure}{\numberline {3.41}{\ignorespaces Autocorrelaci\'on $n_t$ \relax }}{86}{figure.caption.92}
+\contentsline {figure}{\numberline {3.42}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) ARMA(1,0)\relax }}{87}{figure.caption.95}
+\contentsline {figure}{\numberline {3.43}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX $(1,0,0)(2,1,0)_{12}$\relax }}{92}{figure.caption.102}
+\contentsline {figure}{\numberline {3.44}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX $(1,0,0)(2,1,0)_{12}$\relax }}{93}{figure.caption.105}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Estructura de la Aplicaci\'on Web\relax }}{98}{figure.caption.108}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces ACPF del Series del Cl\'uster 1\relax }}{146}{figure.caption.138}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Superficie de Covarianza Estimada (Cl\'uster 1)\relax }}{147}{figure.caption.139}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces ACPF del Series del Cl\'uster 2\relax }}{147}{figure.caption.140}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Superficie de Covarianza Estimada (Cl\'uster 2)\relax }}{148}{figure.caption.141}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces ACPF del Series del Cl\'uster 3\relax }}{148}{figure.caption.142}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Superficie de Covarianza Estimada (Cl\'uster 3)\relax }}{149}{figure.caption.143}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces ACPF del Series del Cl\'uster 4\relax }}{149}{figure.caption.144}
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Superficie de Covarianza Estimada (Cl\'uster 4)\relax }}{150}{figure.caption.145}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(1,1,0)}}{153}{figure.caption.148}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,3)(1,1,0)}}{154}{figure.caption.152}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(2,0,1)(1,1,0)}}{160}{figure.caption.156}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(3,0,2)(1,1,0)}}{161}{figure.caption.162}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(2,1,0)_{12}$}}{164}{figure.caption.166}
+\contentsline {figure}{\numberline {D.6}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(2,1,0)_{12}$}}{167}{figure.caption.170}
+\contentsline {figure}{\numberline {D.7}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(1,1,0)_{12}$}}{170}{figure.caption.174}
+\contentsline {figure}{\numberline {D.8}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(0,0,3)(1,1,1)_{12}$}}{175}{figure.caption.180}

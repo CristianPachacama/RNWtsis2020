@@ -1,0 +1,43 @@
+\chapter{Aplicación Web}
+\label{chp:webapp}
+
+A continuación, mostramos la implementación en código R de la Aplicación Web desarrollada con el paquete \textit{Shiny}, \cite{shiny}, que contiene el análisis completo de las series de tiempo de flujos de rios de Brasil. Este aplicacion esta compuesta principalmente por tres archivos: \textit{global} , \textit{ui}  y \textit{server}, tal como puede ver en el mapa de archivos de la aplicación en la figura \ref{fig:mapa_webapp}.
+
+\begin{figure}[h]
+\caption{Estructura de la Aplicación Web}
+\includegraphics[width=15cm]{MapaApp.eps}
+\label{fig:mapa_webapp}
+\centering
+\end{figure}
+
+\paragraph{Nota. } La aplicación Web con el análisis completo, se encuentra disponible para su uso en la siguiente dirección:
+{\color{blue} https://cristianpachacama.shinyapps.io/Tesis/}. 
+Además puede encontrar el código fuente de la misma en el repositorio de GitHub:
+{\color{blue} https://github.com/CristianPachacama/AppTesis/}
+
+\section{Paquetes (global.R)}
+
+Este archivo contiene la declaración de los paquetes extras, que contienen tods las funciones que se usaran en la aplicación web, y que son necesarios para su correcto funcionamiento.
+
+<<global, eval=FALSE, echo=TRUE, size="footnotesize", code = readLines("Apendices/App/global.R")>>=
+
+@
+
+
+\section{Interfaz de Usuario (ui.R)}
+
+La interfaz de usuario está compuesta por todos los elementos visuales desde donde el usuario de la aplicación puede interactuar con la misma, en este caso está destinada a que el usuario fije los parámetros que posteriormente son usados como insumos para la ejecución de los análisis (en el "sever"), finalmente muestra a los usuarios los resultados del análisis realizado.
+
+<<ui, echo=TRUE, eval=FALSE,size="footnotesize", code = readLines("Apendices/App/ui.R")>>=
+
+@
+
+
+
+\section{Ejecución de Tareas (server.R)}
+
+En el "server" se ejecutan todas las funciones y calculos que hacen parte del análisis, para posteriormente mostrar los resultados del mismo en la interfáz de usuario.
+
+<<server, echo=TRUE, eval=FALSE,size="footnotesize", code = readLines("Apendices/App/server.R")>>=
+
+@

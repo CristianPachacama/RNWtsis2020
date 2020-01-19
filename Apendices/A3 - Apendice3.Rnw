@@ -1,0 +1,85 @@
+\chapter{ACP Funcional}
+\label{ap:acpf}
+
+A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Análisis de Componentes Principales Funcional a las series que componen los 4 clústers.
+
+
+\section{Cluster 1} %%%%%%
+
+
+\begin{figure}[H]
+\caption{ACPF del Series del Clúster 1}
+\includegraphics[width=15cm]{1_Cluster/ACPF}
+% \label{fig:acp_summ}
+\centering
+\end{figure}
+
+
+
+\begin{figure}[H]
+\caption{Superficie de Covarianza Estimada (Clúster 1)}
+\includegraphics[width=15cm]{1_Cluster/covarianza}
+% \label{fig:covar}
+\centering
+\end{figure}
+
+
+
+\section{Cluster 2} %%%%%%
+
+
+\begin{figure}[H]
+\caption{ACPF del Series del Clúster 2}
+\includegraphics[width=15cm]{2_Cluster/ACPF}
+\label{fig:acp_summ2}
+\centering
+\end{figure}
+
+
+
+\begin{figure}[H]
+\caption{Superficie de Covarianza Estimada (Clúster 2)}
+\includegraphics[width=15cm]{2_Cluster/covarianza}
+\label{fig:covar2}
+\centering
+\end{figure}
+
+
+
+
+\section{Cluster 3} %%%%%%%%%%%%%%%
+
+
+\begin{figure}[H]
+\caption{ACPF del Series del Clúster 3}
+\includegraphics[width=15cm]{3_Cluster/ACPF}
+\label{fig:acp_summ3}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\caption{Superficie de Covarianza Estimada (Clúster 3)}
+\includegraphics[width=15cm]{3_Cluster/covarianza}
+\label{fig:covar3}
+\centering
+\end{figure}
+
+
+
+
+\section{Cluster 4} %%%%%%%%%%%%%%%
+
+
+\begin{figure}[H]
+\caption{ACPF del Series del Clúster 4}
+\includegraphics[width=15cm]{4_Cluster/ACPF}
+\label{fig:acp_summ4}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\caption{Superficie de Covarianza Estimada (Clúster 4)}
+\includegraphics[width=15cm]{4_Cluster/covarianza}
+\label{fig:covar4}
+\centering
+\end{figure}

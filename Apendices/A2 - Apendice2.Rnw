@@ -1,0 +1,128 @@
+\chapter{Análisis Clúster}
+
+\section{Matriz de Distancias}
+
+
+Mostramos a continuación la matriz de distancias $D$, asociada a las distancias $d_{ACF}$ medidas entre las series de tiempo de Caudales, donde cada serie fue medida en una estación distinta. El nombre de cada estación se encuentra en la tabla \ref{tab:estaciones}.
+
+\label{tab:d_matriz}
+<<  >>=
+# getwd()
+d_matriz = read_excel("Resultados/1_matriz_distancias.xlsx",skip = 1)
+d_matriz = as.data.frame(d_matriz)
+d_matriz = data.frame("d"=paste0("V",seq(179)),d_matriz)
+kable(d_matriz[1:60,seq(21)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,seq(21)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,seq(21)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,22:41)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,22:41)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,22:41)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,42:61)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,42:61)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,42:61)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,62:81)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,62:81)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,62:81)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,82:101)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,82:101)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,82:101)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,102:121)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,102:121)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,102:121)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,122:141)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,122:141)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,122:141)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,142:161)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,142:161)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,142:161)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+
+<<>>=
+kable(d_matriz[1:60,c(1,162:180)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[61:120,c(1,162:180)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+kable(d_matriz[121:179,c(1,162:180)], "latex", booktabs = T,caption="Matriz de Distancias") %>% 
+  kable_styling(latex_options = c("scale_down"))
+@
+
+
+
+
+% -----------------------------------------
+
+
+<<estaciones>>=
+load(file = "Resultados/0_DataVazoes.RData")
+estacVaz = names(BDDv)[-c(1,2)]
+bdVz = data.frame("V" = paste0("V",seq(60)), "Estación" = estacVaz[seq(60)],
+                  "V."= paste0("V",61:120), "Estación." = estacVaz[61:120],
+                  ".V." = paste0("V",121:180), ".Estación." = c(estacVaz[121:179],"-"))
+kable(bdVz, "latex", booktabs = T,caption="Nombre de Estaciones (Caudales)") %>% 
+  kable_styling(latex_options = c("scale_down"))
+
+@
+\label{tab:estaciones}
+
+
+
+
+% -----------------------------------------
+
+
+

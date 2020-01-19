@@ -1,0 +1,80 @@
+\section{Tratamiento de Valores perdidos}
+\label{sec:limpieza}
+El tratamiento de valores perdidos en una base de datos es un procedimiento fundamental en cualquier estudio estadístico, debido a que puede provocar en cierta medida un impacto sobre los resultados obtenidos del estudio.
+
+En esta sección ilustraremos una propuesta para el tratamiento de valores perdidos en series de tiempo estacionales. Para ello consideremos una serie de tiempo $(Y_t,t\in \Z)$, de la que conocemos las observaciones 
+$$y_1,y_2,...,y_{j-1}, y_j, y_k, y_{k+1},...,y_n$$
+
+donde $1 < j < k < n$, es decir, no conocemos los valores de $y_t$ para $t=j+1, j+2, ..., k-1$. Comenzaremos con este caso en el que existe un periodo, compuesto de instantes consecutivos, en el que no conocemos el valor de $y_t$, pero veremos que a partir de este es posible extender el método para tratar a series de tiempo con varios periodos o inclusive instantes no consecutivos de tiempo.
+
+Como vimos en la sección anterior, la descomposición STL-Loess permite descomponer aditivamente una serie de tiempo en sus componentes de tendencia y estacionalidad inclusive en aquellos valores de $t$ para los que no conocemos $y_t$. Entonces aplicamos la descomposición STL-Loess a $Y_t$, así obtenemos su tendencia $T_t$ y estacionalidad $S_t$ en todo instante de tiempo $t=1,2,...,n$. Además, obtenemos un residuo $U_t$ en aquellos instantes de tiempo $t$ en los cuales conocemos $Y_t$, es decir para $t=1,2,...,j,k,...,n$.
+
+
+\begin{equation}
+\label{eq:stl_descomp}
+Y_t = T_t + S_t + R_t
+\end{equation}
+
+Ilustramos lo antes mencionado en la figura \ref{fig:stl_descomp}, que corresponde a la descomposición STL-Loess de una serie de datos mensuales de precipitación (lluvias) medidos en cierta zona de Brasil, está serie tiene estacionalidad anual (12 meses); notemos que es necesario fijar los parámetros de la descomposición adecuadamente ya que están asociados al número de retardos considerados al estimar tanto la componente estacional como la tendencia. El gráfico muestra en la primera fila la serie climática, en segundo lugar muestra su componente estacional, en tercera fila encontramos su componente de tendencia, y finalmente el residuo. Como podemos notar las componentes de tendencia y estacionalidad están definidas en todo el dominio de tiempo.
+
+\begin{figure}[h]
+\caption{Descomposición STL-Loess de Serie}
+\includegraphics[width=15cm]{Cap2-Stl-Loess.png}
+\label{fig:stl_descomp}
+\centering
+\end{figure}
+
+Es decir, bastaría conocer los valores de $R_t$ en todo instante $t$ e inmediatamente conoceríamos los valores de $Y_t$ de inmediato a partir de la ecuación \eqref{eq:stl_descomp}.
+
+
+Así, proponemos simular los valores perdidos de $R_t$. Una forma simple de simular dichos valores, es usando la función de distribución empírica de los Residuos, y el método simulación de la ``Transformada Inversa''. Esto debido a que los residuos tienden a comportarse como un proceso estacionario, razón por la cual su distribución es invariante en el tiempo (conservando su media y varianza constantes), suponiendo que se especificaron bien los parámetros de la descomposición STL.
+
+
+Pues bien, proponemos el siguiente algoritmo de simulación de valores perdidos de $Y_t$.
+
+\subsubsection{Algoritmo}
+
+\begin{enumerate}
+\item Primero calculamos la descomposición STL de $Y_t$. Así obtenemos:
+\begin{itemize}
+\item $T_t$, y $S_t$ para $t=1,2,...,n$
+\item $R_t$ para $t=1,2,...,j-1,j,k,k+1,...,n$
+\end{itemize}
+
+
+\item Luego calculamos la función de distribución empírica $\hat{F}_0(u)$ de los residuos conocidos $R_t$.
+
+$$\hat{F}_0(u):=\frac{1}{n}\sum_{i\in J} \indic_{(R_i\leq u)} $$
+Donde $J=\{1,2,...,j-1,j,k,k+1,...,n\}$
+
+\item Usando el método de la Transformada Inversa \cite{ross2006simulation}. Para $t$ desde $j+1$ hasta $k-1$ (instantes en los que tenemos valores perdidos), hacer lo siguiente:
+
+\begin{itemize}
+\item Simular $u\sim U[0,1]$
+\item Calcular $$r = \hat{F}_0^{-1}(u) := inf\{ t\in \mathbb{R}: u\leq \hat{F}_0(t) \} $$
+\item Definir $R_t := r$
+\item Calcular $Y_t:=T_t+S_t+R_t$
+\end{itemize}
+
+\end{enumerate}
+
+
+Volviendo al ejemplo antes mostrado \ref{fig:stl_descomp}, luego de aplicar el algoritmo de simulación de valores perdidos obtenemos la serie completa $Y_t$ como se puede observar en la figura \ref{fig:stl_descomp2}.
+
+\begin{figure}[h]
+\caption{Serie Corregida}
+\includegraphics[width=15cm]{Cap2-MarcoTeorico/Cap2-Stl-Loess2.png}
+\label{fig:stl_descomp2}
+\centering
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,338 @@
+\chapter{Modelamiento de Series Temporales}
+
+
+\section{Modelo SARIMA del Clúster}
+\label{ap:sarima}
+
+
+\subsection{Modelo del Clúster 1}
+
+%  Modelos Sarima representantes
+<<>>=
+load(file = "Resultados/Extras/sarima_representantes.RData")
+@
+
+
+El modelo SARIMA que representa al clúster 1, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarima_cl1}.
+
+<<fig.pos="h">>=
+tab_model(ms1,caption_text = "SARIMA$(4,0,0)(1,1,0)_{12}$",label_text = "tab:sarima_cl1")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(1,1,0)" >>=
+tsdiag(ms1, gof.lag = 36)
+@
+
+
+Mientras que los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarima_cl11} .
+
+<<fig.pos= "h">>=
+texto = paste0("SARIMA$(",4,",",0,",",0,")(",1,",",1,",",0,")_{12}$"," - Clúster 1")
+kableResumen(TABLA, caption_text = texto,label_text = "tab:sarima_cl11")
+@
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 2}
+
+
+El modelo SARIMA que representa al clúster 2, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarima_cl2}.
+<<>>=
+load(file = "Resultados/Extras/Modelos/SARIMA2.RData")
+@
+
+<<fig.pos="h">>=
+p=4;q=3
+P=1;Q=0
+d=0;D=1
+texto = paste0("SARIMA$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(ModelosCl[[2]],caption_text = texto,label_text = "tab:sarima_cl2")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,3)(1,1,0)" >>=
+tsdiag(ModelosCl[[2]], gof.lag = 36)
+@
+
+
+Además, los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarima_cl22}.
+
+<<fig.pos= "h">>=
+TABLA = ResumenModelos(Modelos)
+texto = paste0(texto," - Clúster 2")
+kableResumen(TABLA, caption_text = texto,label_text = "tab:sarima_cl22",orientacion = "horizontal")
+@
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 3}
+
+El modelo SARIMA que representa al clúster 3, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarima_cl3}.
+
+<<>>=
+load(file = "Resultados/Extras/Modelos/SARIMA3.RData")
+@
+
+<<fig.pos="h">>=
+p=2;q=1
+P=1;Q=0
+d=0;D=1
+texto = paste0("SARIMA$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(ModelosCl[[3]],caption_text = texto,label_text = "tab:sarima_cl3")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMA(2,0,1)(1,1,0)" >>=
+tsdiag(ModelosCl[[3]], gof.lag = 36)
+@
+
+
+Además, los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarima_cl33}.
+
+
+<<fig.pos= "h">>=
+TABLA = ResumenModelos(Modelos)
+texto = paste0(texto," - Clúster 3")
+kableResumen(TABLA[1:40,], caption_text = texto,label_text = "tab:sarima_cl33")
+@
+
+
+
+<<>>=
+kableResumen(TABLA[41:80,],caption_text = texto)
+@
+
+<<>>=
+kableResumen(TABLA[81:116,],caption_text = texto)
+@
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 4}
+
+
+El modelo SARIMA que representa al clúster 4, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarima_cl4}.
+
+<<>>=
+load(file = "Resultados/Extras/Modelos/SARIMA4.RData")
+@
+
+<<fig.pos="h">>=
+p=3;q=2
+P=1;Q=0
+d=0;D=1
+texto = paste0("SARIMA$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(ModelosCl[[4]],caption_text = texto,label_text = "tab:sarima_cl4")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMA(3,0,2)(1,1,0)" >>=
+tsdiag(ModelosCl[[4]], gof.lag = 36)
+@
+
+
+Mientras que los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarima_cl44}.
+
+
+<<fig.pos= "h">>=
+TABLA = ResumenModelos(Modelos)
+texto = paste0(texto," - Clúster 4")
+kableResumen(TABLA, caption_text = texto,label_text = "tab:sarima_cl44", orientacion = "horizontal")
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%       SARIMAX CLUSTERS       %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modelo SARIMAX del Clúster}
+\label{ap:sarimax}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 1}
+
+El modelo SARIMAX que representa al clúster 1, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarimax_cl1}.
+
+<<fig.pos="h">>=
+p=1;q=0
+P=2;Q=0
+d=0;D=1
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(mod_tr,caption_text = texto, label_text = "tab:sarimax_cl1")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(2,1,0)_{12}$" >>=
+tsdiag(mod_tr, gof.lag = 36)
+@
+
+
+Además, los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarimax_cl11}.
+
+<<>>=
+vaz_clust = c("MACHADINHO (217)", "ERNESTINA (110)","MIRANDA (206)","ITAIPU ARTIFICIAL (66)")
+load(file = "Resultados/Extras/Modelos/SARIMAX1.RData")
+@
+
+
+
+<<fig.pos= "h">>=
+TABLAX = ResumenModelos(ModelosX); TABLAX[14,1] = "SEGREDO Y DESVIO ARTIFICIAL (75)"
+TABLAX$`Estacion-Clima` = NombreXclima
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$"," - Clúster 1")
+kableResumen(TABLAX,caption_text = texto, orientacion = "horizontal",label_text = "tab:sarimax_cl11")
+@
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 2}
+
+<<>>=
+
+load(file = "Resultados/Extras/Modelos/SARIMAX2.RData")
+@
+
+
+El modelo SARIMAX que representa al clúster 2, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarimax_cl2}
+
+<<fig.pos="h">>=
+p=1;q=0
+P=2;Q=0
+d=0;D=1
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(ModelosX[[vaz_clust[2]]],caption_text = texto,label_text = "tab:sarimax_cl2")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(2,1,0)_{12}$" >>=
+tsdiag(ModelosX[[vaz_clust[2]]], gof.lag = 36)
+@
+
+
+Además, los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarimax_cl22}.
+
+<<fig.pos= "h">>=
+TABLAX = ResumenModelos(ModelosX); TABLAX$`Estacion-Clima` = NombreXclima
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$"," - Clúster 2")
+kableResumen(TABLAX,caption_text = texto, orientacion = "horizontal",label_text = "tab:sarimax_cl22")
+@
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 3}
+
+
+
+El modelo SARIMAX que representa al clúster 3, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarimax_cl3}.
+
+<<>>=
+load(file = "Resultados/Extras/Modelos/SARIMAX3.RData")
+@
+
+
+<<fig.pos="h">>=
+p=1;q=0
+P=1;Q=0
+d=0;D=1
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(ModelosX[[vaz_clust[3]]],caption_text = texto,label_text = "tab:sarimax_cl3")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(1,1,0)_{12}$" >>=
+tsdiag(ModelosX[[vaz_clust[3]]], gof.lag = 36)
+@
+
+
+Además, los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarimax_cl33}.
+
+<<fig.pos= "h">>=
+TABLAX = ResumenModelos(ModelosX); TABLAX$`Estacion-Clima` = NombreXclima
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$"," - Clúster 3")
+kableResumen(TABLAX[1:40,],caption_text = texto, orientacion = "horizontal",label_text = "tab:sarimax_cl33")
+@
+
+
+<<>>=
+kableResumen(TABLAX[41:80,],caption_text = texto, orientacion = "horizontal")
+@
+
+<<>>=
+kableResumen(TABLAX[81:116,],caption_text = texto, orientacion = "horizontal")
+@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo del Clúster 4}
+
+
+
+El modelo SARIMAX que representa al clúster 4, sus coeficientes y residuos se resumen en la tabla \ref{tab:sarimax_cl4}.
+
+<<>>=
+load(file = "Resultados/Extras/Modelos/SARIMAX4.RData")
+@
+
+
+<<fig.pos="h">>=
+p=0;q=3
+P=1;Q=1
+d=0;D=1
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$")
+tab_model(ModelosX[[vaz_clust[4]]],caption_text = texto,label_text = "tab:sarimax_cl4")
+@
+
+
+<<fig.pos= "h",fig.height=7,fig.cap="Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(0,0,3)(1,1,1)_{12}$" >>=
+tsdiag(ModelosX[[vaz_clust[4]]], gof.lag = 36)
+@
+
+
+Además, los coeficientes estimados del modelo, para cada una de las series del clúster se muestran en la tabla \ref{tab:sarimax_cl44}
+
+<<fig.pos= "h">>=
+TABLAX = ResumenModelos(ModelosX); TABLAX$`Estacion-Clima` = NombreXclima
+texto = paste0("SARIMAX$(",p,",",d,",",q,")(",P,",",D,",",Q,")_{12}$"," - Clúster 4")
+kableResumen(TABLAX,caption_text = texto, orientacion = "horizontal",label_text = "tab:sarimax_cl44")
+@
+
+
+
+
+

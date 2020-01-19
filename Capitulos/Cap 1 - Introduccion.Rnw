@@ -1,0 +1,138 @@
+\chapter{Introducción}\label{cap1}
+
+
+Brasil tiene uno de los sistemas hidrológicos más complejos, diversos y extensos del mundo. A diferencia de la gran mayoría de los países desarrollados, Brasil tiene en los ríos su principal fuente de generación de electricidad, ocupando el tercer lugar dentro de los más grandes productores hidroeléctricos del mundo. Debido a la importancia del sector hidroeléctrico, buscar formas de facilitar y mejorar el modelamiento de datos asociados a este sector es un problema prioritario. Problema provocado por la dificultad que supone lidiar con la enorme cantidad de datos (accesibles desde la web de instituciones como ANA, ONS, NOAA, CPTEC, etc.) asociados a mediciones de Caudales de los ríos que componen este sistema, que cuenta con alrededor de 179 estaciones de medición repartidas en todo Brasil. Dichos datos se presentan en forma de Series de Tiempo que posee tres características que dificultan su análisis, la primera es que estas series de tiempo poseen observaciones mensuales de los caudales en un periodo de tiempo de alrededor de 17 años, es decir, son series relativamente extensas. La segunda característica es que estas series de tiempo son estacionales, característica que es vital considerar antes de proponer un modelo para estas. Finalmente, las series de tiempo asociadas a variables climáticas, mismas que se incorporarán al modelo que explique el comportamiento de los caudales, son series con valores pérdidos, por lo que es necesario encontrar un método adecuado de imputación de estos valores, previo a incorporarlas a cualquier modelo.
+
+
+%y por último existe evidencia de que el ruido o error asociado a estas series no se distribuye normalmente, sino que su distribución posee colas más pesadas como las analizadas en teoría de valores extremos. 
+
+Hay que destacar que el modelamiento de caudales juega un rol trascendental en la creación de políticas que adopta el sector energético de Brasil, que como mencionamos anteriormente está alimentado en su mayoría por el sector hidroeléctrico en donde el análisis que planteamos permitiría profundizar en la planificación de las operaciones de plantas hidroeléctricas que depende directamente del comportamiento temporal de los ríos que las alimentan, esta planificación podría evitar por ejemplo eventos de déficit energético provocados por una deficiencia estructural de la disponibilidad de energía, que a la larga tiene impacto económico y social mayor que los cortes de energía.
+
+En ese contexto, notamos que es posible disminuir la dimensión del problema del modelamiento de todas estas series a través de la identificación de grupos o zonas representativas (no necesariamente geográficas) que resuman el comportamiento temporal que poseen los caudales de los ríos. Esto en términos de modelamiento se traduce en pasar del problema de modelar el nivel de caudal en cada una de las 179 estaciones, al problema de modelar únicamente una serie por cada grupo.
+
+
+%Ya que el problema se basa en identificar grupos de ríos cuyos Caudales se comportan de manera similar en el tiempo, se propone la utilización de el ``Análisis Clúster'' (Ver  \cite{rousseeuw1990finding}), que está compuesto por un conjunto de técnicas que buscan agrupar objetos, en este caso series de tiempo, considerando para ello una función de disimilitud entre dichos objetos \citep{caiado2006periodogram}, está función mide que tan distintos son una pareja de objetos y a partir de esta medida crea grupos. Al elegir adecuadamente la función de disimilitud (diseñada para series de tiempo) es posible agrupar a los ríos en grupos basados en el comportamiento temporal de sus caudales. Esto con la finalidad de lidiar con la complejidad que supone analizar y modelar esta enorme cantidad de series de tiempo de caudales, pasando de analizar alrededor de 179 series a unas pocas (una serie por Clúster), sin dejar de lado la estructura y comportamiento estacional de cada una de ellas, partiendo de una adecuada elección de la función de disimilitud. 
+
+
+
+% Intro Analisis Cluster
+
+Ya que el problema se basa en identificar grupos de ríos cuyos caudales se comportan de manera similar en el tiempo, se propone la utilización de el Análisis Clúster, que es una técnica de aprendizaje no supervisada que tiene como objetivo dividir un conjunto de objetos en grupos homogéneos (clústers). La partición se realiza de tal manera que los objetos en el mismo clúster son más similares entre sí que los objetos en diferentes grupos según un criterio definido. 
+
+En muchas aplicaciones reales, el análisis de clúster debe realizarse con datos asociados a series de tiempo. 
+De hecho, los problemas de agrupamiento de series de tiempo surgen de manera natural en una amplia variedad de campos, incluyendo economía, finanzas, medicina, ecología, estudios ambientales, ingeniería y muchos otros. Con frecuencia, la agrupación de series de tiempo desempeña un papel central en el problema estudiado. Estos argumentos motivan el creciente interés en la literatura sobre la agrupación de series de tiempo, especialmente en las últimas dos décadas, donde se ha proporcionado una gran cantidad de contribuciones sobre este tema. En  \citeauthor{liao2005clustering} \citeyear{liao2005clustering} se puede encontrar un excelente estudio sobre la agrupación de series de tiempo, aunque posteriormente se han realizado nuevas contribuciones significativas. 
+Particularmente importante en la última década ha sido la explosión de documentos sobre el tema, provenientes tanto de comunidades de minería de datos como de reconocimiento de patrones. \citeauthor{fu2011review} \citeyear{fu2011review} proporciona una visión general completa y exhaustiva de las últimas orientaciones de minería de datos de series de tiempo, incluida una gama de problemas clave como representación, indexación y segmentación de series de tiempo, medidas de disimilitud, procedimientos de agrupamiento y herramientas de visualización.
+
+
+% Intro de Disimilitudes
+Una pregunta crucial en el Análisis Clúster es establecer lo que queremos decir con objetos ``similares'', es decir, determinar una medida de similitud (o disimilitud) adecuada entre dos objetos. En el contexto específico de los datos asociados a series de tiempo, el concepto de disimilitud es particularmente complejo debido al carácter dinámico de las series de tiempo. Las diferencias generalmente consideradas en la agrupación convencional no podrían funcionar adecuadamente con los datos dependientes del tiempo porque ignoran la relación de interdependencia entre los valores. De esta manera, diferentes enfoques para definir una función de disimilitud entre series de tiempo han sido propuestos en la literatura, pero nos centraremos en aquellas medidas asociadas a la autocorrelación (simple, e inversa), correlación cruzada y periodograma de las series propuestos en \cite{struzik1999haar,galeano2000multivariate,caiado2006periodogram,chouakria2007adaptive} . Estos enfoques basados en características tienen como objetivo representar la estructura dinámica de cada serie mediante un vector de características de menor dimensión, lo que permite una reducción de dimensionalidad (las series temporales son esencialmente datos de alta dimensionalidad) y un ahorro significativo en el tiempo de cálculo, además de que nos ayudan a alcanzar el objetivo central por el que usaremos el Análisis Clúster que es el de la modelización de series de tiempo.
+
+
+Una vez que se determina adecuadamente la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre todas las parejas de series), y luego se usa un algoritmo de agrupamiento adecuado para formar los clústers (grupos) con las series. De hecho, la mayoría de los enfoques de agrupamiento de series de tiempo revisados por  \citeauthor{liao2005clustering}  \citeyear{liao2005clustering} son variaciones de algoritmos de particionamiento, por ejemplo: K-Means, K-Medoids, PAM, CLARA \citeauthor{kaufman1986clustering} \citeyear{kaufman1986clustering}  o de Clúster jerárquico que sirven en una gama de disimilitudes específicamente diseñadas para tratar con series de tiempo y algunas de sus características. 
+%CLARA
+En particular nos centraremos en el algoritmo de particionamiento CLARA desarrollado por  \citeauthor{kaufman1990finding} \citeyear{kaufman1990finding} con el principal objetivo de analizar grandes conjuntos de datos.
+
+
+% NUMERO DE CLUSTERS
+Una etapa adicional dentro del análisis clúster consiste en determinar la cantidad de clústers que es más apropiada para los datos. Idealmente, los clústers resultantes no solo deberían tener buenas propiedades estadísticas (compactas, bien separadas, conectadas y estables), sino también resultados relevantes. Se han propuesto una variedad de medidas y métodos para validar los resultados de un análisis clúster y determinar tanto el número de clústers, así como identificar qué algoritmo de agrupamiento ofrece el mejor rendimiento, algunas de estas ellas pueden encontrarse en \cite{fraley1998many,duda2001pattern,kerr2001bootstrapping,salvador2004determining}. Esta validación puede basarse únicamente en las propiedades internas de los datos o en alguna referencia externa.
+
+
+
+% ANALISIS DE COMPONENTES PRINCIPALES FUNCIONAl
+Finalizado Análisis Clúster de las Series de Tiempo y su validación, proponemos una etapa que consiste en la agregación de la información de las series de tiempo contenidas en los clústers identificados en la etapa anterior, esto con la finalidad de resumir en una sola serie de tiempo el comportamiento del grupo de series pertenecientes a determinado clúster.
+%pasamos una etapa en la que pretendemos resumir y agrear la información de las series de tiempo contenidas en los grupos que formamos, 
+Para ello haremos uso del Análisis de Componentes Principales (ACP) desarrollado por \citeauthor{pearson1901liii} \citeyear{pearson1901liii} y de manera independiente por \citeauthor{hotelling1933analysis} \citeyear{hotelling1933analysis}, y posteriormente estudiado a profundidad en  \cite{anderson2003multivariate,jolliffe2011principal}, qué como veremos más adelante es una técnica multivariante usada generalmente para reducir la dimensionalidad de los datos, y también como un complemento de los modelos lineales de regresión.
+En particular usaremos una variante del ACP desarrollada específicamente para datos funcionales \cite{rao1958some,tucker1958determination}, el Análisis de Componentes Principales Funcional (ACPF) que es la técnica más adecuada para tratar con datos asociados a series de tiempo. 
+  \citeauthor{ramsey1997functional}  \citeyear{ramsey1997functional} ofrecen una introducción al tema orientada a la aplicación, mientras que las propiedades asintóticas de consistencia de los estimadores están dispersas en varios artículos de diferentes autores en diferentes contextos: reducción de dimensión  \cite{dauxois1982asymptotic,hall2006properties,hall2009theory}, modelado lineal funcional \cite{cardot1999functional, cardot2003spline, hall2007methodology}, análisis de series de tiempo \cite{bosq2012linear}, por nombrar algunos. 
+
+
+
+
+
+
+% SARIMA del indicador ACP
+
+Pues bien, en este punto se tiene un indicador temporal (serie de tiempo) por clúster, que resume el comportamiento del caudal de los ríos en las estaciones que lo componen, a partir de este, deseamos obtener un modelo para el clúster, para ello proponemos modelar este indicador usando la metodología \citeauthor{box1970time} \citeyear{box1970time} que es se conoce por su rigurosidad para la identificación, estimación y diagnóstico de modelos dinámicos para analizar series temporales, que además es una de las metodologías más usadas hasta la actualidad.
+En nuestro caso particular proponemos el uso de modelos SARIMA (Seasonal Autorregresive Integrated Movile Average) que son una extensión de los modelos ARIMA desarrollados amplimente en \citeauthor{box2015time} \citeyear{box2015time}, que además de ajustar el componente cíclico de la serie, pueden modelar su componente estacional propio de una serie de tiempo asociada al caudal de un río, cuyo comportamiento depende evidentemente de condiciones climáticas. Cabe mencionar que estos modelos se caracterizan por ser fáciles de estimar e interpretar ya que no requieren de otras variables ni de estructuras complejas.
+%De la etapa anterior, y obtenida una serie de tiempo por clúster, pasamos a la etapa de modelamiento de estás series. En 1970,  \citeauthor{box1970time} propusieron una metodología rigurosa para la identificación, estimación y diagnóstico de modelos dinámicos para analizar series temporales, que se convirtió en una de las metodologías más usadas hasta la actualidad.
+%En nuestro caso particular proponemos el uso de modelos SARIMA (Seasonal Autorregresive Integrated Movile Average) que son una extensión de los modelos ARIMA desarrollados amplimente en \cite{box2015time}, que además de ajustar el componente cíclico de la serie, pueden modelar su componente estacional propio de una serie de tiempo asociada al caudal de un río, cuyo comportamiento depende evidentemente de condiciones climáticas. Cabe mencionar que estos modelos se caracterizan por ser fáciles de estimar e interpretar ya que no requieren de otras variables ni de estructuras complejas.
+%
+
+
+% SARIMAX del Medoide
+
+Otra modelo para el clúster, es intuitivamente aquel modelo de la serie de tiempo más centralmente localizada en el clúster, es decir, la serie que sea más ``cercana o próxima'' (en términos de la métrica determinada anteriormente) a todas las series del clúster. 
+Considerando además el hecho de que poseemos información respecto del clima a nivel local, medido en estaciones cercanas a donde se midió el flujo, proponemos usar los modelos SARIMAX (Seasonal Autoregressive Integrated Moving Average with exogenous variables), que son una extensión de los modelos SARIMA antes mencionados, que cuentan con la ventaja de incluir variables exógenas que podrían mejorar el poder explicativo y predictivo del modelo. 
+Por lo que usaremos como variables exógenas de este modelo a las variables de clima de la estación más cercana (geográficamente). \citeauthor{novales1993econometria} \citeyear{novales1993econometria} posee una metodología detallada para esta clase de modelos, enfocándose en la estimación de la función de transferencia (asociada a las variables exógenas). 
+
+
+
+
+% Modelamiento Individual SARIMAX
+
+Finalmente, obtenidos un modelo SARIMA y SARIMAX por clúster, proponemos reciclar la información de estos modelos para usarla en el modelamiento de todas las series de caudales (179 en todo Brasil). %Recordemos que cada serie de tiempo está asociada a una estación de medición del caudal de un río. 
+%Recordemos además, que estos modelos  explican el comportamiento temporal de la serie representante del clúster, y por lo tanto, podrían guardar información respecto del comportamiento en retardos de las series. 
+Como veremos en la sección \ref{sec:metrica}, para la formación de los clústers que contienen estás series consideramos una métrica que nos permita comparar las funciones de autocorrelación de dichas series, estás funciones son uno de las principales herramientas en la especificación de un modelo en retardos (aunque no en escala) como lo son los modelo SARIMA y SARIMAX. 
+%Dicho esto, formulamos la hipótesis siguiente: Las series de un mismo clúster pueden modelarse adecuadamente con la información del modelo SARIMA (o SARIMAX) del clúster al que pertenece.
+Partiendo de esto, proponemos modelar las 179 series de tiempo usando ambos modelos, SARIMA y SARIMAX, fijando a priori los parámetros $p,d,q,P,D,Q,s$ (no necesariamente tomando los mismos coeficientes estimados para los polinomios AR y MA) hallados en la etapa anterior. Para el caso del modelo SARIMAX consideraremos  como variables exógenas a las series de tiempo asociadas a datos de clima tomados en la estación geográficamente más cercana, y mantendremos las funciones de transferencia del modelo del clúster.  
+
+
+
+Obtenidos los modelos, tanto SARIMA como SARIMAX, para cada una de las 179 series, los compararemos a fin de evaluar cual de los dos produce mejores resultados en términos generales, considerando criterios como la cantidad de Información (AIC, BIC, Hannan-Quinn), y el poder predictivo (MAPE, RMSE).
+
+
+\section{Descripción de los Datos}
+
+Para está investigación, se recopilaron datos de dos fuentes primarias:
+
+\begin{enumerate}
+
+\item Primero, datos correspondientes a Caudales, de frecuencia mensual, disponibles desde enero de 1930 a diciembre de 2015. Estás series fueron obtenidas de la página web de \href{http://www.ons.org.br/}{Operador Nacional do Sistema Elétrico (ONS)} mismas que corresponden a series de tiempo de 179 estaciones georeferenciadas. El link de descarga de esta base de datos es:
+
+\url{http://www.ons.org.br/download/operacao/hidrologia/Vaz%C3%B5es_Di%C3%A1rias_1931_2015.xls}
+
+Se muestra en la figura \ref{fig:mapa_vaz} la disposición de las estaciones de medición de caudales.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{map_estacVz}
+	\caption{Estaciones de Medición de Caudales}\label{fig:mapa_vaz}
+\end{figure}
+
+
+
+\item Por otro lado, tenemos variables relacionadas al Clima, de frecuencia mensual, disponibles desde enero de 2000, hasta enero de 2017. Obtenidas del \href{http://www.inmet.gov.br/portal/}{Instituto Nacional de Meteorologia (INMET)}. Contamos con observaciones de 4 variables siguientes en 265 estaciones georeferenciadas.
+
+\begin{itemize}
+
+
+\item Precipitación
+\item Temperatura Máxima
+\item Temperatura Mínima
+\item Humedad Relativa Media
+
+
+\end{itemize}
+
+El link de descarga de estos datos es:
+
+\url{http://www.inmet.gov.br/portal/index.php?r=bdmep/bdmep}
+
+
+Se muestra en la figura \ref{fig:mapa_clm} la disposición de las estaciones de medición de variables climáticas.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{map_estacClm}
+	\caption{Estaciones de Medición de Variables Climáticas}\label{fig:mapa_clm}
+\end{figure}
+
+\end{enumerate}
+
+\paragraph{Observación.} Para el modelamiento de las series de caudales se considera el periodo enero de 2000 a diciembre de 2015, ya que en este periodo poseemos datos tanto de caudales como de condiciones climáticas, mismas que se incluirán en un modelo SARIMAX como variables regresoras.
+
+Cabe mencionar además que existen otras fuentes de datos, como \href{http://climexp.knmi.nl/start.cgi?id=someone@somewhere}{Climate Explorer}, en donde se puede encontrar información mensual (inclusive diaria) de índices globales de clima. Sin embargo, estas variables al no estar georeferenciadas, no las incluimos en el modelo planteado en capítulos posteriores.
+
+

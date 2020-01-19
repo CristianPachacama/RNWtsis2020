@@ -1,0 +1,70 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Modelo SARIMA$(5,0,0)(0,1,0)_{12}$\relax }}{59}{table.caption.54}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Modelo SARIMA(4,0,0)(0,1,0)_{12}\relax }}{61}{table.caption.57}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Modelo SARIMA$(4,0,0)(1,1,0)_{12}$\relax }}{62}{table.caption.60}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Modelo SARMA(1,0)(2,1) - Precipitaci\'on\relax }}{75}{table.caption.76}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Modelo SARMA(4,0)(0,2) - Temperatura M\'axima\relax }}{76}{table.caption.79}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Modelo SARMA(2,2)(2,1) - Temperatura M\IeC {\'\i }nima\relax }}{78}{table.caption.82}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Modelo SARMA(2,0)(3,0) - Humedad Relativa\relax }}{79}{table.caption.85}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Modelo ARMA(1,0) - Perturbaci\'on\relax }}{87}{table.caption.93}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)$\relax }}{89}{table.caption.97}
+\contentsline {table}{\numberline {3.10}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)$\relax }}{90}{table.caption.100}
+\contentsline {table}{\numberline {3.11}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)$\relax }}{91}{table.caption.103}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Modelo SARIMA$(4,0,0)(1,1,0)_{12}$ - Cl\'uster 1\relax }}{95}{table.caption.106}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)_{12}$ - Cl\'uster 1\relax }}{96}{table.caption.107}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Matriz de Distancias\relax }}{118}{table.caption.110}
+\contentsline {table}{\numberline {B.2}{\ignorespaces Matriz de Distancias\relax }}{119}{table.caption.111}
+\contentsline {table}{\numberline {B.3}{\ignorespaces Matriz de Distancias\relax }}{120}{table.caption.112}
+\contentsline {table}{\numberline {B.4}{\ignorespaces Matriz de Distancias\relax }}{121}{table.caption.113}
+\contentsline {table}{\numberline {B.5}{\ignorespaces Matriz de Distancias\relax }}{122}{table.caption.114}
+\contentsline {table}{\numberline {B.6}{\ignorespaces Matriz de Distancias\relax }}{123}{table.caption.115}
+\contentsline {table}{\numberline {B.7}{\ignorespaces Matriz de Distancias\relax }}{124}{table.caption.116}
+\contentsline {table}{\numberline {B.8}{\ignorespaces Matriz de Distancias\relax }}{125}{table.caption.117}
+\contentsline {table}{\numberline {B.9}{\ignorespaces Matriz de Distancias\relax }}{126}{table.caption.118}
+\contentsline {table}{\numberline {B.10}{\ignorespaces Matriz de Distancias\relax }}{127}{table.caption.119}
+\contentsline {table}{\numberline {B.11}{\ignorespaces Matriz de Distancias\relax }}{128}{table.caption.120}
+\contentsline {table}{\numberline {B.12}{\ignorespaces Matriz de Distancias\relax }}{129}{table.caption.121}
+\contentsline {table}{\numberline {B.13}{\ignorespaces Matriz de Distancias\relax }}{130}{table.caption.122}
+\contentsline {table}{\numberline {B.14}{\ignorespaces Matriz de Distancias\relax }}{131}{table.caption.123}
+\contentsline {table}{\numberline {B.15}{\ignorespaces Matriz de Distancias\relax }}{132}{table.caption.124}
+\contentsline {table}{\numberline {B.16}{\ignorespaces Matriz de Distancias\relax }}{133}{table.caption.125}
+\contentsline {table}{\numberline {B.17}{\ignorespaces Matriz de Distancias\relax }}{134}{table.caption.126}
+\contentsline {table}{\numberline {B.18}{\ignorespaces Matriz de Distancias\relax }}{135}{table.caption.127}
+\contentsline {table}{\numberline {B.19}{\ignorespaces Matriz de Distancias\relax }}{136}{table.caption.128}
+\contentsline {table}{\numberline {B.20}{\ignorespaces Matriz de Distancias\relax }}{137}{table.caption.129}
+\contentsline {table}{\numberline {B.21}{\ignorespaces Matriz de Distancias\relax }}{138}{table.caption.130}
+\contentsline {table}{\numberline {B.22}{\ignorespaces Matriz de Distancias\relax }}{139}{table.caption.131}
+\contentsline {table}{\numberline {B.23}{\ignorespaces Matriz de Distancias\relax }}{140}{table.caption.132}
+\contentsline {table}{\numberline {B.24}{\ignorespaces Matriz de Distancias\relax }}{141}{table.caption.133}
+\contentsline {table}{\numberline {B.25}{\ignorespaces Matriz de Distancias\relax }}{142}{table.caption.134}
+\contentsline {table}{\numberline {B.26}{\ignorespaces Matriz de Distancias\relax }}{143}{table.caption.135}
+\contentsline {table}{\numberline {B.27}{\ignorespaces Matriz de Distancias\relax }}{144}{table.caption.136}
+\contentsline {table}{\numberline {B.28}{\ignorespaces Nombre de Estaciones (Caudales)\relax }}{145}{table.caption.137}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {D.1}{\ignorespaces Modelo SARIMA$(4,0,0)(1,1,0)_{12}$\relax }}{151}{table.caption.146}
+\contentsline {table}{\numberline {D.2}{\ignorespaces Modelo SARIMA$(4,0,0)(1,1,0)_{12}$ - Cl\'uster 1\relax }}{152}{table.caption.149}
+\contentsline {table}{\numberline {D.3}{\ignorespaces Modelo SARIMA$(4,0,3)(1,1,0)_{12}$\relax }}{152}{table.caption.150}
+\contentsline {table}{\numberline {D.4}{\ignorespaces Modelo SARIMA$(4,0,3)(1,1,0)_{12}$ - Cl\'uster 2\relax }}{155}{table.caption.153}
+\contentsline {table}{\numberline {D.5}{\ignorespaces Modelo SARIMA$(2,0,1)(1,1,0)_{12}$\relax }}{156}{table.caption.154}
+\contentsline {table}{\numberline {D.6}{\ignorespaces Modelo SARIMA$(2,0,1)(1,1,0)_{12}$ - Cl\'uster 3\relax }}{157}{table.caption.157}
+\contentsline {table}{\numberline {D.7}{\ignorespaces Modelo SARIMA$(2,0,1)(1,1,0)_{12}$ - Cl\'uster 3\relax }}{158}{table.caption.158}
+\contentsline {table}{\numberline {D.8}{\ignorespaces Modelo SARIMA$(2,0,1)(1,1,0)_{12}$ - Cl\'uster 3\relax }}{159}{table.caption.159}
+\contentsline {table}{\numberline {D.9}{\ignorespaces Modelo SARIMA$(3,0,2)(1,1,0)_{12}$\relax }}{159}{table.caption.160}
+\contentsline {table}{\numberline {D.10}{\ignorespaces Modelo SARIMA$(3,0,2)(1,1,0)_{12}$ - Cl\'uster 4\relax }}{162}{table.caption.163}
+\contentsline {table}{\numberline {D.11}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)_{12}$\relax }}{163}{table.caption.164}
+\contentsline {table}{\numberline {D.12}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)_{12}$ - Cl\'uster 1\relax }}{165}{table.caption.167}
+\contentsline {table}{\numberline {D.13}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)_{12}$\relax }}{166}{table.caption.168}
+\contentsline {table}{\numberline {D.14}{\ignorespaces Modelo SARIMAX$(1,0,0)(2,1,0)_{12}$ - Cl\'uster 2\relax }}{168}{table.caption.171}
+\contentsline {table}{\numberline {D.15}{\ignorespaces Modelo SARIMAX$(1,0,0)(1,1,0)_{12}$\relax }}{169}{table.caption.172}
+\contentsline {table}{\numberline {D.16}{\ignorespaces Modelo SARIMAX$(1,0,0)(1,1,0)_{12}$ - Cl\'uster 3\relax }}{171}{table.caption.175}
+\contentsline {table}{\numberline {D.17}{\ignorespaces Modelo SARIMAX$(1,0,0)(1,1,0)_{12}$ - Cl\'uster 3\relax }}{172}{table.caption.176}
+\contentsline {table}{\numberline {D.18}{\ignorespaces Modelo SARIMAX$(1,0,0)(1,1,0)_{12}$ - Cl\'uster 3\relax }}{173}{table.caption.177}
+\contentsline {table}{\numberline {D.19}{\ignorespaces Modelo SARIMAX$(0,0,3)(1,1,1)_{12}$\relax }}{174}{table.caption.178}
+\contentsline {table}{\numberline {D.20}{\ignorespaces Modelo SARIMAX$(0,0,3)(1,1,1)_{12}$ - Cl\'uster 4\relax }}{176}{table.caption.181}

@@ -1,0 +1,121 @@
+
+% Intro del Capitulo (Marco Teorico)
+
+En el presente capítulo, se definen las nociones y conceptos teóricos necesarios para comprender la metodología utilizada en la construcción de los modelos que proponemos para analizar los caudales de los ríos. Empezamos describiendo algunas estructuras de datos y sus respectivos objetos matemáticos asociados. Luego mostramos una propuesta para la limpieza de de datos asociados a series de tiempo basada en una técnica de descomposición conocida como STL-Loess. Luego mostramos definiciones que permitirán llevar acabo de manera adecuada el Análisis Clúster, es decir, la elección de la función de disimilitud y algoritmos de agrupamiento. Al final mostramos la metodología Box y Jenkins que se utilizará en la identificación y estimación de los modelos SARIMA y SARIMAX.
+
+
+\section{Series de Tiempo}
+
+Para el análisis de una variedad de fenómenos económicos o físicos se dispone, en general, de una cierta cantidad de observaciones, tomadas en momentos equidistantes. A una serie de observaciones de este tipo se le llama serie cronológica o temporal \cite{capa2016seriest}.
+%La obvia correlación existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los métodos estadísticos convencionales, que dependen de la suposición de que las observaciones son independientes e idénticamente distribuidas. En ese sentido el análisis de series de tiempo conduce a problemas nuevos en el modelamiento estadístico y la inferencia \cite{shumway2017time}.
+%El análisis de los datos experimentales asociados a series temporales conduce a problemas nuevos en el modelamiento estadístico y la inferencia. La obvia correlación existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los métodos estadísticos convencionales, que dependen de la suposición de que las observaciones son independientes e idénticamente distribuidas. El enfoque sistemático mediante el cual se responde a las preguntas matemáticas y estadísticas planteadas por estas correlaciones de tiempo se conoce comúnmente como análisis de series de tiempo \cite{shumway2017time}.
+A continuación daremos algunas definiciones y propiedades que nos permitirán formalizar estas nociones y profundizar en el análisis de este tipo de fenómenos.
+
+\begin{definicion}
+Un proceso estocástico es una colección de variables aleatorias $(Y_t , t\in T)$ parametrizada por un conjunto $T$ llamado espacio  de tiempos, en donde las variables toman valores en un conjunto $S$ llamado espacio de estados.
+\end{definicion}
+
+Usualmente se considera $T = \R$ o algún subconjunto de este, como $\N$ o $\Z$. De igual manera $S=\R$, aunque puede ser $\C$, $\R^k$ o inclusive $\C^k$.
+
+\begin{definicion}
+Una serie de tiempo es un proceso estocástico con espacio de tiempos $\Z$ y espacio de estados $\R$.
+\end{definicion}
+
+
+
+
+%%% Estacionariedad Fuerte --------------
+\begin{definicion}
+Un proceso $(Y_t, t\in \Z)$ se dice fuertemente estacionario si:
+
+$$ \text{Distribución}(Y_{t_1+l},Y_{t_2+l},...,Y_{t_k+l}) =  \text{Distribución}(Y_{t_1},Y_{t_2},...,Y_{t_k}) $$
+
+para $k=1,2,...$ y $t_1, t_2,..., t_k \in \Z$
+\end{definicion}
+
+% Segundo orden   ----------------------
+\begin{definicion}
+Un proceso real $(Y_t, t \in \Z)$ se dice de segundo orden si 
+$$E(Y_t^2)<\infty$$ 
+para todo $t\in\Z$.
+\end{definicion}
+
+% Estacionario  ------------------------
+\begin{definicion}
+Un proceso $(Y_t, t\in \Z)$ de segundo orden se dice estacionario si:
+\begin{enumerate}
+\item $E(Y_t)=c$
+\item $Cov(Y_{s+l}, Y_{t+l})=Cov(Y_{s}, Y_{t})$ para todo $s,t,l\in \Z$
+\end{enumerate}
+
+\end{definicion}
+
+
+
+%%% Autocovarianza ---------------------
+\begin{definicion}
+Dado un proceso estacionario $(Y_t, t \in \Z)$, se define la función de autocovarianza de este proceso, como sigue:
+$$\gamma(k):=Cov(Y_t, Y_{t-k})$$
+Para todo $k,t\in\Z$
+\end{definicion}
+
+Se puede demostrar que la función de autocovarianza cumple las siguientes propiedades:
+
+\begin{itemize}
+\item $V(Y_t)=\gamma(0)$
+\item $\gamma(k) =  \gamma(-k) $
+\item $|\gamma(k)| \leq  \gamma(0) $
+
+\end{itemize}
+ 
+
+%%% Autocorrelacion  -------------------
+\begin{definicion}
+La función de autocorrelación de un proceso estacionario $(Y_t, t\in \Z)$, se define por:
+$$\rho(k):=\frac{\gamma(k)}{\gamma(0)}$$
+\end{definicion}
+
+
+
+
+
+%%% Correlacion Cruzada  -------------------
+\begin{definicion}
+La función de correlación cruzada de orden $k$ entre los procesos estacionarios $(X_t, t\in \Z)$ y $(Y_t, t\in \Z)$, se define como:
+$$\rho_{xy}(k):=\frac{\gamma_{xy}(k)}{\sqrt{\gamma_x(0) \gamma_y(0) }}$$
+
+Donde $\gamma_{xy}(k):=Cov(X_t,Y_{t-k})$, y no depende de $t$.
+
+\end{definicion}
+
+
+
+
+
+
+
+% Ruido Blanco  -------------------------
+\begin{definicion}
+Sea $(Y_t, t\in \Z)$ un proceso real de segundo orden, se conoce como ruido blanco (débil) si cumple las siguientes condiciones:
+
+\begin{enumerat1e}
+\item $E(Y_t)=0$
+\item $V(Y_t)= \sigma^2 \geq 0$
+\item $Cov(Y_t,Y_s)=0 , \text{ para } s\neq t, \forall t,s\in\Z$
+\end{enumerate}
+
+\end{definicion}
+
+%Operador B backward and forward---------
+
+\begin{definicion}
+Llamaremos operador de retardo $B$ (Backward), a aquel operador que asocia a un proceso $(X_t,t\in\Z)$ el proceso $(Y_t,t\in\Z)$ donde:
+$$Y_t = BX_t=X_{t-1}$$
+Se puede demostrar que este operador es lineal e invertible, y su inverso $B^{-1}=F$ (Forward), también conocido como operador de avance, se define por:
+$$F X_t = X_{t+1}$$
+Además, para todo $n\in \N$ se satisface:
+$$B^n X_t = X_{t-n}$$
+$$F^n X_t = X_{t+n}$$
+\end{definicion}
+
+

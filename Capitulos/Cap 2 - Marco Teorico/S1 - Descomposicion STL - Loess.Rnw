@@ -1,0 +1,163 @@
+
+
+
+\section{Descomposición STL - Loess}
+
+STL es un procedimiento desarrollado por \citeauthor{cleveland1990stl} \citeyear{cleveland1990stl}, que permite descomponer una serie de tiempo en sus componentes estacional, tendencia y Residuo. STL tiene un diseño simple que consiste en una secuencia de aplicaciones del Loess Smoother; la simplicidad permite el análisis de las propiedades del procedimiento y permite un cálculo rápido, incluso para series de tiempo muy largas y con marcadas tendencias, así como estacionalidad. Otras características de STL son la capacidad de fijar el nivel de ``suavizado'' estacional (es decir, que tan suave es la curva asociada)} y de tendencias que varían, de manera casi continua, desde una cantidad muy pequeña de suavizado hasta una cantidad muy grande; estimaciones robustas de la tendencia y los componentes estacionales que no están distorsionados por un comportamiento aberrante en los datos; especificación del período de componente estacional a cualquier múltiplo entero del intervalo de muestreo de tiempo mayor que uno; y la capacidad de descomponer series de tiempo con valores perdidos.
+
+\subsection*{Definiciones}
+
+\subsection{Loess-Regresión Local}
+\label{sec:loess}
+Sean $x_i$ y $y_i$ (para $i = 1,2,...,n$) observaciones de una variable independiente y dependiente respectivamente. La curva de regresión   ``Loess'', $\hat{g}(x)$, es un suavizado de $y$ dado $x$ que puede calcularse para cualquier valor de dominio de la variable independiente. Así Loess está definida sobre cualquier valor no solamente sobre $x_i$.Como veremos más adelante, esta es una importante característica que en STL nos permitirá lidiar con los valores perdidos y eliminar el componente estacional de manera sencilla.
+En realidad Loess puede ser usada para suavizar $y$ en función de cualquier número de variables independientes, pero para STL, solo es necesario considerar una variable independiente.
+
+Primero se calcula $\hat{g}(x)$ de la siguiente manera. Se escoge un entero positivo $q$. Supongamos $q\leq n$. Los $q$ valores de $x_i$ que son más cercanos a $x$ se seleccionan, cada uno está dado por el \textit{Peso del Vecindario} basado en su  distancia desde $x$. Sea $\lambda_q(x)$ la distancia del \textit{q-ésimo} $x_i$ más lejano de $x$. Sea $W$ la función de peso tricúbica definida por:
+\[
+W(u)=
+\left\{\begin{matrix}
+(1-u^3)^3 & \text{para } 0\leq u < 1  \\ 
+0 & \text{para } u\geq 1
+\end{matrix}\right.
+\] 
+
+El peso del vecindario para cualquier $x_i$ es 
+
+$$ v_i(x)=W \left( \frac{|x_i-x|}{\lambda_q(x)} \right) $$
+
+Así un $x_i$ cercano a $x$ tiene el peso más grande; los pesos decrecen a medida que $x_i$ se aleja de $x$, mientras que se aproxima a cero en el \textit{q-ésimo} punto más lejano. El próximo paso es ajustar un polinomio de grado $d$ a los datos con peso $v_i(x)$ en $(x_i,y_i)$. El valor del polinomio ajustado localmente evaluado en $x$ es $\hat{g}(x)$. En este caso solo analizaremos el caso en que $d=1$ y $2$, es decir, ajustando localmente un polinomio lineal o cuadrático.
+
+Ahora supongamos que $q>n$. $\lambda_n(x)$ es la distancia de $x$ al $x_i$ más lejano. Para $q>n$ definimos $\lambda_q(x)$ por
+$$\lambda_q(x)=\lambda_n(x)\frac{q}{n}$$
+
+Luego de manera análoga a lo anterior, definimos los pesos de los vecindarios usando este valor de $\lambda_q(x)$.
+
+Para usar Loess, $d$ y $q$ deben ser previamente elegidos. Las elecciones en el contexto de STL se discutirán a detalle más adelante. A medida que $q$ crece, $\hat{g}(x)$ se hace más suave. Cuando $q$ tiende a infinito, $v_i(x)$ tiende a 1 y $\hat{g}(x)$ tiende al polinomio de mínimos cuadrados ordinarios de grado $d$.
+
+Supongamos que cada observación $(x_i,y_i)$ tiene un peso $\rho_i$ que expresa la confianza de la observación relativa a las otras. Por ejemplo, si $y_i$ tiene varianza $\sigmañ^2k_i$ donde $k_i$ es conocido, luego $\rho_i$ puede ser $1/k$. Así, podemos incorporar estos pesos en el suvizamiento Loess en forma sencilla usando $\rho_i v_i(x)$ como los pesos en el ajuste de mínimos cuadrados. Esto provee un mecanismo mediante el cual podemos construir robustez en STL.
+
+\subsubsection{El diseño general.}
+
+STL consiste de dos procedimientos recursivos: un bucle interno anidado dentro de un bucle externo. En cada uno de los pasos del bucle interno, las componentes de tendencia y estacionalidad son actualizadas una vez; cada recorrido completo del bucle interno consiste de $n_{(i)}$ iteraciones. Cada paso del bucle externo consiste del bucle interno seguido por el cálculo de pesos de robustez; estos pesos son usados en la siguiente corrida del bucle interno para reducir la influencia del comportamiento transitorio y aberrante en las componentes de tendencia y  estacionalidad. Un paso inicial del bucle externo se realiza con todos los pesos de robustez iguales a 1, y luego $n_{(0)}$ pasos del bucle externo se llevan acabo. Las elecciones de $n_{(i)}$ y $n_{(0)}$ se discutirán más adelante. 
+
+Supongamos que el número de observaciones en cada periodo, o ciclo, de la componente estacional es $n_{(p)}$. Por ejemplo, si la serie es mensual con un año de periodicidad, entonces $n_{(p)}=12$. Necesitamos poder referirnos a la subserie de valores en cada posición del ciclo estacional. Por ejemplo, para una serie mensual con $n_{(p)}=12$, la primera subserie contiene los valores de Enero, la segunda tiene los valores de Febrero, y así sucesivamente. Nos referiremos a cada una de estas $n_{(p)}$ subseries como \textit{subserie-ciclo}.
+
+\subsection{Bucle Interno}
+
+Cada paso de el bucle interno consiste de un suavizado estacional que actualiza la componente estacional, seguida por suavizado de tendencia que actualiza la componente de tendencia. Supongamos $S_v^{(k)}$ y $T_v^{(k)}$ para $v=1,2,...,N$ son las componentes estacional y de tendencia al final del \textit{k-ésimo} paso; estas dos componentes se definen para todos los tiempos $v=1,2,...,N$, inclusive donde $Y_v$ es un valor perdido. Las actualizaciones de el $(k+1)$ paso, $S_v^{(k+1)}$ y $T_v^{(k+1)}$, son calculadas de la siguiente manera:
+
+\subsubsection{Paso 1.} \textit{Quitar Tendencia.-}
+\label{sbsec:paso1}
+Calculamos la serie $Y_v-T_v^{(k)}$ que no tiene tendencia . Si $Y_v$ tiene un valor perdido en un punto particular del tiempo, entonces la serie sin tendencia tiene también un valor perdido en esa posición.
+
+\subsubsection{Paso 2.} \textit{Suavizar Subseries Ciclo.-}
+\label{sbsec:paso2}
+Cada subserie-ciclo de la serie sin tendencia es suavizado mediante Loess considerando $q=n_{(s)}$ y $d=1$. Los valores suavizados se calculan en todas las posiciones de tiempo de las subseries-ciclo, incluyendo aquellos con valores perdidos, y en las posiciones justo antes de la primera posición de la subserie y justo después del último. Por ejemplo, suponga que la serie es mensual, $n_{(p)}=12$. La colección de los valores suavizados para todas las subseries-ciclo son series estacionales provisionales, $C_v^{(k+1)}$, consiste de $N+2n_{(p)}$ valores que van desde $v=-n_{(p)}+1$ hasta $N+n_{(p)}$.  
+
+\subsubsection{Paso 3.} \textit{Paso-bajo Filtro de Suavizado de Subseries Ciclo.-}
+\label{sbsec:paso3}
+Un filtro paso-bajo es aplicado a $C_v^{(k+1)}$. El filtro consiste de una media móvil de longitud $n_{(p)}$, seguido por otra media móvil de longitud $n_{(p)}$, seguida de una media móvil de longitud $3$, seguida de un suavizado Loess con $d=1$ y $q=n_{(l)}$. La salida. $L_v^{(k+1)}$, esta definida en las posiciones $v=1$ hasta $N$ porque las tres medias móviles no pueden extenderse hasta el final. El suavizado estacional \ref{sbsec:paso2}  fue extendido $n_{(p)}$ posiciones en cada final en anticipación de esta pérdida.
+
+\subsubsection{Paso 4.} \textit{Quitar tendencia de las Subseries Ciclo suavizadas.-}
+\label{sbsec:paso4}
+El componente estacional desde el $(k+1)$ \textit{-ésimo} bucle es $S_v^{(k+1)}=C_v^{(k+1)}-L_v^{(k+1)}$ para  $v=1,2,...,N$. Se resta $L_v^{(k+1)}$ para evitar que perturbaciones de baja frecuencia entre en la componente estacional.
+
+\subsubsection{Paso 5.} \textit{Desestacionalización.-}
+\label{sbsec:paso5}
+Se calcula la serie desestacionalizada $Y_v-S_v^{(k+1)}$. Si $Y_v$ es un dato perdido en una posición particular de tiempo, entonces también lo será en la serie desestacionalizada.
+
+\subsubsection{Paso 6.} \textit{Suavizado en Tendencia.-}
+\label{sbsec:paso6}
+La serie desestacionalizada es suavizada mediante Loess con los parámetros $q=n_{(t)}$ y $d=1$. Los valores suavizados se calculan para todas las posiciones de tiempo $(v=1,2,...,N)$, inclusive donde existen valores perdidos. La componente de tendencia del $(k+1)$ \textit{-ésimo} bucle, $R_v^{(k+1)}$ para $v=1,2,...,N$, es el conjunto de valores suavizados. 
+
+
+Así la porción suavizada estacional del bucle interno corresponde a los pasos 2,3,y 4, mientras que la porción de suavizado en tendencia corresponde al \hyperref[sbsec:paso6]{Paso 6}
+
+Para llevar a cabo el Paso 1 en el paso inicial a través del bucle interno necesitamos valores iniciales, $T_v^{(0)}$, para la componente de tendencia. Usando $T_v^{(0)}=0$ funciona bastante bien. La tendencia se vuelve parte de la Subserie-Ciclo suavizada, $C_v^{(1)}$, pero se elimina en gran medida durante el 
+\hyperref[sbsec:paso4]{Paso 4}.
+
+
+\subsection{Bucle externo}
+Supongamos que hemos realizado una ejecución inicial del bucle interno para obtener estimaciones, $T_v$ y $S_v$, de la componentes de tendencia y estacionalidad. Luego el residuo es
+
+$$R_v = Y_v - T_v - S_v$$
+
+(Notemos que el residuo, a diferencia de $T_v$ y $S_v$, no está definido donde $Y_v$ tiene valores perdidos.) 
+Definiremos un peso a cada posición de tiempo en la que $Y_v$ es observado. Estos \textit{pesos de robustez} reflejan lo extremo que es $R_v$. Un valor atípico en los datos que resultan en un $|R_v|$ muy grande tendrá un peso pequeño o próximo a cero. Sea
+$$h=6 \text{ mediana}(|R_v|)$$
+
+Luego los pesos de robustez en el tiempo $v$ son:
+$$\rho_v=B \left( \frac{|R_v|}{h}  \right)$$
+
+Donde $B$ es la función bicuadrática de pesos:
+\[
+B(u)=
+\left\{\begin{matrix}
+(1-u^2)^2 & \text{para } 0\leq u < 1  \\ 
+0 & \text{para } u\geq 1
+\end{matrix}\right.
+\] 
+
+Ahora el bucle interno se repite, pero en las series suavizadas de los \hyperref[sbsec:paso2]{Paso 2} y \hyperref[sbsec:paso6]{Paso 6}, el peso del vecindario para el valor en el tiempo $v$ se multiplica por el peso de robustez, $\rho_v$. Esto es solo un uso de los pesos de confiabilidad discutidos en la \hyperref[sec:loess]{Loess}. Estas iteraciones de robustez del bucle externo se llevan a cabo un total de $n_{(0)}$ veces. Cada vez que ingresamos al bucle interno después de la pasada inicial no establecemos $T_v^{(0)}$ como lo hicimos en la pasada inicial, sino que usamos el componente de tendencia del \hyperref[sbsec:paso6]{Paso 6} del bucle interno anterior.
+
+\subsection{Elección de Parámetros}
+
+Como notamos en la sección anterior, STL necesita de la especificación de los 6 parámetros siguientes:
+\begin{itemize}
+\item $n_{(p)}=$ Número de observaciones en cada ciclo de la componente estacional,
+\item $n_{(i)}=$ Número de iteraciones a través del bucle interno,
+\item $n_{(o)}=$ Número de iteraciones robustas del bucle externo,
+\item $n_{(l)}=$ Parámetro de suavizado para el filtro del paso inferior,
+\item $n_{(t)}=$ Parámetro de suavizado para la componente de tendencia,
+\item $n_{(s)}=$ Parámetro de suavizado para la componente estacional.
+\end{itemize}
+
+%La elección de los \textcolor{red}{5 primeros} parámetros es sencilla. Sin embargo, $n_{(s)}$ debe elegirse cuidadosamente para cada aplicación. 
+
+
+El parámetro $n_{(p)}$ indica la periodicidad de la serie, por ejemplo para datos diarios de con periodicidad anual se toma $n_{(p)}=365$, mientras que si los datos son mensuales como en nuestro caso se tomará $n_{(p)}=12$.
+Para escoger los demás parámetros \citeauthor{cleveland1990stl} \citeyear{cleveland1990stl} recomiendan elegirlos de la siguiente manera:
+
+\begin{enumerate}
+\item $n_{(l)}= [n_{(p)}]_{impar}$ , es decir, el menor entero impar mayor que $n_{(p)}$.
+\item $n_{(s)}$, debe ser un impar mayor o igual que 7.
+\item $n_{(t)} = [ 1.5n_{(p)}/(1-1.5/n_{(s)})]_{impar}$
+\item Si no es necesario que las iteraciones sean robusta usar $n_{(i)}=2$ y $n_{(o)}=0$. Pero si se necesitamos robustez se debe tomar $n_{(i)}=1$ , y $n_{(o)}=5$, aunque si deseamos asegurar la convergencia del método podemos tomar $n_{(o)}=10$.
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Para la elección de $n_{(i)}$ primero supongamos que no necesitamos las iteraciones robustas ($n_{(p)}=0$), entonces se quiere escoger $n_{(i)}$ suficientemente grande para que las actualizaciones de las componentes estacional y de tendencia \textcolor{red}{converjan.} Afortunadamente en la práctica se ha demostrado que convergen bastante rápido \cite{cleveland1990stl}, por lo que en la mayoría de los casos basta tomar $n_{(i)}=1$, \textcolor{red}{aunque \citeauthor{cleveland1990stl} recomiendan tomar $n_{(i)}=2$.}
+
+%En el caso en que necesitemos las iteraciones robustas, se elige $n_{(o)}$ lo suficientemente grande para que las estimaciones de las componentes estacional y de tendencia converjan, por lo que \citeauthor{cleveland1990stl} sugiere fijar $n_{(0)}=5$.
+
+%\subsubsection{$n_{(l)}$, parámetro de suavizado para el filtro del paso inferior}
+
+%$n_{(l)}$ siempre se toma como el menor entero impar mayor que $n_{(p)}$.
+
+%Para elegir $n_{(s)}$, notamos que cada subserie ciclo se suaviza a medida que $n_{(s)}$ crece, otro criterio a considerar es que $n_{(s)}$ debe ser un impar mayor o igual que 7.
+
+%El valor que sugiere \textcolor{red}{....?(1990)} para $n_{(t)}$ es:
+%$$  n_{(t)} = \left[  \frac{1.5n_{(p)}}{(1-1.5n_{(s)})}   \right]_{impar} $$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
