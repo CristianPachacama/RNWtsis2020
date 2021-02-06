@@ -1,16 +1,16 @@
-% --- IdentificaciÛn
+% --- Identificaci√≥n
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{FormatoEpn}[2013/10/20]
 
 % Paquete creado para el formato de las tesis de pregrado
 % de la Facultad de Ciencias de la EPN.
-% por: AndrÈs Merino
+% por: Andr√©s Merino
 
 % --- Paquetes requeridos
 
-\RequirePackage[latin9]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage[english,spanish,es-tabla]{babel}
+\RequirePackage[spanish,es-tabla]{babel}
 
 
 \RequirePackage{ifthen}
@@ -64,11 +64,11 @@
     \thispagestyle{empty}
     \vspace*{\fill}
     \begin{center}
-        {\LARGE\textbf{ESCUELA POLIT…CNICA NACIONAL}}\\[4\baselineskip]
+        {\LARGE\textbf{ESCUELA POLIT√âCNICA NACIONAL}}\\[4\baselineskip]
         {\Large \MakeTextUppercase{FACULTAD DE CIENCIAS}}\\[4\baselineskip]
         {\begin{spacing}{1.1}\large \MakeTextUppercase{\@titulo}\end{spacing}}\vspace{4\baselineskip}
-        TRABAJO DE TITULACI”N PREVIO A LA OBTENCI”N DEL TÕTULO DE \MakeTextUppercase{\@carrera}\\[\baselineskip]
-        PROYECTO DE INVESTIGACI”N\\[4\baselineskip]
+        TRABAJO DE TITULACI√ìN PREVIO A LA OBTENCI√ìN DEL T√çTULO DE \MakeTextUppercase{\@carrera}\\[\baselineskip]
+        PROYECTO DE INVESTIGACI√ìN\\[4\baselineskip]
         \MakeTextUppercase{\@autor}\\[0.1\baselineskip]
         {\@correoautor}\\[4\baselineskip]
         Directora: \MakeTextUppercase{\@director}\\[0.1\baselineskip]
@@ -82,7 +82,7 @@
     \newpage
 }
 
-% --- DeclaraciÛn
+% --- Declaraci√≥n
 
 \newcommand{\declaracion}{
     \setlength{\parskip}{0.3\baselineskip}
@@ -90,13 +90,13 @@
     \thispagestyle{empty}
     \vspace*{\fill}
     \begin{center}
-        \textbf{DECLARACI”N}
+        \textbf{DECLARACI√ìN}
     \end{center}
 
     \vspace{2\baselineskip}
-    Yo, \MakeTextUppercase{\@autor}, declaro bajo juramento que el trabajo aquÌ descrito es de mi autorÌa; que no ha sido previamente presentado para ning˙n grado o calificaciÛn profesional; y que he consultado las referencias bibliogr·ficas que se incluyen en este documento.\\[1\baselineskip]
+    Yo, \MakeTextUppercase{\@autor}, declaro bajo juramento que el trabajo aqu√≠ descrito es de mi autor√≠a; que no ha sido previamente presentado para ning√∫n grado o calificaci√≥n profesional; y que he consultado las referencias bibliogr√°ficas que se incluyen en este documento.\\[1\baselineskip]
 
-    A travÈs de la presente declaraciÛn cedo mis derechos de propiedad intelectual, correspondientes a este trabajo, a la Escuela PolitÈcnica Nacional, seg˙n lo establecido por la Ley de Propiedad Intelectual, por su Reglamento y por la normatividad institucional vigente.\\[4\baselineskip]
+    A trav√©s de la presente declaraci√≥n cedo mis derechos de propiedad intelectual, correspondientes a este trabajo, a la Escuela Polit√©cnica Nacional, seg√∫n lo establecido por la Ley de Propiedad Intelectual, por su Reglamento y por la normatividad institucional vigente.\\[4\baselineskip]
 
     \begin{center}
     	%\includegraphics[height=3\baselineskip]{firmaCP3} \par  %%%%%%%%%%%%%%%%%%%%%%%%%%%% -------------------- Firma
@@ -109,18 +109,18 @@
 
 }
 
-% --- CertificaciÛn
+% --- Certificaci√≥n
 
 \newcommand{\certificacion}{
     \thispagestyle{empty}
     \vspace*{\fill}
     \begin{center}
-        \textbf{CERTIFICACI”N}
+        \textbf{CERTIFICACI√ìN}
     \end{center}
 
     \vspace{2\baselineskip}
     \ifthenelse{\equal{\@codirector}{}}{
-    Certifico que el presente trabajo fue desarrollado por \MakeTextUppercase{\@autor}, bajo mi supervisiÛn.\\[4\baselineskip]
+    Certifico que el presente trabajo fue desarrollado por \MakeTextUppercase{\@autor}, bajo mi supervisi√≥n.\\[4\baselineskip]
 
     \begin{raggedleft}
     %\includegraphics[height=3\baselineskip]{firmaAU3} \par  %%%%%%%%%%%%%%%%%%%%%%%%%%%% -------------------- Firma
@@ -132,7 +132,7 @@
     \end{raggedleft}
     }
     {
-    Certificamos que el presente trabajo fue desarrollado por \MakeTextUppercase{\@autor}, bajo nuestra supervisiÛn.\\[4\baselineskip]
+    Certificamos que el presente trabajo fue desarrollado por \MakeTextUppercase{\@autor}, bajo nuestra supervisi√≥n.\\[4\baselineskip]
 
     \begin{raggedleft}
     \settowidth{\unitlength}{\@director}
@@ -184,11 +184,11 @@
     \newpage
 }
 
-% --- Encabezado y Pie de p·gina
+% --- Encabezado y Pie de p√°gina
 
 \pagestyle{plain}
 
-%Im·genes
+%Im√°genes
 \newcommand{\imagen}[2]{%
 \includegraphics[#2]{Imagenes/#1}%
 } % \newcommand{\imagen}

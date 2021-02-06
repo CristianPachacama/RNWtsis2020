@@ -1,24 +1,24 @@
 
 % Intro del Capitulo (Marco Teorico)
 
-En el presente capÌtulo, se definen las nociones y conceptos teÛricos necesarios para comprender la metodologÌa utilizada en la construcciÛn de los modelos que proponemos para analizar los caudales de los rÌos. Empezamos describiendo algunas estructuras de datos y sus respectivos objetos matem·ticos asociados. Luego mostramos una propuesta para la limpieza de de datos asociados a series de tiempo basada en una tÈcnica de descomposiciÛn conocida como STL-Loess. Luego mostramos definiciones que permitir·n llevar acabo de manera adecuada el An·lisis Cl˙ster, es decir, la elecciÛn de la funciÛn de disimilitud y algoritmos de agrupamiento. Al final mostramos la metodologÌa Box y Jenkins que se utilizar· en la identificaciÛn y estimaciÛn de los modelos SARIMA y SARIMAX.
+En el presente cap√≠tulo, se definen las nociones y conceptos te√≥ricos necesarios para comprender la metodolog√≠a utilizada en la construcci√≥n de los modelos que proponemos para analizar los caudales de los r√≠os. Empezamos describiendo algunas estructuras de datos y sus respectivos objetos matem√°ticos asociados. Luego mostramos una propuesta para la limpieza de de datos asociados a series de tiempo basada en una t√©cnica de descomposici√≥n conocida como STL-Loess. Luego mostramos definiciones que permitir√°n llevar acabo de manera adecuada el An√°lisis Cl√∫ster, es decir, la elecci√≥n de la funci√≥n de disimilitud y algoritmos de agrupamiento. Al final mostramos la metodolog√≠a Box y Jenkins que se utilizar√° en la identificaci√≥n y estimaci√≥n de los modelos SARIMA y SARIMAX.
 
 
 \section{Series de Tiempo}
 
-Para el an·lisis de una variedad de fenÛmenos econÛmicos o fÌsicos se dispone, en general, de una cierta cantidad de observaciones, tomadas en momentos equidistantes. A una serie de observaciones de este tipo se le llama serie cronolÛgica o temporal \cite{capa2016seriest}.
-%La obvia correlaciÛn existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los mÈtodos estadÌsticos convencionales, que dependen de la suposiciÛn de que las observaciones son independientes e idÈnticamente distribuidas. En ese sentido el an·lisis de series de tiempo conduce a problemas nuevos en el modelamiento estadÌstico y la inferencia \cite{shumway2017time}.
-%El an·lisis de los datos experimentales asociados a series temporales conduce a problemas nuevos en el modelamiento estadÌstico y la inferencia. La obvia correlaciÛn existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los mÈtodos estadÌsticos convencionales, que dependen de la suposiciÛn de que las observaciones son independientes e idÈnticamente distribuidas. El enfoque sistem·tico mediante el cual se responde a las preguntas matem·ticas y estadÌsticas planteadas por estas correlaciones de tiempo se conoce com˙nmente como an·lisis de series de tiempo \cite{shumway2017time}.
-A continuaciÛn daremos algunas definiciones y propiedades que nos permitir·n formalizar estas nociones y profundizar en el an·lisis de este tipo de fenÛmenos.
+Para el an√°lisis de una variedad de fen√≥menos econ√≥micos o f√≠sicos se dispone, en general, de una cierta cantidad de observaciones, tomadas en momentos equidistantes. A una serie de observaciones de este tipo se le llama serie cronol√≥gica o temporal \cite{capa2016seriest}.
+%La obvia correlaci√≥n existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los m√©todos estad√≠sticos convencionales, que dependen de la suposici√≥n de que las observaciones son independientes e id√©nticamente distribuidas. En ese sentido el an√°lisis de series de tiempo conduce a problemas nuevos en el modelamiento estad√≠stico y la inferencia \cite{shumway2017time}.
+%El an√°lisis de los datos experimentales asociados a series temporales conduce a problemas nuevos en el modelamiento estad√≠stico y la inferencia. La obvia correlaci√≥n existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los m√©todos estad√≠sticos convencionales, que dependen de la suposici√≥n de que las observaciones son independientes e id√©nticamente distribuidas. El enfoque sistem√°tico mediante el cual se responde a las preguntas matem√°ticas y estad√≠sticas planteadas por estas correlaciones de tiempo se conoce com√∫nmente como an√°lisis de series de tiempo \cite{shumway2017time}.
+A continuaci√≥n daremos algunas definiciones y propiedades que nos permitir√°n formalizar estas nociones y profundizar en el an√°lisis de este tipo de fen√≥menos.
 
 \begin{definicion}
-Un proceso estoc·stico es una colecciÛn de variables aleatorias $(Y_t , t\in T)$ parametrizada por un conjunto $T$ llamado espacio  de tiempos, en donde las variables toman valores en un conjunto $S$ llamado espacio de estados.
+Un proceso estoc√°stico es una colecci√≥n de variables aleatorias $(Y_t , t\in T)$ parametrizada por un conjunto $T$ llamado espacio  de tiempos, en donde las variables toman valores en un conjunto $S$ llamado espacio de estados.
 \end{definicion}
 
-Usualmente se considera $T = \R$ o alg˙n subconjunto de este, como $\N$ o $\Z$. De igual manera $S=\R$, aunque puede ser $\C$, $\R^k$ o inclusive $\C^k$.
+Usualmente se considera $T = \R$ o alg√∫n subconjunto de este, como $\N$ o $\Z$. De igual manera $S=\R$, aunque puede ser $\C$, $\R^k$ o inclusive $\C^k$.
 
 \begin{definicion}
-Una serie de tiempo es un proceso estoc·stico con espacio de tiempos $\Z$ y espacio de estados $\R$.
+Una serie de tiempo es un proceso estoc√°stico con espacio de tiempos $\Z$ y espacio de estados $\R$.
 \end{definicion}
 
 
@@ -28,7 +28,7 @@ Una serie de tiempo es un proceso estoc·stico con espacio de tiempos $\Z$ y espa
 \begin{definicion}
 Un proceso $(Y_t, t\in \Z)$ se dice fuertemente estacionario si:
 
-$$ \text{DistribuciÛn}(Y_{t_1+l},Y_{t_2+l},...,Y_{t_k+l}) =  \text{DistribuciÛn}(Y_{t_1},Y_{t_2},...,Y_{t_k}) $$
+$$ \text{Distribuci√≥n}(Y_{t_1+l},Y_{t_2+l},...,Y_{t_k+l}) =  \text{Distribuci√≥n}(Y_{t_1},Y_{t_2},...,Y_{t_k}) $$
 
 para $k=1,2,...$ y $t_1, t_2,..., t_k \in \Z$
 \end{definicion}
@@ -54,12 +54,12 @@ Un proceso $(Y_t, t\in \Z)$ de segundo orden se dice estacionario si:
 
 %%% Autocovarianza ---------------------
 \begin{definicion}
-Dado un proceso estacionario $(Y_t, t \in \Z)$, se define la funciÛn de autocovarianza de este proceso, como sigue:
+Dado un proceso estacionario $(Y_t, t \in \Z)$, se define la funci√≥n de autocovarianza de este proceso, como sigue:
 $$\gamma(k):=Cov(Y_t, Y_{t-k})$$
 Para todo $k,t\in\Z$
 \end{definicion}
 
-Se puede demostrar que la funciÛn de autocovarianza cumple las siguientes propiedades:
+Se puede demostrar que la funci√≥n de autocovarianza cumple las siguientes propiedades:
 
 \begin{itemize}
 \item $V(Y_t)=\gamma(0)$
@@ -71,7 +71,7 @@ Se puede demostrar que la funciÛn de autocovarianza cumple las siguientes propie
 
 %%% Autocorrelacion  -------------------
 \begin{definicion}
-La funciÛn de autocorrelaciÛn de un proceso estacionario $(Y_t, t\in \Z)$, se define por:
+La funci√≥n de autocorrelaci√≥n de un proceso estacionario $(Y_t, t\in \Z)$, se define por:
 $$\rho(k):=\frac{\gamma(k)}{\gamma(0)}$$
 \end{definicion}
 
@@ -81,7 +81,7 @@ $$\rho(k):=\frac{\gamma(k)}{\gamma(0)}$$
 
 %%% Correlacion Cruzada  -------------------
 \begin{definicion}
-La funciÛn de correlaciÛn cruzada de orden $k$ entre los procesos estacionarios $(X_t, t\in \Z)$ y $(Y_t, t\in \Z)$, se define como:
+La funci√≥n de correlaci√≥n cruzada de orden $k$ entre los procesos estacionarios $(X_t, t\in \Z)$ y $(Y_t, t\in \Z)$, se define como:
 $$\rho_{xy}(k):=\frac{\gamma_{xy}(k)}{\sqrt{\gamma_x(0) \gamma_y(0) }}$$
 
 Donde $\gamma_{xy}(k):=Cov(X_t,Y_{t-k})$, y no depende de $t$.
@@ -96,7 +96,7 @@ Donde $\gamma_{xy}(k):=Cov(X_t,Y_{t-k})$, y no depende de $t$.
 
 % Ruido Blanco  -------------------------
 \begin{definicion}
-Sea $(Y_t, t\in \Z)$ un proceso real de segundo orden, se conoce como ruido blanco (dÈbil) si cumple las siguientes condiciones:
+Sea $(Y_t, t\in \Z)$ un proceso real de segundo orden, se conoce como ruido blanco (d√©bil) si cumple las siguientes condiciones:
 
 \begin{enumerat1e}
 \item $E(Y_t)=0$
@@ -111,9 +111,9 @@ Sea $(Y_t, t\in \Z)$ un proceso real de segundo orden, se conoce como ruido blan
 \begin{definicion}
 Llamaremos operador de retardo $B$ (Backward), a aquel operador que asocia a un proceso $(X_t,t\in\Z)$ el proceso $(Y_t,t\in\Z)$ donde:
 $$Y_t = BX_t=X_{t-1}$$
-Se puede demostrar que este operador es lineal e invertible, y su inverso $B^{-1}=F$ (Forward), tambiÈn conocido como operador de avance, se define por:
+Se puede demostrar que este operador es lineal e invertible, y su inverso $B^{-1}=F$ (Forward), tambi√©n conocido como operador de avance, se define por:
 $$F X_t = X_{t+1}$$
-Adem·s, para todo $n\in \N$ se satisface:
+Adem√°s, para todo $n\in \N$ se satisface:
 $$B^n X_t = X_{t-n}$$
 $$F^n X_t = X_{t+n}$$
 \end{definicion}

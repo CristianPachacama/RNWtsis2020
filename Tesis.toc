@@ -1,0 +1,84 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{Resumen}{\es@scroman {xv}}{chapter*.4}%
+\contentsline {chapter}{Abstract}{\es@scroman {xvi}}{chapter*.5}%
+\contentsline {chapter}{Notaciones}{1}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Introducción}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Descripción de los Datos}{6}{section.1.1}%
+\contentsline {paragraph}{Observación.}{8}{section*.9}%
+\contentsline {chapter}{\numberline {2}Marco Teórico}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Series de Tiempo}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Descomposición STL - Loess}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Loess-Regresión Local}{12}{subsection.2.2.1}%
+\contentsline {subsubsection}{El diseño general.}{13}{section*.11}%
+\contentsline {subsection}{\numberline {2.2.2}Bucle Interno}{14}{subsection.2.2.2}%
+\contentsline {subsubsection}{Paso 1.}{14}{section*.12}%
+\contentsline {subsubsection}{Paso 2.}{14}{section*.13}%
+\contentsline {subsubsection}{Paso 3.}{14}{section*.14}%
+\contentsline {subsubsection}{Paso 4.}{15}{section*.15}%
+\contentsline {subsubsection}{Paso 5.}{15}{section*.16}%
+\contentsline {subsubsection}{Paso 6.}{15}{section*.17}%
+\contentsline {subsection}{\numberline {2.2.3}Bucle externo}{15}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Elección de Parámetros}{16}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Tratamiento de Valores perdidos}{17}{section.2.3}%
+\contentsline {subsubsection}{Algoritmo}{19}{section*.19}%
+\contentsline {section}{\numberline {2.4}Análisis de Conglomerados (Clúster)}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Métricas y Funciones de Disimilitud}{20}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Métricas para Series de Tiempo}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Escalonamiento Multidimensional (MDS)}{23}{subsection.2.4.3}%
+\contentsline {subsubsection}{Modelo General MDS }{24}{section*.21}%
+\contentsline {subsection}{\numberline {2.4.4}Algoritmos de Agrupamiento}{25}{subsection.2.4.4}%
+\contentsline {subsubsection}{Particionamiento alrededor de Medoides (PAM)}{26}{section*.22}%
+\contentsline {paragraph}{Observación.}{27}{section*.23}%
+\contentsline {subsubsection}{CLARA}{28}{section*.24}%
+\contentsline {paragraph}{Observación. }{28}{section*.25}%
+\contentsline {paragraph}{Nota.}{28}{section*.26}%
+\contentsline {subsection}{\numberline {2.4.5}Validación}{29}{subsection.2.4.5}%
+\contentsline {subsubsection}{Estadístico GAP}{29}{section*.27}%
+\contentsline {section}{\numberline {2.5}Modelamiento de Series de Tiempo}{30}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Metodología Box y Jenkins}{30}{subsection.2.5.1}%
+\contentsline {paragraph}{Nota.}{31}{section*.28}%
+\contentsline {subsection}{\numberline {2.5.2}Función de transferencia}{32}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Modelo SARIMAX}{34}{subsection.2.5.3}%
+\contentsline {subsubsection}{Metodología Box y Jenkins para el modelo SARIMAX}{35}{section*.29}%
+\contentsline {paragraph}{Observación.}{38}{section*.30}%
+\contentsline {chapter}{\numberline {3}Metodología}{39}{chapter.3}%
+\contentsline {paragraph}{Nota.-}{40}{section*.31}%
+\contentsline {section}{\numberline {3.1}Aplicación del Análisis Clúster}{40}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Representación de $D$}{41}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Elección del Algoritmo de Agrupamiento}{41}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Elección de número de clústers}{43}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Características de Clústers formados}{43}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Modelamiento de Series de tiempo}{47}{section.3.2}%
+\contentsline {paragraph}{Limpieza de Datos de Clima}{48}{section*.43}%
+\contentsline {subsection}{\numberline {3.2.1}Modelo SARIMA del Clúster}{49}{subsection.3.2.1}%
+\contentsline {paragraph}{Observación.}{58}{section*.59}%
+\contentsline {subsection}{\numberline {3.2.2}Modelo SARIMAX del Clúster}{59}{subsection.3.2.2}%
+\contentsline {subsubsection}{Preblanqueo de Series}{60}{section*.62}%
+\contentsline {subsubsection}{Identificación de Funciones de Respuesta al Impulso}{68}{section*.71}%
+\contentsline {subsubsection}{Estimación del modelo}{82}{section*.92}%
+\contentsline {paragraph}{Observación.}{82}{section*.95}%
+\contentsline {chapter}{\numberline {4}Aplicación Web}{89}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Módulo: Clustering}{89}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Módulo: SARIMAX}{90}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Resultados}{94}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusiones y Recomendaciones}{98}{chapter.6}%
+\contentsline {chapter}{\numberline {A}Aplicación Web}{100}{appendix.Alph1}%
+\contentsline {paragraph}{Nota. }{101}{section*.113}%
+\contentsline {section}{\numberline {A.1}Paquetes (global.R)}{101}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Interfaz de Usuario (ui.R)}{103}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Ejecución de Tareas (server.R)}{116}{section.Alph1.3}%
+\contentsline {chapter}{\numberline {B}Análisis Clúster}{119}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Matriz de Distancias}{119}{section.Alph2.1}%
+\contentsline {chapter}{\numberline {C}Modelamiento de Series Temporales}{148}{appendix.Alph3}%
+\contentsline {section}{\numberline {C.1}Modelo SARIMA del clúster}{148}{section.Alph3.1}%
+\contentsline {subsection}{\numberline {C.1.1}Modelo del clúster 1}{148}{subsection.Alph3.1.1}%
+\contentsline {subsection}{\numberline {C.1.2}Modelo del clúster 2}{150}{subsection.Alph3.1.2}%
+\contentsline {subsection}{\numberline {C.1.3}Modelo del clúster 3}{155}{subsection.Alph3.1.3}%
+\contentsline {subsection}{\numberline {C.1.4}Modelo del clúster 4}{155}{subsection.Alph3.1.4}%
+\contentsline {section}{\numberline {C.2}Modelo SARIMAX del clúster}{166}{section.Alph3.2}%
+\contentsline {subsection}{\numberline {C.2.1}Modelo del clúster 1}{166}{subsection.Alph3.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Modelo del clúster 2}{169}{subsection.Alph3.2.2}%
+\contentsline {subsection}{\numberline {C.2.3}Modelo del clúster 3}{173}{subsection.Alph3.2.3}%
+\contentsline {subsection}{\numberline {C.2.4}Modelo del clúster 4}{179}{subsection.Alph3.2.4}%
+\contentsline {section}{Referencias}{185}{section*.188}%
+\contentsline {chapter}{Bibliografía}{188}{section*.188}%

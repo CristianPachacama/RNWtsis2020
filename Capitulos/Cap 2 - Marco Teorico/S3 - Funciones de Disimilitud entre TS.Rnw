@@ -1,27 +1,27 @@
-\section{An·lisis de Conglomerados (Cl˙ster)}
+\section{An√°lisis de Conglomerados (Cl√∫ster)}
 
 
-%El An·lisis Cl˙ster es un tÈcnica de aprendizaje no supervisada que tiene como objetivo dividir un conjunto de objetos en grupos homogÈneos (cl˙sters). La particiÛn se realiza de tal manera que los objetos en el mismo cl˙ster son m·s similares entre sÌ que los objetos en diferentes grupos seg˙n un criterio definido. En muchas aplicaciones reales, el an·lisis de cl˙ster debe realizarse con datos asociados a  series de tiempo. De hecho, los problemas de agrupamiento de series de tiempo surgen de manera natural en una amplia variedad de campos, incluyendo economÌa, finanzas, medicina, ecologÌa, estudios ambientales, ingenierÌa y muchos otros. 
-%Con frecuencia, la agrupaciÛn de series de tiempo desempeÒa un papel central en el problema estudiado. Estos argumentos motivan el creciente interÈs en la literatura sobre la agrupaciÛn de series de tiempo, especialmente en las ˙ltimas dos dÈcadas, donde se ha proporcionado una gran cantidad de contribuciones sobre este tema. En \cite{liao2005clustering} se puede encontrar un excelente estudio sobre la agrupaciÛn de series de tiempo, aunque posteriormente se han realizado nuevas contribuciones significativas. Particularmente importante en la ˙ltima dÈcada ha sido la explosiÛn de documentos sobre el tema provenientes tanto de comunidades de minerÌa de datos como de reconocimiento de patrones. \cite{fu2011review} proporciona una visiÛn general completa y exhaustiva de las ˙ltimas orientaciones de minerÌa de datos de series de tiempo, incluida una gama de problemas clave como representaciÛn, indexaciÛn y segmentaciÛn de series de tiempo, medidas de disimilitud, procedimientos de agrupamiento y herramientas de visualizaciÛn.
+%El An√°lisis Cl√∫ster es un t√©cnica de aprendizaje no supervisada que tiene como objetivo dividir un conjunto de objetos en grupos homog√©neos (cl√∫sters). La partici√≥n se realiza de tal manera que los objetos en el mismo cl√∫ster son m√°s similares entre s√≠ que los objetos en diferentes grupos seg√∫n un criterio definido. En muchas aplicaciones reales, el an√°lisis de cl√∫ster debe realizarse con datos asociados a  series de tiempo. De hecho, los problemas de agrupamiento de series de tiempo surgen de manera natural en una amplia variedad de campos, incluyendo econom√≠a, finanzas, medicina, ecolog√≠a, estudios ambientales, ingenier√≠a y muchos otros. 
+%Con frecuencia, la agrupaci√≥n de series de tiempo desempe√±a un papel central en el problema estudiado. Estos argumentos motivan el creciente inter√©s en la literatura sobre la agrupaci√≥n de series de tiempo, especialmente en las √∫ltimas dos d√©cadas, donde se ha proporcionado una gran cantidad de contribuciones sobre este tema. En \cite{liao2005clustering} se puede encontrar un excelente estudio sobre la agrupaci√≥n de series de tiempo, aunque posteriormente se han realizado nuevas contribuciones significativas. Particularmente importante en la √∫ltima d√©cada ha sido la explosi√≥n de documentos sobre el tema provenientes tanto de comunidades de miner√≠a de datos como de reconocimiento de patrones. \cite{fu2011review} proporciona una visi√≥n general completa y exhaustiva de las √∫ltimas orientaciones de miner√≠a de datos de series de tiempo, incluida una gama de problemas clave como representaci√≥n, indexaci√≥n y segmentaci√≥n de series de tiempo, medidas de disimilitud, procedimientos de agrupamiento y herramientas de visualizaci√≥n.
 
-%Una pregunta crucial en el An·lisis Cl˙ster es establecer lo que queremos decir con objetos de datos "similares", es decir, determinar una medida de similitud (o disimilitud) adecuada entre dos objetos. En el contexto especÌfico de los datos asociados a series de tiempo, el concepto de disimilitud es particularmente complejo debido al car·cter din·mico de la serie. Las diferencias generalmente consideradas en la agrupaciÛn convencional no podrÌan funcionar adecuadamente con los datos dependientes del tiempo porque ignoran la relaciÛn de interdependencia entre los valores. 
+%Una pregunta crucial en el An√°lisis Cl√∫ster es establecer lo que queremos decir con objetos de datos "similares", es decir, determinar una medida de similitud (o disimilitud) adecuada entre dos objetos. En el contexto espec√≠fico de los datos asociados a series de tiempo, el concepto de disimilitud es particularmente complejo debido al car√°cter din√°mico de la serie. Las diferencias generalmente consideradas en la agrupaci√≥n convencional no podr√≠an funcionar adecuadamente con los datos dependientes del tiempo porque ignoran la relaci√≥n de interdependencia entre los valores. 
 
-%De esta manera, diferentes enfoques para definir una funciÛn de disimilitud entre series de tiempo han sido propuestos en la literatura pero nos centraremos en aquellas medidas asociadas a la autocorrelaciÛn (simple, e inversa), correlaciÛn cruzada y periodograma de las series \cite{struzik1999haar};  \cite{galeano2000multivariate}; \cite{caiado2006periodogram}; \cite{chouakria2007adaptive}. Estos enfoques basados en caracterÌsticas tienen como objetivo representar la estructura din·mica de cada serie mediante un vector de caracterÌsticas de menor dimensiÛn, lo que permite una reducciÛn de dimensionalidad (las series temporales son esencialmente datos de alta dimensionalidad) y un ahorro significativo en el tiempo de c·lculo, adem·s de que nos ayudan a alcanzar el objetivo central por el que usaremos el An·lisis Cl˙ster que es el de la modelizaciÛn de series de tiempo.
+%De esta manera, diferentes enfoques para definir una funci√≥n de disimilitud entre series de tiempo han sido propuestos en la literatura pero nos centraremos en aquellas medidas asociadas a la autocorrelaci√≥n (simple, e inversa), correlaci√≥n cruzada y periodograma de las series \cite{struzik1999haar};  \cite{galeano2000multivariate}; \cite{caiado2006periodogram}; \cite{chouakria2007adaptive}. Estos enfoques basados en caracter√≠sticas tienen como objetivo representar la estructura din√°mica de cada serie mediante un vector de caracter√≠sticas de menor dimensi√≥n, lo que permite una reducci√≥n de dimensionalidad (las series temporales son esencialmente datos de alta dimensionalidad) y un ahorro significativo en el tiempo de c√°lculo, adem√°s de que nos ayudan a alcanzar el objetivo central por el que usaremos el An√°lisis Cl√∫ster que es el de la modelizaci√≥n de series de tiempo.
 
-El an·lisis de Conglomerados o Cl˙ster es una rama de mÈtodos que tienen el objetivo de agrupar un conjunto de objetos de tal manera que los objetos de cada grupo sean los m·s ``similares'' posible, mientras que objetos de distintos grupos sean ``distintos''. Una etapa fundamental de este an·lisis corresponde a la especificaciÛn de una medida de similitud (o disimilitud) que permita cuantificar que tan similares o distintos son los objetos analizados.
+El an√°lisis de Conglomerados o Cl√∫ster es una rama de m√©todos que tienen el objetivo de agrupar un conjunto de objetos de tal manera que los objetos de cada grupo sean los m√°s ``similares'' posible, mientras que objetos de distintos grupos sean ``distintos''. Una etapa fundamental de este an√°lisis corresponde a la especificaci√≥n de una medida de similitud (o disimilitud) que permita cuantificar que tan similares o distintos son los objetos analizados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%El an·lisis de Conglomerados o Cl˙ster es una rama de mÈtodos que tienen el objetivo de agrupar un conjunto de objetos de tal manera que los objetos de cada grupo sean los m·s "similares" posible, mientras que objetos de distintos grupos sean "distintos". Una etapa fundamental de este an·lisis corresponde a la especificaciÛn de una medida de similitud (o disimilitud) que permita cuantificar que tan "similares" o "distintos" son los objetos analizados.
+%El an√°lisis de Conglomerados o Cl√∫ster es una rama de m√©todos que tienen el objetivo de agrupar un conjunto de objetos de tal manera que los objetos de cada grupo sean los m√°s "similares" posible, mientras que objetos de distintos grupos sean "distintos". Una etapa fundamental de este an√°lisis corresponde a la especificaci√≥n de una medida de similitud (o disimilitud) que permita cuantificar que tan "similares" o "distintos" son los objetos analizados.
 
-\subsection{MÈtricas y Funciones de Disimilitud}
+\subsection{M√©tricas y Funciones de Disimilitud}
 
-Desde un punto de vista general el tÈrmino proximidad indica el concepto de cercanÌa en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matem·tico, ese tÈrmino hace referencia al concepto de disimilitud o similaridad entre dos elementos. 
-Sea O un conjunto finito o infinito de elementos (individuos, estÌmulos, sujetos u objetos sobre los que queremos definir una proximidad).
+Desde un punto de vista general el t√©rmino proximidad indica el concepto de cercan√≠a en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matem√°tico, ese t√©rmino hace referencia al concepto de disimilitud o similaridad entre dos elementos. 
+Sea O un conjunto finito o infinito de elementos (individuos, est√≠mulos, sujetos u objetos sobre los que queremos definir una proximidad).
 
 
 \begin{defin}
-Dados $O_i, O_j \in O$ y $\delta$ es una funciÛn real de $O \times O \rightarrow \mathbb{R}$, con $\delta_{ij}:=\delta(O_i,O_j)$. Diremos que $\delta$ es una disimilitud o funciÛn de disimilitud si verifica las siguientes condiciones:
+Dados $O_i, O_j \in O$ y $\delta$ es una funci√≥n real de $O \times O \rightarrow \mathbb{R}$, con $\delta_{ij}:=\delta(O_i,O_j)$. Diremos que $\delta$ es una disimilitud o funci√≥n de disimilitud si verifica las siguientes condiciones:
 \begin{itemize}
 \item $\delta_{ij}=\delta_{ji}$, $\forall i,j$
 \item $\delta_{ii} \leq \delta_{ij}$, $\forall i,j$
@@ -29,44 +29,44 @@ Dados $O_i, O_j \in O$ y $\delta$ es una funciÛn real de $O \times O \rightarrow
 \end{itemize}
 \end{defin}
 
-La primera condiciÛn podrÌa eliminarse, aunque resulta necesaria si se desea comparar con una distancia. No obstante, esa condiciÛn suele violarse cuando la disimilitud proviene de juicios emitidos por sujetos, ya que Èstos no siempre califican igual al par $(O_i,O_j)$ que al par $(O_j,O_i)$. Las condiciones segunda y tercera suelen establecerse igualmente para $\delta_o=0$, aunque tambiÈn es conocido que cuando a un individuo le son presentados dos objetos idÈnticos, Èste tiende a asignarles alg˙n valor de disimilitud no nulo y generalmente positivo, y adem·s no siempre se define $c \geq 0$ ya que, si por ejemplo las disimilitud provienen de una transformaciÛn, Èstas podrÌan ser negativas.
+La primera condici√≥n podr√≠a eliminarse, aunque resulta necesaria si se desea comparar con una distancia. No obstante, esa condici√≥n suele violarse cuando la disimilitud proviene de juicios emitidos por sujetos, ya que √©stos no siempre califican igual al par $(O_i,O_j)$ que al par $(O_j,O_i)$. Las condiciones segunda y tercera suelen establecerse igualmente para $\delta_o=0$, aunque tambi√©n es conocido que cuando a un individuo le son presentados dos objetos id√©nticos, √©ste tiende a asignarles alg√∫n valor de disimilitud no nulo y generalmente positivo, y adem√°s no siempre se define $c \geq 0$ ya que, si por ejemplo las disimilitud provienen de una transformaci√≥n, √©stas podr√≠an ser negativas.
 
-Existen diferentes medidas para el c·lculo de disimilitud entre un par de variables o individuos. Si consideramos una matriz de datos $X=(x_{tj})_{n\times p}$, obtenida de $n$ objetos sobre $p$ vatiables, algunos ejemplos de medidas son:
+Existen diferentes medidas para el c√°lculo de disimilitud entre un par de variables o individuos. Si consideramos una matriz de datos $X=(x_{tj})_{n\times p}$, obtenida de $n$ objetos sobre $p$ vatiables, algunos ejemplos de medidas son:
 
 \begin{itemize}
-\item \textit{Distancia euclÌdea ponderada}
+\item \textit{Distancia eucl√≠dea ponderada}
 $$ \delta_{ts}=\left(\displaystyle \sum_{j=1}^p w_i(x_{tj}-x_{sj}) \right)^{1/2} $$
-\item \textit{MÈtrica de Minkowski}
+\item \textit{M√©trica de Minkowski}
 $$ \delta_{ts}=\left(\displaystyle \sum_{j=1}^p |x_{tj}-x_{sj}|^{\lambda}\right)^{1/\lambda}, \ \ \lambda \geq 1 $$
-\item \textit{SeparaciÛn angular}
+\item \textit{Separaci√≥n angular}
 $$ \delta_{ts}=1-\frac{\sum_{j=1}^p x_{tj}x_{sj}}{(\sum_j x_{tj}^2 \sum_j x_{sj}^2)^{1/2}} $$
 
 \end{itemize}
 
 
-\subsection{MÈtricas para Series de Tiempo}
+\subsection{M√©tricas para Series de Tiempo}
 \label{sec:metrica}
-El problema de medir similitudes o diferencias entre datos asociados a series de tiempo ha sido estudiado ampliamente por autores como \citeauthor{johnson2004multivariate} \citeyear{johnson2004multivariate}, adem·s de \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propusieron comparar las funciones de autocorrelaciÛn de las series, \citeauthor{diggle1991nonparametric} \citeyear{diggle1991nonparametric} con enfoques no paramÈtricos comparÛ el espectro de las series,  \citeauthor{piccolo1990distance} \citeyear{piccolo1990distance} diÛ una mÈtrica basada en modelos ARIMA, \citeauthor{diggle1997spectral} \citeyear{diggle1997spectral} desarrollÛ mÈtodos basados en an·lisis espectral, y \citeauthor{maharaj2000cluster} \citeyear{maharaj2000cluster} comparÛ dos series estacionarias bas·ndose en sus par·metros autoregresivos . A continuaciÛn se detallan dos de las mÈtricas que utilizaremos en nuestro an·lisis.
+El problema de medir similitudes o diferencias entre datos asociados a series de tiempo ha sido estudiado ampliamente por autores como \citeauthor{johnson2004multivariate} \citeyear{johnson2004multivariate}, adem√°s de \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propusieron comparar las funciones de autocorrelaci√≥n de las series, \citeauthor{diggle1991nonparametric} \citeyear{diggle1991nonparametric} con enfoques no param√©tricos compar√≥ el espectro de las series,  \citeauthor{piccolo1990distance} \citeyear{piccolo1990distance} di√≥ una m√©trica basada en modelos ARIMA, \citeauthor{diggle1997spectral} \citeyear{diggle1997spectral} desarroll√≥ m√©todos basados en an√°lisis espectral, y \citeauthor{maharaj2000cluster} \citeyear{maharaj2000cluster} compar√≥ dos series estacionarias bas√°ndose en sus par√°metros autoregresivos . A continuaci√≥n se detallan dos de las m√©tricas que utilizaremos en nuestro an√°lisis.
 
 \begin{itemize}
-\item  \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propone una mÈtrica que se basa en la estimaciÛn de la funciÛn de autocorrelaciÛn de las series. Sean $(X_t, t\in\Z)$, $(Y_t, t\in\Z)$ dos series de tiempo, y $\hat\rho_x$, $\hat\rho_y$  sus vectores de coeficientes de autocorrelaciÛn estimados hasta el retardo $k$ (que supondremos es el mayor retardo significativo). AsÌ, se define la distancia como sigue:
+\item  \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propone una m√©trica que se basa en la estimaci√≥n de la funci√≥n de autocorrelaci√≥n de las series. Sean $(X_t, t\in\Z)$, $(Y_t, t\in\Z)$ dos series de tiempo, y $\hat\rho_x$, $\hat\rho_y$  sus vectores de coeficientes de autocorrelaci√≥n estimados hasta el retardo $k$ (que supondremos es el mayor retardo significativo). As√≠, se define la distancia como sigue:
 
 $$d_{ACF}(X_t,Y_t) = \sqrt{(\hat\rho_x - \hat\rho_y)'\Omega (\hat\rho_x - \hat\rho_y)}$$
-Donde $\Omega$ es una matriz de pesos, simÈtrica y semidefinida positiva (usualmente $\Omega=I_k$), que se puede utilizar para dar ponderaciones a los coeficientes que decrecen seg˙n el retardo. Esta mÈtrica est· relacionada con el enfoque paramÈtrico, ya que los par·metros de la aproximaciÛn autorregresiva de las series se calculan a partir de los coeficientes de autocorrelaciÛn de las mismas.
+Donde $\Omega$ es una matriz de pesos, sim√©trica y semidefinida positiva (usualmente $\Omega=I_k$), que se puede utilizar para dar ponderaciones a los coeficientes que decrecen seg√∫n el retardo. Esta m√©trica est√° relacionada con el enfoque param√©trico, ya que los par√°metros de la aproximaci√≥n autorregresiva de las series se calculan a partir de los coeficientes de autocorrelaci√≥n de las mismas.
 
 
 
 %\citeauthor{piccolo1990distance}
-\item \citeauthor{corduas2008time} \citeyear{corduas2008time} definen a partir de trabajos previos como \citeauthor{piccolo1990distance} \citeyear{piccolo1990distance}, una mÈtrica para series de tiempo que se pueden representar como un proceso de media cero invertible $ARIMA(p,d,q)$. Es decir:
+\item \citeauthor{corduas2008time} \citeyear{corduas2008time} definen a partir de trabajos previos como \citeauthor{piccolo1990distance} \citeyear{piccolo1990distance}, una m√©trica para series de tiempo que se pueden representar como un proceso de media cero invertible $ARIMA(p,d,q)$. Es decir:
 $$\varphi_p (B) \Delta^d  X_t = \theta_q (B)\varepsilon_t $$
 
 Al ser invertibles las series pueden escribirse en su forma Autoregresiva AR($\infty$) mediante el operador en retardos $$\pi_x(B) =  \frac{\theta_q (B) }{\varphi_p (B) }  = 1-\sum_{j=1}^\infty \pi_{xj} B^j $$
-bajo esas condiciones, se define la mÈtrica siguiente:
+bajo esas condiciones, se define la m√©trica siguiente:
 
 $$d_{PIC}(X_t,Y_t)= \sqrt{\sum_{j=1}^{\infty}(\pi_{xj}-\pi_{yj})^2$$
 
-Que es la distancia euclÌdea entre los coeficientes de las representaciones $AR(\infty)$ de las dos series. Esta distancia $d_{PIC}$ es una medida bien definida debido a la convergencia absoluta de las series $\pi_x(B)$ y $\pi_y(B)$  de los procesos que pertenecen a una clase admisible ARIMA, y satisface las propiedades de una mÈtrica. Adem·s, tiene una interpretaciÛn interesante en tÈrminos de la funciÛn de pronÛstico de un proceso lineal, que simplemente est· determinado por los valores pasados de la serie y los coeficientes de $\pi(B)$ . Por lo tanto, la distancia entre dos procesos ARIMA, con Ûrdenes dadas, es cero si, con el mismo conjunto de valores iniciales, los modelos correspondientes producen los mismos pronÛsticos.
-Cabe mencionar que la distancia $d_{PIC}$ no toma en cuenta la varianza del ruido blanco asociado, esta se considera ˙nicamente un factor de escala que depende de la unidad de medida y que no afecta a la estructura temporal del proceso. Adem·s, hallar la distancia supone conocer a priori la representaciÛn ARIMA de las series.
+Que es la distancia eucl√≠dea entre los coeficientes de las representaciones $AR(\infty)$ de las dos series. Esta distancia $d_{PIC}$ es una medida bien definida debido a la convergencia absoluta de las series $\pi_x(B)$ y $\pi_y(B)$  de los procesos que pertenecen a una clase admisible ARIMA, y satisface las propiedades de una m√©trica. Adem√°s, tiene una interpretaci√≥n interesante en t√©rminos de la funci√≥n de pron√≥stico de un proceso lineal, que simplemente est√° determinado por los valores pasados de la serie y los coeficientes de $\pi(B)$ . Por lo tanto, la distancia entre dos procesos ARIMA, con √≥rdenes dadas, es cero si, con el mismo conjunto de valores iniciales, los modelos correspondientes producen los mismos pron√≥sticos.
+Cabe mencionar que la distancia $d_{PIC}$ no toma en cuenta la varianza del ruido blanco asociado, esta se considera √∫nicamente un factor de escala que depende de la unidad de medida y que no afecta a la estructura temporal del proceso. Adem√°s, hallar la distancia supone conocer a priori la representaci√≥n ARIMA de las series.
 
 \end{itemize}
 
@@ -81,22 +81,22 @@ Cabe mencionar que la distancia $d_{PIC}$ no toma en cuenta la varianza del ruid
 \subsection{Escalonamiento Multidimensional (MDS)}
 
 
-El escalamiento multidimensional, conocido como MDS por sus siglas en inglÈs, engloba un conjunto de tÈcnicas multivariantes desarrolladas en el ·mbito del comportamiento, que persiguen el estudio de la estructura subyacente de un conjunto de objetos, es decir, que pretende representar un conjunto de objetos en un espacio de baja dimensionalidad. La palabra objeto es muy genÈrica y se refiere, en realidad, a cualquier entidad que se desee comparar, en nuestro caso particular consideraremos a una series de tiempo. Los modelos y mÈtodos de construcciÛn de escalas multidimensionales fueron desarrollados en la mitad del siglo XX, entre los que cabe citar los trabajos de \citeauthor{stevens1946theory} \citeyear{stevens1946theory}, \citeauthor{coombs1950psychological} \citeyear{coombs1950psychological}, \citeauthor{torgerson1958theory} \citeyear{torgerson1958theory}, \citeauthor{kruskal1964multidimensional} \citeyear{kruskal1964multidimensional}, y \citeauthor{guttman1968general} \citeyear{guttman1968general}, que constituyen los antecedentes de los modelos y mÈtodos m·s modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
+El escalamiento multidimensional, conocido como MDS por sus siglas en ingl√©s, engloba un conjunto de t√©cnicas multivariantes desarrolladas en el √°mbito del comportamiento, que persiguen el estudio de la estructura subyacente de un conjunto de objetos, es decir, que pretende representar un conjunto de objetos en un espacio de baja dimensionalidad. La palabra objeto es muy gen√©rica y se refiere, en realidad, a cualquier entidad que se desee comparar, en nuestro caso particular consideraremos a una series de tiempo. Los modelos y m√©todos de construcci√≥n de escalas multidimensionales fueron desarrollados en la mitad del siglo XX, entre los que cabe citar los trabajos de \citeauthor{stevens1946theory} \citeyear{stevens1946theory}, \citeauthor{coombs1950psychological} \citeyear{coombs1950psychological}, \citeauthor{torgerson1958theory} \citeyear{torgerson1958theory}, \citeauthor{kruskal1964multidimensional} \citeyear{kruskal1964multidimensional}, y \citeauthor{guttman1968general} \citeyear{guttman1968general}, que constituyen los antecedentes de los modelos y m√©todos m√°s modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
 
 
 
 
-En tÈrminos generales, el Escalamiento Multidimensional permite representar en un espacio geomÈtrico las proximidades entre pares de objetos a travÈs de distancias (o disimilitudes) en funciÛn de un determinado n˙mero de dimensiones. AsÌ, el MDS cumple su objetivo en dos etapas. En primer lugar, determina las dimensiones subyacentes m·s relevantes (normalmente entre 2 y 4). En segundo lugar, construye una representaciÛn geomÈtrica de los datos a travÈs de las distancias entre los mismos en las dimensiones relevantes.  De esta forma, el MDS asume un paralelismo entre el concepto psicolÛgico de similaridad y el concepto geomÈtrico de distancia.
+En t√©rminos generales, el Escalamiento Multidimensional permite representar en un espacio geom√©trico las proximidades entre pares de objetos a trav√©s de distancias (o disimilitudes) en funci√≥n de un determinado n√∫mero de dimensiones. As√≠, el MDS cumple su objetivo en dos etapas. En primer lugar, determina las dimensiones subyacentes m√°s relevantes (normalmente entre 2 y 4). En segundo lugar, construye una representaci√≥n geom√©trica de los datos a trav√©s de las distancias entre los mismos en las dimensiones relevantes.  De esta forma, el MDS asume un paralelismo entre el concepto psicol√≥gico de similaridad y el concepto geom√©trico de distancia.
 
 
-% El escalamiento multidimensional opera sobre una matriz, cuyos elementos representan  disimilitudes entre un conjunto de objetos, con el objetivo de construir coordenadas de puntos, en un n˙mero predeterminado de dimensiones ($\R^2$ usualmente), de tal manera que la matriz de distancias entre estos puntos es aproximadamente la misma que la matriz de disimilitudes.
-% Los modelos y mÈtodos de construcciÛn de escalas unidimensionales fueron desarrollados en la primera mitad del siglo XX, entre los que cabe citar a Thurstone, Likert, Guttman o Coombs, constituyen los antecedentes de los modelos y mÈtodos m·s modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
+% El escalamiento multidimensional opera sobre una matriz, cuyos elementos representan  disimilitudes entre un conjunto de objetos, con el objetivo de construir coordenadas de puntos, en un n√∫mero predeterminado de dimensiones ($\R^2$ usualmente), de tal manera que la matriz de distancias entre estos puntos es aproximadamente la misma que la matriz de disimilitudes.
+% Los modelos y m√©todos de construcci√≥n de escalas unidimensionales fueron desarrollados en la primera mitad del siglo XX, entre los que cabe citar a Thurstone, Likert, Guttman o Coombs, constituyen los antecedentes de los modelos y m√©todos m√°s modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
 
-A continuaciÛn mostramos el plantemiento de est· tÈcnica en un contexto general, no profundizaremos en ella ya que la usaremos unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de mediciÛn de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta tÈcnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
+A continuaci√≥n mostramos el plantemiento de est√° t√©cnica en un contexto general, no profundizaremos en ella ya que la usaremos unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medici√≥n de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta t√©cnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
 
 \subsubsection{Modelo General MDS }
 
-De modo general, podemos decir que el MDS toma como entrada una matriz de proximidades $\mathcal{D} \in M_{n \times n}$ (disimilitudes entre objetos), donde $n$ es el n˙mero de objetos. Cada elemento $\delta_{ij}$ de $\mathcal{D}$ representa la disimilitud entre un objeto $O_i$ y el objeto $O_j$.
+De modo general, podemos decir que el MDS toma como entrada una matriz de proximidades $\mathcal{D} \in M_{n \times n}$ (disimilitudes entre objetos), donde $n$ es el n√∫mero de objetos. Cada elemento $\delta_{ij}$ de $\mathcal{D}$ representa la disimilitud entre un objeto $O_i$ y el objeto $O_j$.
 
 $$ \mathcal{D} = \begin{pmatrix}
 \delta_{11} & \delta_{12} & \cdots & \delta_{1n} \\
@@ -105,7 +105,7 @@ $$ \mathcal{D} = \begin{pmatrix}
 \delta_{n1} & \delta_{n2} & \cdots & \delta_{nn} \\
 \end{pmatrix} $$
 
-A partir de esta matriz de proximidades, el MDS nos proporciona como resultado una matriz $X \in M_{n \times m}$, representaciÛn $m$-dimensional de los $n$ objetos. Cada valor $X_{ik}$ representa la coordenada $k$ del objeto $i$, para $i=1,2,...,n$. 
+A partir de esta matriz de proximidades, el MDS nos proporciona como resultado una matriz $X \in M_{n \times m}$, representaci√≥n $m$-dimensional de los $n$ objetos. Cada valor $X_{ik}$ representa la coordenada $k$ del objeto $i$, para $i=1,2,...,n$. 
 
 $$ X= \begin{pmatrix}
 X_{11} & X_{12} & \cdots & X_{1m} \\
@@ -115,12 +115,12 @@ X_{n1} & X_{n2} & \cdots & X_{nm} \\
 \end{pmatrix} $$
 
 
-La matriz $X$ se busca de tal manera que su matriz de distancias $D(X) = (d_{ij})_{n\times n}$, considerando la mÈtrica euclidea sobre $\R^m$, se aproxime lo m·s posible a la matriz de proximidades $\mathcal{D}$.
+La matriz $X$ se busca de tal manera que su matriz de distancias $D(X) = (d_{ij})_{n\times n}$, considerando la m√©trica euclidea sobre $\R^m$, se aproxime lo m√°s posible a la matriz de proximidades $\mathcal{D}$.
 
 $$ d_{ij}:=\left[\displaystyle \sum_{k=1}^m (X_{ik}-X_{jk})^2 \right]^{1/2} \text{ , para } i,j=1,2,...,m$$
 
 
-Existen distintos enfoques desde los cuales se puede hallar $X$, uno de ellos consiste de hallar valores y vectores propios de una matriz asociada a $D(X)$. Resumimos el mÈtodo para hallar $X$ en el siguiente algoritmo:
+Existen distintos enfoques desde los cuales se puede hallar $X$, uno de ellos consiste de hallar valores y vectores propios de una matriz asociada a $D(X)$. Resumimos el m√©todo para hallar $X$ en el siguiente algoritmo:
 
 \begin{enumerate}
 
@@ -134,9 +134,9 @@ $$a_{**} = \frac{1}{n^2} \sum_{j=1}^n  \sum_{i=1}^n  a_{ij}  $$
 
 \item Hallar los valores propios de $B$, $\lambda_1, \lambda_2, \dots , \lambda_{n-1}$ y sus respectivos vectores propios $v_1, v_2, \dots, v_{n-1}$ normalizados de tal manera que $v_k' v_k = \lambda_k$ para $k=1,\dots,n-1$. Si $B$ no es semidefinida positiva (posee algun valor propio negativo), se puede ignorar los valores negativos e ir al siguiente paso, o bien, definir adecuadamente una constante $c$, reemplazar los valores de la matriz de proximidades por $\delta'_{ij} := \delta_{ij} + c(1-\delta_{ij}) $ de tal manera que esta nueva matriz sea semidefinida positiva y volver al paso 1.
 
-\item Elegir el n˙mero de dimensiones $m$ en las que se desea representar los objetos. Para ello puede considerar, como criterio de elecciÛn, el porcentaje que aportan las $m$ mayores valores propios.
+\item Elegir el n√∫mero de dimensiones $m$ en las que se desea representar los objetos. Para ello puede considerar, como criterio de elecci√≥n, el porcentaje que aportan las $m$ mayores valores propios.
 
-\item Las coordenadas de el objeto $O_i$ vienen dadas por $X_i = (v_{1i}, v_{2i},\dots, v_{mi})$ para $i=1,\dots,n$, y $v_{ki}$ es la coordenada $i$-Èsima del $k$-Èsimo vector propio.
+\item Las coordenadas de el objeto $O_i$ vienen dadas por $X_i = (v_{1i}, v_{2i},\dots, v_{mi})$ para $i=1,\dots,n$, y $v_{ki}$ es la coordenada $i$-√©sima del $k$-√©simo vector propio.
 
 \end{enumerate}
 

@@ -1,14 +1,14 @@
 \chapter{ACP Funcional}
 \label{ap:acpf}
 
-A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Análisis de Componentes Principales Funcional a las series que componen los 4 clústers.
+A continuaciÃ³n, resumimos en grÃ¡ficos los resultados obtenidos de aplicar el AnÃ¡lisis de Componentes Principales Funcional a las series que componen los 4 clÃºsters.
 
 
 \section{Cluster 1} %%%%%%
 
 
 \begin{figure}[H]
-\caption{ACPF del Series del Clúster 1}
+\caption{ACPF del Series del ClÃºster 1}
 \includegraphics[width=15cm]{1_Cluster/ACPF}
 % \label{fig:acp_summ}
 \centering
@@ -17,7 +17,7 @@ A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Aná
 
 
 \begin{figure}[H]
-\caption{Superficie de Covarianza Estimada (Clúster 1)}
+\caption{Superficie de Covarianza Estimada (ClÃºster 1)}
 \includegraphics[width=15cm]{1_Cluster/covarianza}
 % \label{fig:covar}
 \centering
@@ -29,7 +29,7 @@ A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Aná
 
 
 \begin{figure}[H]
-\caption{ACPF del Series del Clúster 2}
+\caption{ACPF del Series del ClÃºster 2}
 \includegraphics[width=15cm]{2_Cluster/ACPF}
 \label{fig:acp_summ2}
 \centering
@@ -38,7 +38,7 @@ A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Aná
 
 
 \begin{figure}[H]
-\caption{Superficie de Covarianza Estimada (Clúster 2)}
+\caption{Superficie de Covarianza Estimada (ClÃºster 2)}
 \includegraphics[width=15cm]{2_Cluster/covarianza}
 \label{fig:covar2}
 \centering
@@ -51,14 +51,14 @@ A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Aná
 
 
 \begin{figure}[H]
-\caption{ACPF del Series del Clúster 3}
+\caption{ACPF del Series del ClÃºster 3}
 \includegraphics[width=15cm]{3_Cluster/ACPF}
 \label{fig:acp_summ3}
 \centering
 \end{figure}
 
 \begin{figure}[H]
-\caption{Superficie de Covarianza Estimada (Clúster 3)}
+\caption{Superficie de Covarianza Estimada (ClÃºster 3)}
 \includegraphics[width=15cm]{3_Cluster/covarianza}
 \label{fig:covar3}
 \centering
@@ -71,14 +71,14 @@ A continuación, resumimos en gráficos los resultados obtenidos de aplicar el Aná
 
 
 \begin{figure}[H]
-\caption{ACPF del Series del Clúster 4}
+\caption{ACPF del Series del ClÃºster 4}
 \includegraphics[width=15cm]{4_Cluster/ACPF}
 \label{fig:acp_summ4}
 \centering
 \end{figure}
 
 \begin{figure}[H]
-\caption{Superficie de Covarianza Estimada (Clúster 4)}
+\caption{Superficie de Covarianza Estimada (ClÃºster 4)}
 \includegraphics[width=15cm]{4_Cluster/covarianza}
 \label{fig:covar4}
 \centering

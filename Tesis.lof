@@ -1,0 +1,83 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Estaciones de Medición de Caudales\relax }}{7}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Estaciones de Medición de Variables Climáticas\relax }}{8}{figure.caption.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Descomposición STL-Loess de Serie\relax }}{18}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Serie Corregida\relax }}{20}{figure.caption.20}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces MDS - Representación en $R^2$ de $D$}}{41}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Clústers generados con PAM\relax }}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Clústers generados con CLARA \relax }}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Número Óptimo de Clusters \relax }}{43}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Representación de Clústers en $\PazoBB {R}^2$ \relax }}{44}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Representación Geográfica de Clústers\relax }}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Acercamiento a Clúster (representación Geográfica)\relax }}{45}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Series de Tiempo del Clúster 1\relax }}{46}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Series de Tiempo del Clúster 2\relax }}{46}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Series de Tiempo del Clúster 3\relax }}{47}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Series de Tiempo del Clúster 4\relax }}{47}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Serie de Tiempo Climática\relax }}{49}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Serie de Tiempo Climática Corregida\relax }}{49}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Caudal - Clúster 1\relax }}{50}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Función de Autocorrelación Caudal - Clúster 1\relax }}{51}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces D(Caudal,12) - Clúster 1\relax }}{52}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Función de Autocorrelación D(Caudal,12) - Clúster 1\relax }}{52}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(5,0,0)(0,1,0)\relax }}{54}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(0,1,0)\relax }}{55}{figure.caption.55}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(1,1,0)\relax }}{57}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Caudal - Estación Machadinho\relax }}{59}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Series Climáticas - Estación Campos Novos\relax }}{60}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Autocorrelación - Caudal\relax }}{61}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Autocorrelación Precipitación\relax }}{62}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Autocorrelación Temperatura Máxima\relax }}{63}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Autocorrelación Temperatura Mínima\relax }}{63}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Autocorrelación Humedad Relativa\relax }}{64}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Series Blanqueadas\relax }}{65}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Corrleaciones Cruzadas - Variables Exógenas\relax }}{66}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Corrleaciones Cruzadas - Caudal vs. Variables Exógenas\relax }}{67}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Residuos SARMA(1,0)(2,1) - Precipitación\relax }}{69}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Residuos SARMA(4,0)(0,2) - Temperatura Máxima\relax }}{71}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Residuos SARMA(2,2)(2,1) - Temperatura Mínima\relax }}{72}{figure.caption.80}%
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Residuos SARMA(2,0)(3,0) - Humedad Relativa\relax }}{74}{figure.caption.83}%
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Coeficientes $v_j$ estimados - Precipitación\relax }}{76}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.36}{\ignorespaces Coeficientes $v_j$ estimados - Temperatura Máxima\relax }}{77}{figure.caption.85}%
+\contentsline {figure}{\numberline {3.37}{\ignorespaces Coeficientes $v_j$ estimados - Temperatura Mínima \relax }}{78}{figure.caption.86}%
+\contentsline {figure}{\numberline {3.38}{\ignorespaces Coeficientes $v_j$ estimados - Humedad Relativa \relax }}{79}{figure.caption.87}%
+\contentsline {figure}{\numberline {3.39}{\ignorespaces Autocorrelación $n_t$ \relax }}{80}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.40}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) ARMA(1,0)\relax }}{81}{figure.caption.91}%
+\contentsline {figure}{\numberline {3.41}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX $(1,0,0)(2,1,0)_{12}$\relax }}{87}{figure.caption.98}%
+\contentsline {figure}{\numberline {3.42}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX $(1,0,0)(2,1,0)_{12}$\relax }}{88}{figure.caption.101}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Módulo Clustering\relax }}{90}{figure.caption.102}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Módulo SARIMAX\relax }}{91}{figure.caption.103}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Módulo SARIMAX\relax }}{91}{figure.caption.104}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Módulo SARIMAX\relax }}{92}{figure.caption.105}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Módulo SARIMAX\relax }}{92}{figure.caption.106}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Módulo SARIMAX\relax }}{93}{figure.caption.107}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Módulo SARIMAX\relax }}{93}{figure.caption.108}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Predicción de Modelos SARIMA y SARIMAX\relax }}{97}{figure.caption.111}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Estructura de la Aplicación Web\relax }}{100}{figure.caption.112}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(1,1,0)}}{150}{figure.caption.144}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Predicción SARIMA de Caudales del clúster 1\relax }}{152}{figure.caption.146}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,3)(1,1,0)}}{153}{figure.caption.149}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Predicción SARIMA de Caudales del clúster 2\relax }}{159}{figure.caption.151}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(2,0,1)(1,1,0)}}{160}{figure.caption.154}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Predicción SARIMA de Caudales del clúster 3\relax }}{161}{figure.caption.158}%
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Predicción SARIMA de Caudales del clúster 3\relax }}{162}{figure.caption.159}%
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMA(3,0,2)(1,1,0)}}{163}{figure.caption.162}%
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Predicción de Caudales del clúster 4\relax }}{165}{figure.caption.164}%
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(2,1,0)_{12}$}}{167}{figure.caption.167}%
+\contentsline {figure}{\numberline {C.11}{\ignorespaces Predicción SARIMAX de Caudales del clúster 1\relax }}{170}{figure.caption.169}%
+\contentsline {figure}{\numberline {C.12}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(2,1,0)_{12}$}}{171}{figure.caption.172}%
+\contentsline {figure}{\numberline {C.13}{\ignorespaces Predicción SARIMAX de Caudales del clúster 2\relax }}{174}{figure.caption.174}%
+\contentsline {figure}{\numberline {C.14}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(1,0,0)(1,1,0)_{12}$}}{175}{figure.caption.177}%
+\contentsline {figure}{\numberline {C.15}{\ignorespaces Predicción SARIMAX de Caudales del clúster 3\relax }}{180}{figure.caption.181}%
+\contentsline {figure}{\numberline {C.16}{\ignorespaces Predicción SARIMAX de Caudales del clúster 3\relax }}{181}{figure.caption.182}%
+\contentsline {figure}{\numberline {C.17}{\ignorespaces Residuos - Test Portmanteau (Ljung-Box) SARIMAX$(0,0,3)(1,1,1)_{12}$}}{182}{figure.caption.185}%
+\contentsline {figure}{\numberline {C.18}{\ignorespaces Predicción SARIMAX de Caudales del clúster 4\relax }}{184}{figure.caption.187}%

@@ -1,108 +1,108 @@
 \section{Modelamiento de Series de Tiempo}
 
-El an·lisis de los datos experimentales asociados a series temporales conduce a nuevos problemas en el modelamiento estadÌstico y la inferencia. La evidente correlaciÛn existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los mÈtodos estadÌsticos convencionales, que dependen de la suposiciÛn de que las observaciones son independientes e idÈnticamente distribuidas \cite{shumway2017time}.
-%El enfoque sistem·tico mediante el cual se responde a las preguntas matem·ticas y estadÌsticas planteadas por estas correlaciones de tiempo se conoce como an·lisis de series de tiempo \cite{shumway2017time}.
-En esta secciÛn daremos un enfoque sistem·tico que nos permitir· resolver desde la matem·tica y estadÌstica los problemas antes descritos, con el objetivo de modelar series de tiempo, en particular las asociadas a caudales, que pueden presentar peculiaridades como la estacionalidad, que dificultan su an·lisis.
+El an√°lisis de los datos experimentales asociados a series temporales conduce a nuevos problemas en el modelamiento estad√≠stico y la inferencia. La evidente correlaci√≥n existente entre observaciones adyacentes en el tiempo puede restringir severamente la aplicabilidad de muchos de los m√©todos estad√≠sticos convencionales, que dependen de la suposici√≥n de que las observaciones son independientes e id√©nticamente distribuidas \cite{shumway2017time}.
+%El enfoque sistem√°tico mediante el cual se responde a las preguntas matem√°ticas y estad√≠sticas planteadas por estas correlaciones de tiempo se conoce como an√°lisis de series de tiempo \cite{shumway2017time}.
+En esta secci√≥n daremos un enfoque sistem√°tico que nos permitir√° resolver desde la matem√°tica y estad√≠stica los problemas antes descritos, con el objetivo de modelar series de tiempo, en particular las asociadas a caudales, que pueden presentar peculiaridades como la estacionalidad, que dificultan su an√°lisis.
 %
-%Una herramienta fundamental que permite la especificaciÛn de los par·metros de este tipo de modelos es la llamada funciÛn de autocorrelaciÛn asÌ como la autocorrelaciÛn parcial, que como veremos juega un rol trasendental en elecciÛn de la mÈtrica usada en la etapa de clusterizaciÛn.
+%Una herramienta fundamental que permite la especificaci√≥n de los par√°metros de este tipo de modelos es la llamada funci√≥n de autocorrelaci√≥n as√≠ como la autocorrelaci√≥n parcial, que como veremos juega un rol trasendental en elecci√≥n de la m√©trica usada en la etapa de clusterizaci√≥n.
 
 
 
 
 
-\subsection{MetodologÌa Box y Jenkins}
+\subsection{Metodolog√≠a Box y Jenkins}
 \label{sec2box}
 
-Llamada asÌ en honor a sus creadores \citeauthor{box1970time}, es hasta la actualidad la metodologÌa m·s utilizada para identificar, estimar, verificar y predecir a partir de un modelo ARIMA (Autoregressive Integrated Moving Average). 
+Llamada as√≠ en honor a sus creadores \citeauthor{box1970time}, es hasta la actualidad la metodolog√≠a m√°s utilizada para identificar, estimar, verificar y predecir a partir de un modelo ARIMA (Autoregressive Integrated Moving Average). 
 
 
 % ARIMA  ------------------------
 \begin{definicion}
-Un proceso $(Y_t, t \in \Z)$ de segundo orden se llama $ARIMA(p,d,q)$ si puede representarse mediante la ecuaciÛn:
+Un proceso $(Y_t, t \in \Z)$ de segundo orden se llama $ARIMA(p,d,q)$ si puede representarse mediante la ecuaci√≥n:
 
 \begin{equation}
 \phi  (B) \Delta^d Y_t =  \theta  (B) \varepsilon_t\label{eq:arima_def}
 \end{equation}
 
-Donde, $\phi(z)$ y $\theta (z)$ son polinomios de grado $p$ y $q$ respectivamente, y que tienen raÌces fuera del cÌrculo unitario complejo.
+Donde, $\phi(z)$ y $\theta (z)$ son polinomios de grado $p$ y $q$ respectivamente, y que tienen ra√≠ces fuera del c√≠rculo unitario complejo.
 \end{definicion}
 
-En ese caso se dir· tambiÈn que $(Y_t, t \in \Z)$ responde a un modelo $ARIMA(p,d,q)$. Notemos adem·s que en la ecuaciÛn \ref{eq:arima_def} se pueden identificar las siguientes componentes:
+En ese caso se dir√° tambi√©n que $(Y_t, t \in \Z)$ responde a un modelo $ARIMA(p,d,q)$. Notemos adem√°s que en la ecuaci√≥n \ref{eq:arima_def} se pueden identificar las siguientes componentes:
 
 \begin{itemize}
 \item $B$ es el operador de retardos,
 \item $\phi(B)$ es el polinomio AR (Autoregresivo) de orden $p$,
-\item $\theta  (B)$ es el polinomio MA (Media MÛvil) de orden $q$,
-\item $\Delta^d:=(1-B)^d$ es el operador de diferenciaciÛn de orden $d$,
+\item $\theta  (B)$ es el polinomio MA (Media M√≥vil) de orden $q$,
+\item $\Delta^d:=(1-B)^d$ es el operador de diferenciaci√≥n de orden $d$,
 \item $(\varepsilon_t)$ es un ruido blanco de varianza $\sigma^2$.
 \end{itemize}
 
 
 
-A partir de trabajos como los de \citeauthor{chatfield1996,capa2016seriest}, resumimos la metodologÌa Box y Jenkins, para el modelamiento de esta clase de procesos, en las siguientes etapas:
+A partir de trabajos como los de \citeauthor{chatfield1996,capa2016seriest}, resumimos la metodolog√≠a Box y Jenkins, para el modelamiento de esta clase de procesos, en las siguientes etapas:
 
 
 \begin{enumerate}
 % Chatfield 1996
-\item \textit{IdentificaciÛn a Priori.} Consiste de examinar los datos para ver que miembro (o miembros) de la clase de procesos ARIMA(p,d,q) es el m·s adecuado, esto a partir de las observaciones de la serie de tiempo con las que contamos. Es decir, en esta etapa buscamos los posibles valores para la tripleta (p,d,q), en general, no obtenemos una sola tripleta de valores, cabe mencionar que en esta etapa juegan un rol fundamental las funciones de AutocorrelaciÛn y AutocorrelaciÛn Parcial, pues nos permiten determinar posibles valores de la tripleta.
+\item \textit{Identificaci√≥n a Priori.} Consiste de examinar los datos para ver que miembro (o miembros) de la clase de procesos ARIMA(p,d,q) es el m√°s adecuado, esto a partir de las observaciones de la serie de tiempo con las que contamos. Es decir, en esta etapa buscamos los posibles valores para la tripleta (p,d,q), en general, no obtenemos una sola tripleta de valores, cabe mencionar que en esta etapa juegan un rol fundamental las funciones de Autocorrelaci√≥n y Autocorrelaci√≥n Parcial, pues nos permiten determinar posibles valores de la tripleta.
 
-\item \textit{EstimaciÛn.} En este punto se estiman los par·metros de los modelos escogidos, es decir, se estiman los coeficientes de los polinomios asociados a la parte autoregresiva (polinomios de orden $p$) y los de las parte media mÛvil (polinomios de orden $q$) del proceso.
+\item \textit{Estimaci√≥n.} En este punto se estiman los par√°metros de los modelos escogidos, es decir, se estiman los coeficientes de los polinomios asociados a la parte autoregresiva (polinomios de orden $p$) y los de las parte media m√≥vil (polinomios de orden $q$) del proceso.
 
-\item \textit{ValidaciÛn.} Consiste de verificar las hipÛtesis realizadas en los modelos estimados en las dos etapas previas. Es decir, realizar pruebas estadÌsticas para la significancia de los coeficientes estimados, adem·s, analizar de los residuos y verificar que se comporta como ruido blanco. Cabe mencionar que luego de esta etapa podrÌamos rechazar varios modelos, e inclusive todos, en tal caso es necesario plantearse m·s modelos (recordemos que basta elegir una tripleta $p,d,q$ adecuadamente) hasta encontrar al menos uno que pase esta etapa.
+\item \textit{Validaci√≥n.} Consiste de verificar las hip√≥tesis realizadas en los modelos estimados en las dos etapas previas. Es decir, realizar pruebas estad√≠sticas para la significancia de los coeficientes estimados, adem√°s, analizar de los residuos y verificar que se comporta como ruido blanco. Cabe mencionar que luego de esta etapa podr√≠amos rechazar varios modelos, e inclusive todos, en tal caso es necesario plantearse m√°s modelos (recordemos que basta elegir una tripleta $p,d,q$ adecuadamente) hasta encontrar al menos uno que pase esta etapa.
 
-\item \textit{IdentificaciÛn a Posteriori.} En esta etapa elegimos el ``mejor" modelo, para ello consideramos dos criterios principalmente, el primero es considerar el modelo de mayor poder predictivo, el otro es  tomar el de mayor cantidad de ``informaciÛn".
+\item \textit{Identificaci√≥n a Posteriori.} En esta etapa elegimos el ``mejor" modelo, para ello consideramos dos criterios principalmente, el primero es considerar el modelo de mayor poder predictivo, el otro es  tomar el de mayor cantidad de ``informaci√≥n".
 
-\item \textit{PredicciÛn.} Una vez escogido el mejor modelo se procede a realizar la predicciÛn de los valores de la serie para un tiempo futuro (posterior) al periodo de tiempo considerado en la estimaciÛn del modelo.
+\item \textit{Predicci√≥n.} Una vez escogido el mejor modelo se procede a realizar la predicci√≥n de los valores de la serie para un tiempo futuro (posterior) al periodo de tiempo considerado en la estimaci√≥n del modelo.
 
 
 \end{enumerate}
 
 
 \paragraph{Nota.}
-Recordemos que las series que se pretenden modelar en este estudio son series asociadas a caudales de rÌos, que se conoce tienen un comportamiento estacional, es decir, los datos de caudal correspondientes a un mismo mes de diferentes aÒos tienen tendencia a situarse de manera similar respecto a la media anual. Esto hace pensar en incluir en el modelo ARIMA retardos que son m˙ltiplos de 12, sin embargo, su c·lculo se convertirÌa en una tarea muy pesada y sujeta a varios errores. Para evitar este aumento dr·stico de par·metros, \citeauthor{box2015time} propusieron una extensiÛn de los modelos ARIMA que consideren la componente estacional de la serie, conocidos como modelos SARIMA.
+Recordemos que las series que se pretenden modelar en este estudio son series asociadas a caudales de r√≠os, que se conoce tienen un comportamiento estacional, es decir, los datos de caudal correspondientes a un mismo mes de diferentes a√±os tienen tendencia a situarse de manera similar respecto a la media anual. Esto hace pensar en incluir en el modelo ARIMA retardos que son m√∫ltiplos de 12, sin embargo, su c√°lculo se convertir√≠a en una tarea muy pesada y sujeta a varios errores. Para evitar este aumento dr√°stico de par√°metros, \citeauthor{box2015time} propusieron una extensi√≥n de los modelos ARIMA que consideren la componente estacional de la serie, conocidos como modelos SARIMA.
 
 
 % SARIMA  --------------------------
 \begin{definicion}
-Diremos que un proceso $(Y_t)$ de segundo orden,  responde a un modelo SARIMA$(p,d,q)(P,D,Q)_s$ si puede representarse mediante la ecuaciÛn:
+Diremos que un proceso $(Y_t)$ de segundo orden,  responde a un modelo SARIMA$(p,d,q)(P,D,Q)_s$ si puede representarse mediante la ecuaci√≥n:
 
 \begin{equation}
 \phi  (B)\Delta^d \Phi (B^s) \Delta _s^DY_t = \theta  (B) \Theta (B^s)\varepsilon_t
 \label{eq:sarima_def}
 \end{equation}
-Donde, $\phi (z)$, $\theta (z)$, $\Phi (z)$ y $\Theta (z)$ son polinomios con raÌces fuera del cÌrculo unitario complejo.
+Donde, $\phi (z)$, $\theta (z)$, $\Phi (z)$ y $\Theta (z)$ son polinomios con ra√≠ces fuera del c√≠rculo unitario complejo.
 
 \end{definicion}
 
-Cabe mencionar que podemos usar esta metodologÌa Box y Jenkins tambiÈn en los procesos SARIMA, considerando que en las etapas de identificaciÛn es necesario escoger en lugar tripletas, arreglos de 7 par·metros $(p,d,q,s,P,D,Q)$. 
-Los 4 par·metros extras corresponden a los ordenes de los polinomios asociados a la parte estacional del modelo: 
+Cabe mencionar que podemos usar esta metodolog√≠a Box y Jenkins tambi√©n en los procesos SARIMA, considerando que en las etapas de identificaci√≥n es necesario escoger en lugar tripletas, arreglos de 7 par√°metros $(p,d,q,s,P,D,Q)$. 
+Los 4 par√°metros extras corresponden a los ordenes de los polinomios asociados a la parte estacional del modelo: 
 
 \begin{itemize}
 \item $\Phi $ es un polinomio de grado $P$,
 \item $\Theta $ es un polinomio de grado $Q$,
-\item $\Delta _s^D:=(1-B^s)^D$ es el operador de diferenciaciÛn estacional de orden $D$,y $s$ es el periodo de la estacionalidad.  Por ejemplo, $s=12$ para datos mensuales de estacionalidad anual.
+\item $\Delta _s^D:=(1-B^s)^D$ es el operador de diferenciaci√≥n estacional de orden $D$,y $s$ es el periodo de la estacionalidad.  Por ejemplo, $s=12$ para datos mensuales de estacionalidad anual.
 \end{itemize}
 
 
-\subsection{FunciÛn de transferencia}
+\subsection{Funci√≥n de transferencia}
 
-Un modelo que relacione una serie temporal $(Y_t)$ (conocida como \textit{output}) con otra serie (o series) $(X_t)$ (conocida como \textit{input})a modo de variable explicativa (exÛgena), se conoce como \textit{funciÛn de transferencia}. Es decir, si podemos escribir $Y_t$ de la forma:
+Un modelo que relacione una serie temporal $(Y_t)$ (conocida como \textit{output}) con otra serie (o series) $(X_t)$ (conocida como \textit{input})a modo de variable explicativa (ex√≥gena), se conoce como \textit{funci√≥n de transferencia}. Es decir, si podemos escribir $Y_t$ de la forma:
 
 $$Y_t= f(X_t)$$
 
-Por ejemplo, el caso m·s sencillo puede ser, considerar a la regresiÛn simple, es decir:
+Por ejemplo, el caso m√°s sencillo puede ser, considerar a la regresi√≥n simple, es decir:
 
 $$Y_t = c + v_0X_t + N_t$$
 
-Sin embargo, una relaciÛn de este tipo podrÌa ocasionar una serie de problemas como:
+Sin embargo, una relaci√≥n de este tipo podr√≠a ocasionar una serie de problemas como:
 \begin{itemize}
-\item AcciÛn de la serie $Y_t$ (output) sobre las series input, en lugar de que las series input afecten a la serie output.
-\item Se omitido los tÈrminos retardos de la variable (o variables) inputs.
+\item Acci√≥n de la serie $Y_t$ (output) sobre las series input, en lugar de que las series input afecten a la serie output.
+\item Se omitido los t√©rminos retardos de la variable (o variables) inputs.
 \item Residuos autocorrelacionados.
-\item Patrones de autocorrelaciÛn comunes compartidos por $Y_t$ y $X_t$ que pueden producir \textit{correlaciÛn espuria}.
+\item Patrones de autocorrelaci√≥n comunes compartidos por $Y_t$ y $X_t$ que pueden producir \textit{correlaci√≥n espuria}.
 \end{itemize}
 
-Pues bien, como vemos relaciones como las antes planteadas conllevan a una serie de problemas, pero con unas adecuaciones pueden sobrellevarse, como se muestra a continuaciÛn:
+Pues bien, como vemos relaciones como las antes planteadas conllevan a una serie de problemas, pero con unas adecuaciones pueden sobrellevarse, como se muestra a continuaci√≥n:
 
 \begin{equation} \label{eq:fun_transfer}
 \begin{split}
@@ -113,23 +113,23 @@ Y_t & = v(B)X_t \\
 \end{split}
 \end{equation}
 
-Esta corresponde a la representaciÛn genÈrica del modelo de funciÛn de transferencia con un input. Donde, $(Y_t)$ y $(X_t)$ se suponen estacionarios,  $(N_t)$ se conoce como \textit{perturbaciÛn}, y $v(B)$ como \textit{funciÛn de respuesta al impulso}, ya que sus coeficientes describen el efecto sobre el output $(Y_t)$ que provocarÌa un impulso en el input $(X_t)$ . Este tipo de relaciÛn posee varias ventajas, como son:
+Esta corresponde a la representaci√≥n gen√©rica del modelo de funci√≥n de transferencia con un input. Donde, $(Y_t)$ y $(X_t)$ se suponen estacionarios,  $(N_t)$ se conoce como \textit{perturbaci√≥n}, y $v(B)$ como \textit{funci√≥n de respuesta al impulso}, ya que sus coeficientes describen el efecto sobre el output $(Y_t)$ que provocar√≠a un impulso en el input $(X_t)$ . Este tipo de relaci√≥n posee varias ventajas, como son:
 
 \begin{itemize}
-\item Permite una representaciÛn \textit{parsimoniosa}, es decir, con un n˙mero reducido de coeficientes.
-\item Posee una estrategia sencilla para la especificaciÛn del modelo din·mico, que captura adecuadamente la relaciÛn input sobre output.
-\item Se cuenta con instrumentos para corroborar que se utilizan inputs y outputs que poseen caracterÌsticas an·logas de estacionariedad, por lo que los residuos del modelo son estacionarios.
+\item Permite una representaci√≥n \textit{parsimoniosa}, es decir, con un n√∫mero reducido de coeficientes.
+\item Posee una estrategia sencilla para la especificaci√≥n del modelo din√°mico, que captura adecuadamente la relaci√≥n input sobre output.
+\item Se cuenta con instrumentos para corroborar que se utilizan inputs y outputs que poseen caracter√≠sticas an√°logas de estacionariedad, por lo que los residuos del modelo son estacionarios.
 \end{itemize} 
 
-Existe una variedad de alternativas para las funciones de transferencia, otras opciones como considerar una relaciÛn no lineal entre el output y el input, o considerar procesos a tiempo continuo, entre otras. Varias de ellas se detallan en \cite[Capitulo~5]{box2015time}, mientras que las distintas variantes , por ejemplo considerando que el input y output no son estacionarios, se analizan a detalle en \cite{pankratz2012forecasting}.
+Existe una variedad de alternativas para las funciones de transferencia, otras opciones como considerar una relaci√≥n no lineal entre el output y el input, o considerar procesos a tiempo continuo, entre otras. Varias de ellas se detallan en \cite[Capitulo~5]{box2015time}, mientras que las distintas variantes , por ejemplo considerando que el input y output no son estacionarios, se analizan a detalle en \cite{pankratz2012forecasting}.
 
 
 
 \subsection{Modelo SARIMAX}
-El modelo SARIMAX (Seasonal Autoregressive Integrated Moving Average with exogenous variables), es una extensiÛn del modelo SARIMA, que adem·s de considerar la parte estacional de las series de tiempo, integra variables exÛgenas para aumentar su capacidad explicativa y predictiva. 
+El modelo SARIMAX (Seasonal Autoregressive Integrated Moving Average with exogenous variables), es una extensi√≥n del modelo SARIMA, que adem√°s de considerar la parte estacional de las series de tiempo, integra variables ex√≥genas para aumentar su capacidad explicativa y predictiva. 
 
 \begin{definicion}
-Un proceso $(Y_t, t\in\Z)$ de segundo orden,  responde a un modelo SARIMAX$(p,d,q)(P,D,Q)_s(b,m,n)$, si puede representarse mediante la ecuaciÛn:
+Un proceso $(Y_t, t\in\Z)$ de segundo orden,  responde a un modelo SARIMAX$(p,d,q)(P,D,Q)_s(b,m,n)$, si puede representarse mediante la ecuaci√≥n:
 
 \begin{equation} \label{eq:sarimax_def}
 Y_t = v(B) X_t  + N_t
@@ -137,7 +137,7 @@ Y_t = v(B) X_t  + N_t
 
 $$\Delta_s^D  \Delta^d N_t := \frac{\theta(B) \Theta (B^s)}{\phi(B)\Phi (B^s)}\varepsilon_t$$
 
-Donde, $\phi (z)$, $\theta (z)$, $\Phi (z)$ y $\Theta (z)$ son polinomios con raÌces fuera del cÌrculo unitario complejo. Adem·s se tiene:
+Donde, $\phi (z)$, $\theta (z)$, $\Phi (z)$ y $\Theta (z)$ son polinomios con ra√≠ces fuera del c√≠rculo unitario complejo. Adem√°s se tiene:
 
 $$v (B):= \frac{\omega (B)}{\delta (B)} B^{b}$$
 
@@ -146,29 +146,29 @@ Donde $\omega(z) $ es un polinomio de grado $n$, $\delta(z) $ un polinomio de gr
 
 \end{definicion}
 
-Y adem·s:
+Y adem√°s:
 
 \begin{itemize}
-\item $X_t $ es la variable exÛgena (regresora),
-\item $v(B)$ es la funciÛn de respuesta al impulso, asociada a $X_t$
+\item $X_t $ es la variable ex√≥gena (regresora),
+\item $v(B)$ es la funci√≥n de respuesta al impulso, asociada a $X_t$
 \item El coeficiente $b$ se conoce como \textit{tiempo muerto}.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{MetodologÌa Box y Jenkins para el modelo SARIMAX}
+\subsubsection{Metodolog√≠a Box y Jenkins para el modelo SARIMAX}
 \label{sec:metod_sarimax}
-Para la identificaciÛn del modelo SARIMAX se hace una extensiÛn de la metodologÌa Box y Jenkins para modelos ARIMA antes expuesta, aÒadiendo una etapa dedicada a la identificaciÛn de la funciÛn de transferencia, la aplicaciÛn y ejemplos de esta metodologÌa se encuentra detallada en \citeauthor{novales1993econometria} \citeyear{novales1993econometria}. Resumimos el proceso en las siguientes etapas:
+Para la identificaci√≥n del modelo SARIMAX se hace una extensi√≥n de la metodolog√≠a Box y Jenkins para modelos ARIMA antes expuesta, a√±adiendo una etapa dedicada a la identificaci√≥n de la funci√≥n de transferencia, la aplicaci√≥n y ejemplos de esta metodolog√≠a se encuentra detallada en \citeauthor{novales1993econometria} \citeyear{novales1993econometria}. Resumimos el proceso en las siguientes etapas:
 
 \begin{enumerate}
-\item Filtrar tanto $(Y_t)$ como $(X_t)$, para $k=1,2,...,K$ para que todas sean estacionarias. Es decir, identificar los par·metros de diferenciaciÛn $d$ y $D$, luego calcular las series: 
+\item Filtrar tanto $(Y_t)$ como $(X_t)$, para $k=1,2,...,K$ para que todas sean estacionarias. Es decir, identificar los par√°metros de diferenciaci√≥n $d$ y $D$, luego calcular las series: 
 
 
 $$y_t=\Delta^d \Delta_s^D Y_t $$
 $$x_t=\Delta^{d'} \Delta_s^{D'} X_t $$
 
-Este proceso se conoce como \textit{preblanqueo}. La ventaja de este proceso es que ahora podemos plantear la relaciÛn entre procesos estacionarios siguiente:
+Este proceso se conoce como \textit{preblanqueo}. La ventaja de este proceso es que ahora podemos plantear la relaci√≥n entre procesos estacionarios siguiente:
 
 
 \begin{equation}\label{eq:transf_y}
@@ -187,7 +187,7 @@ Donde $\alpha_t$ es un r.b. de varianza $\sigma_{\alpha}^2$
 
 $$\beta_t = \frac{ \phi_x(B) \Phi_x(B)}{\theta_x(B) \Theta_x(B)} y_t$$
 
-Notemos que de la relaciÛn anterior, es posible que $\beta_t$ no sea un r.b. Luego, es claro que:
+Notemos que de la relaci√≥n anterior, es posible que $\beta_t$ no sea un r.b. Luego, es claro que:
 
 $$\beta_t = \frac{ \phi_x(B) \Phi_x(B)}{\theta_x(B) \Theta_x(B)} v(B) x_t + \frac{ \phi_x(B) \Phi_x(B)}{\theta_x(B) \Theta_x(B)} n_t $$
 
@@ -195,13 +195,13 @@ $$\beta_t = \frac{ \phi_x(B) \Phi_x(B)}{\theta_x(B) \Theta_x(B)} v(B) x_t + \fra
 \Longrightarrow  \beta_t = v(B) \alpha_t + \varepsilon_t
 \end{equation}
 
-Si multiplicamos a esta ˙ltima relaciÛn $\alpha_{t-j}$, suponemos que $\varepsilon_t$ es un ruido blanco, y sacamos la esperanza a ambos lados, se obtiene:
+Si multiplicamos a esta √∫ltima relaci√≥n $\alpha_{t-j}$, suponemos que $\varepsilon_t$ es un ruido blanco, y sacamos la esperanza a ambos lados, se obtiene:
 
 $$\gamma_{\alpha\beta}(j) = v_j \sigma_\alpha^2$$
 
 $$\Longrightarrow  v_j = \rho_{\alpha\beta}(j)\frac{\sigma_\beta}{\sigma_\alpha}$$
 
-Donde $v_j$ son los coeficientes de $v(B)$ como se ve en \ref{eq:fun_transfer}. Es decir, existe una relaciÛn directa entre $v_j$ y la funciÛn de correlaciÛn cruzada de las series $\alpha_t$ y $\beta_t$, por lo que podemos tener una aproximaciÛn, no muy buena, pero que nos permitir· conocer los Ûrdenes de los polinomios $\delta(B)$ y $\omega(B)$ que componen $v(B)$. Para ello, hay que considerar lo siguiente: 
+Donde $v_j$ son los coeficientes de $v(B)$ como se ve en \ref{eq:fun_transfer}. Es decir, existe una relaci√≥n directa entre $v_j$ y la funci√≥n de correlaci√≥n cruzada de las series $\alpha_t$ y $\beta_t$, por lo que podemos tener una aproximaci√≥n, no muy buena, pero que nos permitir√° conocer los √≥rdenes de los polinomios $\delta(B)$ y $\omega(B)$ que componen $v(B)$. Para ello, hay que considerar lo siguiente: 
 
 $$(1-\delta_1B-\dots,-\delta_mB^m) (v_0+v_1B+v_2B^2\dots)= (\omega_0-\omega_1B-\dots,-\omega_n^B^n)B^b$$
 
@@ -217,38 +217,38 @@ v_j & = \delta_1v_{j-1}+\detla_2 v_{j-2} + \dots +\delta_m v_{j-m}  \text{ \phan
 De las ecuaciones anteriores se concluye lo siguiente:
 \begin{enumerate}
 \item Los $b$ primeros coeficientes de $v(B)$ son nulos y corresponden al tiempo muerto.
-\item Los coeficientes desde $v_b$ hasta $v_{b+n}$ no siguen ningun patrÛn en particular.
-\item Los coeficientes de $v_{b+n+1}$ en adelante siguen una ecuaciÛn en diferencias de Ûrden $m$, con $m$ valores iniciales $v_j$ para $b+n\leq j\leq b+n-m+1$
+\item Los coeficientes desde $v_b$ hasta $v_{b+n}$ no siguen ningun patr√≥n en particular.
+\item Los coeficientes de $v_{b+n+1}$ en adelante siguen una ecuaci√≥n en diferencias de √≥rden $m$, con $m$ valores iniciales $v_j$ para $b+n\leq j\leq b+n-m+1$
 
 \end{enumerate}
 
-\item Identificada la funciÛn de transferencia, es necesario encontrar la estructura SARMA que falta identificar del modelo SARIMAX, para ello consideramos dos factores. El primero de ellos, es considerar que para llegar a la relaciÛn \ref{eq:transf_bet}, partimos del supuesto de que:
+\item Identificada la funci√≥n de transferencia, es necesario encontrar la estructura SARMA que falta identificar del modelo SARIMAX, para ello consideramos dos factores. El primero de ellos, es considerar que para llegar a la relaci√≥n \ref{eq:transf_bet}, partimos del supuesto de que:
 
 \begin{equation}\label{eq:nt_eps}
  \frac{ \phi_x(B) \Phi_x(B)}{\theta_x(B) \Theta_x(B)} n_t = \varepsilon_t 
 \end{equation}
 
-Que como vemos tiene relaciÛn directa con $N_t$ debido a la ecuaciÛn \ref{eq:sarimax_def}. Por lo tanto, en la identificaciÛn de la estructura SARMA debemos considerar la estructura ya hallada en el paso 2, es decir, incluir en el modelo final, las partes autoregresivas y medias mÛviles (inclusive estacionales) de \ref{eq:nt_eps}.
+Que como vemos tiene relaci√≥n directa con $N_t$ debido a la ecuaci√≥n \ref{eq:sarimax_def}. Por lo tanto, en la identificaci√≥n de la estructura SARMA debemos considerar la estructura ya hallada en el paso 2, es decir, incluir en el modelo final, las partes autoregresivas y medias m√≥viles (inclusive estacionales) de \ref{eq:nt_eps}.
 
-Por otra parte, un segundo factor a considerar es que la perturbaciÛn es desconocida a priori, por lo que debemos plantear un modelo para la perturbaciÛn aproximada $n_t^{*}$, que definimos como:
+Por otra parte, un segundo factor a considerar es que la perturbaci√≥n es desconocida a priori, por lo que debemos plantear un modelo para la perturbaci√≥n aproximada $n_t^{*}$, que definimos como:
 $$n_t^{*} = y_t - v^{*}(B)x_t$$
 Donde:
 $$v^{*}(B):=\frac{ \phi_x(B) \Phi_x(B) }{\theta_x(B) \Theta_x(B)}$$
-Por lo tanto la relaciÛn anterior se reescribe como:
+Por lo tanto la relaci√≥n anterior se reescribe como:
 $$n_t^{*} = y_t -\alpha_t$$
 Es decir, calculamos $n_t^{*}$, y luego buscamos un modelo SARMA, para esta serie, es decir, con polinomios estacionales, pero sin diferencias. 
 
-Luego la estructura para el modelo final consistira de las estructuras SARMA de $n_t^{*}$ como la hallada en el paso 3, es decir, los polinomios de retardos de la ecuaciÛn \ref{eq:nt_eps}.
+Luego la estructura para el modelo final consistira de las estructuras SARMA de $n_t^{*}$ como la hallada en el paso 3, es decir, los polinomios de retardos de la ecuaci√≥n \ref{eq:nt_eps}.
 
-\item Identificados tanto la funciÛn de transferencia asociada a $x_t$, como el modelo SARMA de $n_t$, el siguiente paso es validar el modelo y de ser necesario corregirlo. Para que el modelo sea aceptado, los residuos $\varepsilon_t$ deberÌan comportarse como un ruido blanco, es decir, su funciÛn de autocorrelaciÛn debe ser estadÌsticamente nula. De igual manera la funciÛn de correlaciÛn cruzada entre $\varepsilon_t$ y $\alpha_t$ (o equivalentemente con $x_t$), no debe ser significativamente distinta de cero. Para lo cual, hay que considerar que los intervalos de confianza para la correlaciÛn cruzada en general vienen dados por:
+\item Identificados tanto la funci√≥n de transferencia asociada a $x_t$, como el modelo SARMA de $n_t$, el siguiente paso es validar el modelo y de ser necesario corregirlo. Para que el modelo sea aceptado, los residuos $\varepsilon_t$ deber√≠an comportarse como un ruido blanco, es decir, su funci√≥n de autocorrelaci√≥n debe ser estad√≠sticamente nula. De igual manera la funci√≥n de correlaci√≥n cruzada entre $\varepsilon_t$ y $\alpha_t$ (o equivalentemente con $x_t$), no debe ser significativamente distinta de cero. Para lo cual, hay que considerar que los intervalos de confianza para la correlaci√≥n cruzada en general vienen dados por:
 
 $$IC(\rho_{\varepsilon\alpha}(j) ) \approx \pm 1.96 \sqrt{ \frac{1+\sum_{h=1}^k \hat\rho_\varepsilon(h) \hat\rho_\alpha(h) }{T-j} } $$
 
-Donde $T$ es el n˙mero de observaciones con las que se estimaron las funciones de autocorrelaciÛn.
+Donde $T$ es el n√∫mero de observaciones con las que se estimaron las funciones de autocorrelaci√≥n.
 
-De igual manera las correcciones se realizan en funciÛn de lo observado en las funciones de autocorrelaciÛn de los residuos, esto para corregir la estructura SARMA del modelo. Por otro lado, para corregir la funciÛn de respuesta al impulso $v(B)$ se analiza la correlaciÛn cruzada entre los residuos $\varepsilon_t$ y los $x_t$, que se puede probar, mide la discrepancia entre el modelo real versus el modelo planteado.
+De igual manera las correcciones se realizan en funci√≥n de lo observado en las funciones de autocorrelaci√≥n de los residuos, esto para corregir la estructura SARMA del modelo. Por otro lado, para corregir la funci√≥n de respuesta al impulso $v(B)$ se analiza la correlaci√≥n cruzada entre los residuos $\varepsilon_t$ y los $x_t$, que se puede probar, mide la discrepancia entre el modelo real versus el modelo planteado.
 
 \end{enumerate}
 
 
-\paragraph{ObservaciÛn.} Un caso m·s general del modelo SARIMAX antes expuesto, es considerar m·s de una variable exÛgena, autores como \citeauthor{pankratz2012forecasting} \citeyear{pankratz2012forecasting} abordan ampliamente el problema de identificaciÛn de esta clase de modelos, que resulta an·loga a la metodologÌa aquÌ expuesta. TambiÈn desarrolla un an·lisis detallado de las funciones de respuesta al impulso, los patrones que siguen los coeficientes $v_j$ gr·ficamente, seg˙n el Ûrden de los polinomios que los componen.
+\paragraph{Observaci√≥n.} Un caso m√°s general del modelo SARIMAX antes expuesto, es considerar m√°s de una variable ex√≥gena, autores como \citeauthor{pankratz2012forecasting} \citeyear{pankratz2012forecasting} abordan ampliamente el problema de identificaci√≥n de esta clase de modelos, que resulta an√°loga a la metodolog√≠a aqu√≠ expuesta. Tambi√©n desarrolla un an√°lisis detallado de las funciones de respuesta al impulso, los patrones que siguen los coeficientes $v_j$ gr√°ficamente, seg√∫n el √≥rden de los polinomios que los componen.

@@ -1,60 +1,61 @@
-\chapter{MetodologÌa} \label{cap2}
+\chapter{Metodolog√≠a} \label{cap2}
 
 
-En este capÌtulo se describe a detalle la metodologÌa utilizada en la construcciÛn de los modelos que proponemos para analizar los caudales de los rÌos correspondientes a las 179 estaciones de mediciÛn. Resumimos las etapas de este an·lisis a continuaciÛn:
+En este cap√≠tulo se describe a detalle la metodolog√≠a utilizada en la construcci√≥n de los modelos que proponemos para analizar los caudales de los r√≠os correspondientes a las 179 estaciones de medici√≥n. Resumimos las etapas de este an√°lisis a continuaci√≥n:
 
 \begin{enumerate}
 
-\item Realizar An·lisis de Conglomerados (Cl˙ster).
+\item Realizar An√°lisis de Conglomerados (Cl√∫ster).
 \begin{enumerate}
-\item Elegir la MÈtrica (disimilitud). Se consideran dos mÈtricas, y se escoge la m·s adecuada.
+\item Elegir la M√©trica (disimilitud). Se consideran dos m√©tricas, y se escoge la m√°s adecuada.
 \item Elegir algoritmo de agrupamiento. En nuestro caso el algoritmo CLARA, basado en el algoritmo PAM.
-\item Elegir el n˙mero de cl˙sters.
+\item Elegir el n√∫mero de cl√∫sters.
 \end{enumerate}
 
-\item Obtener un modelo que represente el comportamiento de cada cl˙ster.
+\item Obtener un modelo que represente el comportamiento de cada cl√∫ster.
+
 \begin{enumerate}
-\item Una opciÛn consiste de aplicar An·lisis de Componentes principales Funcional (ACPF), a partir de este se obtiene un indicador temporal (serie de tiempo) que resume el comportamiento de todos los miembros del cl˙ster. Hecho esto, se modela el indicador que representa el cl˙ster mediante un modelo SARIMA. AsÌ, se obtiene un modelo por cada cl˙ster.
-\item La segunda opciÛn consiste de identificar a la serie de tiempo m·s \textit{central} del cl˙ster, es decir, hallamos la serie m·s cercana, en tÈrminos de la mÈtrica elegida, a todas las series del cl˙ster. Identificada esta serie, se procede a modelarla mediante un modelo SARIMAX, que incluye variables exÛgenas, para ello consideraremos los series temporales asociadas a datos de clima (precipitaciÛn, temperaturas m·xima y mÌnima y humedad relativa) de la estaciÛn de mediciÛn m·s cercana. Por lo tanto de este paso obtenemos tambiÈn un modelo por cl˙ster.
-\item Ahora podemos comparar este par de modelos y optar por aquel que produzca mejores resultados en, tÈrminos generales, considerando criterios como la cantidad de InformaciÛn, y el poder predictivo.
+\item Una opci√≥n consiste en agregar la informaci√≥n de las series de tiempo que componen el cl√∫ster considerando la media funcinal, considerando las series como trayectorias de un mismo proceso, esta nueva serie resume el comportamiento de todos los miembros del cl√∫ster. Hecho esto, se modela la media funcional que representa el cl√∫ster mediante un modelo SARIMA. As√≠, se obtiene un modelo por cada cl√∫ster.
+\item La segunda opci√≥n consiste de identificar a la serie de tiempo m√°s \textit{central} del cl√∫ster, es decir, hallamos la serie m√°s cercana, en t√©rminos de la m√©trica elegida, a todas las series del cl√∫ster. Identificada esta serie, se procede a modelarla mediante un modelo SARIMAX, que incluye variables ex√≥genas, para ello consideraremos los series temporales asociadas a datos de clima (precipitaci√≥n, temperaturas m√°xima y m√≠nima y humedad relativa) de la estaci√≥n de medici√≥n m√°s cercana. Por lo tanto de este paso obtenemos tambi√©n un modelo por cl√∫ster.
+\item Ahora podemos comparar este par de modelos y optar por aquel que produzca mejores resultados en, t√©rminos generales, considerando criterios como la cantidad de Informaci√≥n, y el poder predictivo.
 
 \end{enumerate}
-\item Una vez elegido el modelo para cada cl˙ster, procedemos a modelar cada una de las 179 series de caudales. Para ello, reciclamos informaciÛn del modelo del cl˙ster. Por ejemplo, si el modelo de un cl˙ster	es SARIMA $(p_0,d_0,q_0)$ $(P_0,D_0,Q_0)_s_0$, entonces, para modelar una serie perteneciente a dicho cl˙ster, lo hacemos precisamente mediante un modelo SARIMA fijando los mismos par·metros $p_0, d_0, q_0, P_0, D_0, Q_0, s_0$, y posteriormente estimando los coeficientes de los polinomios en retardos asociados a este modelo. 
+\item Una vez elegido el modelo para cada cl√∫ster, procedemos a modelar cada una de las 179 series de caudales. Para ello, reciclamos informaci√≥n del modelo del cl√∫ster. Por ejemplo, si el modelo de un cl√∫ster	es SARIMA $(p_0,d_0,q_0)$ $(P_0,D_0,Q_0)_s_0$, entonces, para modelar una serie perteneciente a dicho cl√∫ster, lo hacemos precisamente mediante un modelo SARIMA fijando los mismos par√°metros $p_0, d_0, q_0, P_0, D_0, Q_0, s_0$, y posteriormente estimando los coeficientes de los polinomios en retardos asociados a este modelo. 
 
 \end{enumerate}
 
-Es decir, al aplicar esta metodologÌa es necesario analizar una serie de tiempo por cada cl˙ster, en lugar de analizar 179. A continuaciÛn se muestran los resultados obtenidos en cada etapa.
+Es decir, al aplicar esta metodolog√≠a es necesario analizar una serie de tiempo por cada cl√∫ster, en lugar de analizar 179. A continuaci√≥n se muestran los resultados obtenidos en cada etapa.
 
-\paragraph{Nota.-} Toda esta metodologÌa se automatizÛ, mediante la creaciÛn de una aplicaciÛn web, disponible al p˙blico, basada completamente en el lenguaje de programaciÛn R. Puede ver a detalle el desarrollo del cÛdigo para esta investigaciÛn en el apÈndice \ref{chp:webapp}. Todos los resultados mostrados a partir de este punto se pueden obtener en dicha aplicaciÛn.
+\paragraph{Nota.-} Toda esta metodolog√≠a se automatiz√≥, mediante la creaci√≥n de una aplicaci√≥n web, disponible al p√∫blico, basada completamente en el lenguaje de programaci√≥n R (versi√≥n 3.5). Puede ver a detalle el desarrollo del c√≥digo para esta investigaci√≥n en el ap√©ndice \ref{chp:webapp}. Todos los resultados mostrados a partir de este punto se pueden obtener en dicha aplicaci√≥n.
 
 
 %% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-\section{AplicaciÛn del An·lisis Cl˙ster}
+\section{Aplicaci√≥n del An√°lisis Cl√∫ster}
 
 
-Pues bien, como ya se mencionÛ en el capÌtulo anterior, tenemos varias mÈtricas definidas para series de tiempo, de las que consideramos dos ($d_{ACF}$ y $d_{PIC}$) relacionadas directamente al modelamiento en retardos de las series de tiempo, sin embargo como ya se comentÛ $d_{PIC}$ tiene la desventaja de que es necesario conocer a priori la estructura ARIMA de las series para poder calcularla, por esa razÛn se eligiÛ la mÈtrica $d_{ACF}$, que ˙nicamente se basa en los coeficientes de autocorrelaciÛn estimados, los que son sencillos de calcular. A partir de est· mÈtrica, se calcula la matriz de distancias $D$, tabla \ref{tab:d_matriz}.
+Pues bien, como ya se mencion√≥ en el cap√≠tulo anterior, tenemos varias m√©tricas definidas para series de tiempo, de las que consideramos dos ($d_{ACF}$ y $d_{PIC}$) relacionadas directamente al modelamiento en retardos de las series de tiempo, sin embargo como ya se coment√≥ $d_{PIC}$ tiene la desventaja de que es necesario conocer a priori la estructura ARIMA de las series para poder calcularla, por esa raz√≥n se eligi√≥ la m√©trica $d_{ACF}$, que √∫nicamente se basa en los coeficientes de autocorrelaci√≥n estimados, los que son sencillos de calcular. A partir de est√° m√©trica, se calcula la matriz de distancias $D$, tabla \ref{tab:d_matriz}.
 
 
 
-% \section{ElecciÛn de MÈtrica}
+% \section{Elecci√≥n de M√©trica}
 % \label{sec3metrica}
-% Se selecciona la mÈtrica (en general se usa una funciÛn de disimilitud) asociada la AutocorrelaciÛn (relaciÛn con sus propios retardos), ya que compara el comportamiento Temporal  de una pareja de series por lo que es ˙til para una posterior modelamiento (SARIMAX por ejemplo, que considera un modelo dependiente del pasado de la serie). A partir de esta pseudo-mÈtrica se genera una matriz de distancias entre todas las estaciones de mediciÛn de caudales.
+% Se selecciona la m√©trica (en general se usa una funci√≥n de disimilitud) asociada la Autocorrelaci√≥n (relaci√≥n con sus propios retardos), ya que compara el comportamiento Temporal  de una pareja de series por lo que es √∫til para una posterior modelamiento (SARIMAX por ejemplo, que considera un modelo dependiente del pasado de la serie). A partir de esta pseudo-m√©trica se genera una matriz de distancias entre todas las estaciones de medici√≥n de caudales.
 % 
 % \[
 % d_{ACF}(x,y) = \sqrt{(\hat \rho_x - \hat\rho_y)'\Omega(\hat{\rho}_x-\hat{\rho}_y)}
 % \]
 % 
-% donde $\hat{\rho}$ es el vector de coeficientes de autocorrelaciÛn estimados, mientras que $\Omega$ es una matriz de pesos usualmente $\Omega=I$ y asÌ se obtiene la distancia Euclidea entre los coeficientes de autocorrelaciÛn, o $\Omega=[cov(\hat\rho)]^{-1}$ y en este caso se obtiene la distancia de Mahalanobis entre los coeficientes de autocorrelaciÛn.
+% donde $\hat{\rho}$ es el vector de coeficientes de autocorrelaci√≥n estimados, mientras que $\Omega$ es una matriz de pesos usualmente $\Omega=I$ y as√≠ se obtiene la distancia Euclidea entre los coeficientes de autocorrelaci√≥n, o $\Omega=[cov(\hat\rho)]^{-1}$ y en este caso se obtiene la distancia de Mahalanobis entre los coeficientes de autocorrelaci√≥n.
 
 
-\subsection{RepresentaciÛn de $D$}
+\subsection{Representaci√≥n de $D$}
 
-A partir de la matriz, y usando la tÈcnica de Escalonamiento Multidimensional (MDS), obtenemos una representaciÛn en 2 dimensiones de cada serie de tiempo (asociada a una estaciÛn de mediciÛn de caudales). Es decir, obtenemos 179 puntos en $\R^2$ cuya matriz de distancias es lo m·s parecida posible a $D$, se muestra dicha representaciÛn en la figura \ref{fig:puntosD}
+A partir de la matriz, y usando la t√©cnica de Escalonamiento Multidimensional (MDS), obtenemos una representaci√≥n en 2 dimensiones de cada serie de tiempo (asociada a una estaci√≥n de medici√≥n de caudales). Es decir, obtenemos 179 puntos en $\R^2$ cuya matriz de distancias es lo m√°s parecida posible a $D$, se muestra dicha representaci√≥n en la figura \ref{fig:puntosD}
 
 
 
-<<fig.width=5,fig.height=4,fig.cap='MDS - RepresentaciÛn en $R^2$ de $D$'>>=
+<<fig.width=5,fig.height=4,fig.cap='MDS - Representaci√≥n en $R^2$ de $D$'>>=
 # library(readxl)
 # library(ggplot2)
 dimR2 <- read_excel("Resultados/1_tabla_dimensionesR2.xlsx",skip=1)
@@ -65,102 +66,102 @@ ggplot(dimR2, aes(D1, D2)) + geom_point(size = 2.2,alpha=I(0.4))+theme_minimal()
 
 
 
-\subsection{ElecciÛn del Algoritmo de Agrupamiento}
+\subsection{Elecci√≥n del Algoritmo de Agrupamiento}
 
-A partir de la matriz de distancias $D$, y aplicando el tanto el algoritmo de agrupamiento CLARA como PAM, por ejemplo para formar $K=3$ grupos, obtenemos agrupaciones parecidas, tal como se puede ver en la figura \ref{fig:pam} , \ref{fig:clara}. Las ligeras semejanzas en los grupos formados obedece a que el algoritmo CLARA, usa el algoritmo PAM pero con remuestreo. Sin embargo, la diferencia radica en la velocidad de ejecuciÛn de ambos algoritmos, como ya lo mencionamos en el capÌtulo anterior, el algoritmo CLARA es mucho m·s eficiente en la formaciÛn de grupos (considerando el tiempo de ejecuciÛn).
+A partir de la matriz de distancias $D$, y aplicando el tanto el algoritmo de agrupamiento CLARA como PAM, por ejemplo para formar $K=3$ grupos, obtenemos agrupaciones parecidas, tal como se puede ver en la figura \ref{fig:pam} , \ref{fig:clara}. Las ligeras semejanzas en los grupos formados obedece a que el algoritmo CLARA, usa el algoritmo PAM pero con remuestreo. Sin embargo, la diferencia radica en la velocidad de ejecuci√≥n de ambos algoritmos, como ya lo mencionamos en el cap√≠tulo anterior, el algoritmo CLARA es mucho m√°s eficiente en la formaci√≥n de grupos (considerando el tiempo de ejecuci√≥n).
 
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{Resultados/1_Pamk3}
-\caption{Cl˙sters generados con PAM}\label{fig:pam}
+\caption{Cl√∫sters generados con PAM}\label{fig:pam}
 \end{figure}
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{Resultados/1_Clarak3}
-\caption{Cl˙sters generados con CLARA }\label{fig:clara}
+\caption{Cl√∫sters generados con CLARA }\label{fig:clara}
 \end{figure}
 
 
 
 
-\subsection{ElecciÛn de n˙mero de cl˙sters}
-En esta secciÛn, haremos uso del estadÌstico GAP, antes descrito, que nos permitir· hallar el n˙mero m·s adecuado de grupos, que debemos formar. Se resumen los resultados de este estadÌstico, para distintos n˙mero de cl˙sters formados con el algoritmo CLARA, en la figura \ref{fig:k_opt}.
+\subsection{Elecci√≥n de n√∫mero de cl√∫sters}
+En esta secci√≥n, haremos uso del estad√≠stico GAP, antes descrito, que nos permitir√° hallar el n√∫mero m√°s adecuado de grupos, que debemos formar. Se resumen los resultados de este estad√≠stico, para distintos n√∫mero de cl√∫sters formados con el algoritmo CLARA, en la figura \ref{fig:k_opt}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.65]{Resultados/4_k_optimo_clusters}
-\caption{N˙mero ”ptimo de Clusters }\label{fig:k_opt}
+\caption{N√∫mero √ìptimo de Clusters }\label{fig:k_opt}
 \end{figure}
 
-Como vemos el n˙mero Ûptimo de cl˙sters en los que debemos agrupar las series de tiempo es $K=4$.
+Como vemos el n√∫mero √≥ptimo de cl√∫sters en los que debemos agrupar las series de tiempo es $K=4$.
 
 
-\subsection{CaracterÌsticas de Cl˙sters formados}
-Elegido el n˙mero de cl˙sters adecuado, ejecutamos el algoritmo CLARA con $K=4$ n˙mero de cl˙sters, y obtenemos los distintos grupos a los que corresponde cada serie. A continuaciÛn, analizaremos distintas representaciones de los cl˙sters.
+\subsection{Caracter√≠sticas de Cl√∫sters formados}
+Elegido el n√∫mero de cl√∫sters adecuado, ejecutamos el algoritmo CLARA con $K=4$ n√∫mero de cl√∫sters, y obtenemos los distintos grupos a los que corresponde cada serie. A continuaci√≥n, analizaremos distintas representaciones de los cl√∫sters.
 
 \begin{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item \textit{RepresentaciÛn en $\R^2$.} Como se puede apreciar en la figura \ref{fig:puntosR2}, las envolventes convexas de los puntos de cada cl˙ster forman grupos bien definidos de puntos (estaciones), que a pesar de estar bastante cercanos, ninguno de ellos se sobrepone a los otros.
+\item \textit{Representaci√≥n en $\R^2$.} Como se puede apreciar en la figura \ref{fig:puntosR2}, las envolventes convexas de los puntos de cada cl√∫ster forman grupos bien definidos de puntos (estaciones), que a pesar de estar bastante cercanos, ninguno de ellos se sobrepone a los otros.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.65]{Resultados/2_plot_cluster_dimensiones}
-\caption{RepresentaciÛn de Cl˙sters en $\R^2$ }\label{fig:puntosR2}
+\caption{Representaci√≥n de Cl√∫sters en $\R^2$ }\label{fig:puntosR2}
 \end{figure}
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item \textit{RepresentaciÛn geogr·fica.} Como se puede apreciar en la figura \ref{fig:mapa}, vemos que a diferencia de la representaciÛn de las estaciones en $\R^2$, no tenemos regiones bien definidas, hay cl˙sters que poseen estaciones (de otros cl˙sters) dentro de la regiÛn que delimitan sus elementos, por lo que parecerÌan mezclarse. Cabe la pena destacar que, viendo con mayor detalle, las serie de un mismo cl˙ster tienden a disponerse sobre la ribera de un mismo rÌo, como se ve por ejemplo en la figura \ref{fig:mapa_zoom}, esto se explicarÌa por la elecciÛn de la mÈtrica con la que construimos los cl˙sters, ya que considera la estructura temporal del caudal (medido en las estaciones) y deja de lado la escala. AsÌ si en dos estaciones los caudales crecen (o decrecen) en espacios de tiempo parecidos, y si considerar a que escala, entonces su distancia $d_{ACF}$ ser· pequeÒa.
+\item \textit{Representaci√≥n geogr√°fica.} Como se puede apreciar en la figura \ref{fig:mapa}, vemos que a diferencia de la representaci√≥n de las estaciones en $\R^2$, no tenemos regiones bien definidas, hay cl√∫sters que poseen estaciones (de otros cl√∫sters) dentro de la regi√≥n que delimitan sus elementos, por lo que parecer√≠an mezclarse. Cabe la pena destacar que, viendo con mayor detalle, las serie de un mismo cl√∫ster tienden a disponerse sobre la ribera de un mismo r√≠o, como se ve por ejemplo en la figura \ref{fig:mapa_zoom}, esto se explicar√≠a por la elecci√≥n de la m√©trica con la que construimos los cl√∫sters, ya que considera la estructura temporal del caudal (medido en las estaciones) y deja de lado la escala. As√≠ si en dos estaciones los caudales crecen (o decrecen) en espacios de tiempo parecidos, y si considerar a que escala, entonces su distancia $d_{ACF}$ ser√° peque√±a.
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{Resultados/3_mapa_clusters}
-\caption{RepresentaciÛn Geogr·fica de Cl˙sters}\label{fig:mapa}
+\caption{Representaci√≥n Geogr√°fica de Cl√∫sters}\label{fig:mapa}
 \end{figure}
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.55]{Resultados/3_mapa_zoom}
-\caption{Acercamiento a Cl˙ster (representaciÛn Geogr·fica)}\label{fig:mapa_zoom}
+\caption{Acercamiento a Cl√∫ster (representaci√≥n Geogr√°fica)}\label{fig:mapa_zoom}
 \end{figure}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item \textit{Gr·fico de las Series de Tiempo.} Como se puede observar en la figura \ref{fig:serie_clust1.1}, y como era de esperarse, las series de tiempo del Cl˙ser 1, tiene un comportamiento parecido en todo el periodo considerado, variando solo en escala. Lo propio sucede en el Cl˙ster 2 y 4, como se pude observar en las figuras \ref{fig:serie_clust1.2}, \ref{fig:serie_clust1.4}. Mientras que el Cl˙ster 3 se observan series que parecen tener un comportamiento temporal menos parecido que el visto en los otros cl˙sters, aunque tras una observaciÛn m·s minuciosa vemos que en realidad las series son parecidas considerando unos retardos.
+\item \textit{Gr√°fico de las Series de Tiempo.} Como se puede observar en la figura \ref{fig:serie_clust1.1}, y como era de esperarse, las series de tiempo del Cl√∫ser 1, tiene un comportamiento parecido en todo el periodo considerado, variando solo en escala. Lo propio sucede en el Cl√∫ster 2 y 4, como se pude observar en las figuras \ref{fig:serie_clust1.2}, \ref{fig:serie_clust1.4}. Mientras que el Cl√∫ster 3 se observan series que parecen tener un comportamiento temporal menos parecido que el visto en los otros cl√∫sters, aunque tras una observaci√≥n m√°s minuciosa vemos que en realidad las series son parecidas considerando unos retardos.
 % Resultados/Cluster 1/1_series_cluster.png
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{Resultados/Cluster1/1_series_cluster}
-\caption{Series de Tiempo del Cl˙ster 1}\label{fig:serie_clust1.1}
+\caption{Series de Tiempo del Cl√∫ster 1}\label{fig:serie_clust1.1}
 \end{figure}
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Resultados/Cluster2/1_series_cluster}
-\caption{Series de Tiempo del Cl˙ster 2}\label{fig:serie_clust1.2}
+\caption{Series de Tiempo del Cl√∫ster 2}\label{fig:serie_clust1.2}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Resultados/Cluster3/1_series_cluster}
-\caption{Series de Tiempo del Cl˙ster 3}\label{fig:serie_clust1.3}
+\caption{Series de Tiempo del Cl√∫ster 3}\label{fig:serie_clust1.3}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Resultados/Cluster4/1_series_cluster}
-\caption{Series de Tiempo del Cl˙ster 4}\label{fig:serie_clust1.4}
+\caption{Series de Tiempo del Cl√∫ster 4}\label{fig:serie_clust1.4}
 \end{figure}
 
 
@@ -178,7 +179,7 @@ Elegido el n˙mero de cl˙sters adecuado, ejecutamos el algoritmo CLARA con $K=4$ 
 
 % 
 % \begin{figure}[h]
-% \caption{Mapa de Cl˙sters}
+% \caption{Mapa de Cl√∫sters}
 % \includegraphics[width=15cm]{Cap3-Metodologia/Capture1.png}
 % \label{fig:mapa_clust}
 % \centering
@@ -186,43 +187,43 @@ Elegido el n˙mero de cl˙sters adecuado, ejecutamos el algoritmo CLARA con $K=4$ 
 % 
 % 
 % \begin{figure}[h]
-% \caption{Series del Cl˙ster 1}
+% \caption{Series del Cl√∫ster 1}
 % \includegraphics[width=15cm]{Cap3-Metodologia/Capture2.png}
 % \label{fig:clust1}
 % \centering
 % \end{figure}
 
-\section{An·lisis de Componente Principales Funcional}
-
-El ACP tÌpico se encarga de reducir la dimensiÛn de un conjunto de datos mediante el c·lculo de un grupo mucho menor de variables ortogonales que mejor representan el conjunto original de datos.
-An·logamente el an·lisis de componentes principales funcionales (ACPF) es una extensiÛn del ACP cl·sico en el que las componentes principales est·n representadas por funciones y no por vectores, como lo detallamos en el capÌtulo anterior. 
-
-AsÌ, podemos usar todas las series de tiempo asociadas a los caudales de un cl˙ster para hallar esta funciÛn (o funciones) que representan el comportamiento de todas las series del cl˙ster. Esto bajo el supuesto de que todas las series de un cl˙ster, son en realidad trayectorias de un mismo proceso estoc·stico. 
-
-
-\subsection{ACPF de los Cl˙sters}
-En la figura \ref{fig:acp_summ1} podemos observar, en la esquina superior izquierda, un gr·fico que muestra con cuantas observaciones se cuenta en cada punto de tiempo $t$, vemos que se cuenta con m·s de 4 observaciones, esto debido a que consideramos que cada serie del cl˙ster conforma una observaciÛn del proceso. En la parte superior derecha podemos observar la funciÛn media del proceso, como vemos esta muestra un comportamiento estacional parecido al de las series que componen el cl˙ster, por lo que m·s adelante la consideraremos como una candidata a ser representante del cl˙ster, esto a pesar de que en un principio se planeaba usar una de las componentes principales con ese fin. En la parte inferior izquierda encontramos un gr·fico que representa el porcentaje de variabilidad explicada por cada componente principal, como se puede observar la primera componente explica el $99\%$ de la variabilidad del proceso. Finalmente, el gr·fico restante representa las 3 primeras componentes principales (funcionales), vemos que la primera de ellas es una curva suave casi constante, que no posee un comportamiento estacional, razÛn por la que se la descarta como posible serie representante del cl˙ster.
-
-\begin{figure}[H]
-\includegraphics[width=15cm]{1_Cluster/ACPF}
-\caption{ACPF del Series del Cl˙ster 1}
-\label{fig:acp_summ1}
-\centering
-\end{figure}
-
-Otro gr·fico interesante de analizar, es el de la covarianza, recordando que en el caso funcional la funciÛn de covarianza es una superficie. La covarianza estimada del proceso asociado al cl˙ster 1 se ve en la parte izquierda de la figura \ref{fig:covar1}, como era de esperarse es una superficie con picos y valles, que indica el comportamiento estacional de todas las series que componen el cl˙ster. 
-
-\begin{figure}[H]
-\includegraphics[width=15cm]{1_Cluster/covarianza}
-\caption{Superficie de Covarianza Estimada (Cl˙ster 1)}
-\label{fig:covar1}
-\centering
-\end{figure}
-
-En la parte derecha de la misma figura encontramos un gr·fico de modos de variaciÛn, este gr·fico se usa para identificar niveles inusuales de variaciÛn en un proceso que esta compuesto por varias rÈplicas (trayectorias), cerca de la franja amarilla vemos hallamos trayectorias (series) cuyo comportamiento es m·s usual, es decir, la mayorÌa de trayectorias sigue esa tendencia, mientras que hacÌa los extremos (en color azul oscuro) encontramos las trayectorias menos comunes. Podemos evidenciar de igual manera un comportamiento periÛdico que es otra evidencia m·s de la estacionalidad que poseen las series del cl˙ster. 
-
-\paragraph{ObservaciÛn.} Las gr·ficas correspondientes a los otros tres cl˙sters se encuentran en el apÈndice \ref{ap:acpf}.
-
+% \section{An√°lisis de Componente Principales Funcional}
+% 
+% El ACP t√≠pico se encarga de reducir la dimensi√≥n de un conjunto de datos mediante el c√°lculo de un grupo mucho menor de variables ortogonales que mejor representan el conjunto original de datos.
+% An√°logamente el an√°lisis de componentes principales funcionales (ACPF) es una extensi√≥n del ACP cl√°sico en el que las componentes principales est√°n representadas por funciones y no por vectores, como lo detallamos en el cap√≠tulo anterior. 
+% 
+% As√≠, podemos usar todas las series de tiempo asociadas a los caudales de un cl√∫ster para hallar esta funci√≥n (o funciones) que representan el comportamiento de todas las series del cl√∫ster. Esto bajo el supuesto de que todas las series de un cl√∫ster, son en realidad trayectorias de un mismo proceso estoc√°stico. 
+% 
+% 
+% \subsection{ACPF de los Cl√∫sters}
+% En la figura \ref{fig:acp_summ1} podemos observar, en la esquina superior izquierda, un gr√°fico que muestra con cuantas observaciones se cuenta en cada punto de tiempo $t$, vemos que se cuenta con m√°s de 4 observaciones, esto debido a que consideramos que cada serie del cl√∫ster conforma una observaci√≥n del proceso. En la parte superior derecha podemos observar la funci√≥n media del proceso, como vemos esta muestra un comportamiento estacional parecido al de las series que componen el cl√∫ster, por lo que m√°s adelante la consideraremos como una candidata a ser representante del cl√∫ster, esto a pesar de que en un principio se planeaba usar una de las componentes principales con ese fin. En la parte inferior izquierda encontramos un gr√°fico que representa el porcentaje de variabilidad explicada por cada componente principal, como se puede observar la primera componente explica el $99\%$ de la variabilidad del proceso. Finalmente, el gr√°fico restante representa las 3 primeras componentes principales (funcionales), vemos que la primera de ellas es una curva suave casi constante, que no posee un comportamiento estacional, raz√≥n por la que se la descarta como posible serie representante del cl√∫ster.
+% 
+% \begin{figure}[H]
+% \includegraphics[width=15cm]{1_Cluster/ACPF}
+% \caption{ACPF del Series del Cl√∫ster 1}
+% \label{fig:acp_summ1}
+% \centering
+% \end{figure}
+% 
+% Otro gr√°fico interesante de analizar, es el de la covarianza, recordando que en el caso funcional la funci√≥n de covarianza es una superficie. La covarianza estimada del proceso asociado al cl√∫ster 1 se ve en la parte izquierda de la figura \ref{fig:covar1}, como era de esperarse es una superficie con picos y valles, que indica el comportamiento estacional de todas las series que componen el cl√∫ster. 
+% 
+% \begin{figure}[H]
+% \includegraphics[width=15cm]{1_Cluster/covarianza}
+% \caption{Superficie de Covarianza Estimada (Cl√∫ster 1)}
+% \label{fig:covar1}
+% \centering
+% \end{figure}
+% 
+% En la parte derecha de la misma figura encontramos un gr√°fico de modos de variaci√≥n, este gr√°fico se usa para identificar niveles inusuales de variaci√≥n en un proceso que esta compuesto por varias r√©plicas (trayectorias), cerca de la franja amarilla vemos hallamos trayectorias (series) cuyo comportamiento es m√°s usual, es decir, la mayor√≠a de trayectorias sigue esa tendencia, mientras que hac√≠a los extremos (en color azul oscuro) encontramos las trayectorias menos comunes. Podemos evidenciar de igual manera un comportamiento peri√≥dico que es otra evidencia m√°s de la estacionalidad que poseen las series del cl√∫ster. 
+% 
+% \paragraph{Observaci√≥n.} Las gr√°ficas correspondientes a los otros tres cl√∫sters se encuentran en el ap√©ndice \ref{ap:acpf}.
+% 
 
 
 
@@ -232,23 +233,23 @@ En la parte derecha de la misma figura encontramos un gr·fico de modos de variac
 
 \section{Modelamiento de Series de tiempo}
 
-En esta secciÛn, se plantear·n dos modelos para cada cl˙ster. Por una parte, plantearemos un modelo SARIMA aplicado a un representate del cl˙ster, una primera idea era considerar la como serie representativa a la primera componente principal obtenida del ACP funcional del cl˙ster, si embargo como pudimos constatar en la secciÛn anterior, dicha serie no recoge el comportamiento estacional de los caudales, por esta razÛn optamos por elegir a la media funcional de las series (vistas como trayectorias de un mismo proceso estoc·stico), que como vimos tiene un comportamiento bastante similar, aunque suavizado, al de todas las series del cl˙ster.
+En esta secci√≥n, se plantear√°n dos modelos para cada cl√∫ster. Por una parte, plantearemos un modelo SARIMA aplicado a un representate del cl√∫ster, una primera idea era considerar la como serie representativa a la primera componente principal obtenida del ACP funcional del cl√∫ster, si embargo como pudimos constatar en la secci√≥n anterior, dicha serie no recoge el comportamiento estacional de los caudales, por esta raz√≥n optamos por elegir a la media funcional de las series (vistas como trayectorias de un mismo proceso estoc√°stico), que como vimos tiene un comportamiento bastante similar, aunque suavizado, al de todas las series del cl√∫ster.
 
-El segundo modelo que planteamos es un modelo SARIMAX aplicado a la serie \textit{medoide} del cl˙ster, es decir, aquella serie m·s centralmente ubicada (en tÈrminos de la mÈtrica $d_{ACF}$), estas series se obtienen durante la ejecuciÛn del algoritmo de agrupamiento CLARA (y tambiÈn PAM). Consideramos en este caso como variables regresoras a las series clim·ticas, de la estaciÛn geogr·ficamente m·s cercana a la estaciÛn de mediciÛn de caudales.
+El segundo modelo que planteamos es un modelo SARIMAX aplicado a la serie \textit{medoide} del cl√∫ster, es decir, aquella serie m√°s centralmente ubicada (en t√©rminos de la m√©trica $d_{ACF}$), estas series se obtienen durante la ejecuci√≥n del algoritmo de agrupamiento CLARA (y tambi√©n PAM). Consideramos en este caso como variables regresoras a las series clim√°ticas, de la estaci√≥n geogr√°ficamente m√°s cercana a la estaci√≥n de medici√≥n de caudales.
 
-A continuaciÛn mostramos un paso previo, la limpieza de los datos que poseemos, necesaria para un correcto modelamiento de series temporales.
+A continuaci√≥n mostramos un paso previo, la limpieza de los datos que poseemos, necesaria para un correcto modelamiento de series temporales.
 
-\paragraph{Limpieza de Datos de Clima} Un punto importante previo al modelamiento, es la limpieza de los datos. En este caso contamos con una alta presencia de valores perdidos especialmente en las series asociadas a variables Clim·ticas. Por lo que consideramos retirar todas aquellas series que contengan m·s del $10\%$ de valores perdidos. 
-Mientras que para las restantes, aplicamos el algoritmo de limpieza a los valores perdidos de las series clim·ticas  (\ref{sec:limpieza}). 
+\paragraph{Limpieza de Datos de Clima} Un punto importante previo al modelamiento, es la limpieza de los datos. En este caso contamos con una alta presencia de valores perdidos especialmente en las series asociadas a variables Clim√°ticas. Por lo que consideramos retirar todas aquellas series que contengan m√°s del $10\%$ de valores perdidos. 
+Mientras que para las restantes, aplicamos el algoritmo de limpieza a los valores perdidos de las series clim√°ticas  (\ref{sec:limpieza}). 
 
-Pues bien, aplicando el algoritmo de de limpieza a las 4 variables clim·ticas (PrecipitaciÛn, temperatura m·xima, temperatura mÌnima, y humedad relativa), se obtuvieron valores simulados que concuerdan con los valores conocidos, considerando que las series, luego de este proceso de limpieza, no alteraron su estructura general, tal como se puede ver en la figura \ref{fig:climaLimp2}.
+Pues bien, aplicando el algoritmo de de limpieza a las 4 variables clim√°ticas (Precipitaci√≥n, temperatura m√°xima, temperatura m√≠nima, y humedad relativa), se obtuvieron valores simulados que concuerdan con los valores conocidos, considerando que las series, luego de este proceso de limpieza, no alteraron su estructura general, tal como se puede ver en la figura \ref{fig:climaLimp2}.
 
 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=10cm]{Cap3-Metodologia/limpieza.png}
-\caption{Serie de Tiempo Clim·tica}
+\caption{Serie de Tiempo Clim√°tica}
 \label{fig:clima2}
 
 \end{figure}
@@ -257,7 +258,7 @@ Pues bien, aplicando el algoritmo de de limpieza a las 4 variables clim·ticas (P
 \begin{figure}[H]
 \centering
 \includegraphics[width=10cm]{Cap3-Metodologia/limpieza2.png}
-\caption{Serie de Tiempo Clim·tica Corregida}
+\caption{Serie de Tiempo Clim√°tica Corregida}
 \label{fig:climaLimp2}
 
 \end{figure}
@@ -266,12 +267,12 @@ Pues bien, aplicando el algoritmo de de limpieza a las 4 variables clim·ticas (P
 
 % \section{Agrupar datos de Caudales y Clima}
 % 
-% Una vez corregidas las series clim·ticas, el criterio para agrupar las series clim·ticas con series de caudales de determinado cl˙ster es el siguiente:  Para cada serie de Caudales del cl˙ster se busca la serie clim·tica de la estaciÛn m·s cercana, 
+% Una vez corregidas las series clim√°ticas, el criterio para agrupar las series clim√°ticas con series de caudales de determinado cl√∫ster es el siguiente:  Para cada serie de Caudales del cl√∫ster se busca la serie clim√°tica de la estaci√≥n m√°s cercana, 
 % 
-% Finalmete esta lista de estaciones clim·ticas (y las 4 variables que la conforman) constituyen las variables explicativas del modelo que plantearemos adelante para poder explicar el comportamiento del Caudal de cada Cl˙ster, es decir, de la serie de Caudales que representa el cl˙ster obtenida del ACP-Funcional.
+% Finalmete esta lista de estaciones clim√°ticas (y las 4 variables que la conforman) constituyen las variables explicativas del modelo que plantearemos adelante para poder explicar el comportamiento del Caudal de cada Cl√∫ster, es decir, de la serie de Caudales que representa el cl√∫ster obtenida del ACP-Funcional.
 % 
 % \begin{figure}[h]
-% \caption{Serie de Tiempo Clim·tica Corregida}
+% \caption{Serie de Tiempo Clim√°tica Corregida}
 % \includegraphics[width=16cm]{Cap3-Metodologia/vazclim.png}
 % \label{fig:acpf1}
 % \centering
@@ -279,9 +280,9 @@ Pues bien, aplicando el algoritmo de de limpieza a las 4 variables clim·ticas (P
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Modelo SARIMA del Cl˙ster}
+\subsection{Modelo SARIMA del Cl√∫ster}
 
-Como lo mencionamos anteriormente, modelaremos una serie representante del cl˙ster, en este caso la media funcional de las series de caudales que lo componen (ver figura \ref{fig:sarima_serie}), para ello seguimos la metodologÌa Box y Jenkins, por lo que analizamos en primer lugar la funciÛn de AutocorrelaciÛn y AutocorrelaciÛn Parcial de la serie, como podemos ver en la figura \ref{fig:sarima_acf}, tenemos picos fuera de las bandas de confianza, que se repiten periÛdicamente (cada 12 retardos). 
+Como lo mencionamos anteriormente, modelaremos una serie representante del cl√∫ster, en este caso la media funcional de las series de caudales que lo componen (ver figura \ref{fig:sarima_serie}), para ello seguimos la metodolog√≠a Box y Jenkins, por lo que analizamos en primer lugar la funci√≥n de Autocorrelaci√≥n y Autocorrelaci√≥n Parcial de la serie, como podemos ver en la figura \ref{fig:sarima_acf}, tenemos picos fuera de las bandas de confianza, que se repiten peri√≥dicamente (cada 12 retardos). 
 
 <<>>=
 vaz_acp = read_excel("Resultados/Cluster1/vaz_acp_clust1.xlsx")
@@ -298,7 +299,7 @@ vazd1 = diff(vaz,lag=12,differences = 1)
 % \begin{figure}[h]
 % \centering
 % \includegraphics[width=13cm]{1_Cluster/sarima_serie}
-% \caption{Media Funcional (Cl˙ster 1)}
+% \caption{Media Funcional (Cl√∫ster 1)}
 % \label{fig:sarima_serie}
 % 
 % \end{figure}
@@ -307,7 +308,7 @@ vazd1 = diff(vaz,lag=12,differences = 1)
 % \begin{figure}[H]
 % \centering
 % \includegraphics[width=13cm]{1_Cluster/sarima_autocorr1}
-% \caption{FunciÛn de AutocorrelaciÛn: Media Funcional (Cl˙ster 1)}
+% \caption{Funci√≥n de Autocorrelaci√≥n: Media Funcional (Cl√∫ster 1)}
 % \label{fig:sarima_acf}
 % 
 % \end{figure}
@@ -315,7 +316,7 @@ vazd1 = diff(vaz,lag=12,differences = 1)
 % \begin{figure}[H]
 % \centering
 % \includegraphics[width=13cm]{1_Cluster/sarima_autocorrP1}
-% \caption{FunciÛn de AutocorrelaciÛn: Media Funcional (Cl˙ster 1)}
+% \caption{Funci√≥n de Autocorrelaci√≥n: Media Funcional (Cl√∫ster 1)}
 % \label{fig:sarima_pacf}
 % 
 % \end{figure}
@@ -338,7 +339,7 @@ ts_ggplot = function(serieDF , n_variable=3 , ylabel ="Caudal"){
       date_labels = "%b %Y"
     )+
     labs(
-      # title = "Caudal del cl˙ster 1", 
+      # title = "Caudal del cl√∫ster 1", 
       # subtitle = "Media Funcional",
       y = ylabel
     )+
@@ -355,7 +356,7 @@ ts_ggplot = function(serieDF , n_variable=3 , ylabel ="Caudal"){
 
 
 <<eval=FALSE>>=
-#============    Funcion de Graficas AutocorrelaciÛn y Parcial    =======================
+#============    Funcion de Graficas Autocorrelaci√≥n y Parcial    =======================
 
 
 acf_ggplot = function(serie){
@@ -366,7 +367,7 @@ acf_ggplot = function(serie){
                     conf.int.type = 'ma') + 
     theme_minimal() +
     labs(
-      title = "AutocorrelaciÛn"#,
+      title = "Autocorrelaci√≥n"#,
       # subtitle = "Media Funcional",
       # y = "Caudal"
     )
@@ -378,7 +379,7 @@ acf_ggplot = function(serie){
                      conf.int.type = 'ma') + 
     theme_minimal() +
     labs(
-      title = "AutocorrelaciÛn Parcial"#,
+      title = "Autocorrelaci√≥n Parcial"#,
       # subtitle = "Media Funcional",
       # y = "Caudal"
     )
@@ -398,7 +399,7 @@ acf_ggplot = function(serie){
 
 
 
-<<fig.pos= "H", fig.height=5, fig.cap="\\label{fig:sarima_serie} Caudal - Cl˙ster 1">>=
+<<fig.pos= "H", fig.height=5, fig.cap="\\label{fig:sarima_serie} Caudal - Cl√∫ster 1">>=
 
 ts_ggplot(vaz_acp)
 
@@ -406,7 +407,7 @@ ts_ggplot(vaz_acp)
 
 
 
-<<fig.pos= "H",fig.height=5,fig.cap="\\label{fig:sarima_acf} FunciÛn de AutocorrelaciÛn Caudal - Cl˙ster 1">>=
+<<fig.pos= "H",fig.height=5,fig.cap="\\label{fig:sarima_acf} Funci√≥n de Autocorrelaci√≥n Caudal - Cl√∫ster 1">>=
 
 acf_ggplot(vaz)
 
@@ -418,7 +419,7 @@ acf_ggplot(vaz)
 
 
 
-Es evidente que esta serie no es estacionaria, y que es necesaria una diferenciaciÛn de tipo estacional (ver figura \ref{fig:sarima_seried1}). DespuÈs de diferencial estacionalmente, tenemos una funciÛn de autocorrelaciÛn que no decrece r·pidamente y que en varios retardos se encuentra fuera de las bandas de confianza (ver figura \ref{fig:sarima_acf2}). Aunque podemos aplicar el test de Dickey Fuller para ver si es necesaria una diferenciaciÛn (no estacional) adicional.
+Es evidente que esta serie no es estacionaria, y que es necesaria una diferenciaci√≥n de tipo estacional (ver figura \ref{fig:sarima_seried1}). Despu√©s de diferencial estacionalmente, tenemos una funci√≥n de autocorrelaci√≥n que no decrece r√°pidamente y que en varios retardos se encuentra fuera de las bandas de confianza (ver figura \ref{fig:sarima_acf2}). Aunque podemos aplicar el test de Dickey Fuller para ver si es necesaria una diferenciaci√≥n (no estacional) adicional.
 % Test de DICKEY FULLER
 
 
@@ -438,7 +439,7 @@ tseries::adf.test(vazd1)
 
 
 
-<<fig.pos= "H",fig.height=3, fig.cap="\\label{fig:sarima_seried1} D(Caudal,12) - Cl˙ster 1">>=
+<<fig.pos= "H",fig.height=3, fig.cap="\\label{fig:sarima_seried1} D(Caudal,12) - Cl√∫ster 1">>=
 dvaz = data.frame(Fecha=vaz_acp$Fecha[-(1:12)],
                   DVazoePCA = vazd1)
 
@@ -447,7 +448,7 @@ ts_ggplot(dvaz, n_variable = 2, ylabel = "D(Caudal,12)")
 
 
 
-<<fig.pos= "H",fig.height=5,fig.cap="\\label{fig:sarima_acf2} FunciÛn de AutocorrelaciÛn D(Caudal,12) - Cl˙ster 1">>=
+<<fig.pos= "H",fig.height=5,fig.cap="\\label{fig:sarima_acf2} Funci√≥n de Autocorrelaci√≥n D(Caudal,12) - Cl√∫ster 1">>=
 
 acf_ggplot(dvaz$DVazoePCA)
 
@@ -517,7 +518,7 @@ tab_model = function(modelo,caption_text=NULL,label_text = NULL){
 
 
 % \newpage
-Como podemos ver en \ref{tab:dfuller}, el test de Dickey Fuller nos arroja un $\text{P-valor} = 0.016 < 0.05$, por lo que se concluye que el proceso ya es estacionario. Pues bien, en este punto conocemos los par·metros $d=0$ y $D=1$ del modelo SARIMA, nos resta identificar los Ûrdenes $p, P, q$ y $Q$ de los polinomios Autoregresivos y Medias MÛviles. Para ello, notemos que la funciÛn de autocorrelaciÛn parcial posee picos fuera de las  bandas hasta el retardo 5, por lo que la parte autoregresiva del modelo podrÌa incluir 5 retardos, por lo tanto, comenzamos planteando un modelo SARIMA$(5,0,0)(0,1,0)_{12}$. 
+Como podemos ver en \ref{tab:dfuller}, el test de Dickey Fuller nos arroja un $\text{P-valor} = 0.016 < 0.05$, por lo que se concluye que el proceso ya es estacionario. Pues bien, en este punto conocemos los par√°metros $d=0$ y $D=1$ del modelo SARIMA, nos resta identificar los √≥rdenes $p, P, q$ y $Q$ de los polinomios Autoregresivos y Medias M√≥viles. Para ello, notemos que la funci√≥n de autocorrelaci√≥n parcial posee picos fuera de las  bandas hasta el retardo 5, por lo que la parte autoregresiva del modelo podr√≠a incluir 5 retardos, por lo tanto, comenzamos planteando un modelo SARIMA$(5,0,0)(0,1,0)_{12}$. 
 
 <<fig.pos="H">>=
 {
@@ -541,7 +542,7 @@ tab_model(ms1,label_text = "mod:sarima1",caption_text = "SARIMA$(5,0,0)(0,1,0)_{
 @
 
 
-Como se puede ver en la tabla \ref{mod:sarima1}, los coeficientes asociados a los dos mayores retardos del polinomio AR son no significativos, por lo que es posible que sea necesario quitarlos del modelo. Por otra parte analizando los residuos del modelo, podemos observar por una parte que la funciÛn de AutocorrelaciÛn se encuentra dentro de las bandas de confianza, excepto en el retardo 12, por otro lado analizando los P-valores del Test Portmanteau (ver figura \ref{fig:sarima_residJ1}), en la versiÛn de Ljung-Box, vemos que estos son menores a 0.05 a partir del retardo 7, por lo que se concluye que los residuos son significativos. Por lo tanto, no se rechaza la independencia de los residuos de este modelo, asÌ que es necesario modificarlo.
+Como se puede ver en la tabla \ref{mod:sarima1}, los coeficientes asociados a los dos mayores retardos del polinomio AR son no significativos, por lo que es posible que sea necesario quitarlos del modelo. Por otra parte analizando los residuos del modelo, podemos observar por una parte que la funci√≥n de Autocorrelaci√≥n se encuentra dentro de las bandas de confianza, excepto en el retardo 12, por otro lado analizando los P-valores del Test Portmanteau (ver figura \ref{fig:sarima_residJ1}), en la versi√≥n de Ljung-Box, vemos que estos son menores a 0.05 a partir del retardo 7, por lo que se concluye que los residuos son significativos. Por lo tanto, no se rechaza la independencia de los residuos de este modelo, as√≠ que es necesario modificarlo.
 
 
 
@@ -580,7 +581,7 @@ tab_model(ms1,label_text = "mod:sarima_resid12",caption_text = "SARIMA(4,0,0)(0,
 @
 
 
-En cuanto a los residuos de este modelo se puede ver en la figura \ref{fig:sarima_resid12} que la funciÛn de autocorrelaciÛn tiene un pico fuera de las bandas ˙nicamente en el retardo 12, por lo que es posible que sea necesario incorporar un retardo del polinomio media mÛvil (MA) o autoregresivo (AR) estacional. Adem·s, se puede observar que los p-valores del estadÌstico de Ljung-Box aun son menores que 0.05 despuÈs del sÈptimo retardo.
+En cuanto a los residuos de este modelo se puede ver en la figura \ref{fig:sarima_resid12} que la funci√≥n de autocorrelaci√≥n tiene un pico fuera de las bandas √∫nicamente en el retardo 12, por lo que es posible que sea necesario incorporar un retardo del polinomio media m√≥vil (MA) o autoregresivo (AR) estacional. Adem√°s, se puede observar que los p-valores del estad√≠stico de Ljung-Box aun son menores que 0.05 despu√©s del s√©ptimo retardo.
 
 
 <<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarima_resid12} Residuos - Test Portmanteau (Ljung-Box) SARIMA(4,0,0)(0,1,0)" >>=
@@ -590,7 +591,7 @@ tsdiag(ms1, gof.lag = 24)
 @
 
 
-Pues bien, agregamos ahora al modelo el primer retardo del polinomio autoregresivo estacional, con lo que planterÌamos  un modelo SARIMA$(4,0,0)(1,1,0)_{12}$. Tal como se puede ver en la tabla \ref{mod:sarima_resid13}, tenemos un modelo con todos los coeficientes significativos, y con residuos independientes, tal como se puede ver en la figura \ref{fig:sarima_resid13}. 
+Pues bien, agregamos ahora al modelo el primer retardo del polinomio autoregresivo estacional, con lo que planter√≠amos  un modelo SARIMA$(4,0,0)(1,1,0)_{12}$. Tal como se puede ver en la tabla \ref{mod:sarima_resid13}, tenemos un modelo con todos los coeficientes significativos, y con residuos independientes, tal como se puede ver en la figura \ref{fig:sarima_resid13}. 
 
 <<fig.pos="H" >>=
 {
@@ -622,13 +623,13 @@ tsdiag(ms1, gof.lag = 24)
 @
 
 
-Tras analizar estos estos tres modelos, y considerando los criterios de informaciÛn como los dados por los estadÌsticos AIC, BIC, y Hannan Quinn, se elige como mejor modelo al SARIMA$(4,0,0)(1,1,0)_{12}$, ya que minimiza todos estos criterios, obteniendo $AIC=\Sexpr{aic(ms1)} $, $BIC=\Sexpr{bic(ms1)}$, Hannan Quinn$=\Sexpr{hannanQ(ms1)}$. Adem·s posee residuos que se comportan como ruido blanco, seg˙n las pruebas, de  varianza menor. Finalmente podemos representar este modelo mediante la siguiente ecuaciÛn:
+Tras analizar estos estos tres modelos, y considerando los criterios de informaci√≥n como los dados por los estad√≠sticos AIC, BIC, y Hannan Quinn, se elige como mejor modelo al SARIMA$(4,0,0)(1,1,0)_{12}$, ya que minimiza todos estos criterios, obteniendo $AIC=\Sexpr{aic(ms1)} $, $BIC=\Sexpr{bic(ms1)}$, Hannan Quinn$=\Sexpr{hannanQ(ms1)}$. Adem√°s posee residuos que se comportan como ruido blanco, seg√∫n las pruebas, de  varianza menor. Finalmente podemos representar este modelo mediante la siguiente ecuaci√≥n:
 
 \begin{equation}\label{eq:sarima}
 (1- 2.659 B + 2.610 B^2 - 1.181 B^3  + 0.239 B^4)(1+ 0.738 B^{12})\Delta_{12} Y_t = \varepsilon_t
 \end{equation}
 
-\paragraph{ObservaciÛn.} Los modelos hallados para cada uno de los cuatro cl˙ster, siguiendo el mismo mÈtodo descrito en esta secciÛn, se encuentra en el apÈndice \ref{ap:sarima}. AsÌ mismo puede encontrar los coeficientes estimados, significancia de los mismos, y estadÌsticos de la bondad de ajuste, de los modelos de cada uno de las series asociadas a las estaciones que componen cada cl˙ster. Se comentar· m·s adelante, los resultados obtenidos en tÈrminos generales compar·ndolos con los modelos obtenidos usando los modelos SARIMAX que se presentan a continuaciÛn.
+\paragraph{Observaci√≥n.} Los modelos hallados para cada uno de los cuatro cl√∫ster, siguiendo el mismo m√©todo descrito en esta secci√≥n, se encuentra en el ap√©ndice \ref{ap:sarima}. As√≠ mismo puede encontrar los coeficientes estimados, significancia de los mismos, y estad√≠sticos de la bondad de ajuste, de los modelos de cada uno de las series asociadas a las estaciones que componen cada cl√∫ster. Se comentar√° m√°s adelante, los resultados obtenidos en t√©rminos generales compar√°ndolos con los modelos obtenidos usando los modelos SARIMAX que se presentan a continuaci√≥n.
 
 
 
@@ -643,9 +644,9 @@ Tras analizar estos estos tres modelos, y considerando los criterios de informac
 \newpage
 
 
-\subsection{Modelo SARIMAX del Cl˙ster}
+\subsection{Modelo SARIMAX del Cl√∫ster}
 
-En esta secciÛn hallaremos un segundo modelo que represente el Caudal para el cl˙ster 1, para ello consideraremos la serie \textit{medoide} del cl˙ster, hallamos una por cada cl˙ster durante la ejecuciÛn del algoritmo CLARA, y la usaremos como representante del comportamiento del caudal de este cl˙ster. Aplicaremos un modelo SARIMAX usando como variables regresoras a la PrecipitaciÛn, Temperatura M·xima, Temperatura MÌnima, y Humedad Relativa medidas en la estaciÛn m·s cercana (geogr·ficamente) a donde se midiÛ el caudal asociado al medoide (ver figuras \ref{fig:mapa_vaz}, \ref{fig:mapa_clm}.
+En esta secci√≥n hallaremos un segundo modelo que represente el Caudal para el cl√∫ster 1, para ello consideraremos la serie \textit{medoide} del cl√∫ster, hallamos una por cada cl√∫ster durante la ejecuci√≥n del algoritmo CLARA, y la usaremos como representante del comportamiento del caudal de este cl√∫ster. Aplicaremos un modelo SARIMAX usando como variables regresoras a la Precipitaci√≥n, Temperatura M√°xima, Temperatura M√≠nima, y Humedad Relativa medidas en la estaci√≥n m√°s cercana (geogr√°ficamente) a donde se midi√≥ el caudal asociado al medoide (ver figuras \ref{fig:mapa_vaz}, \ref{fig:mapa_clm}.
 
 
 <<>>=
@@ -656,7 +657,7 @@ est_clim = "CAMPOS NOVOS(83887)"
 @
 
 
-En este caso, el medoide correspondiente al cl˙ster 1 es el de la estaciÛn \Sexpr{"MACHADINHO (217)"} (ver figura \ref{fig:sarimax_serie}), mientras que la estaciÛn de clima m·s cercana, asociada a esta, es \Sexpr{"CAMPOS NOVOS(83887)"} (ver figura \ref{fig:sarimax_serieCl}). Siguiendo la metodologÌa propuesta por Box y Jenkins, cuya aplicaciÛn se encuentra a detalle en \cite{novales1993econometria}, obtenemos lo siguiente.
+En este caso, el medoide correspondiente al cl√∫ster 1 es el de la estaci√≥n \Sexpr{"MACHADINHO (217)"} (ver figura \ref{fig:sarimax_serie}), mientras que la estaci√≥n de clima m√°s cercana, asociada a esta, es \Sexpr{"CAMPOS NOVOS(83887)"} (ver figura \ref{fig:sarimax_serieCl}). Siguiendo la metodolog√≠a propuesta por Box y Jenkins, cuya aplicaci√≥n se encuentra a detalle en \citeauthor{novales1993econometria} \citeyear{novales1993econometria}, obtenemos lo siguiente.
 
 
 <<>>=
@@ -700,7 +701,7 @@ En este caso, el medoide correspondiente al cl˙ster 1 es el de la estaciÛn \Sexp
 @
 
 
-<<fig.pos="H",fig.height=5, fig.cap="\\label{fig:sarimax_serie} Caudal - EstaciÛn Machadinho">>=
+<<fig.pos="H",fig.height=5, fig.cap="\\label{fig:sarimax_serie} Caudal - Estaci√≥n Machadinho">>=
 VazData2 = VazData
 VazData2$Fecha = as.Date(VazData2$Fecha)
 ts_ggplot(VazData2,n_variable = 2)
@@ -709,12 +710,12 @@ ts_ggplot(VazData2,n_variable = 2)
 
 
 
-<<fig.pos="H",fig.height=8,fig.cap="\\label{fig:sarimax_serieCl} Series Clim·ticas - EstaciÛn Campos Novos">>=
+<<fig.pos="H",fig.height=8,fig.cap="\\label{fig:sarimax_serieCl} Series Clim√°ticas - Estaci√≥n Campos Novos">>=
 
 XData2 = XData
 XData2$Fecha = as.Date(XData2$Fecha)
 
-p1 = ts_ggplot(XData2,n_variable = 2,ylabel = "PrecipitaciÛn") + 
+p1 = ts_ggplot(XData2,n_variable = 2,ylabel = "Precipitaci√≥n") + 
   theme(axis.title.y = element_text(size = 8))
 p2 = ts_ggplot(XData2,n_variable = 3,ylabel = "Temperatura Maxima") + 
   theme(axis.title.y = element_text(size = 8))
@@ -733,16 +734,16 @@ grid.arrange(
 
 \subsubsection{Preblanqueo de Series}
 
-En primer lugar necesitamos \textit{preblanquear} las series, tanto la serie de caudal, como las cuatro series asociadas a clima. Para ello podemos analizar sus funciones de autocorrelaciÛn y realizar el test de Dickey Fuller, a fin de identificar si es necesario diferenciar las series. 
+En primer lugar necesitamos \textit{preblanquear} las series, tanto la serie de caudal, como las cuatro series asociadas a clima. Para ello podemos analizar sus funciones de autocorrelaci√≥n y realizar el test de Dickey Fuller, a fin de identificar si es necesario diferenciar las series. 
 
 
 \begin{itemize}
-\item Para preblanquear la serie de caudales del la estaciÛn \Sexpr{est_vaz} analizamos la funciÛn de autocorrelaciÛn  (ver figura \ref{fig:blan_acf_vz1}), que si bien es cierto presenta picos de periodicidad 12, estos no se encuentran fuera de las bandas de confianza, es decir, existe la posibilidad de que el proceso sea estacionario, para corroborarlo podemos ejecutar el test de Dickey Fuller (ver \ref{tab:dyf_vz1}), donde se obtiene un P-valor$=0.01$, es decir, se rechaza la existencia de raÌces unitarias a favor de la hipÛtesis alternativa de que la serie es estacionaria, por lo tanto no es necesario diferenciar esta serie.
+\item Para preblanquear la serie de caudales del la estaci√≥n \Sexpr{est_vaz} analizamos la funci√≥n de autocorrelaci√≥n  (ver figura \ref{fig:blan_acf_vz1}), que si bien es cierto presenta picos de periodicidad 12, estos no se encuentran fuera de las bandas de confianza, es decir, existe la posibilidad de que el proceso sea estacionario, para corroborarlo podemos ejecutar el test de Dickey Fuller (ver \ref{tab:dyf_vz1}), donde se obtiene un P-valor$=0.01$, es decir, se rechaza la existencia de ra√≠ces unitarias a favor de la hip√≥tesis alternativa de que la serie es estacionaria, por lo tanto no es necesario diferenciar esta serie.
 
 
 
 
-<<fig.pos="H",fig.height=5,fig.cap='\\label{fig:blan_acf_vz1} AutocorrelaciÛn - Caudal'>>=
+<<fig.pos="H",fig.height=5,fig.cap='\\label{fig:blan_acf_vz1} Autocorrelaci√≥n - Caudal'>>=
 # acf(as.numeric(VazTrain),lag.max = 36,type = "correlation")
 acf_ggplot(as.numeric(VazTrain))
 
@@ -758,11 +759,11 @@ tseries::adf.test(VazTrain)
 
 
 
-\item De igual manera para el caso de la serie asociada a PrecipitaciÛn, vemos una funciÛn de autocorrelaciÛn dentro de las bandas de confianza (ver figura \ref{fig:blan_acf_cl1}), con picos fuera de las bandas en los retardos 15 y 30, por lo que nos da cierto indicio de que esta serie es estacionaria, lo que podemos corroborar aplicando el test de Dickey Fuller (\ref{tab:blan_dyf_cl1}), en el que obtenemos un P-valor$=0.01$, es decir, la serie asociada a PrecipitaciÛn es tambiÈn estacionaria.
+\item De igual manera para el caso de la serie asociada a Precipitaci√≥n, vemos una funci√≥n de autocorrelaci√≥n dentro de las bandas de confianza (ver figura \ref{fig:blan_acf_cl1}), con picos fuera de las bandas en los retardos 15 y 30, por lo que nos da cierto indicio de que esta serie es estacionaria, lo que podemos corroborar aplicando el test de Dickey Fuller (\ref{tab:blan_dyf_cl1}), en el que obtenemos un P-valor$=0.01$, es decir, la serie asociada a Precipitaci√≥n es tambi√©n estacionaria.
 
 
 
-<<fig.pos="H",fig.height=5,fig.cap='\\label{fig:blan_acf_cl1} AutocorrelaciÛn PrecipitaciÛn'>>=
+<<fig.pos="H",fig.height=5,fig.cap='\\label{fig:blan_acf_cl1} Autocorrelaci√≥n Precipitaci√≥n'>>=
 # acf(as.numeric(Xtrain[,1]),lag.max = 36,type = "correlation")
 acf_ggplot(as.numeric(Xtrain[,1]))
 @
@@ -774,29 +775,29 @@ tseries::adf.test(Xtrain[,1])
 \label{tab:blan_dyf_cl1}
 
 
-\item Para el caso de la serie asociada a Temperatura M·xima y MÌnima, vemos un comportamiento similar de sus funciones de autocorrelaciÛn (ver figura \ref{fig:blan_acf_cl2}, \ref{fig:blan_acf_cl3}), ambas con picos periÛdicos fuera de las bandas de confianza, lo que podrÌa indicar la necesidad de diferenciar estas series estacionalmente.
+\item Para el caso de la serie asociada a Temperatura M√°xima y M√≠nima, vemos un comportamiento similar de sus funciones de autocorrelaci√≥n (ver figura \ref{fig:blan_acf_cl2}, \ref{fig:blan_acf_cl3}), ambas con picos peri√≥dicos fuera de las bandas de confianza, lo que podr√≠a indicar la necesidad de diferenciar estas series estacionalmente.
 
-<<fig.pos="H",fig.height=4,fig.cap='\\label{fig:blan_acf_cl2} AutocorrelaciÛn Temperatura M·xima'>>=
+<<fig.pos="H",fig.height=4,fig.cap='\\label{fig:blan_acf_cl2} Autocorrelaci√≥n Temperatura M√°xima'>>=
 # acf(as.numeric(Xtrain[,2]),lag.max = 36,type = "correlation")
 acf_ggplot(as.numeric(Xtrain[,2]))
 @
 
 
-<<fig.pos="H",fig.height=4,fig.cap='\\label{fig:blan_acf_cl3} AutocorrelaciÛn Temperatura MÌnima'>>=
+<<fig.pos="H",fig.height=4,fig.cap='\\label{fig:blan_acf_cl3} Autocorrelaci√≥n Temperatura M√≠nima'>>=
 # acf(as.numeric(Xtrain[,3]),lag.max = 36,type = "correlation")
 acf_ggplot(as.numeric(Xtrain[,3]))
 
 @
 
 
-\item Finalmente, analizando la serie asociada a Humedad Relativa (ver figura \ref{fig:blan_acf_cl4}), se observa que la funciÛn de autocorrelaciÛn presenta picos relativamente pequeÒos periÛdicos cada 12 retardos, que apenas salen de las bandas, por lo que es posible que la serie sea estacionaria, para corroborarlo procedemos a realizar el test de Dickey Fuller, donde se obtiene un P-valor$=0.01$, es decir, se concluye que la serie es estacionaria, y por lo tanto no es necesario diferenciar esta serie.
+\item Finalmente, analizando la serie asociada a Humedad Relativa (ver figura \ref{fig:blan_acf_cl4}), se observa que la funci√≥n de autocorrelaci√≥n presenta picos relativamente peque√±os peri√≥dicos cada 12 retardos, que apenas salen de las bandas, por lo que es posible que la serie sea estacionaria, para corroborarlo procedemos a realizar el test de Dickey Fuller, donde se obtiene un P-valor$=0.01$, es decir, se concluye que la serie es estacionaria, y por lo tanto no es necesario diferenciar esta serie.
 
 <<>>=
 tseries::adf.test(Xtrain[,4])
 @
 
 
-<<fig.pos="H",fig.height=5,fig.cap='\\label{fig:blan_acf_cl4} AutocorrelaciÛn Humedad Relativa'>>=
+<<fig.pos="H",fig.height=5,fig.cap='\\label{fig:blan_acf_cl4} Autocorrelaci√≥n Humedad Relativa'>>=
 # acf(as.numeric(Xtrain[,3]),lag.max = 36,type = "correlation")
 acf_ggplot(as.numeric(Xtrain[,4]))
 
@@ -806,7 +807,7 @@ acf_ggplot(as.numeric(Xtrain[,4]))
 
 \end{itemize}
 
-Como se puede observar en la figura \ref{fig:blanqueadas}, hemos obtenido series estacionarias mediante el proceso de preblanqueo de las series tanto de caudales como clim·ticas. Por lo que podemos pasar al siguiente paso de la metodologÌa Box y Jenkins para el modelo SARIMAX.
+Como se puede observar en la figura \ref{fig:blanqueadas}, hemos obtenido series estacionarias mediante el proceso de preblanqueo de las series tanto de caudales como clim√°ticas. Por lo que podemos pasar al siguiente paso de la metodolog√≠a Box y Jenkins para el modelo SARIMAX.
 
 
 
@@ -826,7 +827,7 @@ XblancDF = as.data.frame(Xblanc)
 
 XblancDF$Fecha = XData2$Fecha[-(1:12)]
 
-p1 = ts_ggplot(XblancDF,n_variable = 1,ylabel = "PrecipitaciÛn") + 
+p1 = ts_ggplot(XblancDF,n_variable = 1,ylabel = "Precipitaci√≥n") + 
   theme(axis.title.y = element_text(size = 8))
 p2 = ts_ggplot(XblancDF,n_variable = 2,ylabel = "Temperatura Maxima") + 
   theme(axis.title.y = element_text(size = 8))
@@ -889,16 +890,16 @@ ccfab_ggplot = function(serie_y,serie_x = NULL, modelo = NULL,txt_titulo=NULL){
                      conf.int.type = 'ma') + 
       theme_minimal() +
       labs(
-        title =TeX("CorrelaciÛn Cruzada $\\alpha_t$ vs. $\\beta_t$") #,
+        title =TeX("Correlaci√≥n Cruzada $\\alpha_t$ vs. $\\beta_t$") #,
         # subtitle = "Media Funcional",
         # y = "Caudal"
       )
   }else{
     
     if(is.null(txt_titulo)){
-      titulo = "CorrelaciÛn Cruzada"
+      titulo = "Correlaci√≥n Cruzada"
     }else{
-      titulo = paste("CorrelaciÛn Cruzada",txt_titulo)
+      titulo = paste("Correlaci√≥n Cruzada",txt_titulo)
     }
     
     cc_ab = autoplot(ccf(as.numeric(serie_y), as.numeric(serie_x),
@@ -922,7 +923,7 @@ ccfab_ggplot = function(serie_y,serie_x = NULL, modelo = NULL,txt_titulo=NULL){
 
 
 
-<<fig.pos="H",fig.height=8, fig.cap='\\label{fig:cc_exogenas} Corrleaciones Cruzadas - Variables ExÛgenas'>>=
+<<fig.pos="H",fig.height=8, fig.cap='\\label{fig:cc_exogenas} Corrleaciones Cruzadas - Variables Ex√≥genas'>>=
 cp1 =ccfab_ggplot(serie_x = x1,serie_y = x2,txt_titulo = "$x_1$ vs. $x_2$")
 cp2 =ccfab_ggplot(serie_x = x1,serie_y = x3,txt_titulo = "$x_1$ vs. $x_3$")
 cp3 =ccfab_ggplot(serie_x = x1,serie_y = x4,txt_titulo = "$x_1$ vs. $x_4$")
@@ -940,7 +941,7 @@ grid.arrange(
 @
 
 
-<<fig.pos="H",fig.height=8, fig.cap='\\label{fig:cc_output} Corrleaciones Cruzadas - Caudal vs. Variables ExÛgenas'>>=
+<<fig.pos="H",fig.height=8, fig.cap='\\label{fig:cc_output} Corrleaciones Cruzadas - Caudal vs. Variables Ex√≥genas'>>=
 cpy1 = ccfab_ggplot(serie_x = x1,serie_y = y,txt_titulo = "$x_1$ vs. $y$")
 cpy2 = ccfab_ggplot(serie_x = x2,serie_y = y,txt_titulo = "$x_2$ vs. $y$")
 cpy3 = ccfab_ggplot(serie_x = x3,serie_y = y,txt_titulo = "$x_3$ vs. $y$")
@@ -960,30 +961,30 @@ grid.arrange(
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\subsubsection{IdentificaciÛn de Funciones de Respuesta al Impulso}
+\subsubsection{Identificaci√≥n de Funciones de Respuesta al Impulso}
 
-Siguiendo la metodologÌa de identificaciÛn de este modelo, pasamos a la etapa de identificaciÛn de las funciones de respuesta al impulso asociadas a las variables clim·ticas. Considerando lo siguiente:
+Siguiendo la metodolog√≠a de identificaci√≥n de este modelo, pasamos a la etapa de identificaci√≥n de las funciones de respuesta al impulso asociadas a las variables clim√°ticas. Considerando lo siguiente:
 
 \begin{itemize}
-\item $v^{(1)}(B)$ : FunciÛn de respuesta al impulso asociada a la PrecipitaciÛn $x^{(1)}_t$.
-\item $v^{(2)}(B)$ : FunciÛn de respuesta al impulso asociada a la Temperatura M·xima $x^{(2)}_t$.
-\item $v^{(3)}(B)$ : FunciÛn de respuesta al impulso asociada a la Temperatura MÌnima $x^{(3)}_t$.
-\item $v^{(4)}(B)$ : FunciÛn de respuesta al impulso asociada a la Humedad Relativa $x^{(4)}_t$.
+\item $v^{(1)}(B)$ : Funci√≥n de respuesta al impulso asociada a la Precipitaci√≥n $x^{(1)}_t$.
+\item $v^{(2)}(B)$ : Funci√≥n de respuesta al impulso asociada a la Temperatura M√°xima $x^{(2)}_t$.
+\item $v^{(3)}(B)$ : Funci√≥n de respuesta al impulso asociada a la Temperatura M√≠nima $x^{(3)}_t$.
+\item $v^{(4)}(B)$ : Funci√≥n de respuesta al impulso asociada a la Humedad Relativa $x^{(4)}_t$.
 \end{itemize}
 
 
-Como se mostrÛ en el capÌtulo anterior, esta etapa consiste de hallar modelos SARMA para cada variable exÛgena, es decir al final de esta etapa se obtienen modelos del tipo:
+Como se mostr√≥ en el cap√≠tulo anterior, esta etapa consiste de hallar modelos SARMA para cada variable ex√≥gena, es decir al final de esta etapa se obtienen modelos del tipo:
 
 
 $$\frac{ \phi_x^{(k)}(B) \Phi_x^{(k)}(B) }{\theta_x^{(k)}(B) \Theta_x^{(k)}(B)} x^{(k)}_t= \alpha^{(k)}_t $$
 
 donde $\alpha^{(k)}_t$ es un r.b. de varianza $\sigma^2_k$, para $k=1,2,3,4$.
 
-A continuaciÛn mostramos los 4 modelos SARMA obtenidos, sus coeficientes, significancia, bondad de ajuste y validaciÛn de residuos.
+A continuaci√≥n mostramos los 4 modelos SARMA obtenidos, sus coeficientes, significancia, bondad de ajuste y validaci√≥n de residuos.
 
 \begin{enumerate}
 
-\item Siguiendo la metodologÌa Box y Jenkins cl·sica, se obtuvo, para la variable PrecipitaciÛn, un modelo SARMA con par·metros $p=1$ , $P=2$, $q=0$ y $Q=1$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_precip}, se muestra adem·s, en la figura \ref{fig:sarma_precip}, el an·lisis de los residuos, donde de acuerdo a los P-valores del estadÌstico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
+\item Siguiendo la metodolog√≠a Box y Jenkins cl√°sica, se obtuvo, para la variable Precipitaci√≥n, un modelo SARMA con par√°metros $p=1$ , $P=2$, $q=0$ y $Q=1$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_precip}, se muestra adem√°s, en la figura \ref{fig:sarma_precip}, el an√°lisis de los residuos, donde de acuerdo a los P-valores del estad√≠stico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
 
 <<model_x1, fig.pos="H">>=
 # Modelo X1: PrecipitacaoTotal ------------
@@ -1012,13 +1013,13 @@ mx1 = auto.arima(Xblanc[,1], max.p = 6, max.q = 6,
 
 # coeftest(mx1)
 # tsdiag(mx1, gof.lag = 24)
-tab_model(mx1,label_text = "tab:sarma_precip",caption_text = "SARMA(1,0)(2,1) - PrecipitaciÛn")
+tab_model(mx1,label_text = "tab:sarma_precip",caption_text = "SARMA(1,0)(2,1) - Precipitaci√≥n")
 
 @
 
 
 
-<<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarma_precip} Residuos SARMA(1,0)(2,1) - PrecipitaciÛn" >>=
+<<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarma_precip} Residuos SARMA(1,0)(2,1) - Precipitaci√≥n" >>=
 
 tsdiag(mx1, gof.lag = 24)
 
@@ -1029,7 +1030,7 @@ tsdiag(mx1, gof.lag = 24)
 
 
 
-\item De igual manera, para la variable Temperatura M·xima se obtuvo un modelo SARMA con par·metros $p=4$ , $P=0$, $q=0$ y $Q=2$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_tmax}, se muestra adem·s, en la figura \ref{fig:sarma_tmax}, el an·lisis de los residuos, donde de acuerdo a los P-valores del estadÌstico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
+\item De igual manera, para la variable Temperatura M√°xima se obtuvo un modelo SARMA con par√°metros $p=4$ , $P=0$, $q=0$ y $Q=2$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_tmax}, se muestra adem√°s, en la figura \ref{fig:sarma_tmax}, el an√°lisis de los residuos, donde de acuerdo a los P-valores del estad√≠stico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
 
 << model_x2, fig.pos="H" >>=
 # Modelo X2:Temp Max ------------
@@ -1059,7 +1060,7 @@ mx2 = arima(Xblanc[,2],order = c(p,d,q),include.mean = media,
 
 # coeftest(mx2)
 # tsdiag(mx2, gof.lag = 24)
-tab_model(mx2,label_text = "tab:sarma_tmax",caption_text = "SARMA(4,0)(0,2) - Temperatura M·xima")
+tab_model(mx2,label_text = "tab:sarma_tmax",caption_text = "SARMA(4,0)(0,2) - Temperatura M√°xima")
 
 @
 
@@ -1068,7 +1069,7 @@ tab_model(mx2,label_text = "tab:sarma_tmax",caption_text = "SARMA(4,0)(0,2) - Te
 
 
 
-<<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarma_tmax} Residuos SARMA(4,0)(0,2) - Temperatura M·xima" >>=
+<<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarma_tmax} Residuos SARMA(4,0)(0,2) - Temperatura M√°xima" >>=
 
 tsdiag(mx2, gof.lag = 24)
 
@@ -1080,7 +1081,7 @@ tsdiag(mx2, gof.lag = 24)
 
 
 
-\item Para la variable Temperatura MÌnima se obtuvo un modelo SARMA con par·metros $p=2$ , $P=2$, $q=2$ y $Q=1$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_tmin}, se muestra adem·s, en la figura \ref{fig:sarma_tmin}, el an·lisis de los residuos, donde de acuerdo a los P-valores del estadÌstico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
+\item Para la variable Temperatura M√≠nima se obtuvo un modelo SARMA con par√°metros $p=2$ , $P=2$, $q=2$ y $Q=1$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_tmin}, se muestra adem√°s, en la figura \ref{fig:sarma_tmin}, el an√°lisis de los residuos, donde de acuerdo a los P-valores del estad√≠stico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
 
 <<model_x3, fig.pos="H">>=
 # Modelo X3: Temp Minina ------------
@@ -1111,12 +1112,12 @@ mx3 = arima(Xblanc[,3],order = c(p,d,q),include.mean = media,
 
 # coeftest(mx3)
 
-tab_model(mx3,label_text = "tab:sarma_tmin",caption_text = "SARMA(2,2)(2,1) - Temperatura MÌnima")
+tab_model(mx3,label_text = "tab:sarma_tmin",caption_text = "SARMA(2,2)(2,1) - Temperatura M√≠nima")
 
 @
 
 
-<<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarma_tmin} Residuos SARMA(2,2)(2,1) - Temperatura MÌnima" >>=
+<<fig.pos= "H",fig.height=7,fig.cap="\\label{fig:sarma_tmin} Residuos SARMA(2,2)(2,1) - Temperatura M√≠nima" >>=
 
 tsdiag(mx3, gof.lag = 24)
 
@@ -1127,7 +1128,7 @@ tsdiag(mx3, gof.lag = 24)
 
 
 
-\item Finalmente para la variable Humedad Relativa se obtuvo un modelo SARMA con par·metros $p=2$ , $P=3$, $q=0$ y $Q=0$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_humed}, se muestra adem·s, en la figura \ref{fig:sarma_humed}, el an·lisis de los residuos, donde de acuerdo a los P-valores del estadÌstico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
+\item Finalmente para la variable Humedad Relativa se obtuvo un modelo SARMA con par√°metros $p=2$ , $P=3$, $q=0$ y $Q=0$. Se muestran los coeficientes de este modelo y su significancia en la tabla \ref{tab:sarma_humed}, se muestra adem√°s, en la figura \ref{fig:sarma_humed}, el an√°lisis de los residuos, donde de acuerdo a los P-valores del estad√≠stico de Ljung-Box (Portmanteau), se concluye sigue que los residuos del modelo se comportan como un r.b.
 
 <<model_x4, fig.pos="H">>=
 # Modelo X4: Humedad Relativa ------------
@@ -1210,16 +1211,16 @@ ccfab_ggplot = function(serie_y,serie_x = NULL, modelo = NULL,txt_titulo=NULL){
                      conf.int.type = 'ma') + 
       theme_minimal() +
       labs(
-        title =TeX("CorrelaciÛn Cruzada $\\alpha_t$ vs. $\\beta_t$") #,
+        title =TeX("Correlaci√≥n Cruzada $\\alpha_t$ vs. $\\beta_t$") #,
         # subtitle = "Media Funcional",
         # y = "Caudal"
       )
   }else{
     
     if(is.null(txt_titulo)){
-      titulo = "CorrelaciÛn Cruzada"
+      titulo = "Correlaci√≥n Cruzada"
     }else{
-      titulo = paste("CorrelaciÛn Cruzada",txt_titulo)
+      titulo = paste("Correlaci√≥n Cruzada",txt_titulo)
     }
     
     cc_ab = autoplot(ccf(as.numeric(serie_y), as.numeric(serie_x),
@@ -1261,7 +1262,7 @@ vj_ggplot = function(serie_y,modelo){
   N = modx$nobs
   IntConf_v=c()
   for(k in 1:36){
-    aux = 1.96*sqrt((1+2*sum(rii[seq(k)]*rjj[seq(k)]))/(N-k)  ) #Intervalo CorrelaciÛn
+    aux = 1.96*sqrt((1+2*sum(rii[seq(k)]*rjj[seq(k)]))/(N-k)  ) #Intervalo Correlaci√≥n
     IntConf_v[k] = aux*(s_alf/s_bet)
   }
   # IntConf = data.frame("k" = seq(36),"IntervaloConf" = IntConf_v)
@@ -1295,7 +1296,7 @@ vj_ggplot = function(serie_y,modelo){
 
 
 
-Ahora podemos pasar al paso 3 de la metodologÌa \ref{sec:metod_sarimax}, que consiste de identificar los Ûrdenes de los polinomios $\delta^{(k)}(B)$, $\omega^{(k)}(B)$ que componen las funciones de respuesta al impulso $v^{(k)}(B)$ asociadas a $x_t^{(k)}$. Para ello un primer paso consiste de estimar a groso modo los coeficientes $v_j^{(k)}$ de las funciones de respuesta al impulso, esto a partir de los valores de la funciÛn de correlaciÛn cruzada entre $\alpha_t^{(k)}$, hallada  en el paso anterior, y $\beta^{(k)}$ que resulta de aplicar el modelo SARMA de la $k$-Èsima variable, pero a la serie $y_t$, es decir:
+Ahora podemos pasar al paso 3 de la metodolog√≠a \ref{sec:metod_sarimax}, que consiste de identificar los √≥rdenes de los polinomios $\delta^{(k)}(B)$, $\omega^{(k)}(B)$ que componen las funciones de respuesta al impulso $v^{(k)}(B)$ asociadas a $x_t^{(k)}$. Para ello un primer paso consiste de estimar los coeficientes $v_j^{(k)}$ de las funciones de respuesta al impulso, esto a partir de los valores de la funci√≥n de correlaci√≥n cruzada entre $\alpha_t^{(k)}$, hallada  en el paso anterior, y $\beta^{(k)}$ que resulta de aplicar el modelo SARMA de la $k$-√©sima variable, pero a la serie $y_t$, es decir:
 
 $$\beta^{(k)} = \frac{ \phi_x^{(k)}(B) \Phi_x^{(k)}(B) }{\theta_x^{(k)}(B) \Theta_x^{(k)}(B)} y_t$$
 
@@ -1304,17 +1305,17 @@ Los coeficientes estimados de $v_j^{(k)}$ vienen dados por:
 
 $$\hat v_j^{(k)} = \hat\rho_{\alpha\beta}(j) \frac{\hat\sigma_{\beta^{(k)}}}{\hat\sigma_\alpha} $$
 
-Mostramos a continuaciÛn, los coeficientes estimados de $v_j^{(k)}$ para cada una de las 4 variables clim·ticas
+Mostramos a continuaci√≥n, los coeficientes estimados de $v_j^{(k)}$ para cada una de las 4 variables clim√°ticas
 
 
 \begin{enumerate}
 
 
-\item Para la variable PrecipitaciÛn $x_t^{(1)}$, obtenemos los valores estimados de $v_j^{(1)}$ para $j=-36,\dots , 0, \dots, 36$, los representamos en la figura \ref{fig:vj1}. Observamos en la figura \ref{fig:vj1} que los coeficientes estimados siguen un comportamiento sinusoidal, conducta usual de sucesiones que son soluciÛn de ecuaciones en diferencias de segundo grado, por lo tanto consideraremos $m=2$, retardos del polinomio $\delta^{(1)}(B)$. Como los primeros valores de $v_j^{(1)}$ no son prÛximos a cero, tomamos $b=0$. Cabe recalcar que la funciÛn de correlaciÛn cruzada tiene un pico en $j=-8$, es decir, la m·xima correlaciÛn se da entre $y_t$ y $x_{t+8}^{(1)}$, por lo que podrÌa ser necesario considerar $n=8$ retardos del polinomio $\omega^{(1)}(B)$.
+\item Para la variable Precipitaci√≥n $x_t^{(1)}$, obtenemos los valores estimados de $v_j^{(1)}$ para $j=-36,\dots , 0, \dots, 36$, los representamos en la figura \ref{fig:vj1}. Observamos en la figura \ref{fig:vj1} que los coeficientes estimados siguen un comportamiento sinusoidal, conducta usual de sucesiones que son soluci√≥n de ecuaciones en diferencias de segundo grado, por lo tanto consideraremos $m=2$, retardos del polinomio $\delta^{(1)}(B)$. Como los primeros valores de $v_j^{(1)}$ no son pr√≥ximos a cero, tomamos $b=0$. Cabe recalcar que la funci√≥n de correlaci√≥n cruzada tiene un pico en $j=-8$, es decir, la m√°xima correlaci√≥n se da entre $y_t$ y $x_{t+8}^{(1)}$, por lo que podr√≠a ser necesario considerar $n=8$ retardos del polinomio $\omega^{(1)}(B)$.
 
 
 
-<<fig.pos="H", fig.height=7 , fig.cap="\\label{fig:vj1} Coeficientes $v_j$ estimados - PrecipitaciÛn" >>=
+<<fig.pos="H", fig.height=7 , fig.cap="\\label{fig:vj1} Coeficientes $v_j$ estimados - Precipitaci√≥n" >>=
 modx = mx1
 # x_aux = x1
 p1 = ccfab_ggplot(serie_y =  y, modelo = modx)
@@ -1329,12 +1330,12 @@ grid.arrange(
 
 
 
-\item Para la variable Temperatura M·xima $x_t^{(2)}$, observamos que los coeficientes $\hat v_j^{(2)}$ se encuentran dentro de las bandas de confianza, y no siguen un patron en especÌfico (figura \ref{fig:vj2}). AsÌ, consideramos $m=0$, mientras que como todos los coeficientes $\hat v_j^{(2)}$ se encuentran dentro de las bandas de confianza, entonces tomaremos $b=0$, y $n=0$. Es decir ingresaremos esta variable sin retardos, como si se tratara de una regresiÛn m˙ltiple.
+\item Para la variable Temperatura M√°xima $x_t^{(2)}$, observamos que los coeficientes $\hat v_j^{(2)}$ se encuentran dentro de las bandas de confianza, y no siguen un patron en espec√≠fico (figura \ref{fig:vj2}). As√≠, consideramos $m=0$, mientras que como todos los coeficientes $\hat v_j^{(2)}$ se encuentran dentro de las bandas de confianza, entonces tomaremos $b=0$, y $n=0$. Es decir ingresaremos esta variable sin retardos, como si se tratara de una regresi√≥n m√∫ltiple.
 
 
 
 
-<<fig.pos="H", fig.height=7, fig.cap="\\label{fig:vj2} Coeficientes $v_j$ estimados - Temperatura M·xima" >>=
+<<fig.pos="H", fig.height=7, fig.cap="\\label{fig:vj2} Coeficientes $v_j$ estimados - Temperatura M√°xima" >>=
 modx = mx2
 # x_aux = x1
 p1 = ccfab_ggplot(serie_y =  y, modelo = modx)
@@ -1348,10 +1349,10 @@ grid.arrange(
 @
 
 
-\item Para la variable Temperatura MÌnima $x_t^{(3)}$, observamos que los coeficientes $\hat v_j^{(3)}$, de manera similar a la Temperatura MÌnima, se encuentran dentro de las bandas de confianza a excepciÛn de los retardos $j=4$ y $j=-20$, aunque descartamos este por el principio de parsimonia (ya que hace que el modelo tenga demasiados coeficientes a estimar y se vuelva m·s complejo), por lo que consideraremos $n=4$. Adem·s no siguien un patrÛn claro (figura \ref{fig:vj3}), por lo tanto consideramos $m=0$, $b=0$. 
+\item Para la variable Temperatura M√≠nima $x_t^{(3)}$, observamos que los coeficientes $\hat v_j^{(3)}$, de manera similar a la Temperatura M√≠nima, se encuentran dentro de las bandas de confianza a excepci√≥n de los retardos $j=4$ y $j=-20$, aunque descartamos este por el principio de parsimonia (ya que hace que el modelo tenga demasiados coeficientes a estimar y se vuelva m√°s complejo), por lo que consideraremos $n=4$. Adem√°s no siguien un patr√≥n claro (figura \ref{fig:vj3}), por lo tanto consideramos $m=0$, $b=0$. 
 
 
-<<fig.pos="H", fig.height=7, fig.cap="\\label{fig:vj3} Coeficientes $v_j$ estimados - Temperatura MÌnima ">>=
+<<fig.pos="H", fig.height=7, fig.cap="\\label{fig:vj3} Coeficientes $v_j$ estimados - Temperatura M√≠nima ">>=
 modx = mx3
 # x_aux = x1
 p1 = ccfab_ggplot(serie_y =  y, modelo = modx)
@@ -1366,7 +1367,7 @@ grid.arrange(
 
 
 
-\item Para la variable Humedad Relativa $x_t^{(4)}$, observamos que los coeficientes $\hat v_j^{(4)}$ se encuentran dentro de las bandas de confianza y no siguen un patrÛn en particular consideraremos $b=0$ y $m=0$ , a excepciÛn de los retardos $j=3$ y $j=-7$ (figura \ref{fig:vj4}). AsÌ, posibles valores a considerar son $n=3$ y $n=7$, pero por el principio de parsimonia, solo consideraremos $n=3$.
+\item Para la variable Humedad Relativa $x_t^{(4)}$, observamos que los coeficientes $\hat v_j^{(4)}$ se encuentran dentro de las bandas de confianza y no siguen un patr√≥n en particular consideraremos $b=0$ y $m=0$ , a excepci√≥n de los retardos $j=3$ y $j=-7$ (figura \ref{fig:vj4}). As√≠, posibles valores a considerar son $n=3$ y $n=7$, pero por el principio de parsimonia, solo consideraremos $n=3$.
 
 
 
@@ -1388,17 +1389,17 @@ grid.arrange(
 \end{enumerate}
 
 
-Identificadas las funciones de respuesta al impulso, para cada una de las variables, considerando ˙nicamente las variables que no se encuentren correlacionadas, 
+Identificadas las funciones de respuesta al impulso, para cada una de las variables, considerando √∫nicamente las variables que no se encuentren correlacionadas, 
 %estimamos los coeficientes asociados, se muestran los coeficientes en la tabla $$ .
-pasamos al paso 4 de la metodologÌa, en este punto debemos identificar la estructura SARMA que compone el modelo SARIMAX, para ello, consideraremos dos factores, el primero es que las funciones de respuesta al impulso $v^{(k)}(B)$ tienen como tÈrmino com˙n al polinomio estacional autoregresivo  (SAR) de grado 2, por lo que incluiremos este en el modelo final. Otro factor a analizar es la perturbaciÛn $n_t$, para identificar si es necesario incluir m·s coeficientes tanto en la parte autoregresiva como media mÛvil del modelo final.
+pasamos al paso 4 de la metodolog√≠a, en este punto debemos identificar la estructura SARMA que compone el modelo SARIMAX, para ello, consideraremos dos factores, el primero es que las funciones de respuesta al impulso $v^{(k)}(B)$ tienen como t√©rmino com√∫n al polinomio estacional autoregresivo  (SAR) de grado 2, por lo que incluiremos este en el modelo final. Otro factor a analizar es la perturbaci√≥n $n_t$, para identificar si es necesario incluir m√°s coeficientes tanto en la parte autoregresiva como media m√≥vil del modelo final.
 
-Para ello procedemos a modelar $n_t$ precisamente mediante un modelo SARMA. Para nuestro caso, la perturbaciÛn viene dada por:
+Para ello procedemos a modelar $n_t$ precisamente mediante un modelo SARMA. Para nuestro caso, la perturbaci√≥n viene dada por:
 
 $$n_t^{*} = y_t -  \alpha_t^{(1)}-\alpha_t^{(2)}-\alpha_t^{(3)}-\alpha_t^{(4)}$$
 
-Ovservando la figura \ref{fig:acf_pertur} vemos que la funciÛn de autocorrelaciÛn y autocorrleaciÛn parcial de $n^{*}_t$ tienen picos fuera de las bandas de confianza en los retardos 1 y 10, en el resto de retardos muestra un comportamiento con picos periÛdicos, pero dentro de las bandas de confianza, por lo que podrÌa ser necesario incluir polinomios estacionales en el modelo final. 
+Observando la figura \ref{fig:acf_pertur} vemos que la funci√≥n de autocorrelaci√≥n y autocorrleaci√≥n parcial de $n^{*}_t$ tienen picos fuera de las bandas de confianza en los retardos 1 y 10, en el resto de retardos muestra un comportamiento con picos peri√≥dicos, pero dentro de las bandas de confianza, por lo que podr√≠a ser necesario incluir polinomios estacionales en el modelo final. 
 
-<<fig.pos="H",fig.height=5 ,fig.cap="\\label{fig:acf_pertur} AutocorrelaciÛn $n_t$ ">>=
+<<fig.pos="H",fig.height=5 ,fig.cap="\\label{fig:acf_pertur} Autocorrelaci√≥n $n_t$ ">>=
 
 nt= y - mx1$residuals - mx2$residuals -mx3$residuals - mx4$residuals
 acf_ggplot(as.numeric(nt))
@@ -1406,12 +1407,12 @@ acf_ggplot(as.numeric(nt))
 @
 
 
-Tras analizar la funciÛn de autocorrelaciÛn de $n_t^{*}$, proponemos el modelo ARMA$(1,0)$. Como se muestra en la tabla \ref{tab:arma_nt}, todos los coeficientes son significativos, mientras que analizando los residuos del modelo (ver figura \ref{fig:nt_resid}), encontramos que todos los P-valores del estadÌstico Ljung-Box son mayores que 0.05, por lo tanto los residuos se comportan como un ruido blanco.
+Tras analizar la funci√≥n de autocorrelaci√≥n de $n_t^{*}$, proponemos el modelo ARMA$(1,0)$. Como se muestra en la tabla \ref{tab:arma_nt}, todos los coeficientes son significativos, mientras que analizando los residuos del modelo (ver figura \ref{fig:nt_resid}), encontramos que todos los P-valores del estad√≠stico Ljung-Box son mayores que 0.05, por lo tanto los residuos se comportan como un ruido blanco.
 
 
 <<fig.pos="H">>=
 mdn = arima(nt,order = c(1,0,0))
-tab_model(mdn,label_text = "tab:arma_nt",caption_text = "ARMA(1,0) - PerturbaciÛn")
+tab_model(mdn,label_text = "tab:arma_nt",caption_text = "ARMA(1,0) - Perturbaci√≥n")
 
 @
 
@@ -1424,7 +1425,7 @@ tsdiag(mdn,gof.lag = 24)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{EstimaciÛn del modelo}
+\subsubsection{Estimaci√≥n del modelo}
 
 <<>>=
 p=1;q=0
@@ -1433,7 +1434,7 @@ d=0;D=1
 @
 
 
-A partir de las anteriores etapas, identificamos un modelo inicial del tipo SARIMAX $(\Sexpr{p},\Sexpr{d},\Sexpr{q})(\Sexpr{P},\Sexpr{D},\Sexpr{Q})_{12}$ con 4 variables exÛgenas, y con funciones de respuesta al impulso con Ûrdenes $(b_k,m_k,n_k)$ como se muestran a continuaciÛn:
+A partir de las anteriores etapas, identificamos un modelo inicial del tipo SARIMAX $(\Sexpr{p},\Sexpr{d},\Sexpr{q})(\Sexpr{P},\Sexpr{D},\Sexpr{Q})_{12}$ con 4 variables ex√≥genas, y con funciones de respuesta al impulso con √≥rdenes $(b_k,m_k,n_k)$ como se muestran a continuaci√≥n:
 
 <<>>=
 # Cambio Nombres Variables Regresoras -----
@@ -1507,9 +1508,9 @@ colnames(XblancNmb) = c("Precipitacion","TemperaturaMax","TemperaturaMin","Humed
 @
 
 \begin{itemize}
-\item PrecipitaciÛn $v^{(1)}$ : $b_1= 0$, $m_1=\Sexpr{tma1}$, $n_1=\Sexpr{tar1}$
-\item Temperatura M·xima $v^{(2)}$ : $b_2= 0$, $m_2=\Sexpr{tma2}$, $n_2=\Sexpr{tar2}$
-\item Temperatura MÌnima $v^{(3)}$ : $b_3= 0$, $m_3=\Sexpr{tma3}$, $n_3=\Sexpr{tar3}$
+\item Precipitaci√≥n $v^{(1)}$ : $b_1= 0$, $m_1=\Sexpr{tma1}$, $n_1=\Sexpr{tar1}$
+\item Temperatura M√°xima $v^{(2)}$ : $b_2= 0$, $m_2=\Sexpr{tma2}$, $n_2=\Sexpr{tar2}$
+\item Temperatura M√≠nima $v^{(3)}$ : $b_3= 0$, $m_3=\Sexpr{tma3}$, $n_3=\Sexpr{tar3}$
 \item Humedad Relativa $v^{(4)}$ : $b_4= 0$, $m_4=\Sexpr{tma4}$, $n_4=\Sexpr{tar4}$
 \end{itemize}
 
@@ -1531,13 +1532,13 @@ Cff = round(as.numeric(mod_tr$coef),digits = 3)
 %%%%%%%%%%%%%%%%%%%%%%%%   QUITAR VARIABLES CORRELACIONADAS   %%%%%%%%%%%%%%%%%%%%%%%
 
 
-\paragraph{ObservaciÛn.} Como vemos en la tabla \ref{tab:sarimax_estim1} tiene varios de lo coeficientes no significativos, para varios de ellos no es posible estimar numÈricamente sus errores est·ndar, por lo que es necesario, por una parte, quitar aquellas componentes menos significativas.  En esta etapa notamos la necesidad de eliminar variables del modelo, para ello consideramos el criterio de quitar aquellas variables exÛgenas que se encuentren correlacionadas entre si y que no tengan una alta correlaciÛn con la variable \textit{output} (Caudal). Para ello se observaron las funciones de correlaciÛn cruzada representadas en las figuras \ref{fig:cc_exogenas} y \ref{fig:cc_output} respectivamente.
+\paragraph{Observaci√≥n.} Como vemos en la tabla \ref{tab:sarimax_estim1} tiene varios de lo coeficientes no significativos, para varios de ellos no es posible estimar num√©ricamente sus errores est√°ndar, por lo que es necesario, por una parte, quitar aquellas componentes menos significativas.  En esta etapa notamos la necesidad de eliminar variables del modelo, para ello consideramos el criterio de quitar aquellas variables ex√≥genas que se encuentren correlacionadas entre si y que no tengan una alta correlaci√≥n con la variable \textit{output} (Caudal). Para ello se observaron las funciones de correlaci√≥n cruzada representadas en las figuras \ref{fig:cc_exogenas} y \ref{fig:cc_output} respectivamente.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Quitando la variable Temperatura M·xima y posteriormente MÌnima, ya que tampoco tenÌa coeficientes asociados significativos, llegamos al modelo SARIMAX $(1,0,0)(2,1,0)_{12}$, con 3 variables exÛgenas, cuyas funciones de respuesta al impulso tienen Ûrdenes $(b_k,m_k,n_k)$ como se muestran a continuaciÛn:
+Quitando la variable Temperatura M√°xima y posteriormente M√≠nima, ya que tampoco ten√≠a coeficientes asociados significativos, llegamos al modelo SARIMAX $(1,0,0)(2,1,0)_{12}$, con 3 variables ex√≥genas, cuyas funciones de respuesta al impulso tienen √≥rdenes $(b_k,m_k,n_k)$ como se muestran a continuaci√≥n:
 
 
 <<>>=
@@ -1608,9 +1609,9 @@ Quitando la variable Temperatura M·xima y posteriormente MÌnima, ya que tampoco 
 
 
 \begin{itemize}
-\item PrecipitaciÛn $v^{(1)}$ : $b_1= 0$, $m_1=\Sexpr{tma1}$, $n_1=\Sexpr{tar1}$
-% \item Temperatura M·xima $v^{(2)}$ : $b_2= 0, $m_2=\Sexpr{tma2}$, $n_2=\Sexpr{tar2}$
-% \item Temperatura MÌnima $v^{(3)}$ : $b_3= 0, $m_3=\Sexpr{tma3}$, $n_3=\Sexpr{tar3}$
+\item Precipitaci√≥n $v^{(1)}$ : $b_1= 0$, $m_1=\Sexpr{tma1}$, $n_1=\Sexpr{tar1}$
+% \item Temperatura M√°xima $v^{(2)}$ : $b_2= 0, $m_2=\Sexpr{tma2}$, $n_2=\Sexpr{tar2}$
+% \item Temperatura M√≠nima $v^{(3)}$ : $b_3= 0, $m_3=\Sexpr{tma3}$, $n_3=\Sexpr{tar3}$
 \item Humedad Relativa $v^{(4)}$ : $b_4= 0$, $m_4=\Sexpr{tma4}$, $n_4=\Sexpr{tar4}$
 \end{itemize}
 
@@ -1624,7 +1625,7 @@ tab_model(mod_tr,label_text = "tab:sarimax_estim2",caption_text = texto)
 Cff = round(as.numeric(mod_tr$coef),digits = 3)
 @
 
-Sin embargo, al analizar sus residuos (ver figura \ref{fig:sarima_estim2}), vemos que los P-valores del estadÌstico de Ljung-Box son menores a 0.05, por lo tanto se considera que la autocorrelaciÛn de los residuos es significativa, y se rechaza su independencia.
+Sin embargo, al analizar sus residuos (ver figura \ref{fig:sarima_estim2}), vemos que los P-valores del estad√≠stico de Ljung-Box son menores a 0.05, por lo tanto se considera que la autocorrelaci√≥n de los residuos es significativa, y se rechaza su independencia.
 
 <<fig.pos= "h",fig.height=8,fig.cap="\\label{fig:sarima_estim2} Residuos - Test Portmanteau (Ljung-Box) SARIMAX $(1,0,0)(2,1,0)_{12}$">>=
 tsdiag(mod_tr,gof.lag = 36)
@@ -1636,7 +1637,7 @@ tsdiag(mod_tr,gof.lag = 36)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Tras probar varias combinaciones de par·metros y con la ayuda de las funciones de aucorrelaciÛn podemos corregir las partes SARMA del modelo,y de las funciones de correlaciÛn cruzada entre los residuos y $x_t^{k}$ para corregir las funciones de respuesta al impulso, llegamos al modelo SARIMAX $(1,0,0)(2,1,0)_{12}$, cuyas funciones de respuesta al impulso tienen Ûrdenes $(b_k,m_k,n_k)$ como se muestran a continuaciÛn:
+Tras probar varias combinaciones de par√°metros y con la ayuda de las funciones de aucorrelaci√≥n podemos corregir las partes SARMA del modelo,y de las funciones de correlaci√≥n cruzada entre los residuos y $x_t^{k}$ para corregir las funciones de respuesta al impulso, llegamos al modelo SARIMAX $(1,0,0)(2,1,0)_{12}$, cuyas funciones de respuesta al impulso tienen √≥rdenes $(b_k,m_k,n_k)$ como se muestran a continuaci√≥n:
 
 
 
@@ -1722,9 +1723,9 @@ Tras probar varias combinaciones de par·metros y con la ayuda de las funciones d
 
 
 \begin{itemize}
-\item PrecipitaciÛn $v^{(1)}$ : $b_1= 0$, $m_1=\Sexpr{tma1}$, $n_1=\Sexpr{tar1}$
-% \item Temperatura M·xima $v^{(2)}$ : $b_2= 0, $m_2=\Sexpr{tma2}$, $n_2=\Sexpr{tar2}$
-% \item Temperatura MÌnima $v^{(3)}$ : $b_3= 0, $m_3=\Sexpr{tma3}$, $n_3=\Sexpr{tar3}$
+\item Precipitaci√≥n $v^{(1)}$ : $b_1= 0$, $m_1=\Sexpr{tma1}$, $n_1=\Sexpr{tar1}$
+% \item Temperatura M√°xima $v^{(2)}$ : $b_2= 0, $m_2=\Sexpr{tma2}$, $n_2=\Sexpr{tar2}$
+% \item Temperatura M√≠nima $v^{(3)}$ : $b_3= 0, $m_3=\Sexpr{tma3}$, $n_3=\Sexpr{tar3}$
 \item Humedad Relativa $v^{(4)}$ : $b_4= 0$, $m_4=\Sexpr{tma4}$, $n_4=\Sexpr{tar4}$
 \end{itemize}
 
@@ -1740,7 +1741,7 @@ Cff = round(as.numeric(mod_tr$coef),digits = 3)
 
 
 
-Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarimax_estim3}), tenemos que los P-valores del estadÌstico de Ljung-Box son mayores que 0.05, por lo que podemos aceptar que sus residuos son independientes. AsÌ, este es el modelo que representar· el Cl˙ster 1. Finalmente podemos representar este modelo mediante la siguiente ecuaciÛn:
+Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarimax_estim3}), tenemos que los P-valores del estad√≠stico de Ljung-Box son mayores que 0.05, por lo que podemos aceptar que sus residuos son independientes. As√≠, este es el modelo que representar√° el Cl√∫ster 1. Finalmente podemos representar este modelo mediante la siguiente ecuaci√≥n:
 
 
 \begin{eqnarray} \label{eq:sarimax}
@@ -1748,12 +1749,16 @@ Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarima
 + \frac{1}{( 1 - 0.554 B )(1+ 0.719 B^{12} +0.387 B^{24} )  }\varepsilon_t                  \label{prime}
 \end{eqnarray}
 
-En el prÛximo capÌtulo se muestran los resultados de modelar todas las series que componen el cl˙ster 1, partiendo de un modelo con los mismos par·metros (aunque no los mismos coeficientes).
-
 
 <<fig.pos= "h",fig.height=8,fig.cap="\\label{fig:sarimax_estim3} Residuos - Test Portmanteau (Ljung-Box) SARIMAX $(1,0,0)(2,1,0)_{12}$">>=
 tsdiag(mod_tr,gof.lag = 36)
 @
+
+
+
+En la siguiente secci√≥n damos una breve rese√±a del uso de la aplicaci√≥n web creada para facilitar la ejecuci√≥n de la metodolog√≠a ya descrita.
+
+Mientras que en la secci√≥n (\autoref{chap:resultados}) se muestran a detalle los resultados de modelar todas las series que componen el cl√∫ster 1, partiendo de un modelo con los mismos par√°metros (aunque no los mismos coeficientes), as√≠ mismo se muestran las predicciones e intervalos de confianza obtenidas de los modelos SARIMA y SARIMAX correspondientes.
 
 
 

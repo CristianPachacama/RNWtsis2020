@@ -1,6 +1,6 @@
 \subsection{Algoritmos de Agrupamiento}
 
-Una vez que se determina la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre parejas de series), y luego se usa un algoritmo de agrupamiento convencional para formar los cl˙sters (grupos) con las series. De hecho, la mayorÌa de los enfoques de agrupamiento de series de tiempo desarrollados por autores como \citeauthor{liao2005clustering} son variaciones de procedimientos generales como por ejemplo: K-Means, K-Medoids, PAM, CLARA \cite{kaufman1986clustering} o de Cl˙ster jer·rquico, que utilizan una gama de disimilitudes especÌficamente diseÒadas para tratar con series de tiempo y algunas de sus caracterÌsticas. A continuaciÛn detallamos dos de los algoritmos que usaremos en nuestro an·lisis.
+Una vez que se determina la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre parejas de series), y luego se usa un algoritmo de agrupamiento convencional para formar los cl√∫sters (grupos) con las series. De hecho, la mayor√≠a de los enfoques de agrupamiento de series de tiempo desarrollados por autores como \citeauthor{liao2005clustering} \citeyear{liao2005clustering} son variaciones de procedimientos generales como por ejemplo: K-Means, K-Medoids, PAM, CLARA \citeauthor{kaufman1986clustering} \citeyear{kaufman1986clustering} o de Cl√∫ster jer√°rquico, que utilizan una gama de disimilitudes espec√≠ficamente dise√±adas para tratar con series de tiempo y algunas de sus caracter√≠sticas. A continuaci√≥n detallamos dos de los algoritmos que usaremos en nuestro an√°lisis.
 
 \subsubsection{Particionamiento alrededor de Medoides (PAM)}
 
@@ -8,57 +8,57 @@ Una vez que se determina la medida de disimilitud, se obtiene una matriz de disi
 
 %Por ejemplo si un objeto $O_i$ es el medoide de un grupo, entonces diremos que el objeto $O_j$ pertenece a dicho grupo si $d(O_j , O_i) = \underset{O_m}{\min} \{ d(O_j,O_m) \}$
 
-%\textbf{ObservaciÛn. } La calidad de agrupamiento del mÈtodo se mide como la distancia promedio entre los objetos y sus respectivos medoides.
+%\textbf{Observaci√≥n. } La calidad de agrupamiento del m√©todo se mide como la distancia promedio entre los objetos y sus respectivos medoides.
 
 %El algoritmo PAM halla los $k$ medoids a partir de un conjunto arbitrario de objetos para luego intercambiarlos sucesivamente de tal manera de que en cada paso se mejore la calidad de agrupamiento.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-El algoritmo PAM propuesto por \citeauthor{rousseeuw1990finding}, tiene por objetivo hallar $k$ grupos (cl˙sters) a partir de $n$ de objetos , esto mediante la identificaciÛn de objetos representativos que est·n lo m·s centralmente localizados dentro de cada grupo, estos objetos se conocen como "medoides". El algoritmo consiste de dos fases, en una primera fase, 
-%conocida como BUILD (ConstrucciÛn), 
-se obtiene un agrupamiento inicial mediante la selecciÛn sucesiva de objetos representativos hasta que se hayan encontrado $k$ objetos. El primer objeto es aquel para el cual la suma de las diferencias con todos los dem·s objetos es lo m·s pequeÒa posible. Este objeto es el m·s centralmente ubicado en el conjunto de objetos. Posteriormente, en cada paso se selecciona otro objeto, este objeto es aquel que disminuye la funciÛn objetivo tanto como sea posible. 
+El algoritmo PAM propuesto por \citeauthor{rousseeuw1990finding} \citeyear{rousseeuw1990finding}, tiene por objetivo hallar $k$ grupos (cl√∫sters) a partir de $n$ de objetos , esto mediante la identificaci√≥n de objetos representativos que est√°n lo m√°s centralmente localizados dentro de cada grupo, estos objetos se conocen como "medoides". El algoritmo consiste de dos fases, en una primera fase, 
+%conocida como BUILD (Construcci√≥n), 
+se obtiene un agrupamiento inicial mediante la selecci√≥n sucesiva de objetos representativos hasta que se hayan encontrado $k$ objetos. El primer objeto es aquel para el cual la suma de las diferencias con todos los dem√°s objetos es lo m√°s peque√±a posible. Este objeto es el m√°s centralmente ubicado en el conjunto de objetos. Posteriormente, en cada paso se selecciona otro objeto, este objeto es aquel que disminuye la funci√≥n objetivo tanto como sea posible. 
 
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Por ejemplo, para medir el efecto de intercambiar un objeto $O_i_1$ por $O_i_2$ el algoritmo PAM calcula el costo $C_j (i_1,i_2)$ (para todo objeto $O_j$ no selecionado. $C_j (i_1,i_2)$  se calcula seg˙n cada uno de los siguientes casos:
+%Por ejemplo, para medir el efecto de intercambiar un objeto $O_i_1$ por $O_i_2$ el algoritmo PAM calcula el costo $C_j (i_1,i_2)$ (para todo objeto $O_j$ no selecionado. $C_j (i_1,i_2)$  se calcula seg√∫n cada uno de los siguientes casos:
 
 
 \textbf{Algoritmo}
 
 \begin{enumerate}
 \item Seleccionar $k$ objetos arbitrariamente
-\item Calcular $T(i,h)$ para todos los pares de objetos, tales que $O_i$ est· seleccionado y $O_h$ no. Para el c·lculo de $T(i,h)$ se considera lo siguiente:
+\item Calcular $T(i,h)$ para todos los pares de objetos, tales que $O_i$ est√° seleccionado y $O_h$ no. Para el c√°lculo de $T(i,h)$ se considera lo siguiente:
 
 
 \begin{enumerate}
 
-\item  Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Luego supongamos que $O_j$ es m·s parecido a $O_{k}$ que $O_h$. AsÌ, si reemplazamos $O_i$ por $O_h$ como medoide del grupo, entonces $O_j$ pertenecerÌa al grupo representado por $O_{k}$. Por lo tanto el costo de intercambio de medoides respecto de $O_j$ es :
+\item  Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Luego supongamos que $O_j$ es m√°s parecido a $O_{k}$ que $O_h$. As√≠, si reemplazamos $O_i$ por $O_h$ como medoide del grupo, entonces $O_j$ pertenecer√≠a al grupo representado por $O_{k}$. Por lo tanto el costo de intercambio de medoides respecto de $O_j$ es :
 
 $$C_{j}(i,h)= d(O_j,O_{k})-d(O_j,O_i)$$
 
 Notemos que $C_{j}(i,h)\geq 0$ 
 
-\item Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Pero esta vez $O_j$ es menos parecido a $O_{k}$ que $O_h$. AsÌ, el costo de  reemplazar $O_i$ por $O_h$ viene dado por:
+\item Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Pero esta vez $O_j$ es menos parecido a $O_{k}$ que $O_h$. As√≠, el costo de  reemplazar $O_i$ por $O_h$ viene dado por:
 
 $$C_{j}(i,h)= d(O_j,O_{h})-d(O_j,O_i)$$
 
 En este caso $C_{j}(i,h)$ puede ser positivo o negativo.
 
-\item Supongamos que $O_j$ pertenece a un grupo distinto al representado por el medoide $O_i$ . Sea $O_{k}$ el medoide de ese grupo. Luego supongamos que $O_j$ es m·s similar a $O_{k}$ que a $O_h$, entonces:
+\item Supongamos que $O_j$ pertenece a un grupo distinto al representado por el medoide $O_i$ . Sea $O_{k}$ el medoide de ese grupo. Luego supongamos que $O_j$ es m√°s similar a $O_{k}$ que a $O_h$, entonces:
 
 $$C_{j}(i,h)= 0$
 
-\item Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Entonces reeplazar $O_i$ con $O_h$ provocarÌa que $O_j$ pase del grupo representado por $O_h$ al grupo representado por $O_k$. AsÌ, el costo viene dado por:
+\item Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Entonces reeplazar $O_i$ con $O_h$ provocar√≠a que $O_j$ pase del grupo representado por $O_h$ al grupo representado por $O_k$. As√≠, el costo viene dado por:
 
 $$C_{j}(i,h) = d(O_j,O_{h})-d(O_j,O_k)$$
 
 Notemos que $C_{j}(i,h)<0$
 
-\item Finalmente el costo total de reemplazar $O_i$ por $O_h$ est· dado por:
+\item Finalmente el costo total de reemplazar $O_i$ por $O_h$ est√° dado por:
 
 $$T(i,h)= \sum_{i} C_{j}(i,h)$$
 
@@ -68,11 +68,11 @@ $$T(i,h)= \sum_{i} C_{j}(i,h)$$
 
 
 
-\item Seleccionar el par $O_i, O_h$ que minimice $T(i,h)$. Si el mÌnimo $T(i,h)$ es negativo, reemplazar $O_i$ con $O_h$ y vuelva al paso 2. 
-\item Caso contrario, para cada objeto no seleccionado, hallar el medoide m·s parecido.  
+\item Seleccionar el par $O_i, O_h$ que minimice $T(i,h)$. Si el m√≠nimo $T(i,h)$ es negativo, reemplazar $O_i$ con $O_h$ y vuelva al paso 2. 
+\item Caso contrario, para cada objeto no seleccionado, hallar el medoide m√°s parecido.  
 \end{enumerate}
 
-\paragraph{ObservaciÛn.} Resultados experimentales obtenidos en \cite{rousseeuw1990finding} muestran que PAM funciona adecuadamente con conjuntos de datos pequeÒos (100 objetos), pero no es eficiente para grandes conjuntos de datos, lo que se puede evidenciar al analizar la complejidad del algoritmo PAM, donde se puede observar que cada iteraciÛn del algoritmo tiene un orden de complejidad de $O(k(n-k)^2)$.
+\paragraph{Observaci√≥n.} Resultados experimentales obtenidos en \citeauthor{rousseeuw1990finding} \citeyear{rousseeuw1990finding} muestran que PAM funciona adecuadamente con conjuntos de datos peque√±os (100 objetos), pero no es eficiente para grandes conjuntos de datos, lo que se puede evidenciar al analizar la complejidad del algoritmo PAM, donde se puede observar que cada iteraci√≥n del algoritmo tiene un orden de complejidad de $O(k(n-k)^2)$.
 
 
 
@@ -85,55 +85,55 @@ $$T(i,h)= \sum_{i} C_{j}(i,h)$$
 
 
 \subsubsection{CLARA}
-CLARA (Clustering Large Aplications) es un mÈtodo desarrollado por Kaufman y Rousseuw con la finalidad de agrupar un gran n˙mero de objetos. El algoritmo CLARA consiste b·sicamente  en aplicar PAM sobre una muestra aleatoria de objetos, en lugar de aplicarlo directamente a todos los objetos. Este algoritmo est· motivado partiendo del supuesto  de que los medoides de una muestra de objetos tomada aleatoriamente, aproximarÌa a los medoides de todos los objetos. Para mejorar esta aproximaciÛn CLARA toma $L$ muestras  y devuelve la mejor agrupaciÛn. En este caso, la calidad de agrupamiento se mide como la distancia promedio entre todos los objetos y sus medoides (no solo los de la muestra).
+CLARA (Clustering Large Aplications) es un m√©todo desarrollado por \citeauthor{rousseeuw1990finding} con la finalidad de agrupar un gran n√∫mero de objetos. El algoritmo CLARA consiste b√°sicamente  en aplicar PAM sobre una muestra aleatoria de objetos, en lugar de aplicarlo directamente a todos los objetos. Este algoritmo est√° motivado partiendo del supuesto  de que los medoides de una muestra de objetos tomada aleatoriamente, aproximar√≠a a los medoides de todos los objetos. Para mejorar esta aproximaci√≥n CLARA toma $L$ muestras  y devuelve la mejor agrupaci√≥n. En este caso, la calidad de agrupamiento se mide como la distancia promedio entre todos los objetos y sus medoides (no solo los de la muestra).
 
 \textbf{Algoritmo}
 
 \begin{enumerate}
 \item Realizar $L$ veces lo siguiente:
 \item Tomar una muestra aleatoria de $m$ de los $n$ objetos , y ejecutar el algoritmo PAM para hallar los $k$ medoides de esta muestra.
-\item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cual de los $k$ medoides es el m·s similar a $O_j$.
-\item Calcular la disimilitud promedio del grupo obtenido en el paso anterior. Si este valor es menor al mÌnimo anterior, actualizamos el valor mÌnimo y guardamos los $k$ medoides del paso 2 como los mejores medoides obtenidos hasta el momento.
+\item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cual de los $k$ medoides es el m√°s similar a $O_j$.
+\item Calcular la disimilitud promedio del grupo obtenido en el paso anterior. Si este valor es menor al m√≠nimo anterior, actualizamos el valor m√≠nimo y guardamos los $k$ medoides del paso 2 como los mejores medoides obtenidos hasta el momento.
 
 \end{enumerate}
 
-Corridas experimentales realizadas en \cite{rousseeuw1990finding} muestran que tomar $L=5$ muestras de tamaÒo $m=40 + 2k$ da buenos resultados. 
+Corridas experimentales realizadas en \citeauthor{rousseeuw1990finding} \citeyear{rousseeuw1990finding} muestran que tomar $L=5$ muestras de tama√±o $m=40 + 2k$ da buenos resultados. 
 
-\paragraph{ObservaciÛn. } Se puede corroborar que el orden de complejidad del algoritmo CLARA es $O(k(40+k)^2+k(n-k))$, esto explica porque CLARA es m·s eficiente que PAM para valores grandes de $n$.
+\paragraph{Observaci√≥n. } Se puede corroborar que el orden de complejidad del algoritmo CLARA es $O(k(40+k)^2+k(n-k))$, esto explica porque CLARA es m√°s eficiente que PAM para valores grandes de $n$.
 
 \paragraph{Nota.}
 
-La implementaciÛn en el lenguaje de programaciÛn R, tanto del algoritmo PAM como CLARA, se encuentran en el paquete \textit{cluster} desarrollado por \citeauthor{clust2019r}. Mientras que los gr·ficos asociados al an·lisis cl˙ster con estos dos algoritmos se encuentran en el paquete \textit{factoextra} desarrollado por \citeauthor{factoext2017r}
+La implementaci√≥n en el lenguaje de programaci√≥n R, tanto del algoritmo PAM como CLARA, se encuentran en el paquete \textit{cluster} desarrollado por \citeauthor{clust2019r} \citeyear{clust2019r}. Mientras que los gr√°ficos asociados al an√°lisis cl√∫ster con estos dos algoritmos se encuentran en el paquete \textit{factoextra} desarrollado por \citeauthor{factoext2017r} \citeyear{factoext2017r}
 
 %\subsection{CLARANS}
 %\cite{ng2002clarans}
 
-\subsection{ValidaciÛn}
+\subsection{Validaci√≥n}
 
-Una etapa adicional dentro del an·lisis cl˙ster consiste en determinar la cantidad de cl˙sters que es m·s apropiada para los datos. Idealmente, los cl˙sters resultantes no solo deberÌan tener buenas propiedades estadÌsticas (compactas, bien separadas, conectadas y estables), sino tambiÈn resultados relevantes. Se han propuesto una variedad de medidas y mÈtodos para validar los resultados de un an·lisis cl˙ster y determinar tanto el n˙mero de cl˙sters, asÌ como identificar quÈ algoritmo de agrupamiento ofrece el mejor rendimiento, algunas de estas ellas pueden encontrarse en \citeauthor{fraley1998many} \citeyear{fraley1998many}, \citeauthor{duda2001pattern} \citeyear{duda2001pattern}, \citeauthor{salvador2004determining} \citeayear{salvador2004determining}, y \citeauthor{kerr2001bootstrapping} \citeyear{kerr2001bootstrapping}. 
+Una etapa adicional dentro del an√°lisis cl√∫ster consiste en determinar la cantidad de cl√∫sters que es m√°s apropiada para los datos. Idealmente, los cl√∫sters resultantes no solo deber√≠an tener buenas propiedades estad√≠sticas (compactas, bien separadas, conectadas y estables), sino tambi√©n resultados relevantes. Se han propuesto una variedad de medidas y m√©todos para validar los resultados de un an√°lisis cl√∫ster y determinar tanto el n√∫mero de cl√∫sters, as√≠ como identificar qu√© algoritmo de agrupamiento ofrece el mejor rendimiento, algunas de estas ellas pueden encontrarse en \citeauthor{fraley1998many} \citeyear{fraley1998many}, \citeauthor{duda2001pattern} \citeyear{duda2001pattern}, \citeauthor{salvador2004determining} \citeayear{salvador2004determining}, y \citeauthor{kerr2001bootstrapping} \citeyear{kerr2001bootstrapping}. 
 
 
-A continuaciÛn, mostramos un estadÌstico llamado GAP, desarrollado por \citeauthor{tibshirani2001estimating} \citeyear{tibshirani2001estimating}, mismo que considera la dispersiÛn en y entre cl˙sters, que por su versatilidad y f·cil estimaciÛn puede usarse en la elecciÛn del n˙mero de cl˙sters para cualquier algoritmo de agrupamiento.
+A continuaci√≥n, mostramos un estad√≠stico llamado GAP, desarrollado por \citeauthor{tibshirani2001estimating} \citeyear{tibshirani2001estimating}, mismo que considera la dispersi√≥n en y entre cl√∫sters, que por su versatilidad y f√°cil estimaci√≥n puede usarse en la elecci√≥n del n√∫mero de cl√∫sters para cualquier algoritmo de agrupamiento.
 
-\subsubsection{EstadÌstico GAP}
+\subsubsection{Estad√≠stico GAP}
 
-Supongamos que a partir de $n$ objetos hemos creado $k$ cl˙sters $C_1,\dots,C_k$, cada cl˙ster $C_r$ posee $n_r$ objetos, y definamos:
+Supongamos que a partir de $n$ objetos hemos creado $k$ cl√∫sters $C_1,\dots,C_k$, cada cl√∫ster $C_r$ posee $n_r$ objetos, y definamos:
 
 \[
 D_r = \sum_{O_i,O_j\in C_r} \delta_{ij} 
 \]
 
-La suma de las distancias dos a dos de todos los objetos del cl˙ster $r$. Luego, consideremos 
+La suma de las distancias dos a dos de todos los objetos del cl√∫ster $r$. Luego, consideremos 
 
 \[
 W_k = \sum_{r=1}^k \frac{1}{2n_r}D_r
 \]
 
-AsÌ $W_k$ es la suma de cuadrados dentro del cl˙ster, alrededor de los centro del Cl˙ster. Luego, se estandariza  $log(W_k)$ comparandolo con su esperanza bajo una distribuciÛn nula de referencia de los datos.
+As√≠ $W_k$ es la suma de cuadrados dentro del cl√∫ster, alrededor de los centro del Cl√∫ster. Luego, se estandariza  $log(W_k)$ comparandolo con su esperanza bajo una distribuci√≥n nula de referencia de los datos.
 
 \[
 \text{Gap}_n(k) = E_n^*(log(W_k))-log(W_k)
 \]
 
-Donde $E_n^*$ denota la esperanza bajo un tamaÒo de muestra $n$ de la distribuciÛn de referencia. El valor estimado $\hat k$ ser· aquel valor que maximice $\text{Gap}_n(k)$.
+Donde $E_n^*$ denota la esperanza bajo un tama√±o de muestra $n$ de la distribuci√≥n de referencia. El valor estimado $\hat k$ ser√° aquel valor que maximice $\text{Gap}_n(k)$.
 

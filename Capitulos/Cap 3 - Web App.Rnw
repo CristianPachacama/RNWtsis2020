@@ -1,0 +1,90 @@
+\chapter{Aplicación Web}
+\label{chp:webapp}
+
+A continuación, mostramos una guía de uso de la aplicación web que implementa la metodología antes descrita.
+
+
+\section{Módulo: Clustering}
+
+En este módulo el usuario puede realizar una serie de variantes del análisis clúster expuesto en este documento. Incorporta 10 métricas distintas como:
+
+\begin{enumerate}
+\item Autocorrelación
+\item Correlación de Pearson
+\item Correlación Temporal
+\item Métrica Euclidea
+\item Métrica de Fourier
+\item Métrica Infinito
+\item Métrica Manhatan
+\item Métrica Minkwoski
+\item Autocorrelación Parcial
+\item Periodograma
+\end{enumerate}
+
+
+Así mismo es posible usar 3 diferentes algoritmos de agrupamiento:
+
+\begin{enumerate}
+\item K-Medias
+\item PAM - CLARA
+\item Clúster Jerárquico
+\end{enumerate}
+
+Como se ilustra  en la figura (\ref{fig:app_clustering}), una vez definidos estos dos parámetros y el número de clústers que se desean construir, y dando clic en el botón \texttt{Clusterizar}, la aplicación web crea los clústers, además una sugerencia del número óptimo de clústers que se deben construir, también se muestran las estaciones georeferenciadas en un mapa, opcionalmente su representación MDS en $\mathbb{R}^2$, así mismo se genera una tabla con las estaciones y a que clúster corresponden, si se seleccionan estaciones de esta lista, la aplicación muestra gráficos de las series de tiempo de Caudales asociados a estas estaciones. 
+
+
+\begin{figure}[h]
+\caption{Módulo Clustering}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_clustering}
+\label{fig:app_clustering}
+\centering
+\end{figure}
+
+
+\section{Módulo: SARIMAX}
+
+Este módulo se compone de dos secciones, la primera (ver \ref{fig:modulo_sarimax2}) busca definir las componentes SARIMA del modelo asociado al Caudal de una estación (de un clúster predefinido), en nuestro caso, la estación \textit{medoide} o central del clúster, aunque se puede elegir cualquiera. En la segunda parte se trata de elegir las variables regresoras asociadas a estaciones de medición climatologica (ver \ref{fig:modulo_sarimax3}). Elegidas estas dos componentes, la aplicación estima el modelo asociado y muestra una serie de estadísticos de validación del modelo, análisis de residuos, predicciones del modelo (para la serie modelada), y una tabla con todos los modelos estimados para los caudales del clúster (ver \ref{fig:modulo_sarimax5}).
+
+
+\begin{figure}[h]
+\caption{Módulo SARIMAX}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_sarimax1}
+\label{fig:modulo_sarimax1}
+\centering
+\end{figure}
+
+\begin{figure}[h]
+\caption{Módulo SARIMAX}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_sarimax2}
+\label{fig:modulo_sarimax2}
+\centering
+\end{figure}
+
+\begin{figure}[h]
+\caption{Módulo SARIMAX}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_sarimax3}
+\label{fig:modulo_sarimax3}
+\centering
+\end{figure}
+
+\begin{figure}[h]
+\caption{Módulo SARIMAX}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_sarimax4}
+\label{fig:modulo_sarimax4}
+\centering
+\end{figure}
+
+\begin{figure}[h]
+\caption{Módulo SARIMAX}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_sarimax5}
+\label{fig:modulo_sarimax5}
+\centering
+\end{figure}
+
+\begin{figure}[h]
+\caption{Módulo SARIMAX}
+\includegraphics[width=15cm]{Cap3-WebApp/modulo_sarimax6}
+\label{fig:modulo_sarimax6}
+\centering
+\end{figure}
+

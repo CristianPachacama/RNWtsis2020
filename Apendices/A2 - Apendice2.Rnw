@@ -1,9 +1,9 @@
-\chapter{An醠isis Cl鷖ter}
+\chapter{An谩lisis Cl煤ster}
 
 \section{Matriz de Distancias}
 
 
-Mostramos a continuaci髇 la matriz de distancias $D$, asociada a las distancias $d_{ACF}$ medidas entre las series de tiempo de Caudales, donde cada serie fue medida en una estaci髇 distinta. El nombre de cada estaci髇 se encuentra en la tabla \ref{tab:estaciones}.
+Mostramos a continuaci贸n la matriz de distancias $D$, asociada a las distancias $d_{ACF}$ medidas entre las series de tiempo de Caudales, donde cada serie fue medida en una estaci贸n distinta. El nombre de cada estaci贸n se encuentra en la tabla \ref{tab:estaciones}.
 
 \label{tab:d_matriz}
 <<  >>=
@@ -110,9 +110,9 @@ kable(d_matriz[121:179,c(1,162:180)], "latex", booktabs = T,caption="Matriz de D
 <<estaciones>>=
 load(file = "Resultados/0_DataVazoes.RData")
 estacVaz = names(BDDv)[-c(1,2)]
-bdVz = data.frame("V" = paste0("V",seq(60)), "Estaci髇" = estacVaz[seq(60)],
-                  "V."= paste0("V",61:120), "Estaci髇." = estacVaz[61:120],
-                  ".V." = paste0("V",121:180), ".Estaci髇." = c(estacVaz[121:179],"-"))
+bdVz = data.frame("V" = paste0("V",seq(60)), "Estaci贸n" = estacVaz[seq(60)],
+                  "V."= paste0("V",61:120), "Estaci贸n." = estacVaz[61:120],
+                  ".V." = paste0("V",121:180), ".Estaci贸n." = c(estacVaz[121:179],"-"))
 kable(bdVz, "latex", booktabs = T,caption="Nombre de Estaciones (Caudales)") %>% 
   kable_styling(latex_options = c("scale_down"))
 

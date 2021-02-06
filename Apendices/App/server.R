@@ -52,6 +52,6 @@ function(input, output,session) {
   })
   #Subtitutlo Resultados
   output$estacion_modelada = renderText({
-    paste("Modelamiento Estación:",input$nomb_est_vaz3)
+    paste("Modelamiento EstaciÃ³n:",input$nomb_est_vaz3)
   })
 }

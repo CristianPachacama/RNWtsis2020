@@ -19,7 +19,7 @@ navbarPage(
       tags$b('Proyecto: '),
       ' "Extreme low Levels of setreamflow in Hydropower Plants".' ,
       '-',
-      tags$a('Departamento de Matem·tica - EPN (2018)', 
+      tags$a('Departamento de Matem√°tica - EPN (2018)', 
              href = 'http://www.epn.edu.ec'),
       tags$b('  ||  '),
       tags$b('Desarrollado por: '),
@@ -30,7 +30,7 @@ navbarPage(
   
   #INTRODUCCION E INFORMACION DEL PROYECTO ---------------------------
   tabPanel(
-    'IntroducciÛn',
+    'Introducci√≥n',
     icon = icon('home'),
     
     fluidRow(
@@ -39,12 +39,12 @@ navbarPage(
         fluidRow(' '),
         hr(),
         fluidRow(
-          column(3, tags$b('Proyecto TitulaciÛn:')),
+          column(3, tags$b('Proyecto Titulaci√≥n:')),
           column(1),
           column(
             8,
-            'An·lisis Cl˙ster para series de tiempo estacionales
-            y modelizaciÛn de caudales de rÌos del Brasil.'
+            'An√°lisis Cl√∫ster para series de tiempo estacionales
+            y modelizaci√≥n de caudales de r√≠os del Brasil.'
           )
           ),
         hr(),
@@ -52,13 +52,13 @@ navbarPage(
                  column(8, 'PIS-16-14')),
         hr(),
         fluidRow(
-          column(3, tags$b('Linea de InvestigaciÛn:')),
+          column(3, tags$b('Linea de Investigaci√≥n:')),
           column(1),
-          column(8, 'Modelos EconomÈtricos')
+          column(8, 'Modelos Econom√©tricos')
         ),
         hr(),
         fluidRow(column(3, tags$b('Departamento:')), column(1),
-                 column(8, 'Matem·tica')),
+                 column(8, 'Matem√°tica')),
         hr(),
         fluidRow(
           column(3, tags$b('Directora:')),
@@ -74,8 +74,8 @@ navbarPage(
       
       mainPanel(
         h3(
-          'An·lisis Cl˙ster para series de tiempo estacionales
-          y modelizaciÛn de caudales de rÌos del Brasil.'
+          'An√°lisis Cl√∫ster para series de tiempo estacionales
+          y modelizaci√≥n de caudales de r√≠os del Brasil.'
         ),
         hr(),
         h4('Resume:'),
@@ -157,44 +157,44 @@ navbarPage(
       sidebarPanel(
         h4('Cluster de Series de Tiempo'),
         p(
-          'Primero selecciona una de las MÈtricas
+          'Primero selecciona una de las M√©tricas
           definidas para series de tiempo.'
         ),
         selectInput(
           'vaz_clus_metric',
-          label = 'Selecciona MÈtrica',
+          label = 'Selecciona M√©trica',
           selected = 'D_acf',
           list(
-            'CorrelaciÛn Cruzada' = 'D_ccor',
-            'AutocorrelaciÛn' = 'D_acf',
-            'CorrelaciÛn de Pearson' = 'D_cor',
-            'CorrelaciÛn Temporal' = 'D_cort',
-            'MÈtrica Euclidea' = 'D_euc',
-            'MÈtrica de Fourier' = 'D_fourier',
-            'MÈtrica Infinito' = 'D_ifnrm',
-            'MÈtrica Manhatan' = 'D_manh',
-            'MÈtrica de Minkwoski' = 'D_mink',
-            'AutocorrelaciÛn Parcial' = 'D_pacf',
+            'Correlaci√≥n Cruzada' = 'D_ccor',
+            'Autocorrelaci√≥n' = 'D_acf',
+            'Correlaci√≥n de Pearson' = 'D_cor',
+            'Correlaci√≥n Temporal' = 'D_cort',
+            'M√©trica Euclidea' = 'D_euc',
+            'M√©trica de Fourier' = 'D_fourier',
+            'M√©trica Infinito' = 'D_ifnrm',
+            'M√©trica Manhatan' = 'D_manh',
+            'M√©trica de Minkwoski' = 'D_mink',
+            'Autocorrelaci√≥n Parcial' = 'D_pacf',
             'Periodograma' = 'D_per'
           )
         ),
-        p('Luego elige un mÈtodo de clusterizaciÛn
+        p('Luego elige un m√©todo de clusterizaci√≥n
           (agrupamiento).'),
         selectInput(
           'vaz_clus_metod',
-          label = 'Selecciona MÈtodo',
+          label = 'Selecciona M√©todo',
           selected = 'clara',
           list(
             'K-Medias' = 'kmedias',
             'K-Medoid (CLARA)' = 'clara',
-            'Cluster Ger·rquico' = 'gerarquico'
+            'Cluster Ger√°rquico' = 'gerarquico'
           )
         ),
-        p('Finalmente elige el n˙mero de clusters
+        p('Finalmente elige el n√∫mero de clusters
           que quieres que se formen.'),
         sliderInput(
           'vaz_clus_k',
-          label = 'N˙mero de Clusters',
+          label = 'N√∫mero de Clusters',
           min = 2,
           max = 8,
           value = 4
@@ -205,7 +205,7 @@ navbarPage(
           icon = icon('braille')
         ),
         hr(),
-        h4('Gr·fico de Series'),
+        h4('Gr√°fico de Series'),
         p(
           'Para graficar una o varias series,
           primero clusteriza las estaciones, luego
@@ -214,11 +214,11 @@ navbarPage(
           se encuentra en la parte inferior derecha'
         ),
         hr(),
-        #Link a pestaÒa ACP Funcional
+        #Link a pesta√±a ACP Funcional
         p(
-          'Si desea puede seguir con el An·lisis
+          'Si desea puede seguir con el An√°lisis
           de Componentes Principales Funcional
-          de las Series de Flujos en la pestaÒa',
+          de las Series de Flujos en la pesta√±a',
           actionLink(inputId = "pestania_acpf", label = "ACP Funcional")
         )
         ),
@@ -244,26 +244,26 @@ navbarPage(
     tabPanel(
       "ACP Funcional",
       
-      h3(align = "center", "An·lisis de Componentes Principales Funcional"),
+      h3(align = "center", "An√°lisis de Componentes Principales Funcional"),
       
       p(
-        'Primero realice el An·lisis Cl˙ster en la pestaÒa anterior (',
+        'Primero realice el An√°lisis Cl√∫ster en la pesta√±a anterior (',
         actionLink(inputId = "pestania_cluster2", label = "Clusters"),
-        ') fijando adecuadamente los par·metros. Luego, selecciona
-        que Cl˙ster deseas analizar usando ACP Funcional.'
+        ') fijando adecuadamente los par√°metros. Luego, selecciona
+        que Cl√∫ster deseas analizar usando ACP Funcional.'
       ),
-      # N˙mero de Cl˙ster a Analizar
+      # N√∫mero de Cl√∫ster a Analizar
       selectInput(
         'n_clus_acpf2',
-        label = 'Selecciona Cl˙ster',
+        label = 'Selecciona Cl√∫ster',
         selected = "1",
         choices = 1:4
       ),
       
       p(
-        "En el siguiente gr·fico se muestran las
-        series de Flujos que componene el cl˙ster,
-        asÌ como una listado de las mismas."
+        "En el siguiente gr√°fico se muestran las
+        series de Flujos que componene el cl√∫ster,
+        as√≠ como una listado de las mismas."
       ),
       #Grafico de Series Vazoes por Cluster
       tabsetPanel(
@@ -272,7 +272,7 @@ navbarPage(
                  dataTableOutput(outputId = "tab_vaz_clus2")),
         #Grafico de Vazoes del Cluster
         tabPanel(
-          "Gr·fico",
+          "Gr√°fico",
           br(),
           br(),
           dygraphOutput(
@@ -288,20 +288,20 @@ navbarPage(
       #Resultados ACPF
       h4("Resultados del ACP Funcional"),
       p(
-        "A continuaciÛn, se muestra un conjunto
-        de gr·ficos resultado de haber relizado el
+        "A continuaci√≥n, se muestra un conjunto
+        de gr√°ficos resultado de haber relizado el
         ACP Funcional de las series de Flujos del
-        Cluster. Es decir, la funciÛn media del
+        Cluster. Es decir, la funci√≥n media del
         proceso, las funciones propias, y el
         porcentaje que aporta cada componente a la
         variabilidad del proceso."
       ),
       #Grafico ACOF
       tabsetPanel(
-        tabPanel("Gr·fico Resumen",
+        tabPanel("Gr√°fico Resumen",
                  
                  plotOutput(outputId = "graf_acpf1")),
-        tabPanel("Gr·ficos de PresiciÛn",
+        tabPanel("Gr√°ficos de Presici√≥n",
                  
                  plotOutput(outputId = "graf_acpf2")),
         tabPanel("BoxPlot Funcional",
@@ -316,10 +316,10 @@ navbarPage(
       "SARIMAX",
       h3(align = "center", "Modelamiento SARIMAX"),
       p(
-        "En esta secciÛn modelaremos una serie de
+        "En esta secci√≥n modelaremos una serie de
         tiempo asociada a Flujos, usando como
-        variables regresoras a variables Clim·ticas y
-        las componentes principales del Cl˙ster obtenidas
+        variables regresoras a variables Clim√°ticas y
+        las componentes principales del Cl√∫ster obtenidas
         a partir del ACP Funcional)."
     ),
     
@@ -337,35 +337,35 @@ navbarPage(
     
     #Especificaciones
     p(
-      "Donde \\(V_t\\) es el caudal estimado del cl˙ster en el
+      "Donde \\(V_t\\) es el caudal estimado del cl√∫ster en el
       tiempo \\(t\\), \\(C_{kt}\\) son las variables de Clima
-      de la estaciÛn \\(k\\) en el tiempo \\(t\\)."
+      de la estaci√≥n \\(k\\) en el tiempo \\(t\\)."
     ),
     
     
     p(
-      "Para ello primero seleccione el Cl˙ster
+      "Para ello primero seleccione el Cl√∫ster
       que desea analizar. Recuerde haber realizado
-      primero el An·lisis respectivo en la primera pestaÒa (",
+      primero el An√°lisis respectivo en la primera pesta√±a (",
       actionLink(inputId = "pestania_cluster3", label = "Clusters"),
       ').'
       ),
     #Seleccionar Numero de Cluster
     selectInput(
       'n_clus_acpf3',
-      label = 'Selecciona Cl˙ster',
+      label = 'Selecciona Cl√∫ster',
       selected = "1",
       choices = 1:4
     ),
     p(
-      "A continuaciÛn, seleccione la estaciÛn
+      "A continuaci√≥n, seleccione la estaci√≥n
       correspondiente a la serie de tiempo de
       Flujos que desea modelar."
     ),
     #Seleccionar Estacion Vazoe
     selectInput(
       'nomb_est_vaz3',
-      label = 'Selecciona EstaciÛn',
+      label = 'Selecciona Estaci√≥n',
       selected = "1",
       choices = 1:4
     ),
@@ -373,21 +373,21 @@ navbarPage(
     dygraphOutput(outputId = "graf_vaz_estacion", width = "98%"),
     p(
       "Luego, elije las variables regresoras del
-      modelo, en este caso contamos con variables Clim·ticas."
+      modelo, en este caso contamos con variables Clim√°ticas."
     ),
     br(),
-    # Variables Clim·ticas
+    # Variables Clim√°ticas
     h4("Variables Regresoras"),
     p(
       "En la siguiente tabla se muestran las
-      series clim·ticas asociadas a las estaciones
-      de mediciÛn m·s cercanas a las estaciones
+      series clim√°ticas asociadas a las estaciones
+      de medici√≥n m√°s cercanas a las estaciones
       donde se midieron los Flujos que componen
-      el Cl˙ster. Adem·s, podemos encontrar
-      la gr·fica de dichas series, asÌ como un mapa
+      el Cl√∫ster. Adem√°s, podemos encontrar
+      la gr√°fica de dichas series, as√≠ como un mapa
       donde podemos observar las estaciones de
-      mediciÛn de Flujos y sus correspondientes
-      estaciones de mediciÛn de Clima."
+      medici√≥n de Flujos y sus correspondientes
+      estaciones de medici√≥n de Clima."
     ),
     p(
       tags$b("Nota:"),
@@ -399,41 +399,41 @@ navbarPage(
                   label = "Desestacionalizar Series de Clima.",
                   value = FALSE),
     p(
-      "Puede incluir en el modelo adem·s, variables
+      "Puede incluir en el modelo adem√°s, variables
       como la serie de Fujos representante
-      del Cl˙ster, asÌ como las series que
-      representan a las variables Clim·ticas:
-      PrecipitaciÛn, Temperatura M·xima,
-      Temperatura MÌnima, y Humedad (halladas a partir
+      del Cl√∫ster, as√≠ como las series que
+      representan a las variables Clim√°ticas:
+      Precipitaci√≥n, Temperatura M√°xima,
+      Temperatura M√≠nima, y Humedad (halladas a partir
       de ACP Funcional)."
     ),
     # Eleccion Variables Extras
     checkboxInput("flujoBox",
-                  label = "Flujo del Cl˙ster",
+                  label = "Flujo del Cl√∫ster",
                   value = FALSE),
     checkboxInput("precipBox",
-                  label = "PrecipitaciÛn del Cl˙ster",
+                  label = "Precipitaci√≥n del Cl√∫ster",
                   value = FALSE),
     checkboxInput("tempMaxBox",
-                  label = "Temperatura M·xima del Cl˙ster",
+                  label = "Temperatura M√°xima del Cl√∫ster",
                   value = FALSE),
     checkboxInput("tempMinBox",
-                  label = "Temperatura MÌnima del Cl˙ster",
+                  label = "Temperatura M√≠nima del Cl√∫ster",
                   value = FALSE),
     checkboxInput("humedBox",
-                  label = "Humedad del Cl˙ster",
+                  label = "Humedad del Cl√∫ster",
                   value = FALSE),
     
-    #PestaÒas
+    #Pesta√±as
     tabsetPanel(
       tabPanel(
         "Variables Regresoras",
         br(),
-        #Tabla Variables Clima del Cl˙ster
+        #Tabla Variables Clima del Cl√∫ster
         dataTableOutput(outputId = "tab_clim_clus3")
       ),
       tabPanel(
-        "Gr·fico",
+        "Gr√°fico",
         br(),
         p(
           "Primero selecciona las variables de
@@ -456,14 +456,14 @@ navbarPage(
     p(
       "Nota: Si no selecciona ninguna
       de las variables de la tabla anterior, por
-      defecto se consideran todas las variable clim·ticas."
+      defecto se consideran todas las variable clim√°ticas."
     ),
     br(),
     
-    #Par·metros del Modelo
-    h4("SelecciÛn del Par·metros"),
+    #Par√°metros del Modelo
+    h4("Selecci√≥n del Par√°metros"),
     p(
-      "A continuaciÛn puede elegir los par·metros
+      "A continuaci√≥n puede elegir los par√°metros
       \\( (p,d,q,P,D,Q)\\) del modelo (asociados
       a los retardos y diferencias)."
     ),
@@ -521,7 +521,7 @@ navbarPage(
       align = "center",
       actionButton(
         inputId = "boton_modelo",
-        label = "Ejecutar An·lisis",
+        label = "Ejecutar An√°lisis",
         icon = icon("cog", lib = "glyphicon")
       )
     ),
@@ -536,9 +536,9 @@ navbarPage(
         "Coeficientes",
         br(),
         p(
-          "En esta secciÛn presentamos un
+          "En esta secci√≥n presentamos un
           resumen general del modelo estimado
-          a partir de los par·metros antes fijados."
+          a partir de los par√°metros antes fijados."
         ),
         verbatimTextOutput("coeficientes")
         ),
@@ -547,14 +547,14 @@ navbarPage(
         "Residuos",
         br(),
         p(
-          "A continuaciÛn podemos ver el gr·fico
-          de los residuos, su distribuciÛn, asÌ como
-          la funciÛn de autocorrelaciÛn de los mismos."
+          "A continuaci√≥n podemos ver el gr√°fico
+          de los residuos, su distribuci√≥n, as√≠ como
+          la funci√≥n de autocorrelaci√≥n de los mismos."
         ),
         plotOutput("resid_graf")
         ),
       #Prediccion
-      tabPanel("PredicciÛn")
+      tabPanel("Predicci√≥n")
       
       
       

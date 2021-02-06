@@ -1,43 +1,45 @@
-\chapter{AplicaciÛn Web}
-\label{chp:webapp}
+\chapter{Aplicaci√≥n Web}
+\label{apnd:webapp}
 
-A continuaciÛn, mostramos la implementaciÛn en cÛdigo R de la AplicaciÛn Web desarrollada con el paquete \textit{Shiny}, \cite{shiny}, que contiene el an·lisis completo de las series de tiempo de flujos de rios de Brasil. Este aplicacion esta compuesta principalmente por tres archivos: \textit{global} , \textit{ui}  y \textit{server}, tal como puede ver en el mapa de archivos de la aplicaciÛn en la figura \ref{fig:mapa_webapp}.
+A continuaci√≥n, mostramos la implementaci√≥n en c√≥digo R de la Aplicaci√≥n Web desarrollada con el paquete \textit{Shiny}, \cite{shiny}, que contiene el an√°lisis completo de las series de tiempo de flujos de rios de Brasil. Este aplicacion esta compuesta principalmente por tres archivos: \textit{global} , \textit{ui}  y \textit{server}, tal como puede ver en el mapa de archivos de la aplicaci√≥n en la figura \ref{fig:mapa_webapp}.
 
 \begin{figure}[h]
-\caption{Estructura de la AplicaciÛn Web}
+\caption{Estructura de la Aplicaci√≥n Web}
 \includegraphics[width=15cm]{MapaApp.eps}
 \label{fig:mapa_webapp}
 \centering
 \end{figure}
 
-\paragraph{Nota. } La aplicaciÛn Web con el an·lisis completo, se encuentra disponible para su uso en la siguiente direcciÛn:
-{\color{blue} https://cristianpachacama.shinyapps.io/Tesis/}. 
-Adem·s puede encontrar el cÛdigo fuente de la misma en el repositorio de GitHub:
+\paragraph{Nota. } La aplicaci√≥n Web con el an√°lisis completo, se encuentra disponible para su uso en la siguiente direcci√≥n:
+{\color{blue} https://cristianpachacama.shinyapps.io/TesisBorrrador/}.
+
+Adem√°s puede encontrar el c√≥digo fuente de la misma en el repositorio de GitHub:
 {\color{blue} https://github.com/CristianPachacama/AppTesis/}
+
 
 \section{Paquetes (global.R)}
 
-Este archivo contiene la declaraciÛn de los paquetes extras, que contienen tods las funciones que se usaran en la aplicaciÛn web, y que son necesarios para su correcto funcionamiento.
+Este archivo contiene la declaraci√≥n de los paquetes extras, que contienen tods las funciones que se usaran en la aplicaci√≥n web, y que son necesarios para su correcto funcionamiento.
 
-<<global, eval=FALSE, echo=TRUE, size="footnotesize", code = readLines("Apendices/App/global.R")>>=
+<<global, eval=FALSE, echo=TRUE, size="footnotesize", code = readLines("Apendices/App/global.R",encoding = 'UTF-8')>>=
 
 @
 
 
 \section{Interfaz de Usuario (ui.R)}
 
-La interfaz de usuario est· compuesta por todos los elementos visuales desde donde el usuario de la aplicaciÛn puede interactuar con la misma, en este caso est· destinada a que el usuario fije los par·metros que posteriormente son usados como insumos para la ejecuciÛn de los an·lisis (en el "sever"), finalmente muestra a los usuarios los resultados del an·lisis realizado.
+La interfaz de usuario est√° compuesta por todos los elementos visuales desde donde el usuario de la aplicaci√≥n puede interactuar con la misma, en este caso est√° destinada a que el usuario fije los par√°metros que posteriormente son usados como insumos para la ejecuci√≥n de los an√°lisis (en el "sever"), finalmente muestra a los usuarios los resultados del an√°lisis realizado.
 
-<<ui, echo=TRUE, eval=FALSE,size="footnotesize", code = readLines("Apendices/App/ui.R")>>=
+<<ui, echo=TRUE, eval=FALSE,size="footnotesize", code = readLines("Apendices/App/ui.R",encoding = 'UTF-8')>>=
 
 @
 
 
 
-\section{EjecuciÛn de Tareas (server.R)}
+\section{Ejecuci√≥n de Tareas (server.R)}
 
-En el "server" se ejecutan todas las funciones y calculos que hacen parte del an·lisis, para posteriormente mostrar los resultados del mismo en la interf·z de usuario.
+En el "server" se ejecutan todas las funciones y calculos que hacen parte del an√°lisis, para posteriormente mostrar los resultados del mismo en la interf√°z de usuario. A continuaci√≥n, mostramos una versi√≥n resumida del archivo "server", cada una de las rutinas (alojadas en subdirectorios) aqu√≠ incluidas se pueden encontrar en: {\color{blue} https://github.com/CristianPachacama/AppTesis/Code}.
 
-<<server, echo=TRUE, eval=FALSE,size="footnotesize", code = readLines("Apendices/App/server.R")>>=
+<<server, echo=TRUE, eval=FALSE,size="footnotesize", code = readLines("Apendices/App/server.R",encoding = 'UTF-8')>>=
 
 @

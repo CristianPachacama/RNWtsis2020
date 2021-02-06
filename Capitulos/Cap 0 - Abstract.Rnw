@@ -3,30 +3,30 @@
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 % Cargamos Preambulo
-% <<set-parent, echo=FALSE, cache=FALSE>>=
-% set_parent('informe_semds.Rnw')
-% @
+
 
 \chapter*{Resumen}
 %\onehalfspacing
 
 \addcontentsline{toc}{chapter}{Resumen}
-%Descripción General
-En el presente trabajo se aborda la aplicación del Análisis Clúster para Series de Tiempo orientado al modelamiento de caudales de los principales ríos de Brasil, que se midieron en 179 estaciones repartidas en los mismos, esto a partir de variables climáticas y la combinación de técnicas de modelamiento como SARIMA, SARIMAX y técnicas de estadística funcional.
+%DescripciÃ³n General
+En el presente trabajo se aborda la aplicaciÃ³n del AnÃ¡lisis ClÃºster para Series de Tiempo orientado al modelamiento de caudales de los principales rÃ­os de Brasil, que se midieron en 179 estaciones repartidas en los mismos, esto a partir de variables climÃ¡ticas y la combinaciÃ³n de tÃ©cnicas de modelamiento como SARIMA, SARIMAX y AnÃ¡lisis de Conglomerados (\textit{ClÃºster}).
 
-%Descripción Específica  .......................
-Específicamente lo que se hace es crear un número pequeño de clústers (de 2 a 4 clústers) a partir de las 179 estaciones, donde cada grupo contendrá a estaciones en la que sus caudales posean un comportamiento temporal lo más similar posible, luego para cada uno de estos clústers, se proponen dos modelos, el primero es un modelo SARIMA construido para la media funcional de las series de cada clúster, y el segundo, un modelo SARIMAX construido para la serie de tiempo más centralmente ubicada (\textit{medoid}) dentro de cada clúster y considerando como variables exógenas a series climáticas medidas en la estación geográficamente más cercana. 
+%DescripciÃ³n EspecÃ­fica  .......................
+EspecÃ­ficamente lo que se hace es crear un nÃºmero pequeÃ±o de clÃºsters (de 2 a 4 clÃºsters) a partir de las 179 estaciones, donde cada grupo contendrÃ¡ a estaciones en la que sus caudales posean un comportamiento temporal lo mÃ¡s similar posible, luego para cada uno de estos clÃºsters, se proponen dos modelos, el primero es un modelo SARIMA construido para la media funcional de las series de cada clÃºster, y el segundo, un modelo SARIMAX construido para la serie de tiempo mÃ¡s centralmente ubicada (\textit{medoide}) dentro de cada clÃºster y considerando como variables exÃ³genas a series climÃ¡ticas medidas en la estaciÃ³n geogrÃ¡ficamente mÃ¡s cercana. 
 
 %Resultados Concretos y valores  .........................
-Mostraremos después las ventajas y la eficiencia de modelar una enorme cantidad de series de tiempo con el uso de estas técnicas, esto debido a que el modelo que explica cada clúster puede ser extendido (usando los mismos retardos y variables explicativas) a cada una de las series de tiempo que lo componen. 
-Realizamos estudios comparativos entre ambos modelos, obteniendo resultados cercanos en cuanto a criterios de información y poder predictivo. A pesar de ello el modelo SARIMAX muestra una ventaja en todos los criterios, obteniendo, por ejemplo, para el caudal de la estación \textit{14 DE JULHO (284)},  un $AIC = 1913.2$, $\hat\sigma = 6655$ y el Log-Verosimilitud $= -950.6$, mejor en comparación con el modelo SARIMA, para el cual se obtuvieron un $AIC = 1882.2$, $\hat\sigma = 4884 $ y el Log-Verosimilitud $=-932.1$.
+Mostraremos despuÃ©s las ventajas y la eficiencia de modelar una enorme cantidad de series de tiempo con el uso de estas tÃ©cnicas, esto debido a que el modelo que explica cada clÃºster puede ser extendido (usando los mismos retardos y variables explicativas) a cada una de las series de tiempo que lo componen. 
+Realizamos estudios comparativos entre ambos modelos, obteniendo resultados cercanos en cuanto a criterios de informaciÃ³n y poder predictivo. A pesar de ello el modelo SARIMAX muestra una ventaja en todos los criterios,
+% obteniendo, por ejemplo, para el caudal de la estaciÃ³n \textit{14 DE JULHO (284)},  un $AIC = 1913.2$, $\hat\sigma = 6655$ y el Log-Verosimilitud $= -950.6$, mejor en comparaciÃ³n con el modelo SARIMA, para el cual se obtuvieron un $AIC = 1882.2$, $\hat\sigma = 4884 $ y el Log-Verosimilitud $=-932.1$.
 %Significado de Resultados .........................
-Así mostramos que conseguimos pasar del problema de modelar 179 series de tiempo, a modelar las series de tiempo de unos cuantos clústers.
+% AsÃ­ mostramos que conseguimos 
+con lo que mostramos que es posible reducir el problema de modelar 179 series de tiempo, a modelar las series de tiempo de unos cuantos clÃºsters.
 
 
 \vspace{5mm}
 
-\textbf{Palabras clave:} Análisis Clúster para Series de Tiempo, STL-Loess, SARIMAX.
+\textbf{Palabras clave:} AnÃ¡lisis ClÃºster para Series de Tiempo, STL-Loess, SARIMAX.
 
 
 
@@ -38,17 +38,17 @@ Así mostramos que conseguimos pasar del problema de modelar 179 series de tiempo
 \addcontentsline{toc}{chapter}{Abstract}
 
 %General description
-This paper deals with the application of the Cluster Analysis for Time Series oriented to the modeling of flows of the main rivers of Brazil, which were measured in 179 stations distributed in them, this from climatic variables and the combination of techniques of modeling as SARIMA, SARIMAX and functional statistics techniques.
+This paper deals with the application of the Cluster Analysis for Time Series oriented to the modeling of stream flows of the main rivers of Brazil, which were measured in 179 stations distributed in them, this from climatic variables and the combination of techniques of modeling as SARIMA, SARIMAX and Cluster Analysis.
 
 % Specific Description .......................
 Specifically, what is done is to create a small number of clusters (from 2 to 4 clusters) from the 179 stations, where each group will contain stations in which their flows have a temporal behavior similar possible, then for each of these clusters, two models are proposed, the first is a SARIMA model built for the functional mean of the series of each cluster, and the second, a SARIMAX model built for the time series most centrally located \textit{(medoid)} inside each cluster and considering as exogenous variables climatic series measured in the nearest geographical station.
 
 % Concrete Results and values .........................
 We will show later the advantages and the efficiency of modeling a huge amount of time series with the use of these techniques, this because the model that explains each cluster can be extended (using the same delays and explanatory variables) to each one of the time series that compose it.
-We carry out comparative studies between both models, obtaining close results in terms of information criteria and predictive power. Despite this, the SARIMAX model shows an advantage in all the criteria, obtaining, for example, for the flow of the station \textit{14 DE JULHO (284)}, an $AIC = 1913.2$, $\hat\sigma = 6655 $ and Log-Likelihood $ = -950.6 $, better in comparison with the SARIMA model, for which an $ AIC = 1882.2 $, $ \hat\sigma = 4884 $ and Log-Likelihood $= - 932.1$ were obtained.
-
+We carry out comparative studies between both models, obtaining close results in terms of information criteria and predictive power. Despite this, the SARIMAX model shows an advantage in all the criteria, 
+% obtaining, for example, for the flow of the station \textit{14 DE JULHO (284)}, an $AIC = 1913.2$, $\hat\sigma = 6655 $ and Log-Likelihood $ = -950.6 $, better in comparison with the SARIMA model, for which an $ AIC = 1882.2 $, $ \hat\sigma = 4884 $ and Log-Likelihood $= - 932.1$ were obtained.
 % Meaning of Results .........................
-Thus we show that we managed to move from the problem of modeling 179 time series, to modeling the time series of a few clusters.
+thus we show that it is possible to reduce the problem of modeling 179 time series, to modeling the time series of a few clusters.
 
 \vspace{5mm}
 

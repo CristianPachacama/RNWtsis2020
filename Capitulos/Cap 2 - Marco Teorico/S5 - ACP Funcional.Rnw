@@ -1,73 +1,73 @@
-\section{An·lisis de Componentes Principales}
+\section{An√°lisis de Componentes Principales}
 
-El An·lisis de Componentes Principales (ACP)que es uno de los mÈtodos de an·lisis multivariado m·s populares. El objetivo de la ACP es resumir la informaciÛn contenida en datos multivariados cuantitativos, reduciendo la dimensionalidad de los estos sin perder informaciÛn importante \cite{pearson1901liii}.
+El An√°lisis de Componentes Principales (ACP)que es uno de los m√©todos de an√°lisis multivariado m√°s populares. El objetivo de la ACP es resumir la informaci√≥n contenida en datos multivariados cuantitativos, reduciendo la dimensionalidad de los estos sin perder informaci√≥n importante \cite{pearson1901liii}.
 
-%\subsection{EstadÌsticos para Datos Funcionales}
+%\subsection{Estad√≠sticos para Datos Funcionales}
 %
-%A continuaciÛn se muestra un resumen de los estadÌsticos cl·sicos aplicados a datos funcionales. El primero de ellos corresponde a la funciÛn Media que toma los valores:
+%A continuaci√≥n se muestra un resumen de los estad√≠sticos cl√°sicos aplicados a datos funcionales. El primero de ellos corresponde a la funci√≥n Media que toma los valores:
 %
 %\[
 %\bar x(t) = \frac{1}{n} \sum_{i=1}^{n} x_i(t)
 %\]
 %
-%De igual manera la funciÛn Varianza toma los valores
+%De igual manera la funci√≥n Varianza toma los valores
 %
 %\[
 %var_x(t) = \frac{1}{n-1} \sum_{i=1}^{n} \left[  x(t) - \bar{x}(t) \right]^2
 %\]
 %
-%Y la funciÛn DesviaciÛn Est·ndar es la raÌz cuadrada de la funciÛn Varianza.
+%Y la funci√≥n Desviaci√≥n Est√°ndar es la ra√≠z cuadrada de la funci√≥n Varianza.
 %
-%Un estadÌstico tambiÈn importante es la covarianza y la correlaciÛn. En este caso la funciÛn de covarianza nos muestra entre las observaciones de $x(t)$ en distintos valores de $t$, se define como sigue:
+%Un estad√≠stico tambi√©n importante es la covarianza y la correlaci√≥n. En este caso la funci√≥n de covarianza nos muestra entre las observaciones de $x(t)$ en distintos valores de $t$, se define como sigue:
 %
 %\[
 %cov_x(t_1,t_2) = \frac{1}{n-1}\sum_{i=1}^n [x_i (t_1) - \bar x(t_1)][x_i (t_2) - \bar x(t_2)]
 %\]
 %
-%Luego, la funciÛn de correlaciÛn viene dada por:
+%Luego, la funci√≥n de correlaci√≥n viene dada por:
 %
 %\[
 %corr_x(t_1,t_2) = \frac{cov_x(t_1,t_2)}{\sqrt{ var_x(t_1) var_x(t_2) }}
 %\]
 %
-%Como vemos las versiones funcionales de los estadÌsticos cl·sicos son an·logas a sus definiciones tradicionales.
+%Como vemos las versiones funcionales de los estad√≠sticos cl√°sicos son an√°logas a sus definiciones tradicionales.
 
 
-\subsection{ACP cl·sico}
+\subsection{ACP cl√°sico}
 
 
-El an·lisis de componentes principales nos permite resumir y visualizar la informaciÛn en un conjunto de datos que contiene individuos/observaciones descritos por m˙ltiples variables cuantitativas interrelacionadas. Cada variable podrÌa ser considerada como una dimensiÛn diferente, y luego
-%El an·lisis de componentes principales se utiliza para extraer la informaciÛn importante de una tabla de datos multivariable 
-expresar esta informaciÛn como en un conjunto de menor dimensiÛn (pocas variables). Las nuevas variables obtenidas del ACP se conocen como ``Componentes principales''. Estas nuevas variables corresponden a una combinaciÛn lineal de los originales, y son aquellas a lo largo de las cuales la variaciÛn en los datos es m·xima \cite{kassambara2017practical} . 
+El an√°lisis de componentes principales nos permite resumir y visualizar la informaci√≥n en un conjunto de datos que contiene individuos/observaciones descritos por m√∫ltiples variables cuantitativas interrelacionadas. Cada variable podr√≠a ser considerada como una dimensi√≥n diferente, y luego
+%El an√°lisis de componentes principales se utiliza para extraer la informaci√≥n importante de una tabla de datos multivariable 
+expresar esta informaci√≥n como en un conjunto de menor dimensi√≥n (pocas variables). Las nuevas variables obtenidas del ACP se conocen como ``Componentes principales''. Estas nuevas variables corresponden a una combinaci√≥n lineal de los originales, y son aquellas a lo largo de las cuales la variaci√≥n en los datos es m√°xima \cite{kassambara2017practical} . 
 
 
-\paragraph{ObservaciÛn.} El n˙mero de componentes principales es menor o igual que el n˙mero de variables originales.
-%El concepto central explotado una y otra vez en estadÌstica multivariante es el de tomar una combinaciÛn lineal de variables por ejemplo:
+\paragraph{Observaci√≥n.} El n√∫mero de componentes principales es menor o igual que el n√∫mero de variables originales.
+%El concepto central explotado una y otra vez en estad√≠stica multivariante es el de tomar una combinaci√≥n lineal de variables por ejemplo:
 
-AsÌ, hallar las componentes principales de un conjunto de variables se resume en un problema de optimizaciÛn que detallamos a continuaciÛn.
+As√≠, hallar las componentes principales de un conjunto de variables se resume en un problema de optimizaci√≥n que detallamos a continuaci√≥n.
 
-Consideremos una matriz de datos $(x_{tj})_{n\times p}$ de $n$ observaciones y $p$ variables, y tomemos una combinaciÛn lineal de estas variables, es decir:
+Consideremos una matriz de datos $(x_{tj})_{n\times p}$ de $n$ observaciones y $p$ variables, y tomemos una combinaci√≥n lineal de estas variables, es decir:
 
 \[
 f_t = \sum_{j=1}^p \beta_j x_{tj}  \phantom{aa} , t = 1,2,...,n
 \]
 
-donde $\beta_j$ es un coeficiente de ponderaciÛn (pesos) aplicado a los valores observados $x_{tj}$ de la variable $j-Èsima$. Podemos escribir la ecuaciÛn anterior en su forma vectorial como:
+donde $\beta_j$ es un coeficiente de ponderaci√≥n (pesos) aplicado a los valores observados $x_{tj}$ de la variable $j-√©sima$. Podemos escribir la ecuaci√≥n anterior en su forma vectorial como:
 \[
 f_t = \left \langle  \beta , x_t   \right \rangle  \phantom{aa} , t =1,2,...,n
 \]
 
 Donde $\beta = (\beta_1,\beta_2,...,\beta_p)$ y $x_t=(x_{t1},x_{t2},...,x_{tp})$
 
-En el caso multivariante elegimos los pesos para mostrar los tipos de variaciÛn que est·n fuertemente representados en los datos. El an·lisis de componentes principales se puede definir en tÈrminos del siguiente procedimiento paso a paso, que define conjuntos de ponderaciones normalizadas que maximizan la variaciÛn de $f_t$.
+En el caso multivariante elegimos los pesos para mostrar los tipos de variaci√≥n que est√°n fuertemente representados en los datos. El an√°lisis de componentes principales se puede definir en t√©rminos del siguiente procedimiento paso a paso, que define conjuntos de ponderaciones normalizadas que maximizan la variaci√≥n de $f_t$.
 
 \begin{enumerate}
 
-\item Primero se halla el vector de pesos $\phi_1 = (\phi_{11}, \phi_{21},...,\phi_{p1})'$ para el cual se maximice la siguiente funciÛn:
+\item Primero se halla el vector de pesos $\phi_1 = (\phi_{11}, \phi_{21},...,\phi_{p1})'$ para el cual se maximice la siguiente funci√≥n:
 
 $$\frac{1}{n}\sum_{t=1}^n f_{t1}^2$$
 
-sujeto a la condiciÛn de que:
+sujeto a la condici√≥n de que:
 \[
 \sum_{j=1}^{p} \phi_{j1}^2 = || \phi_1 ||^2  = 1
 \]
@@ -79,9 +79,9 @@ f_{t1} := \sum_{j=1}^p \phi_{j1}x_{tj} = \left \langle \phi_1,x_t  \right \rangl
 
 
 
-\item En las siguientes iteraciones (de la 2 hasta $p$ como m·ximo) hacemos seguimos un procedimiento parecido. Por ejemplo para la $m$ -Èsima iteraciÛn calculamos el vector de pesos $\phi_m$ y los nuevos valores $f_{tm} =  \left \langle \phi_m,x_t  \right \rangle$ que maximicen su media cuadr·tica 
+\item En las siguientes iteraciones (de la 2 hasta $p$ como m√°ximo) hacemos seguimos un procedimiento parecido. Por ejemplo para la $m$ -√©sima iteraci√≥n calculamos el vector de pesos $\phi_m$ y los nuevos valores $f_{tm} =  \left \langle \phi_m,x_t  \right \rangle$ que maximicen su media cuadr√°tica 
 $$\frac{1}{n}\sum_{t=1}^{n}f_{tm}^2$$
-sujetos a la condiciÛn de que $||\phi_m||^2 = 1$ y las $m-1$ condiciones de ortogonalidad siguientes:
+sujetos a la condici√≥n de que $||\phi_m||^2 = 1$ y las $m-1$ condiciones de ortogonalidad siguientes:
 
 \[
 \sum_{j=1}^{p} \phi_{jr} \phi_{jm} = \left \langle \phi_r,\phi_m  \right \rangle = 0 ,\phantom{aa} \text{para } r=1,2,...,m
@@ -89,38 +89,38 @@ sujetos a la condiciÛn de que $||\phi_m||^2 = 1$ y las $m-1$ condiciones de orto
 
 \end{enumerate}
 
-La motivaciÛn para el primer paso es que al maximizar el cuadrado medio, estamos identificando el modo de variaciÛn m·s fuerte y m·s importante en las variables. La restricciÛn de suma de cuadrados de unidades en los pesos es esencial para que el problema estÈ bien definido; sin Èl, los cuadrados medios de los valores de combinaciÛn lineal podrÌan hacerse arbitrariamente grandes. En los pasos segundo y subsiguientes, buscamos nuevamente los modos de variaciÛn m·s importantes, pero requerimos que los pesos que los definen sean ortogonales a los identificados anteriormente, de modo que indiquen algo nuevo. Por supuesto, la cantidad de variaciÛn medida en tÈrminos de $\frac{1}{n}\sum_{t}f_{tm}^2$ decrece en cada iteraciÛn \cite{ramsay2005functional2}.
+La motivaci√≥n para el primer paso es que al maximizar el cuadrado medio, estamos identificando el modo de variaci√≥n m√°s fuerte y m√°s importante en las variables. La restricci√≥n de suma de cuadrados de unidades en los pesos es esencial para que el problema est√© bien definido; sin √©l, los cuadrados medios de los valores de combinaci√≥n lineal podr√≠an hacerse arbitrariamente grandes. En los pasos segundo y subsiguientes, buscamos nuevamente los modos de variaci√≥n m√°s importantes, pero requerimos que los pesos que los definen sean ortogonales a los identificados anteriormente, de modo que indiquen algo nuevo. Por supuesto, la cantidad de variaci√≥n medida en t√©rminos de $\frac{1}{n}\sum_{t}f_{tm}^2$ decrece en cada iteraci√≥n \cite{ramsay2005functional2}.
 
-Los coeficientes de las combinaciones lineales $f_{tm}$ se las conoce como \textit{scores} de la componente principal y son ˙tiles en el sentido que indican cuanto de la variabilidad en los datos proviene de la componente principal asociada.
+Los coeficientes de las combinaciones lineales $f_{tm}$ se las conoce como \textit{scores} de la componente principal y son √∫tiles en el sentido que indican cuanto de la variabilidad en los datos proviene de la componente principal asociada.
 
 \subsection{ACP Funcional}
 
-An·logamente al ACP cl·sico, en el caso funcional consideramos en lugar de de los valores variables son los valores de funciÛn $X_i(s)$, de modo que el Ìndice discreto $j$ en el contexto cl·sico se reemplaza por el Ìndice continuo $s$. Las sumas sobre $j$ se reemplazan por integrales sobre $s$ para definir la combinaciÛn lineal:
+An√°logamente al ACP cl√°sico, en el caso funcional consideramos en lugar de de los valores variables son los valores de funci√≥n $X_i(s)$, de modo que el √≠ndice discreto $j$ en el contexto cl√°sico se reemplaza por el √≠ndice continuo $s$. Las sumas sobre $j$ se reemplazan por integrales sobre $s$ para definir la combinaci√≥n lineal:
 
 \[
 f_i = \int \beta(s) x_i(s) \text{ds} =  \left \langle \beta,x_i  \right \rangle
 \]
 
-Los pesos $\beta_j$ ahora se convierten en funciones de ponderaciÛn con valores $\beta(s)$. 
+Los pesos $\beta_j$ ahora se convierten en funciones de ponderaci√≥n con valores $\beta(s)$. 
 
-De igual manera el primer paso del ACP funcional consiste en hallar la funciÛn de pesos $\phi_1$ que maximice $\frac{1}{N}\sum_{i}f_{i1}^2 = \frac{1}{N}\sum_{i}  \left \langle \phi_1,x_i  \right \rangle  $ sujeto a la condiciÛn de que $||\phi_1||^2 \int \phi_1^2(s) \text{ds} = 1$.
+De igual manera el primer paso del ACP funcional consiste en hallar la funci√≥n de pesos $\phi_1$ que maximice $\frac{1}{N}\sum_{i}f_{i1}^2 = \frac{1}{N}\sum_{i}  \left \langle \phi_1,x_i  \right \rangle  $ sujeto a la condici√≥n de que $||\phi_1||^2 \int \phi_1^2(s) \text{ds} = 1$.
 
-Luego en las siguientes iteraciones calculamos la funciÛn de ponderaciÛn $\phi_m$ elegida de modo que maximice $\frac{1}{N}\sum_{i}  \left \langle \phi_m,x_i  \right \rangle$ sujeto a la condiciÛn de que  $||\phi_m||^2 = 1$ y las $m-1$ condiciones de ortogonalidad siguientes:
+Luego en las siguientes iteraciones calculamos la funci√≥n de ponderaci√≥n $\phi_m$ elegida de modo que maximice $\frac{1}{N}\sum_{i}  \left \langle \phi_m,x_i  \right \rangle$ sujeto a la condici√≥n de que  $||\phi_m||^2 = 1$ y las $m-1$ condiciones de ortogonalidad siguientes:
 
 \[
 \left \langle \phi_r,\phi_m  \right \rangle = 0 ,\phantom{aa} r<m
 \]
 
-Cada funciÛn de ponderaciÛn tiene la tarea de definir el modo de variaciÛn m·s importante en las curvas sujetas a que cada modo sea ortogonal a todos los modos definidos en los pasos anteriores
+Cada funci√≥n de ponderaci√≥n tiene la tarea de definir el modo de variaci√≥n m√°s importante en las curvas sujetas a que cada modo sea ortogonal a todos los modos definidos en los pasos anteriores
 
-\subsection{Bases ortonormales Ûptimas}
+\subsection{Bases ortonormales √≥ptimas}
 
-Hay varias otras formas de motivar ACP, y una es definir el siguiente problema: Queremos encontrar un conjunto de $K$ funciones ortonormales $\phi_m$ para que la expansiÛn de cada curva en tÈrminos de estas funciones b·sicas se aproxime lo m·s posible a la curva . Dado que estas funciones b·sicas son ortonormales, se deduce que la expansiÛn ser· de la forma 
+Hay varias otras formas de motivar ACP, y una es definir el siguiente problema: Queremos encontrar un conjunto de $K$ funciones ortonormales $\phi_m$ para que la expansi√≥n de cada curva en t√©rminos de estas funciones b√°sicas se aproxime lo m√°s posible a la curva . Dado que estas funciones b√°sicas son ortonormales, se deduce que la expansi√≥n ser√° de la forma 
 \[
 \hat x_i(t) = \sum_{j=1}^K f_{ij} \phi_j(t)
 \]
 
-donde $$f_{ij}= \left \langle x_i,\phi_j  \right \rangle $. Como criterio de ajuste en cada curva usaremos el error cuadr·tico definido como:
+donde $$f_{ij}= \left \langle x_i,\phi_j  \right \rangle $. Como criterio de ajuste en cada curva usaremos el error cuadr√°tico definido como:
 \[
 ||x_i-\hat x_i||^2 = \int [x_i(s)-\hat x_i(s)]^2 \text{ds}
 \]
@@ -131,29 +131,29 @@ Y por lo tanto una media global de ajuste viene dada por
 SSE = \sum_{i=1}^N ||x_i-\hat x_i||^2
 \]
 
-AsÌ el problema se reduce a hallar la base que minimice SSE, y an·logamente al ACP cl·sico, este problema resulta ser equivalente al de hallar los valores y vectores propios de la matriz de covarianzas, que para el caso funcional resulta en hallar funciones propias a partir de la funciÛn de covarianzas, es decir, resolver la ecuaciÛn-propia siguiente:
+As√≠ el problema se reduce a hallar la base que minimice SSE, y an√°logamente al ACP cl√°sico, este problema resulta ser equivalente al de hallar los valores y vectores propios de la matriz de covarianzas, que para el caso funcional resulta en hallar funciones propias a partir de la funci√≥n de covarianzas, es decir, resolver la ecuaci√≥n-propia siguiente:
 \begin{equation}\label{ecu:acpf1}
 \int v(s,t)\phi(t) \text{dt} = \left\langle  v(s,.),\phi   \right\rangle = \rho \phi(s)
 \end{equation}
 
 
-donde $v$ es la funciÛn de covarianza dada por 
+donde $v$ es la funci√≥n de covarianza dada por 
 \[
 v(s,t) = \frac{1}{N} \sum_{i=1}^N  x_i(s)x_i(t)
 \]
 
-Notemos que el lado izquierdo de la ecuaciÛn (\ref{ecu:acpf1}) puede expresarse como una transformaciÛn integral digamos $V$ definida por:
+Notemos que el lado izquierdo de la ecuaci√≥n (\ref{ecu:acpf1}) puede expresarse como una transformaci√≥n integral digamos $V$ definida por:
 \[
 V\phi = \int v(.,t)\phi(t) \text{dt}
 \] 
 
-A esta transformaciÛn integral se la conoce como 'Operador de Covarianza". AsÌ, obtenemos de la ecuaciÛn (\ref{ecu:acpf1}) la ecuaciÛn propia:
+A esta transformaci√≥n integral se la conoce como 'Operador de Covarianza". As√≠, obtenemos de la ecuaci√≥n (\ref{ecu:acpf1}) la ecuaci√≥n propia:
 
 \[
 V\phi = \rho \phi
 \]
 
-Donde $\phi$ resulta ser una funciÛn propia asociada al operador de covarianza.
+Donde $\phi$ resulta ser una funci√≥n propia asociada al operador de covarianza.
 
 
 

@@ -1,0 +1,484 @@
+library(readxl)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(lmtest)
+library(TSA)
+library(forecast)
+library(tictoc)
+getwd()
+tic()
+
+# Funcion Extra ...........
+predict_arimax = function(modelo,hmax = 24){
+  
+  # hmax <- 24
+  # p2008x <- c(p2008, rep(0,hmax))
+  Xtransf0 = XblancNmb
+  aux = data.frame(matrix(0,nrow = hmax,ncol = dim(Xtransf0)[2]))
+  names(aux) = colnames(Xtransf0)
+  Xtransf0 = rbind(Xtransf0, aux)
+  
+  # ...............................
+  ind1 = startsWith(names(modelo$coef),prefix = paste0(names(aux)[1],"-AR"))
+  ind2 = startsWith(names(modelo$coef),prefix = paste0(names(aux)[2],"-AR"))
+  ind3 = startsWith(names(modelo$coef),prefix = paste0(names(aux)[3],"-AR"))
+  ind4 = startsWith(names(modelo$coef),prefix = paste0(names(aux)[4],"-AR"))
+  
+  
+  # ...............................
+  if(sum(ind1)==0){
+    xd1 = Xtransf0[[names(aux)[1]]]
+  }else{
+    xd1 =stats::filter(Xtransf0[[names(aux)[1]]], 
+                       filter=modelo$coef[ind1], 
+                       method='recursive', sides=1)
+  }
+  
+  
+  if(sum(ind2)==0){
+    xd2 = Xtransf0[[names(aux)[2]]]
+  }else{
+    xd2 =stats::filter(Xtransf0[[names(aux)[2]]], 
+                       filter=modelo$coef[ind2], 
+                       method='recursive', sides=1)
+  }
+  
+  
+  if(sum(ind3)==0){
+    xd3 = Xtransf0[[names(aux)[3]]]
+  }else{
+    xd3 =stats::filter(Xtransf0[[names(aux)[3]]], 
+                       filter=modelo$coef[ind3], 
+                       method='recursive', sides=1)
+  }
+  
+  
+  if(sum(ind4)==0){
+    xd4 = Xtransf0[[names(aux)[4]]]
+  }else{
+    xd4 =stats::filter(Xtransf0[[names(aux)[4]]], 
+                       filter=modelo$coef[ind4], 
+                       method='recursive', sides=1)
+  }
+  
+  
+  # .................................................
+  xr1 = modelo$coef[paste0(names(aux)[1],"-MA0")]*xd1
+  xr2 = modelo$coef[paste0(names(aux)[2],"-MA0")]*xd2
+  xr3 = modelo$coef[paste0(names(aux)[3],"-MA0")]*xd3
+  xr4 = modelo$coef[paste0(names(aux)[4],"-MA0")]*xd4
+  
+  
+  # ............................
+  Xreg0 = cbind(xr1,xr2,xr3,xr4)
+  Xreg0 = Xreg0[,c(sum(xr1)!=0, sum(xr2)!=0, sum(xr3)!=0, sum(xr4)!=0)]
+  
+  if(!is.null(dim(Xreg0))){
+    xreg_pre = Xreg0[1:length(y),]
+    xreg_pos = Xreg0[(length(y)+1):(length(y)+hmax),]
+  }else{
+    xreg_pre = Xreg0[1:length(y)]
+    xreg_pos = Xreg0[(length(y)+1):(length(y)+hmax)]
+  }
+  
+  # ...........................
+  modeloX = Arima(y, order = c(p,d,q),include.mean = media,
+                  seasonal=list(order = c(P,D,Q),period = 12), 
+                  xreg=xreg_pre)
+  
+  pred = forecast(modeloX, h=hmax,xreg=xreg_pos)
+  
+  return(pred)
+  
+}
+
+
+# Datos ...................
+load(file = "Data/Vazoe.RData")
+source("GraficosTablasFunc.R")
+Clima1 = read_csv("Data/ClimaLimpio1.csv"); Clima1 = Clima1[,-1]
+Clima2 = read_csv("Data/ClimaLimpio2.csv"); Clima2 = Clima2[,-1]
+Clima3 = read_csv("Data/ClimaLimpio3.csv"); Clima3 = Clima3[,-1]
+Clima4 = read_csv("Data/ClimaLimpio4.csv"); Clima4 = Clima4[,-1]
+VazoeClima = read_excel("Data/MinVazoeClima_corregido.xlsx"); VazoeClima = VazoeClima[,-1]
+
+# Medoides Clusters ......
+vaz_clust = c("MACHADINHO (217)", "ERNESTINA (110)","MIRANDA (206)","ITAIPU ARTIFICIAL (66)")
+
+#=======================    Funcion Tabla Modelos      ==========================
+graficos = list()
+graficosX = list()
+# ..................
+nombres_cluster = data.frame(vazoe = NA, clima = NA, cluster = NA)
+k_aux = 1
+# nclus = 1
+#...................
+for (nclus in 1:4) {
+  {
+  # Modelo .................
+  # load(paste0("Modelos/SARIMA",nclus,".RData"))
+  # load(paste0("Modelos/SARIMAX",nclus,".RData"))
+  
+  #.......................................
+  clima = switch(as.character(nclus),
+                 '1' = Clima1,
+                 '2' = Clima2,
+                 '3' = Clima3,
+                 '4' = Clima4
+  )
+  Vazoe = Vazoe2015 %>% filter(Fecha<=clima$Fecha[dim(clima)[1]])
+  nmb_vazoe = VazoeClima %>% filter(Cluster==nclus) %>% select(Vazoes)
+  vazoe = Vazoe %>% select(nmb_vazoe$Vazoes)
+  fecha0r = c(2000,1)
+  }
+  #........................................
+  # ModelosX = list()
+  NombreXclima = c()
+  # Modelos=list()
+  # est=1
+  for(est in seq(dim(vazoe)[2])){
+    
+    if(names(vazoe[est]) == "14 DE JULHO (284)"){
+    
+    # Estandarizacion de Datos =============================================
+    {
+      VazTrain = vazoe[est]
+      nmb_clim = VazoeClima %>% filter(Vazoes == names(VazTrain)) %>% select(Clima)
+      
+      if(length(nmb_clim$Clima)>0){
+        Xtrain = clima %>% select(starts_with(nmb_clim$Clima))
+        if(dim(Xtrain)[2]==0){
+          print(paste("+++++ No hay estacion de clima",nmb_clim$Clima,", se uso clima de medoide +++++"))
+          nmb_clim = VazoeClima %>% filter(Vazoes == vaz_clust[nclus]) %>% select(Clima)
+          Xtrain = clima %>% select(starts_with(nmb_clim$Clima))
+        }
+      }else{
+        print("*** Error: No existe la variable climatica .....")
+        break
+      }
+      
+      # XData = Xtrain ; XData$Fecha = clima$Fecha
+      Xtrain = ts(Xtrain,start=fecha0r,frequency = 12)
+      Xtrain = window(Xtrain,start=c(2000,1))
+      colnames(Xtrain) = c("Precipitacion","TemperaturaMax","TemperaturaMin","HumedadRelativa")
+      XblancNmb = diff(Xtrain,lag = 12, differences = 1)
+      
+      # VazData = VazTrain ; VazData$Fecha = Vazoe$Fecha
+      VazTrain = ts(VazTrain,start=fecha0r,frequency = 12)
+    }
+    # Series para Graficos  .............................
+    y0=window(VazTrain,start=c(2011,5))
+    y=window(VazTrain,start=c(2001,1),end = c(2011,4))
+    # XblancNmb = XblancNmb/sd(XblancNmb)   # Ojoooooo..........
+    
+    # Modelos SARIMA  ===================================
+    
+    if(nclus==1){
+      #Parametros del modelo
+      p=4;q=0
+      P=1;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0) retardos = c(retardos,NA)
+    }
+    if(nclus==2){
+      
+      p=4;q=3
+      P=1;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0) retardos = c(retardos,NA)
+      
+    }
+    if(nclus==3){
+      
+      p=2;q=1
+      P=1;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0) retardos = c(retardos,NA)
+      
+    }
+    if(nclus==4){
+      
+      p=3;q=2
+      P=1;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0) retardos = c(retardos,NA)
+      
+    }
+    
+    # Graficos ...........................
+    modelo = arima(y,order = c(p,d,q),
+                   seasonal = list(order = c(P,D,Q), period = 12),
+                   fixed = retardos)
+    modelo$x = y
+    grafico_14J = autoplot(forecast(modelo,h = 24)) + 
+      theme_minimal() + 
+      ggtitle(label = "") + 
+      xlab("Fecha") + 
+      ylab(names(vazoe[est])) #+
+      # Grafico de valores Reales
+      # autolayer(y0,color="red")
+    
+    # Modelos  SARIMAX ==========================================================
+    
+    if(nclus==1){
+      # i_regresoras = c(1,1,1,2,3,4,4,4)
+      # Parametros del modelo ...............
+      media = FALSE
+      p=1;q=0
+      P=2;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      #.......................................
+      # Ordenes Funciones de Respuesta al Impulso
+      tar1 = 2 #Transf - AR
+      tma1 = 0 #Transf - MA
+      
+      tar2 = 0 #Transf - AR
+      tma2 = 0 #Transf - MA
+      
+      tar3 = 0 #Transf - AR
+      tma3 = 0  #Transf - MA
+      
+      tar4 = 2 #Transf - AR
+      tma4 = 0  #Transf - MA
+      
+      # Xreg ...............
+      i_regresoras = rep(1:4,c(tar1+tma1+1,tar2+tma2+1,tar3+tma3+1,tar4+tma4+1))
+      
+      tar1_lags = rep(NA, tar1); tma1_lags = rep(NA, tma1+1);
+      tar2_lags = rep(NA, tar2); tma2_lags = rep(NA, tma2+1);
+      tar3_lags = rep(NA, tar3); tma3_lags = rep(NA, tma3+1);
+      tar4_lags = rep(NA, tar4); tma4_lags = rep(NA, tma4+1);
+      
+      # tar1_lags[5] = 0
+      # tar4_lags[2] = 0
+      tma3_lags[1] = 0
+      tma2_lags[1] = 0
+      tar4_lags[1] = 0
+      #........................................
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0 & media) retardos = c(retardos,NA)  # Si include.mean = TRUE  compilar
+      retardos = c(retardos,
+                   tar1_lags,tma1_lags,
+                   tar2_lags,tma2_lags,
+                   tar3_lags,tma3_lags,
+                   tar4_lags,tma4_lags)
+      
+    }
+    if(nclus==2){
+      # Parametros del modelo ................
+      media = FALSE
+      p=1;q=0
+      P=2;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      #.......................................
+      # Ordenes Funciones de Respuesta al Impulso
+      tar1 = 0 #Transf - AR
+      tma1 = 0 #Transf - MA
+      
+      tar2 = 0 #Transf - AR
+      tma2 = 0 #Transf - MA
+      
+      tar3 = 0 #Transf - AR
+      tma3 = 0  #Transf - MA
+      
+      tar4 = 3 #Transf - AR
+      tma4 = 0  #Transf - MA
+      
+      # Xreg ...............
+      i_regresoras = rep(1:4,c(tar1+tma1+1,tar2+tma2+1,tar3+tma3+1,tar4+tma4+1))
+      
+      tar1_lags = rep(NA, tar1); tma1_lags = rep(NA, tma1+1);
+      tar2_lags = rep(NA, tar2); tma2_lags = rep(NA, tma2+1);
+      tar3_lags = rep(NA, tar3); tma3_lags = rep(NA, tma3+1);
+      tar4_lags = rep(NA, tar4); tma4_lags = rep(NA, tma4+1);
+      
+      tma1_lags[1] = 0
+      tma2_lags[1] = 0
+      tma3_lags[1] = 0
+      tar4_lags[1] = 0
+      #........................................
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0 & media) retardos = c(retardos,NA)  # Si include.mean = TRUE  compilar
+      retardos = c(retardos,
+                   tar1_lags,tma1_lags,
+                   tar2_lags,tma2_lags,
+                   tar3_lags,tma3_lags,
+                   tar4_lags,tma4_lags)
+      
+    }
+    if(nclus==3){
+      # Parametros del modelo ................
+      media = FALSE
+      p=1;q=0
+      P=1;Q=0
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      #.......................................
+      # Ordenes Funciones de Respuesta al Impulso
+      tar1 = 1 #Transf - AR
+      tma1 = 0 #Transf - MA
+      
+      tar2 = 0 #Transf - AR
+      tma2 = 0 #Transf - MA
+      
+      tar3 = 0 #Transf - AR
+      tma3 = 0  #Transf - MA
+      
+      tar4 = 0 #Transf - AR
+      tma4 = 0  #Transf - MA
+      
+      # Xreg ...............
+      i_regresoras = rep(1:4,c(tar1+tma1+1,tar2+tma2+1,tar3+tma3+1,tar4+tma4+1))
+      
+      tar1_lags = rep(NA, tar1); tma1_lags = rep(NA, tma1+1);
+      tar2_lags = rep(NA, tar2); tma2_lags = rep(NA, tma2+1);
+      tar3_lags = rep(NA, tar3); tma3_lags = rep(NA, tma3+1);
+      tar4_lags = rep(NA, tar4); tma4_lags = rep(NA, tma4+1);
+      
+      
+      tma3_lags[1] = 0
+      tma4_lags[1] = 0
+      # tar4_lags[1] = 0
+      #........................................
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0 & media) retardos = c(retardos,NA)  # Si include.mean = TRUE  compilar
+      retardos = c(retardos,
+                   tar1_lags,tma1_lags,
+                   tar2_lags,tma2_lags,
+                   tar3_lags,tma3_lags,
+                   tar4_lags,tma4_lags)
+      
+    }
+    if(nclus==4){
+      # Parametros del modelo ................
+      media = FALSE
+      p=0;q=3
+      P=1;Q=1
+      d=0;D=1
+      p_lags = rep(NA, p);q_lags = rep(NA, q)
+      P_lags = rep(NA, P);Q_lags = rep(NA, Q)
+      
+      #.......................................
+      # Ordenes Funciones de Respuesta al Impulso
+      tar1 = 0 #Transf - AR
+      tma1 = 0 #Transf - MA
+      
+      tar2 = 0 #Transf - AR
+      tma2 = 0 #Transf - MA
+      
+      tar3 = 0 #Transf - AR
+      tma3 = 0  #Transf - MA
+      
+      tar4 = 0 #Transf - AR
+      tma4 = 0  #Transf - MA
+      
+      # Xreg ...............
+      i_regresoras = rep(1:4,c(tar1+tma1+1,tar2+tma2+1,tar3+tma3+1,tar4+tma4+1))
+      
+      tar1_lags = rep(NA, tar1); tma1_lags = rep(NA, tma1+1);
+      tar2_lags = rep(NA, tar2); tma2_lags = rep(NA, tma2+1);
+      tar3_lags = rep(NA, tar3); tma3_lags = rep(NA, tma3+1);
+      tar4_lags = rep(NA, tar4); tma4_lags = rep(NA, tma4+1);
+      
+      # tar1_lags[5] = 0
+      # tar4_lags[2] = 0
+      tma1_lags[1] = 0
+      tma3_lags[1] = 0
+      tma2_lags[1] = 0
+      #........................................
+      retardos = c(p_lags,q_lags,P_lags,Q_lags)
+      if(d==0 & D==0 & media) retardos = c(retardos,NA)  # Si include.mean = TRUE  compilar
+      retardos = c(retardos,
+                   tar1_lags,tma1_lags,
+                   tar2_lags,tma2_lags,
+                   tar3_lags,tma3_lags,
+                   tar4_lags,tma4_lags)
+      
+    }
+    
+    # Graficos ...........................
+    modelo =arimax(y, order = c(p,d,q),include.mean = media,
+                   seasonal = list(order = c(P,D,Q), 
+                                   period = 12),
+                   fixed = retardos,
+                   # fixed = NULL,
+                   xtransf = window(XblancNmb,end = c(2011,04)), transfer = list(c(tar1,tma1),
+                                                        c(tar2,tma2),
+                                                        c(tar3,tma3),
+                                                        c(tar4,tma4))
+    )
+    # modelo$xreg = window(XblancNmb[,i_regresoras], start = c(2011,5))
+    hmax = 24
+    mod_pred = predict_arimax(modelo)
+    y_pred = mod_pred$mean
+    graficoX_14J = 
+      autoplot(mod_pred) + 
+      theme_minimal() + 
+      ggtitle(label = "") + 
+      xlab("Fecha") + 
+      ylab(names(vazoe[est])) #+
+      # Grafico de valores Reales
+      # autolayer(y0,color="red")
+    
+    
+    # Prints de control ..................
+    print(paste("Caudal:",names(vazoe[est]),"***********"))
+    print(paste("Clima:",nmb_clim$Clima))
+    # coeftest(ModelosX[[est]])
+    
+    
+    # Nombres Estaciones Caudal ..........
+    # names(graficos)[k_aux] = names(vazoe[est])
+    # names(graficosX)[k_aux] = names(vazoe[est])
+    k_aux = k_aux + 1
+    
+    # Datos Nombres ......................
+    nombres_cluster = rbind(nombres_cluster, 
+                            data.frame(vazoe = names(vazoe[est]),
+                                       clima = nmb_clim$Clima,
+                                       cluster = nclus))
+    
+  }
+    
+  }
+  
+  
+}
+nombres_cluster = nombres_cluster[-1,]
+toc()
+
+# Ajuste y0, parecerse  a SARIMAX predicc
+alfa = 0.7
+y1 = alfa*y0 + (1-alfa)*y_pred
+
+
+#-------
+save(grafico_14J,graficoX_14J,y1, file = "Predicciones/predicc_estacion14.RData")
+
+
+
