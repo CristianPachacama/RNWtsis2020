@@ -180,13 +180,9 @@ source(file = "GraficosTablasFunc.R",local = T)
 
 
 
-
-
-
 %Capitulo3: Metodologia  .............................
 <<capitulo3, child='Capitulos/Cap 3 - Metodologia.Rnw'>>=
 @
-
 
 
 

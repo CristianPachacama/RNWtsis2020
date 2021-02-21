@@ -1,6 +1,6 @@
 \chapter{Resultados}
 \label{chap:resultados}
-En el presente capítulo analizaremos los modelos SARIMA (ver \ref{eq:sarima}) y SARIMAX (ver \ref{eq:sarimax}) estimados para cada una de las series de tiempo asociadas a Caudales medidos en las estaciones que componen el clúster 1. 
+En el presente capítulo se analizan los modelos SARIMA (ver \ref{eq:sarima}) y SARIMAX (ver \ref{eq:sarimax}) estimados para cada una de las series de tiempo asociadas a Caudales medidos en las estaciones que componen el clúster 1. 
 
 <<>>=
 #Modelos Cluster 1
@@ -11,7 +11,7 @@ load("Resultados/Extras/Predicciones/SARIMA.RData")
 load("Resultados/Extras/Predicciones/SARIMAX.RData")
 @
 
-Para el caso del modelo SARIMA$(4,0,0)(1,1,0)_{12}$, resumimos en la tabla \ref{tab:sarima1_resumen}, los coeficientes estimados, su significancia, varianza de los residuos, y estadísticos como AIC,BIC, de cada una de las 41 series que componen el clúster 1. Como podemos observar los coeficientes asociados al retardo 1 de los polinomios autoregresivo y autoregresivo estacional, son significativos en las 41 estaciones, mientras que los coeficientes asociados a los retardos 2 y 3 del polinomio autoregresivo son significativos en únicamente cinco estaciones. En cambio el coeficiente asociado al retardo 4 del polinomio autoregresivo es no significativo en todos los casos.
+Para el caso del modelo SARIMA$(4,0,0)(1,1,0)_{12}$, se resumen en la tabla \ref{tab:sarima1_resumen}, los coeficientes estimados, su significancia, varianza de los residuos, y estadísticos como AIC,BIC, de cada una de las 41 series que componen el clúster 1. Como se puede observar los coeficientes asociados al retardo 1 de los polinomios autoregresivo y autoregresivo estacional, son significativos en las 41 estaciones, mientras que los coeficientes asociados a los retardos 2 y 3 del polinomio autoregresivo son significativos en únicamente cinco estaciones. En cambio el coeficiente asociado al retardo 4 del polinomio autoregresivo es no significativo en todos los casos.
 
 
 
@@ -42,7 +42,7 @@ En cuanto al modelo SARIMAX $(1,0,0)(2,1,0)_{12}$ con funciones de respuesta al 
 \item Humedad Relativa $v^{(4)}$ : $b_4= 0$, $m_4=\Sexpr{tma4}$, $n_4=\Sexpr{tar4}$
 \end{itemize}
 
-Observando el resumen de los resultados de este modelo en la tabla \ref{tab:sarimax1_resumen}, notamos que todos los coeficientes asociados a la estructura SARIMA del modelo son significativos en todas las series de tiempo del clúster. En la mayoría de series, los retardos 1 y 2 del polinomio autoregresivo asociado a la variable exógena Precipitación, son significativos, seguidos por el retardo 2 del polinomio autoregresivo asociado a la variable Humedad Relativa. Los coeficientes asociados a los polinomios media móvil de las dos variables exógenas, son no significativos en su mayoría.
+Observando el resumen de los resultados de este modelo en la tabla \ref{tab:sarimax1_resumen}, se ve que todos los coeficientes asociados a la estructura SARIMA del modelo son significativos en todas las series de tiempo del clúster. En la mayoría de series, los retardos 1 y 2 del polinomio autoregresivo asociado a la variable exógena Precipitación, son significativos, seguidos por el retardo 2 del polinomio autoregresivo asociado a la variable Humedad Relativa. Los coeficientes asociados a los polinomios media móvil de las dos variables exógenas, son no significativos en su mayoría.
 
 
 <<>>=
@@ -60,7 +60,7 @@ kableResumen(TABLAX,caption_text,label_text,orientacion = "horizontal")
 @
 
 
-Finalmente, analizando los estadísticos AIC, BIC, y $\hat\sigma^2$ de los dos modelo, vemos, en cada una de las estaciones, que estos criterios se minimizan al usar el modelo SARIMAX para modelar los caudales, así mismo, al analizar el logaritmo de la verosimilitud vemos que este se maximiza precisamente en el modelo SARIMAX, por esta razón, elegimos este último como el modelo que representará el clúster y a partir del cual se puede realizar pronósticos. Esto ocurre en los 4 clústers, tal como se puede corroborar en los apéndices \ref{ap:sarima} y \ref{ap:sarimax}, en donde podemos observar una clara ventaja al usar los modelos SARIMAX en el modelamiento de caudales. Por ejemplo, para la serie de tiempo asociada a la estación \textit{14 DE JULHO (284)} considerando el modelo SARIMA, obtenemos un $AIC = 1913.2$, un $BIC=1930.7$, $\hat\sigma = 6655 $ y el Log-Verosimilitud $= -950.6$, mientras que para el modelo SARIMAX obtenemos un $AIC = 1882.2$, un $BIC=1909.2$, $\hat\sigma = 4884 $ y el Log-Verosimilitud $=-932.1$, es decir, el modelo SARIMAX es mejor en todos los criterios. Así mismo, si analizamos las predicciones producidas por los dos modelos (ver \ref{fig:predic14}), vemos que si bien los dos tienen predicciones (en azul) próximas a los valores reales de la serie (en rojo), el modelo SARIMAX produce predicciones más acertadas.
+Finalmente, analizando los estadísticos AIC, BIC, y $\hat\sigma^2$ de los dos modelo, se observa, en cada una de las estaciones, que estos criterios se minimizan al usar el modelo SARIMAX para modelar los caudales, así mismo, al analizar el logaritmo de la verosimilitud se ve que este se maximiza precisamente en el modelo SARIMAX, por esta razón, se elige este último como el modelo que representará el clúster y a partir del cual se puede realizar pronósticos. Esto ocurre en los 4 clústers, tal como se puede corroborar en los apéndices \ref{ap:sarima} y \ref{ap:sarimax}, en donde se puede observar una clara ventaja al usar los modelos SARIMAX en el modelamiento de caudales. Por ejemplo, para la serie de tiempo asociada a la estación \textit{14 DE JULHO (284)} considerando el modelo SARIMA, se obtiene un $AIC = 1913.2$, un $BIC=1930.7$, $\hat\sigma = 6655 $ y el Log-Verosimilitud $= -950.6$, mientras que para el modelo SARIMAX se obtiene un $AIC = 1882.2$, un $BIC=1909.2$, $\hat\sigma = 4884 $ y el Log-Verosimilitud $=-932.1$, es decir, el modelo SARIMAX es mejor en todos los criterios. Así mismo, si se analizan las predicciones producidas por los dos modelos (ver \ref{fig:predic14}), se ve que si bien los dos tienen predicciones (en azul) próximas a los valores reales de la serie (en rojo), el modelo SARIMAX produce predicciones más acertadas.
 
 
 <<fig.cap="\\label{fig:predic14} Predicción de Modelos SARIMA y SARIMAX">>=
@@ -87,7 +87,7 @@ grid.arrange(grafico_14J+autolayer(y1,color="red")+ggtitle("Modelo SARIMA"),
 % variables micro y macro climáticas.
 
 
-En conclusión el uso de la metodología aquí planteada nos permitió utilizar una variante del Análisis Clúster para modelar las 179 series de tiempo de caudales (asociadas a estaciones de medición en todo Brasil), a partir del modelamiento de 4 series de tiempo correspondientes a las \textit{medoides} de cada clúster, reduciendo así significativamente el tiempo de modelamiento que hubiera tomado hacerlo directamente. 
+En conclusión el uso de la metodología aquí planteada permite utilizar una variante del Análisis Clúster para modelar las 179 series de tiempo de caudales (asociadas a estaciones de medición en todo Brasil), a partir del modelamiento de 4 series de tiempo correspondientes a las \textit{medoides} de cada clúster, reduciendo así significativamente el tiempo de modelamiento que hubiera tomado hacerlo directamente.
 
 
 
@@ -111,7 +111,7 @@ Además se pudieron probar satisfactoriamente una variedad de algoritmos de clus
 % planteada, y además mostrar posibles ventajas en cuanto a tiempo y eficiencia de la
 % metodología planteada
 
-En cuanto al modelamiento basado en la metodología Box y Jenkins vimos que si bien la correcta implementación del modelamiento SARIMAX supone un análisis más extenso, al considerar muchos más factores en su identificación, que el necesario para llevar a cabo el modelamiento SARIMA aquí propuesto, los modelos SARIMAX nos ofrecen mejores resultados (en términos de estadísticos de validación) en casi todos los casos. 
+En cuanto al modelamiento basado en la metodología Box y Jenkins se observó que si bien la correcta implementación del modelamiento SARIMAX supone un análisis más extenso, al considerar muchos más factores en su identificación, que el necesario para llevar a cabo el modelamiento SARIMA aquí propuesto, los modelos SARIMAX ofrecen mejores resultados, en términos de estadísticos de validación, criterios de información y también en predicción (en casi todos los casos). 
 
 
 % Conclusion Objetivo 3
@@ -120,7 +120,9 @@ En cuanto al modelamiento basado en la metodología Box y Jenkins vimos que si b
 % Encontrar los factores macro y micro - climáticos determinantes del nivel de caudal para
 % cada clúster y comparar como varían sus efectos entre uno clúster y otro.
 
-Otro aporte importante del uso de modelos Sarimax es que nos permitió identificar y medir la incidencia de factores climáticos a nivel local que interaccionan y afectan el comportamiento de los caudales, factores como la precipitacion la humedad relativa y temperatura.
+Otro aporte importante del uso de modelos SARIMAX es que permitió identificar y medir la incidencia de factores climáticos a nivel local que interaccionan y afectan el comportamiento temporal de los caudales, factores como la precipitación, la humedad relativa y temperatura.
+% Conclusion en terminos de POLITICAS
+Conocido el comportamiento temporal de los caudales, a partir de las predicciones arrojadas por los modelos planteados, que podrían hacerse con una alta precisión para un horizonte de tiempo considerablemente grande (de varios años al futuro), dicho de otra manera, se puede calcular anticipadamente la oferta energética generada por el sector hidroeléctrico del país, que a la postre permitiría establecer una planificación del uso de energía hidroelectrica y también de energías alternativas (eólica, nuclear, solar) para cubrir la demanda interna y externa del país, ya que Brasil exporta energía eléctrica a países como Argentina.
 
 
 % Coclucion 4
@@ -129,7 +131,8 @@ Otro aporte importante del uso de modelos Sarimax es que nos permitió identific
 % través de la utilización de software estadístico y programación.
 
 Finalmente, la implementacion y automatización de la metodología aquí propuesta que dieron paso a rutinas generales ejemplificadas en la Aplicación web creada para este estudio, dan muestra de la fácil reproducibilidad de esta metodología en una variedad de contextos distintos a los aquí abordados y abren la puerta a una variedad de análisis de datos de origen geográfico y temporal. 
-Así mismo, cabe la posibilidad de extender este estudio a una escala mucho mayor ya sea considerando series de mayor frecuencia, o mayor cantidad de series, teniendo en cuenta algunas barreras en cuanto a la eficiencia de los algoritmos utilizados versus los recursos de hardware disponibles. A modo de ejemplo, en pruebas preliminares al desarrollo de este estudio, se consideraron series de frecuencia diaria, donde se encontraron cuellos de botella principalmente en el cálculo de la matriz de distancias (o disimilitudes) de la primera etapa, donde el tiempo de cálculo llegó a tomar un par de horas, en contraste con los tres minutos que tomó este proceso para series mensuales. Hay que notar que el tiempo de cálculo depende tanto del número de series de tiempo así como del número de observaciones que posee cada una, así, el tiempo de cálculo de la matriz crece al menos cuadráticamente cuando crecen estos dos factores. Por lo tanto, si el objetivo es escalar está metodología a un contexto por ejemplo de Big Data, es necesario considerar, por una parte, la necesidad de implementar algoritmos aún más eficientes que los expuestos aquí, por ejemplo, paralelizando el cálculo de la matriz de distancias, y por otra, los recursos necesarios para dicha implementación, es decir, vía Computación distribuida o vía Computación de alto rendimiento (\textit{High performance Computing, HPC}).
+% RECOMENDACIONES
+Así mismo, cabe la posibilidad de extender este estudio a una escala mucho mayor ya sea considerando series de mayor frecuencia, o mayor cantidad de series, teniendo en cuenta algunas barreras en cuanto a la eficiencia de los algoritmos utilizados versus los recursos de hardware disponibles. A modo de ejemplo, en pruebas preliminares al desarrollo de este estudio, se consideraron series de frecuencia diaria, donde se encontraron cuellos de botella principalmente en el cálculo de la matriz de distancias (o disimilitudes) de la primera etapa, donde el tiempo de cálculo llegó a tomar un par de horas, en contraste con los tres minutos que tomó este proceso para series mensuales. Hay que notar que el tiempo de cálculo depende tanto del número de series de tiempo así como del número de observaciones que posee cada una, así, el tiempo de cálculo de la matriz crece al menos cuadráticamente cuando crecen estos dos factores. Por lo tanto, si el objetivo es escalar está metodología a un contexto por ejemplo de Big Data, es necesario considerar, por una parte, la necesidad de implementar algoritmos aún más eficientes que los expuestos aquí, por ejemplo, paralelizando el cálculo de la matriz de distancias, y también de la distancia persé, otra mejora posible es la de usar el algoritmo de agrupamiento CLARANS que es una extensión más eficiente del algoritmo CLARA. Por otro lado, hay que considerar el uso de otros recursos de hardware necesarios para dicha implementación, es decir, vía Computación distribuida o vía Computación de alto rendimiento (\textit{High performance Computing, HPC}).
 %%% 
 
 

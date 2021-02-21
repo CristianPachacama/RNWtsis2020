@@ -51,7 +51,7 @@ ts_ggplot = function(serieDF , n_variable=3 , ylabel ="Caudal"){
       date_labels = "%b %Y"
     )+
     labs(
-      # title = "Caudal del cl煤ster 1", 
+      # title = "Caudal del cl脙潞ster 1", 
       # subtitle = "Media Funcional",
       y = ylabel
     )+
@@ -68,7 +68,7 @@ ts_ggplot = function(serieDF , n_variable=3 , ylabel ="Caudal"){
 
 
 
-#============    Funcion de Graficas Autocorrelaci贸n y Parcial    =======================
+#============    Funcion de Graficas Autocorrelaci脙鲁n y Parcial    =======================
 
 acf_ggplot = function(serie){
   
@@ -78,7 +78,7 @@ acf_ggplot = function(serie){
                     conf.int.type = 'ma') + 
     theme_minimal() +
     labs(
-      title = "Autocorrelaci髇"#,
+      title = "Autocorrelaci贸n"#,
       # subtitle = "Media Funcional",
       # y = "Caudal"
     )
@@ -90,7 +90,7 @@ acf_ggplot = function(serie){
                      conf.int.type = 'ma') + 
     theme_minimal() +
     labs(
-      title = "Autocorrelaci髇 Parcial"#,
+      title = "Autocorrelaci贸n Parcial"#,
       # subtitle = "Media Funcional",
       # y = "Caudal"
     )
@@ -109,7 +109,7 @@ acf_ggplot = function(serie){
 
 
 
-#============    Funcion de Graficas Autocorrelaci贸n y Parcial    =======================
+#============    Funcion de Graficas Autocorrelacion y Parcial    =======================
 
 ccfab_ggplot = function(serie_y,serie_x = NULL, modelo = NULL,txt_titulo=NULL){
   
@@ -136,16 +136,16 @@ ccfab_ggplot = function(serie_y,serie_x = NULL, modelo = NULL,txt_titulo=NULL){
                      conf.int.type = 'ma') + 
       theme_minimal() +
       labs(
-        title =TeX("Correlaci髇 Cruzada $\\alpha_t$ vs. $\\beta_t$") #,
+        title =TeX("Correlaci贸n Cruzada $\\alpha_t$ vs. $\\beta_t$") #,
         # subtitle = "Media Funcional",
         # y = "Caudal"
       )
   }else{
     
     if(is.null(txt_titulo)){
-      titulo = "Correlaci髇 Cruzada"
+      titulo = "Correlaci贸n Cruzada"
     }else{
-      titulo = paste("Correlaci髇 Cruzada",txt_titulo)
+      titulo = paste("Correlaci贸n Cruzada",txt_titulo)
     }
     
     cc_ab = autoplot(ccf(as.numeric(serie_y), as.numeric(serie_x),
@@ -179,7 +179,12 @@ tab_model = function(modelo,caption_text=NULL,label_text = NULL,orientacion="ver
   m = dim(t_model)[1]
   tabla = data_frame("Coef"=NA,"Estimate"=NA,"Std.Error"=NA,"z-value"=NA,"Pr(>|z|)"=NA)
   for(i in seq(m)){
-    tabla[i,] = c(0,as.numeric(t_model[i,]))
+    # tabla[i,] = c(0,as.numeric(t_model[i,]))
+    tabla[i,1] = 0
+    tabla[i,2] = as.numeric(t_model[i,1])
+    tabla[i,3] = as.numeric(t_model[i,2])
+    tabla[i,4] = as.numeric(t_model[i,3])
+    tabla[i,5] = as.numeric(t_model[i,4])
   }
   tabla$Coef = rownames(t_model)
   Pval = tabla$`Pr(>|z|)`
@@ -253,7 +258,7 @@ ResumenModelos = function(Lista_Modelos){
   t_model = coeftest(Lista_Modelos[[1]])
   TABLA = matrix(NA,nrow = length(Lista_Modelos),ncol = length(rownames(t_model))+ 5  )
   TABLA = data.frame(TABLA)
-  names(TABLA) = c("Estaci髇-Caudal",rownames(t_model),"sigma^2","Log-Verosim","AIC","BIC")
+  names(TABLA) = c("Estaci贸n-Caudal",rownames(t_model),"sigma^2","Log-Verosim","AIC","BIC")
   nc = dim(TABLA)[2]
   
   # Info de cada modelo - Estacion

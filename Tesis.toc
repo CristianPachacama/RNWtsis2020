@@ -3,7 +3,7 @@
 \contentsline {chapter}{Abstract}{\es@scroman {xvi}}{chapter*.5}%
 \contentsline {chapter}{Notaciones}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Introducción}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Descripción de los Datos}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Descripción de los Datos}{7}{section.1.1}%
 \contentsline {paragraph}{Observación.}{8}{section*.9}%
 \contentsline {chapter}{\numberline {2}Marco Teórico}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Series de Tiempo}{9}{section.2.1}%

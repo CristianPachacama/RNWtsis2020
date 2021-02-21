@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.28)  7 NOV 2020 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.28)  16 FEB 2021 22:51
 entering extended mode
 **./Tesis.tex
 (Tesis.tex
@@ -648,12 +648,6 @@ LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
  (Notaciones.aux)
 
-LaTeX Warning: Label `tab:unnamed-chunk-63' multiply defined.
-
-
-LaTeX Warning: Label `tab:unnamed-chunk-63' multiply defined.
-
-
 LaTeX Warning: Label `tab:unnamed-chunk-64' multiply defined.
 
 
@@ -700,6 +694,12 @@ LaTeX Warning: Label `tab:unnamed-chunk-71' multiply defined.
 
 
 LaTeX Warning: Label `tab:unnamed-chunk-71' multiply defined.
+
+
+LaTeX Warning: Label `tab:unnamed-chunk-72' multiply defined.
+
+
+LaTeX Warning: Label `tab:unnamed-chunk-72' multiply defined.
 
 
 LaTeX Warning: Label `tab:estaciones' multiply defined.
@@ -1000,21 +1000,21 @@ Cap\'{\i }tulo 1.
 
 
 ] [3] [4] [5] [6]
-Overfull \hbox (14.32794pt too wide) in paragraph at lines 327--328
+Overfull \hbox (14.32794pt too wide) in paragraph at lines 328--329
 [][][]$\T1/cmtt/m/n/12 http :// www [] .ons [] .org [] .br / download / operaca
 o / hidrologia / Vaz % C3 % B5es [] []Di % C3 %
  []
 
-<./Imagenes//map_estacVz.png, id=753, 845.1575pt x 477.785pt>
+<./Imagenes//map_estacVz.png, id=754, 845.1575pt x 477.785pt>
 File: ./Imagenes//map_estacVz.png Graphic file (type png)
 <use ./Imagenes//map_estacVz.png>
-Package pdftex.def Info: ./Imagenes//map_estacVz.png  used on input line 334.
+Package pdftex.def Info: ./Imagenes//map_estacVz.png  used on input line 335.
 (pdftex.def)             Requested size: 422.57771pt x 238.8919pt.
 [7 <./Imagenes//map_estacVz.png>]
-<./Imagenes//map_estacClm.png, id=767, 845.1575pt x 540.0175pt>
+<./Imagenes//map_estacClm.png, id=768, 845.1575pt x 540.0175pt>
 File: ./Imagenes//map_estacClm.png Graphic file (type png)
 <use ./Imagenes//map_estacClm.png>
-Package pdftex.def Info: ./Imagenes//map_estacClm.png  used on input line 363.
+Package pdftex.def Info: ./Imagenes//map_estacClm.png  used on input line 364.
 (pdftex.def)             Requested size: 422.57771pt x 270.00809pt.
  [8 <./Imagenes//map_estacClm.png>]
 Cap\'{\i }tulo 2.
@@ -1028,7 +1028,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.482 \begin{enumerat1e}
+l.483 \begin{enumerat1e}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1037,7 +1037,7 @@ or  <return>  to continue without it.
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1048,7 +1048,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1059,7 +1059,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1068,7 +1068,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1079,7 +1079,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1090,7 +1090,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1099,7 +1099,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1108,44 +1108,39 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-! LaTeX Error: \begin{definicion} on input line 479 ended by \end{enumerate}.
+! LaTeX Error: \begin{definicion} on input line 480 ended by \end{enumerate}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.486 \end{enumerate}
+l.487 \end{enumerate}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Too many }'s.
-l.512 ...cir, que tan suave es la curva asociada)}
+l.513 ...cir, que tan suave es la curva asociada)}
                                                    y de tendencias que varÃ­...
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-[11] [12]
-
-LaTeX Warning: Command \~ invalid in math mode on input line 543.
-
-Missing character: There is no ñ in font pplr7t!
-[13] [14] [15] [16] [17]
-<./Imagenes//Cap2-Stl-Loess.png, id=859, 500.62032pt x 353.82187pt>
+[11] [12] [13] [14] [15] [16] [17]
+<./Imagenes//Cap2-Stl-Loess.png, id=860, 500.62032pt x 353.82187pt>
 File: ./Imagenes//Cap2-Stl-Loess.png Graphic file (type png)
 <use ./Imagenes//Cap2-Stl-Loess.png>
-Package pdftex.def Info: ./Imagenes//Cap2-Stl-Loess.png  used on input line 694
+Package pdftex.def Info: ./Imagenes//Cap2-Stl-Loess.png  used on input line 695
 .
 (pdftex.def)             Requested size: 426.79134pt x 301.65701pt.
  [18 <./Imagenes//Cap2-Stl-Loess.png>]
-<./Imagenes//Cap2-MarcoTeorico/Cap2-Stl-Loess2.png, id=871, 500.62032pt x 353.8
+<./Imagenes//Cap2-MarcoTeorico/Cap2-Stl-Loess2.png, id=872, 500.62032pt x 353.8
 2187pt>
 File: ./Imagenes//Cap2-MarcoTeorico/Cap2-Stl-Loess2.png Graphic file (type png)
 
 <use ./Imagenes//Cap2-MarcoTeorico/Cap2-Stl-Loess2.png>
 Package pdftex.def Info: ./Imagenes//Cap2-MarcoTeorico/Cap2-Stl-Loess2.png  use
-d on input line 738.
+d on input line 739.
 (pdftex.def)             Requested size: 426.79134pt x 301.65701pt.
 
 
@@ -1159,7 +1154,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.778 \begin{defin}
+l.779 \begin{defin}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1173,14 +1168,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.785 \end{defin}
+l.786 \end{defin}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [21]
-Overfull \hbox (1.22401pt too wide) in paragraph at lines 818--818
+Overfull \hbox (1.22401pt too wide) in paragraph at lines 819--819
 []\T1/ppl/m/n/12 Al ser in-ver-ti-bles las se-ries pue-den es-cri-bir-se en su 
 for-ma Au-to-re-gre-si-va AR($\OMS/zplm/m/n/12 1$\T1/ppl/m/n/12 )
  []
@@ -1188,7 +1183,7 @@ for-ma Au-to-re-gre-si-va AR($\OMS/zplm/m/n/12 1$\T1/ppl/m/n/12 )
 ! Missing } inserted.
 <inserted text> 
                 }
-l.821 ...\sum_{j=1}^{\infty}(\pi_{xj}-\pi_{yj})^2$
+l.822 ...\sum_{j=1}^{\infty}(\pi_{xj}-\pi_{yj})^2$
                                                   $
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1197,7 +1192,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (6.64873pt too wide) in paragraph at lines 823--825
+Overfull \hbox (6.64873pt too wide) in paragraph at lines 824--826
 []\T1/ppl/m/n/12 Que es la dis-tan-cia eu-clí-dea en-tre los co-efi-cien-tes de
  las re-pre-sen-ta-cio-nes $\OML/zplm/m/it/12 AR\OT1/zplm/m/n/12 (\OMS/zplm/m/n
 /12 1\OT1/zplm/m/n/12 )$
@@ -1207,26 +1202,26 @@ Overfull \hbox (6.64873pt too wide) in paragraph at lines 823--825
 ! Display math should end with $$.
 <to be read again> 
                     
-l.979 $$C_{j}(i,h)= 0$
+l.980 $$C_{j}(i,h)= 0$
                       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
-Overfull \hbox (12.36195pt too wide) in paragraph at lines 1001--1002
+Overfull \hbox (12.36195pt too wide) in paragraph at lines 1002--1003
  []\T1/ppl/b/n/12 Observación.[] \T1/ppl/m/n/12 Re-sul-ta-dos ex-pe-ri-men-ta-l
 es ob-te-ni-dos en [][][]Rousseeuw y Kauf-man[][] [][][]1990[][])
  []
 
 
-Overfull \hbox (6.50189pt too wide) in paragraph at lines 1014--1015
+Overfull \hbox (6.50189pt too wide) in paragraph at lines 1015--1016
 []\T1/ppl/m/n/12 CLARA (Clus-te-ring Lar-ge Apli-ca-tions) es un mé-to-do de-sa
 -rro-lla-do por [][][]Rousseeuw
  []
 
 [27]
 ! Undefined control sequence.
-l.1039 ...thor{salvador2004determining} \citeayear
+l.1040 ...thor{salvador2004determining} \citeayear
                                                   {salvador2004determining},...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1235,13 +1230,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [28]
-Overfull \hbox (20.15872pt too wide) in paragraph at lines 1042--1043
-[]\T1/ppl/m/n/12 A con-ti-nua-ción, mos-tra-mos un es-ta-dís-ti-co lla-ma-do GA
+Overfull \hbox (17.47061pt too wide) in paragraph at lines 1043--1044
+[]\T1/ppl/m/n/12 A con-ti-nua-ción, se mues-tra un es-ta-dís-ti-co lla-ma-do GA
 P, de-sa-rro-lla-do por [][][]Tibshirani,
  []
 
 [29]
-Overfull \hbox (3.57564pt too wide) in paragraph at lines 1092--1093
+Overfull \hbox (3.57564pt too wide) in paragraph at lines 1093--1094
 [][]\T1/ppl/b/sc/12 Definición \T1/ppl/b/n/12 2.11\T1/ppl/b/sc/12 . []\T1/ppl/m
 /sl/12 Un pro-ce-so $\OT1/zplm/m/n/12 (\OML/zplm/m/it/12 Y[]\OT1/ppl/m/n/12 , \
 OML/zplm/m/it/12 t \OMS/zplm/m/n/12 2 \U/fplmbb/m/n/12 Z\OT1/zplm/m/n/12 )$ \T1
@@ -1251,7 +1246,7 @@ n/12 (\OML/zplm/m/it/12 p\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 d\OT1/ppl/m/n/12 ,
  []
 
 
-Overfull \hbox (6.21251pt too wide) in paragraph at lines 1101--1102
+Overfull \hbox (6.21251pt too wide) in paragraph at lines 1102--1103
 []\T1/ppl/m/n/12 En ese ca-so se di-rá tam-bién que $\OT1/zplm/m/n/12 (\OML/zpl
 m/m/it/12 Y[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 t \OMS/zplm/m/n/12 2 \U/fplmbb
 /m/n/12 Z\OT1/zplm/m/n/12 )$ \T1/ppl/m/n/12 res-pon-de a un mo-de-lo $\OML/zplm
@@ -1262,14 +1257,14 @@ m/it/12 d\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 q\OT1/zplm/m/n/12 )$\T1/ppl/m/n/12
 
 [30] [31] [32] [33] [34] [35]
 ! Double superscript.
-l.1277 ...= (\omega_0-\omega_1B-\dots,-\omega_n^B^
+l.1278 ...= (\omega_0-\omega_1B-\dots,-\omega_n^B^
                                                   n)B^b$$
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 ! Undefined control sequence.
 <argument> ...b\\ v_j & = \delta _1v_{j-1}+\detla 
                                                   _2 v_{j-2} + \dots +\delta...
-l.1286 \end{split}
+l.1287 \end{split}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1280,7 +1275,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...b\\ v_j & = \delta _1v_{j-1}+\detla 
                                                   _2 v_{j-2} + \dots +\delta...
-l.1286 \end{split}
+l.1287 \end{split}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1291,7 +1286,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...n\\ v_j & = \delta _1v_{j-1}+\detla 
                                                   _2 v_{j-2} + \dots +\delta...
-l.1286 \end{split}
+l.1287 \end{split}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1302,7 +1297,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...b\\ v_j & = \delta _1v_{j-1}+\detla 
                                                   _2 v_{j-2} + \dots +\delta...
-l.1286 \end{split}
+l.1287 \end{split}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1313,7 +1308,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...b\\ v_j & = \delta _1v_{j-1}+\detla 
                                                   _2 v_{j-2} + \dots +\delta...
-l.1286 \end{split}
+l.1287 \end{split}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1324,7 +1319,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...n\\ v_j & = \delta _1v_{j-1}+\detla 
                                                   _2 v_{j-2} + \dots +\delta...
-l.1286 \end{split}
+l.1287 \end{split}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1338,83 +1333,83 @@ Cap\'{\i }tulo 3.
 
 ]
 ! Double subscript.
-l.1356 ...SARIMA $(p_0,d_0,q_0)$ $(P_0,D_0,Q_0)_s_
+l.1354 ...SARIMA $(p_0,d_0,q_0)$ $(P_0,D_0,Q_0)_s_
                                                   0$, entonces, para modelar...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [40]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 1385.
+(Font)              scaled to size 15.0049pt on input line 1383.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 1385.
+(Font)              scaled to size 10.42007pt on input line 1383.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 1385.
+(Font)              scaled to size 8.33606pt on input line 1383.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 1385.
+(Font)              scaled to size 15.0049pt on input line 1383.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 1385.
+(Font)              scaled to size 10.42007pt on input line 1383.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 1385.
+(Font)              scaled to size 8.33606pt on input line 1383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1385.
+(hyperref)                removing `math shift' on input line 1383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1385.
+(hyperref)                removing `math shift' on input line 1383.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1392.
+Package xcolor Warning: Incompatible color definition on input line 1390.
 
 <figure/unnamed-chunk-3-1.pdf, id=1138, 361.35pt x 289.08pt>
 File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 1394.
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 1392.
 
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
 [41 <./figure/unnamed-chunk-3-1.pdf>]
 <Resultados/1_Pamk3.png, id=1153, 779.713pt x 521.95pt>
 File: Resultados/1_Pamk3.png Graphic file (type png)
 <use Resultados/1_Pamk3.png>
-Package pdftex.def Info: Resultados/1_Pamk3.png  used on input line 1416.
+Package pdftex.def Info: Resultados/1_Pamk3.png  used on input line 1414.
 (pdftex.def)             Requested size: 350.8676pt x 234.87532pt.
 <Resultados/1_Clarak3.png, id=1154, 779.713pt x 521.95pt>
 File: Resultados/1_Clarak3.png Graphic file (type png)
 <use Resultados/1_Clarak3.png>
-Package pdftex.def Info: Resultados/1_Clarak3.png  used on input line 1423.
+Package pdftex.def Info: Resultados/1_Clarak3.png  used on input line 1421.
 (pdftex.def)             Requested size: 350.8676pt x 234.87532pt.
  [42 <./Resultados/1_Pamk3.png> <./Resultados/1_Clarak3.png>]
 <Resultados/4_k_optimo_clusters.pdf, id=1162, 546.04pt x 400.49625pt>
 File: Resultados/4_k_optimo_clusters.pdf Graphic file (type pdf)
 <use Resultados/4_k_optimo_clusters.pdf>
 Package pdftex.def Info: Resultados/4_k_optimo_clusters.pdf  used on input line
- 1435.
+ 1433.
 (pdftex.def)             Requested size: 354.9218pt x 260.31947pt.
 <Resultados/2_plot_cluster_dimensiones.pdf, id=1164, 556.0775pt x 451.6875pt>
 File: Resultados/2_plot_cluster_dimensiones.pdf Graphic file (type pdf)
 <use Resultados/2_plot_cluster_dimensiones.pdf>
 Package pdftex.def Info: Resultados/2_plot_cluster_dimensiones.pdf  used on inp
-ut line 1452.
+ut line 1450.
 (pdftex.def)             Requested size: 361.44609pt x 293.59338pt.
  [43 <./Resultados/4_k_optimo_clusters.pdf>]
 <Resultados/3_mapa_clusters.png, id=1177, 748.29562pt x 590.95781pt>
 File: Resultados/3_mapa_clusters.png Graphic file (type png)
 <use Resultados/3_mapa_clusters.png>
 Package pdftex.def Info: Resultados/3_mapa_clusters.png  used on input line 146
-5.
+3.
 (pdftex.def)             Requested size: 336.72992pt x 265.92856pt.
  [44 <./Resultados/2_plot_cluster_dimensiones.pdf>]
 <Resultados/3_mapa_zoom.png, id=1191, 597.432pt x 466.74374pt>
 File: Resultados/3_mapa_zoom.png Graphic file (type png)
 <use Resultados/3_mapa_zoom.png>
-Package pdftex.def Info: Resultados/3_mapa_zoom.png  used on input line 1472.
+Package pdftex.def Info: Resultados/3_mapa_zoom.png  used on input line 1470.
 (pdftex.def)             Requested size: 328.58861pt x 256.70984pt.
 <Resultados/Cluster1/1_series_cluster.png, id=1195, 901.86937pt x 590.95781pt>
 File: Resultados/Cluster1/1_series_cluster.png Graphic file (type png)
 <use Resultados/Cluster1/1_series_cluster.png>
 Package pdftex.def Info: Resultados/Cluster1/1_series_cluster.png  used on inpu
-t line 1483.
+t line 1481.
 (pdftex.def)             Requested size: 360.74136pt x 236.37894pt.
  [45 <./Resultados/3_mapa_clusters.png (PNG copy)> <./Resultados/3_mapa_zoom.pn
 g (PNG copy)>]
@@ -1422,13 +1417,13 @@ g (PNG copy)>]
 File: Resultados/Cluster2/1_series_cluster.png Graphic file (type png)
 <use Resultados/Cluster2/1_series_cluster.png>
 Package pdftex.def Info: Resultados/Cluster2/1_series_cluster.png  used on inpu
-t line 1490.
+t line 1488.
 (pdftex.def)             Requested size: 360.74686pt x 233.37129pt.
 <Resultados/Cluster3/1_series_cluster.png, id=1203, 721.4955pt x 466.74374pt>
 File: Resultados/Cluster3/1_series_cluster.png Graphic file (type png)
 <use Resultados/Cluster3/1_series_cluster.png>
 Package pdftex.def Info: Resultados/Cluster3/1_series_cluster.png  used on inpu
-t line 1496.
+t line 1494.
 (pdftex.def)             Requested size: 360.74686pt x 233.37129pt.
  [46 <./Resultados/Cluster1/1_series_cluster.png (PNG copy)> <./Resultados/Clus
 ter2/1_series_cluster.png (PNG copy)>]
@@ -1436,7 +1431,7 @@ ter2/1_series_cluster.png (PNG copy)>]
 File: Resultados/Cluster4/1_series_cluster.png Graphic file (type png)
 <use Resultados/Cluster4/1_series_cluster.png>
 Package pdftex.def Info: Resultados/Cluster4/1_series_cluster.png  used on inpu
-t line 1502.
+t line 1500.
 (pdftex.def)             Requested size: 360.74686pt x 233.37129pt.
  [47 <./Resultados/Cluster3/1_series_cluster.png (PNG copy)> <./Resultados/Clus
 ter4/1_series_cluster.png (PNG copy)>]
@@ -1445,80 +1440,80 @@ ter4/1_series_cluster.png (PNG copy)>]
 File: ./Imagenes//Cap3-Metodologia/limpieza.png Graphic file (type png)
 <use ./Imagenes//Cap3-Metodologia/limpieza.png>
 Package pdftex.def Info: ./Imagenes//Cap3-Metodologia/limpieza.png  used on inp
-ut line 1590.
+ut line 1588.
 (pdftex.def)             Requested size: 284.52756pt x 200.81421pt.
  [48]
 <./Imagenes//Cap3-Metodologia/limpieza2.png, id=1221, 450.483pt x 317.38576pt>
 File: ./Imagenes//Cap3-Metodologia/limpieza2.png Graphic file (type png)
 <use ./Imagenes//Cap3-Metodologia/limpieza2.png>
 Package pdftex.def Info: ./Imagenes//Cap3-Metodologia/limpieza2.png  used on in
-put line 1599.
+put line 1597.
 (pdftex.def)             Requested size: 284.52756pt x 200.46742pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1669.
+Package xcolor Warning: Incompatible color definition on input line 1667.
 
 <figure/unnamed-chunk-7-1.pdf, id=1224, 505.89pt x 361.35pt>
 File: figure/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 1671.
+Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 1669.
 
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 [49 <./Imagenes//Cap3-Metodologia/limpieza.png> <./Imagenes//Cap3-Metodologia/l
 impieza2.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 1684.
+Package xcolor Warning: Incompatible color definition on input line 1682.
 
 <figure/unnamed-chunk-8-1.pdf, id=1231, 505.89pt x 361.35pt>
 File: figure/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 1686.
+Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 1684.
 
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 [50 <./figure/unnamed-chunk-7-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1707.
+Package xcolor Warning: Incompatible color definition on input line 1705.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1725.
+Package xcolor Warning: Incompatible color definition on input line 1723.
 
 <figure/unnamed-chunk-10-1.pdf, id=1243, 505.89pt x 216.81pt>
 File: figure/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-10-1.pdf  used on input line 1727
+Package pdftex.def Info: figure/unnamed-chunk-10-1.pdf  used on input line 1725
 .
 (pdftex.def)             Requested size: 441.01773pt x 189.01024pt.
 [51 <./figure/unnamed-chunk-8-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1740.
+Package xcolor Warning: Incompatible color definition on input line 1738.
 
 <figure/unnamed-chunk-11-1.pdf, id=1254, 505.89pt x 361.35pt>
 File: figure/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-11-1.pdf  used on input line 1742
+Package pdftex.def Info: figure/unnamed-chunk-11-1.pdf  used on input line 1740
 .
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 [52 <./figure/unnamed-chunk-10-1.pdf> <./figure/unnamed-chunk-11-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1768.
+Package xcolor Warning: Incompatible color definition on input line 1771.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1803.
+Package xcolor Warning: Incompatible color definition on input line 1806.
 
-<figure/unnamed-chunk-14-1.pdf, id=1272, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-14-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-14-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-14-1.pdf  used on input line 1805
+<figure/unnamed-chunk-15-1.pdf, id=1272, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-15-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-15-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-15-1.pdf  used on input line 1808
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 [53]
 
-Package xcolor Warning: Incompatible color definition on input line 1822.
+Package xcolor Warning: Incompatible color definition on input line 1825.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1824 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
+l.1827 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1526,7 +1521,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1824 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
+l.1827 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1534,7 +1529,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1824 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
+l.1827 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1542,284 +1537,279 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1824 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
+l.1827 ...esid12}Modelo SARIMA(4,0,0)(0,1,0)_{12}}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1852.
+Package xcolor Warning: Incompatible color definition on input line 1855.
 
-<figure/unnamed-chunk-16-1.pdf, id=1280, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-16-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-16-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-16-1.pdf  used on input line 1854
+<figure/unnamed-chunk-17-1.pdf, id=1280, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-17-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-17-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-17-1.pdf  used on input line 1857
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[54 <./figure/unnamed-chunk-14-1.pdf>] [55 <./figure/unnamed-chunk-16-1.pdf>]
+[54 <./figure/unnamed-chunk-15-1.pdf>] [55 <./figure/unnamed-chunk-17-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1868.
+Package xcolor Warning: Incompatible color definition on input line 1871.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1896.
+Package xcolor Warning: Incompatible color definition on input line 1899.
 
-<figure/unnamed-chunk-18-1.pdf, id=1304, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-18-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-18-1.pdf  used on input line 1898
+<figure/unnamed-chunk-19-1.pdf, id=1304, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-19-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-19-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-19-1.pdf  used on input line 1901
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[56] [57 <./figure/unnamed-chunk-18-1.pdf>] [58]
+[56] [57 <./figure/unnamed-chunk-19-1.pdf>] [58]
 
-Package xcolor Warning: Incompatible color definition on input line 1945.
+Package xcolor Warning: Incompatible color definition on input line 1948.
 
-<figure/unnamed-chunk-21-1.pdf, id=1334, 505.89pt x 361.35pt>
-File: figure/unnamed-chunk-21-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-21-1.pdf  used on input line 1947
-.
-(pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
-
-Package xcolor Warning: Incompatible color definition on input line 1961.
-
-<figure/unnamed-chunk-22-1.pdf, id=1335, 505.89pt x 578.16pt>
+<figure/unnamed-chunk-22-1.pdf, id=1334, 505.89pt x 361.35pt>
 File: figure/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-22-1.pdf  used on input line 1963
+Package pdftex.def Info: figure/unnamed-chunk-22-1.pdf  used on input line 1950
 .
-(pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
-[59 <./figure/unnamed-chunk-21-1.pdf>] [60 <./figure/unnamed-chunk-22-1.pdf>]
+(pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 
-Package xcolor Warning: Incompatible color definition on input line 1986.
+Package xcolor Warning: Incompatible color definition on input line 1964.
 
-<figure/unnamed-chunk-23-1.pdf, id=1357, 505.89pt x 361.35pt>
+<figure/unnamed-chunk-23-1.pdf, id=1335, 505.89pt x 578.16pt>
 File: figure/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-23-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-23-1.pdf  used on input line 1988
+Package pdftex.def Info: figure/unnamed-chunk-23-1.pdf  used on input line 1966
+.
+(pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
+[59 <./figure/unnamed-chunk-22-1.pdf>] [60 <./figure/unnamed-chunk-23-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 1989.
+
+<figure/unnamed-chunk-24-1.pdf, id=1357, 505.89pt x 361.35pt>
+File: figure/unnamed-chunk-24-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-24-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-24-1.pdf  used on input line 1991
 .
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 
-Package xcolor Warning: Incompatible color definition on input line 2001.
+Package xcolor Warning: Incompatible color definition on input line 2004.
 
-[61 <./figure/unnamed-chunk-23-1.pdf>]
+[61 <./figure/unnamed-chunk-24-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2022.
+Package xcolor Warning: Incompatible color definition on input line 2025.
 
-<figure/unnamed-chunk-25-1.pdf, id=1369, 505.89pt x 361.35pt>
-File: figure/unnamed-chunk-25-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-25-1.pdf  used on input line 2024
+<figure/unnamed-chunk-26-1.pdf, id=1369, 505.89pt x 361.35pt>
+File: figure/unnamed-chunk-26-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-26-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-26-1.pdf  used on input line 2027
 .
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 
-Package xcolor Warning: Incompatible color definition on input line 2036.
+Package xcolor Warning: Incompatible color definition on input line 2039.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2053.
+Package xcolor Warning: Incompatible color definition on input line 2056.
 
-<figure/unnamed-chunk-27-1.pdf, id=1372, 505.89pt x 289.08pt>
-File: figure/unnamed-chunk-27-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-27-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-27-1.pdf  used on input line 2055
-.
-(pdftex.def)             Requested size: 441.01773pt x 252.01364pt.
-[62 <./figure/unnamed-chunk-25-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 2067.
-
-<figure/unnamed-chunk-28-1.pdf, id=1382, 505.89pt x 289.08pt>
+<figure/unnamed-chunk-28-1.pdf, id=1372, 505.89pt x 289.08pt>
 File: figure/unnamed-chunk-28-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-28-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-28-1.pdf  used on input line 2069
+Package pdftex.def Info: figure/unnamed-chunk-28-1.pdf  used on input line 2058
 .
 (pdftex.def)             Requested size: 441.01773pt x 252.01364pt.
-[63 <./figure/unnamed-chunk-27-1.pdf> <./figure/unnamed-chunk-28-1.pdf>]
+[62 <./figure/unnamed-chunk-26-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2083.
+Package xcolor Warning: Incompatible color definition on input line 2070.
 
+<figure/unnamed-chunk-29-1.pdf, id=1382, 505.89pt x 289.08pt>
+File: figure/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-29-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-29-1.pdf  used on input line 2072
+.
+(pdftex.def)             Requested size: 441.01773pt x 252.01364pt.
 
-Package xcolor Warning: Incompatible color definition on input line 2097.
+Package xcolor Warning: Incompatible color definition on input line 2086.
 
-<figure/unnamed-chunk-30-1.pdf, id=1399, 505.89pt x 361.35pt>
-File: figure/unnamed-chunk-30-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-30-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-30-1.pdf  used on input line 2099
+[63 <./figure/unnamed-chunk-28-1.pdf> <./figure/unnamed-chunk-29-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 2100.
+
+<figure/unnamed-chunk-31-1.pdf, id=1399, 505.89pt x 361.35pt>
+File: figure/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-31-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-31-1.pdf  used on input line 2102
 .
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 
-Package xcolor Warning: Incompatible color definition on input line 2121.
+Package xcolor Warning: Incompatible color definition on input line 2124.
 
-<figure/unnamed-chunk-31-1.pdf, id=1401, 505.89pt x 578.16pt>
-File: figure/unnamed-chunk-31-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-31-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-31-1.pdf  used on input line 2123
+<figure/unnamed-chunk-32-1.pdf, id=1401, 505.89pt x 578.16pt>
+File: figure/unnamed-chunk-32-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-32-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-32-1.pdf  used on input line 2126
 .
 (pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
-[64 <./figure/unnamed-chunk-30-1.pdf>]
+[64 <./figure/unnamed-chunk-31-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2149.
+Package xcolor Warning: Incompatible color definition on input line 2152.
 
-<figure/unnamed-chunk-33-1.pdf, id=1411, 505.89pt x 578.16pt>
-File: figure/unnamed-chunk-33-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-33-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-33-1.pdf  used on input line 2151
-.
-(pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
-[65 <./figure/unnamed-chunk-31-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 2163.
-
-<figure/unnamed-chunk-34-1.pdf, id=1421, 505.89pt x 578.16pt>
+<figure/unnamed-chunk-34-1.pdf, id=1411, 505.89pt x 578.16pt>
 File: figure/unnamed-chunk-34-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-34-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-34-1.pdf  used on input line 2165
+Package pdftex.def Info: figure/unnamed-chunk-34-1.pdf  used on input line 2154
 .
 (pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
-[66 <./figure/unnamed-chunk-33-1.pdf>] [67 <./figure/unnamed-chunk-34-1.pdf>]
+[65 <./figure/unnamed-chunk-32-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2206.
+Package xcolor Warning: Incompatible color definition on input line 2166.
 
-
-Package xcolor Warning: Incompatible color definition on input line 2235.
-
-<figure/unnamed-chunk-35-1.pdf, id=1442, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-35-1.pdf, id=1421, 505.89pt x 578.16pt>
 File: figure/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-35-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-35-1.pdf  used on input line 2237
+Package pdftex.def Info: figure/unnamed-chunk-35-1.pdf  used on input line 2168
 .
-(pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[68] [69 <./figure/unnamed-chunk-35-1.pdf>]
+(pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
+[66 <./figure/unnamed-chunk-34-1.pdf>] [67 <./figure/unnamed-chunk-35-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2255.
+Package xcolor Warning: Incompatible color definition on input line 2209.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2286.
+Package xcolor Warning: Incompatible color definition on input line 2238.
 
-<figure/unnamed-chunk-36-1.pdf, id=1463, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-36-1.pdf, id=1442, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-36-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-36-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-36-1.pdf  used on input line 2288
+Package pdftex.def Info: figure/unnamed-chunk-36-1.pdf  used on input line 2240
+.
+(pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
+[68] [69 <./figure/unnamed-chunk-36-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 2258.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2289.
+
+<figure/unnamed-chunk-37-1.pdf, id=1463, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-37-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-37-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-37-1.pdf  used on input line 2291
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 [70]
 
-Package xcolor Warning: Incompatible color definition on input line 2307.
+Package xcolor Warning: Incompatible color definition on input line 2310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2337.
+Package xcolor Warning: Incompatible color definition on input line 2340.
 
-<figure/unnamed-chunk-37-1.pdf, id=1472, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-37-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-37-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-37-1.pdf  used on input line 2339
-.
-(pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[71 <./figure/unnamed-chunk-36-1.pdf>] [72 <./figure/unnamed-chunk-37-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 2357.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2385.
-
-<figure/unnamed-chunk-38-1.pdf, id=1497, 505.89pt x 433.62pt>
+<figure/unnamed-chunk-38-1.pdf, id=1472, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-38-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-38-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-38-1.pdf  used on input line 2387
+Package pdftex.def Info: figure/unnamed-chunk-38-1.pdf  used on input line 2342
+.
+(pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
+[71 <./figure/unnamed-chunk-37-1.pdf>] [72 <./figure/unnamed-chunk-38-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 2360.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2388.
+
+<figure/unnamed-chunk-39-1.pdf, id=1497, 505.89pt x 433.62pt>
+File: figure/unnamed-chunk-39-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-39-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-39-1.pdf  used on input line 2390
 .
 (pdftex.def)             Requested size: 441.01773pt x 378.0205pt.
-[73] [74 <./figure/unnamed-chunk-38-1.pdf>]
+[73] [74 <./figure/unnamed-chunk-39-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2434.
+Package xcolor Warning: Incompatible color definition on input line 2437.
 
-<figure/unnamed-chunk-40-1.pdf, id=1517, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-40-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-40-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-40-1.pdf  used on input line 2436
+<figure/unnamed-chunk-41-1.pdf, id=1517, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-41-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-41-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-41-1.pdf  used on input line 2439
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 [75]
 
-Package xcolor Warning: Incompatible color definition on input line 2454.
+Package xcolor Warning: Incompatible color definition on input line 2457.
 
-<figure/unnamed-chunk-41-1.pdf, id=1525, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-41-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-41-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-41-1.pdf  used on input line 2456
-.
-(pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[76 <./figure/unnamed-chunk-40-1.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 2471.
-
-<figure/unnamed-chunk-42-1.pdf, id=1538, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-42-1.pdf, id=1525, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-42-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-42-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-42-1.pdf  used on input line 2473
+Package pdftex.def Info: figure/unnamed-chunk-42-1.pdf  used on input line 2459
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[77 <./figure/unnamed-chunk-41-1.pdf>]
+[76 <./figure/unnamed-chunk-41-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2490.
+Package xcolor Warning: Incompatible color definition on input line 2474.
 
-<figure/unnamed-chunk-43-1.pdf, id=1551, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-43-1.pdf, id=1538, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-43-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-43-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-43-1.pdf  used on input line 2492
+Package pdftex.def Info: figure/unnamed-chunk-43-1.pdf  used on input line 2476
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[78 <./figure/unnamed-chunk-42-1.pdf>] [79 <./figure/unnamed-chunk-43-1.pdf>]
-Overfull \hbox (0.39499pt too wide) in paragraph at lines 2515--2516
-[]\T1/ppl/m/n/12 Observando la fi-gu-ra [][]3.39[][] ve-mos que la fun-ción de 
-au-to-co-rre-la-ción y au-to-corrlea-
- []
+[77 <./figure/unnamed-chunk-42-1.pdf>]
 
+Package xcolor Warning: Incompatible color definition on input line 2493.
 
-Package xcolor Warning: Incompatible color definition on input line 2518.
-
-<figure/unnamed-chunk-44-1.pdf, id=1574, 505.89pt x 361.35pt>
+<figure/unnamed-chunk-44-1.pdf, id=1551, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-44-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-44-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-44-1.pdf  used on input line 2520
+Package pdftex.def Info: figure/unnamed-chunk-44-1.pdf  used on input line 2495
+.
+(pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
+[78 <./figure/unnamed-chunk-43-1.pdf>] [79 <./figure/unnamed-chunk-44-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 2521.
+
+<figure/unnamed-chunk-45-1.pdf, id=1574, 505.89pt x 361.35pt>
+File: figure/unnamed-chunk-45-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-45-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-45-1.pdf  used on input line 2523
 .
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 
-Overfull \hbox (25.41391pt too wide) in paragraph at lines 2531--2532
+Overfull \hbox (16.29396pt too wide) in paragraph at lines 2534--2535
 []\T1/ppl/m/n/12 Tras ana-li-zar la fun-ción de au-to-co-rre-la-ción de $\OML/z
-plm/m/it/12 n[]$\T1/ppl/m/n/12 , pro-po-ne-mos el mo-de-lo ARMA$\OT1/zplm/m/n/1
-2 (\OT1/ppl/m/n/12 1, 0\OT1/zplm/m/n/12 )$\T1/ppl/m/n/12 .
+plm/m/it/12 n[]$\T1/ppl/m/n/12 , se pro-po-ne el mo-de-lo ARMA$\OT1/zplm/m/n/12
+ (\OT1/ppl/m/n/12 1, 0\OT1/zplm/m/n/12 )$\T1/ppl/m/n/12 .
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2535.
+Package xcolor Warning: Incompatible color definition on input line 2538.
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 2550--2551
+Underfull \hbox (badness 1796) in paragraph at lines 2553--2554
 []\T1/ppl/m/n/12 sigma^2 = 246784.96, lo-gli-ke-lihood = -1128.97, AIC =
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2560.
+Package xcolor Warning: Incompatible color definition on input line 2563.
 
-<figure/unnamed-chunk-46-1.pdf, id=1577, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-46-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-46-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-46-1.pdf  used on input line 2562
+<figure/unnamed-chunk-47-1.pdf, id=1577, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-47-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-47-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-47-1.pdf  used on input line 2565
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
-[80 <./figure/unnamed-chunk-44-1.pdf>] [81 <./figure/unnamed-chunk-46-1.pdf>]
+[80 <./figure/unnamed-chunk-45-1.pdf>] [81 <./figure/unnamed-chunk-47-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 2600.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2682.
+Package xcolor Warning: Incompatible color definition on input line 2603.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2725.
+Package xcolor Warning: Incompatible color definition on input line 2685.
 
-<figure/unnamed-chunk-53-1.pdf, id=1605, 505.89pt x 578.16pt>
-File: figure/unnamed-chunk-53-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-53-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-53-1.pdf  used on input line 2727
+
+Package xcolor Warning: Incompatible color definition on input line 2728.
+
+<figure/unnamed-chunk-54-1.pdf, id=1605, 505.89pt x 578.16pt>
+File: figure/unnamed-chunk-54-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-54-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-54-1.pdf  used on input line 2730
 .
 (pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
 
@@ -1827,21 +1817,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [82] [83] [84]
 
-Package xcolor Warning: Incompatible color definition on input line 2764.
+Package xcolor Warning: Incompatible color definition on input line 2767.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2806.
+Package xcolor Warning: Incompatible color definition on input line 2809.
 
-<figure/unnamed-chunk-56-1.pdf, id=1624, 505.89pt x 578.16pt>
-File: figure/unnamed-chunk-56-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-56-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-56-1.pdf  used on input line 2808
+<figure/unnamed-chunk-57-1.pdf, id=1624, 505.89pt x 578.16pt>
+File: figure/unnamed-chunk-57-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-57-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-57-1.pdf  used on input line 2811
 .
 (pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[85] [86] [87 <./figure/unnamed-chunk-53-1.pdf>] [88 <./figure/unnamed-chunk-56
+[85] [86] [87 <./figure/unnamed-chunk-54-1.pdf>] [88 <./figure/unnamed-chunk-57
 -1.pdf>]
 Cap\'{\i }tulo 4.
 [89
@@ -1852,14 +1842,14 @@ Cap\'{\i }tulo 4.
 File: ./Imagenes//Cap3-WebApp/modulo_clustering.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_clustering.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_clustering.png  used on
- input line 2882.
+ input line 2884.
 (pdftex.def)             Requested size: 426.79134pt x 177.73369pt.
 <./Imagenes//Cap3-WebApp/modulo_sarimax1.png, id=1674, 855.79726pt x 524.55975p
 t>
 File: ./Imagenes//Cap3-WebApp/modulo_sarimax1.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_sarimax1.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_sarimax1.png  used on i
-nput line 2895.
+nput line 2897.
 (pdftex.def)             Requested size: 426.79134pt x 261.59888pt.
 
 
@@ -1870,7 +1860,7 @@ t>
 File: ./Imagenes//Cap3-WebApp/modulo_sarimax2.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_sarimax2.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_sarimax2.png  used on i
-nput line 2902.
+nput line 2904.
 (pdftex.def)             Requested size: 426.79134pt x 249.48924pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1880,7 +1870,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./Imagenes//Cap3-WebApp/modulo_sarimax3.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_sarimax3.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_sarimax3.png  used on i
-nput line 2909.
+nput line 2911.
 (pdftex.def)             Requested size: 426.79134pt x 262.62334pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1890,7 +1880,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./Imagenes//Cap3-WebApp/modulo_sarimax4.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_sarimax4.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_sarimax4.png  used on i
-nput line 2916.
+nput line 2918.
 (pdftex.def)             Requested size: 426.79134pt x 263.27173pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1899,7 +1889,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./Imagenes//Cap3-WebApp/modulo_sarimax5.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_sarimax5.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_sarimax5.png  used on i
-nput line 2923.
+nput line 2925.
 (pdftex.def)             Requested size: 426.79134pt x 263.6641pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1909,7 +1899,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: ./Imagenes//Cap3-WebApp/modulo_sarimax6.png Graphic file (type png)
 <use ./Imagenes//Cap3-WebApp/modulo_sarimax6.png>
 Package pdftex.def Info: ./Imagenes//Cap3-WebApp/modulo_sarimax6.png  used on i
-nput line 2930.
+nput line 2932.
 (pdftex.def)             Requested size: 426.79134pt x 263.96507pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1921,12 +1911,12 @@ ax4.png>] [93 <./Imagenes//Cap3-WebApp/modulo_sarimax5.png> <./Imagenes//Cap3-W
 ebApp/modulo_sarimax6.png>]
 Cap\'{\i }tulo 5.
 
-Package xcolor Warning: Incompatible color definition on input line 2957.
+Package xcolor Warning: Incompatible color definition on input line 2959.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.3016 \end{tabular}}
+l.3018 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1934,7 +1924,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.3016 \end{tabular}}
+l.3018 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1943,7 +1933,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3041.
+Package xcolor Warning: Incompatible color definition on input line 3043.
 
 [94
 
@@ -1951,7 +1941,7 @@ Package xcolor Warning: Incompatible color definition on input line 3041.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.3101 \end{tabular}}
+l.3103 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1959,7 +1949,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.3101 \end{tabular}}
+l.3103 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1969,18 +1959,18 @@ my insertion and my current dilemma will both disappear.
 
 [96]
 
-Package xcolor Warning: Incompatible color definition on input line 3113.
+Package xcolor Warning: Incompatible color definition on input line 3115.
 
-<figure/unnamed-chunk-62-1.pdf, id=1726, 505.89pt x 361.35pt>
-File: figure/unnamed-chunk-62-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-62-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-62-1.pdf  used on input line 3115
+<figure/unnamed-chunk-63-1.pdf, id=1726, 505.89pt x 361.35pt>
+File: figure/unnamed-chunk-63-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-63-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-63-1.pdf  used on input line 3117
 .
 (pdftex.def)             Requested size: 441.01773pt x 315.01707pt.
 [97
 
 
- <./figure/unnamed-chunk-62-1.pdf>]
+ <./figure/unnamed-chunk-63-1.pdf>]
 Cap\'{\i }tulo 6.
 [98
 
@@ -1994,16 +1984,16 @@ Package epstopdf Info: Source file: <./Imagenes//MapaApp.eps>
 (epstopdf)                    size: 41363 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Imagenes//MapaApp-eps-con
 verted-to.pdf ./Imagenes//MapaApp.eps>
-(epstopdf)             \includegraphics on input line 3219.
+(epstopdf)             \includegraphics on input line 3224.
 Package epstopdf Info: Output file is already uptodate.
 <./Imagenes//MapaApp-eps-converted-to.pdf, id=1748, 657.45625pt x 469.755pt>
 File: ./Imagenes//MapaApp-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Imagenes//MapaApp-eps-converted-to.pdf>
 Package pdftex.def Info: ./Imagenes//MapaApp-eps-converted-to.pdf  used on inpu
-t line 3219.
+t line 3224.
 (pdftex.def)             Requested size: 426.79134pt x 304.95007pt.
 
-Overfull \hbox (21.48332pt too wide) in paragraph at lines 3224--3226
+Overfull \hbox (21.48332pt too wide) in paragraph at lines 3229--3231
 \T1/ppl/m/n/12 uso en la si-guien-te di-rec-ción: []https://cristianpachacama.s
 hinyapps.io/TesisBorrrador/[]. 
  []
@@ -2011,171 +2001,171 @@ hinyapps.io/TesisBorrrador/[].
 [100
 
  <./Imagenes//MapaApp-eps-converted-to.pdf>]
-Overfull \hbox (8.0744pt too wide) in paragraph at lines 3227--3229
+Overfull \hbox (8.0744pt too wide) in paragraph at lines 3232--3234
 []\T1/ppl/m/n/12 Además pue-de en-con-trar el có-di-go fuen-te de la mis-ma en 
 el re-po-si-to-rio de GitHub:
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3236.
+Package xcolor Warning: Incompatible color definition on input line 3241.
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3242.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3247.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-3307.
+3312.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmtt.fd"
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [101]
-Underfull \vbox (badness 10000) detected at line 3316
+Underfull \vbox (badness 10000) detected at line 3321
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3316
+Underfull \vbox (badness 10000) detected at line 3321
  []
 
 [102]
 
-Package xcolor Warning: Incompatible color definition on input line 3325.
+Package xcolor Warning: Incompatible color definition on input line 3330.
 
 [103]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [104]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [105]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [106]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [107]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [108]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [109]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [110]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [111]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [112]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [113]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [114]
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3897
+Underfull \vbox (badness 10000) detected at line 3902
  []
 
 [115]
 
-Package xcolor Warning: Incompatible color definition on input line 3907.
+Package xcolor Warning: Incompatible color definition on input line 3912.
 
 [116]
-Underfull \vbox (badness 10000) detected at line 3967
+Underfull \vbox (badness 10000) detected at line 3972
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3967
+Underfull \vbox (badness 10000) detected at line 3972
  []
 
 [117] [118]
 Ap\'{e}ndice B.
 
-Package xcolor Warning: Incompatible color definition on input line 3981.
+Package xcolor Warning: Incompatible color definition on input line 3986.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4238.
+Package xcolor Warning: Incompatible color definition on input line 4243.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4494.
+Package xcolor Warning: Incompatible color definition on input line 4499.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4750.
+Package xcolor Warning: Incompatible color definition on input line 4755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5006.
+Package xcolor Warning: Incompatible color definition on input line 5011.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5262.
+Package xcolor Warning: Incompatible color definition on input line 5267.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5518.
+Package xcolor Warning: Incompatible color definition on input line 5523.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5774.
+Package xcolor Warning: Incompatible color definition on input line 5779.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6031.
+Package xcolor Warning: Incompatible color definition on input line 6036.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6292.
+Package xcolor Warning: Incompatible color definition on input line 6297.
 
 [119
 
@@ -2184,27 +2174,27 @@ Package xcolor Warning: Incompatible color definition on input line 6292.
 [143] [144] [145] [146] [147]
 Ap\'{e}ndice C.
 
-Package xcolor Warning: Incompatible color definition on input line 6412.
+Package xcolor Warning: Incompatible color definition on input line 6417.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6440.
+Package xcolor Warning: Incompatible color definition on input line 6445.
 
-<figure/unnamed-chunk-74-1.pdf, id=1969, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-74-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-74-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-74-1.pdf  used on input line 6442
+<figure/unnamed-chunk-75-1.pdf, id=1969, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-75-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-75-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-75-1.pdf  used on input line 6447
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6456.
+Package xcolor Warning: Incompatible color definition on input line 6461.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6515 \end{tabular}}
+l.6520 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2212,7 +2202,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6515 \end{tabular}}
+l.6520 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2221,44 +2211,44 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6524.
+Package xcolor Warning: Incompatible color definition on input line 6529.
 
-<figure/unnamed-chunk-76-1.pdf, id=1972, 505.89pt x 867.24pt>
-File: figure/unnamed-chunk-76-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-76-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-76-1.pdf  used on input line 6526
+<figure/unnamed-chunk-77-1.pdf, id=1972, 505.89pt x 867.24pt>
+File: figure/unnamed-chunk-77-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-77-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-77-1.pdf  used on input line 6531
 .
 (pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6552.
+Package xcolor Warning: Incompatible color definition on input line 6557.
 
 [148
 
 ] [149]
 
-Package xcolor Warning: Incompatible color definition on input line 6584.
+Package xcolor Warning: Incompatible color definition on input line 6589.
 
-<figure/unnamed-chunk-79-1.pdf, id=1983, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-79-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-79-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-79-1.pdf  used on input line 6586
+<figure/unnamed-chunk-80-1.pdf, id=1983, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-80-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-80-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-80-1.pdf  used on input line 6591
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6600.
+Package xcolor Warning: Incompatible color definition on input line 6605.
 
-[150 <./figure/unnamed-chunk-74-1.pdf>] [151] [152 <./figure/unnamed-chunk-76-1
-.pdf>] [153 <./figure/unnamed-chunk-79-1.pdf>]
+[150 <./figure/unnamed-chunk-75-1.pdf>] [151] [152 <./figure/unnamed-chunk-77-1
+.pdf>] [153 <./figure/unnamed-chunk-80-1.pdf>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6626 \end{tabular}}
+l.6631 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2266,7 +2256,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6626 \end{tabular}}
+l.6631 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2276,39 +2266,39 @@ my insertion and my current dilemma will both disappear.
 
 [154]
 
-Package xcolor Warning: Incompatible color definition on input line 6637.
+Package xcolor Warning: Incompatible color definition on input line 6642.
 
-<figure/unnamed-chunk-81-1.pdf, id=2025, 505.89pt x 722.7pt>
-File: figure/unnamed-chunk-81-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-81-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-81-1.pdf  used on input line 6639
+<figure/unnamed-chunk-82-1.pdf, id=2025, 505.89pt x 722.7pt>
+File: figure/unnamed-chunk-82-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-82-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-82-1.pdf  used on input line 6644
 .
 (pdftex.def)             Requested size: 441.02388pt x 585.28455pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6662.
+Package xcolor Warning: Incompatible color definition on input line 6667.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6689.
+Package xcolor Warning: Incompatible color definition on input line 6694.
 
-<figure/unnamed-chunk-84-1.pdf, id=2027, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-84-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-84-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-84-1.pdf  used on input line 6691
+<figure/unnamed-chunk-85-1.pdf, id=2027, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-85-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-85-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-85-1.pdf  used on input line 6696
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6706.
+Package xcolor Warning: Incompatible color definition on input line 6711.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6763 \end{tabular}}
+l.6768 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2316,7 +2306,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6763 \end{tabular}}
+l.6768 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2325,12 +2315,12 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6772.
+Package xcolor Warning: Incompatible color definition on input line 6777.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6829 \end{tabular}}
+l.6834 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2338,7 +2328,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6829 \end{tabular}}
+l.6834 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2347,12 +2337,12 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6836.
+Package xcolor Warning: Incompatible color definition on input line 6841.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6889 \end{tabular}}
+l.6894 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2360,7 +2350,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6889 \end{tabular}}
+l.6894 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2369,57 +2359,57 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6899.
+Package xcolor Warning: Incompatible color definition on input line 6904.
 
-<figure/unnamed-chunk-88-1.pdf, id=2030, 505.89pt x 867.24pt>
-File: figure/unnamed-chunk-88-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-88-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-88-1.pdf  used on input line 6901
-.
-(pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package xcolor Warning: Incompatible color definition on input line 6912.
-
-<figure/unnamed-chunk-89-1.pdf, id=2031, 505.89pt x 867.24pt>
+<figure/unnamed-chunk-89-1.pdf, id=2030, 505.89pt x 867.24pt>
 File: figure/unnamed-chunk-89-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-89-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-89-1.pdf  used on input line 6914
+Package pdftex.def Info: figure/unnamed-chunk-89-1.pdf  used on input line 6906
 .
 (pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6936.
+Package xcolor Warning: Incompatible color definition on input line 6917.
+
+<figure/unnamed-chunk-90-1.pdf, id=2031, 505.89pt x 867.24pt>
+File: figure/unnamed-chunk-90-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-90-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-90-1.pdf  used on input line 6919
+.
+(pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6966.
+Package xcolor Warning: Incompatible color definition on input line 6941.
 
-<figure/unnamed-chunk-92-1.pdf, id=2033, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-92-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-92-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-92-1.pdf  used on input line 6968
+
+Package xcolor Warning: Incompatible color definition on input line 6971.
+
+<figure/unnamed-chunk-93-1.pdf, id=2033, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-93-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-93-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-93-1.pdf  used on input line 6973
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 6983.
+Package xcolor Warning: Incompatible color definition on input line 6988.
 
 [155
 
 
-] [156] [157] [158] [159 <./figure/unnamed-chunk-81-1.pdf>] [160 <./figure/unna
-med-chunk-84-1.pdf>] [161 <./figure/unnamed-chunk-88-1.pdf>] [162 <./figure/unn
-amed-chunk-89-1.pdf>] [163 <./figure/unnamed-chunk-92-1.pdf>]
+] [156] [157] [158] [159 <./figure/unnamed-chunk-82-1.pdf>] [160 <./figure/unna
+med-chunk-85-1.pdf>] [161 <./figure/unnamed-chunk-89-1.pdf>] [162 <./figure/unn
+amed-chunk-90-1.pdf>] [163 <./figure/unnamed-chunk-93-1.pdf>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7004 \end{tabular}}
+l.7009 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2427,7 +2417,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7004 \end{tabular}}
+l.7009 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2437,41 +2427,41 @@ my insertion and my current dilemma will both disappear.
 
 [164]
 
-Package xcolor Warning: Incompatible color definition on input line 7016.
+Package xcolor Warning: Incompatible color definition on input line 7021.
 
-<figure/unnamed-chunk-94-1.pdf, id=2106, 505.89pt x 578.16pt>
-File: figure/unnamed-chunk-94-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-94-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-94-1.pdf  used on input line 7018
+<figure/unnamed-chunk-95-1.pdf, id=2106, 505.89pt x 578.16pt>
+File: figure/unnamed-chunk-95-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-95-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-95-1.pdf  used on input line 7023
 .
 (pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
 
-Package xcolor Warning: Incompatible color definition on input line 7057.
+Package xcolor Warning: Incompatible color definition on input line 7062.
 
 [165
 
 
- <./figure/unnamed-chunk-94-1.pdf>]
+ <./figure/unnamed-chunk-95-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 7089.
+Package xcolor Warning: Incompatible color definition on input line 7094.
 
-<figure/unnamed-chunk-96-1.pdf, id=2118, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-96-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-96-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-96-1.pdf  used on input line 7091
+<figure/unnamed-chunk-97-1.pdf, id=2118, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-97-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-97-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-97-1.pdf  used on input line 7096
 .
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7109.
+Package xcolor Warning: Incompatible color definition on input line 7114.
 
-[166] [167 <./figure/unnamed-chunk-96-1.pdf>]
+[166] [167 <./figure/unnamed-chunk-97-1.pdf>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7169 \end{tabular}}
+l.7174 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2479,7 +2469,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7169 \end{tabular}}
+l.7174 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2489,44 +2479,44 @@ my insertion and my current dilemma will both disappear.
 
 [168]
 
-Package xcolor Warning: Incompatible color definition on input line 7179.
+Package xcolor Warning: Incompatible color definition on input line 7184.
 
-<figure/unnamed-chunk-99-1.pdf, id=2139, 505.89pt x 867.24pt>
-File: figure/unnamed-chunk-99-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-99-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-99-1.pdf  used on input line 7181
-.
+<figure/unnamed-chunk-100-1.pdf, id=2139, 505.89pt x 867.24pt>
+File: figure/unnamed-chunk-100-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-100-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-100-1.pdf  used on input line 718
+6.
 (pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7206.
+Package xcolor Warning: Incompatible color definition on input line 7211.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7236.
+Package xcolor Warning: Incompatible color definition on input line 7241.
 
-<figure/unnamed-chunk-102-1.pdf, id=2141, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-102-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-102-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-102-1.pdf  used on input line 723
-8.
+<figure/unnamed-chunk-103-1.pdf, id=2141, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-103-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-103-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-103-1.pdf  used on input line 724
+3.
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7252.
+Package xcolor Warning: Incompatible color definition on input line 7257.
 
 [169
 
 
-] [170 <./figure/unnamed-chunk-99-1.pdf>] [171 <./figure/unnamed-chunk-102-1.pd
-f>]
+] [170 <./figure/unnamed-chunk-100-1.pdf>] [171 <./figure/unnamed-chunk-103-1.p
+df>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7278 \end{tabular}}
+l.7283 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2534,7 +2524,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7278 \end{tabular}}
+l.7283 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2544,44 +2534,44 @@ my insertion and my current dilemma will both disappear.
 
 [172]
 
-Package xcolor Warning: Incompatible color definition on input line 7288.
+Package xcolor Warning: Incompatible color definition on input line 7293.
 
-<figure/unnamed-chunk-104-1.pdf, id=2172, 505.89pt x 722.7pt>
-File: figure/unnamed-chunk-104-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-104-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-104-1.pdf  used on input line 729
-0.
+<figure/unnamed-chunk-105-1.pdf, id=2172, 505.89pt x 722.7pt>
+File: figure/unnamed-chunk-105-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-105-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-105-1.pdf  used on input line 729
+5.
 (pdftex.def)             Requested size: 441.02388pt x 585.28455pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7316.
+Package xcolor Warning: Incompatible color definition on input line 7321.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7344.
+Package xcolor Warning: Incompatible color definition on input line 7349.
 
-<figure/unnamed-chunk-107-1.pdf, id=2174, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-107-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-107-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-107-1.pdf  used on input line 734
-6.
+<figure/unnamed-chunk-108-1.pdf, id=2174, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-108-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-108-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-108-1.pdf  used on input line 735
+1.
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7360.
+Package xcolor Warning: Incompatible color definition on input line 7365.
 
 [173
 
 
-] [174 <./figure/unnamed-chunk-104-1.pdf>] [175 <./figure/unnamed-chunk-107-1.p
+] [174 <./figure/unnamed-chunk-105-1.pdf>] [175 <./figure/unnamed-chunk-108-1.p
 df>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7418 \end{tabular}}
+l.7423 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2589,7 +2579,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7418 \end{tabular}}
+l.7423 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2599,12 +2589,12 @@ my insertion and my current dilemma will both disappear.
 
 [176]
 
-Package xcolor Warning: Incompatible color definition on input line 7427.
+Package xcolor Warning: Incompatible color definition on input line 7432.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7485 \end{tabular}}
+l.7490 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2612,7 +2602,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7485 \end{tabular}}
+l.7490 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2622,12 +2612,12 @@ my insertion and my current dilemma will both disappear.
 
 [177]
 
-Package xcolor Warning: Incompatible color definition on input line 7493.
+Package xcolor Warning: Incompatible color definition on input line 7498.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7547 \end{tabular}}
+l.7552 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2635,7 +2625,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7547 \end{tabular}}
+l.7552 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2645,46 +2635,46 @@ my insertion and my current dilemma will both disappear.
 
 [178]
 
-Package xcolor Warning: Incompatible color definition on input line 7558.
+Package xcolor Warning: Incompatible color definition on input line 7563.
 
-<figure/unnamed-chunk-111-1.pdf, id=2213, 505.89pt x 867.24pt>
-File: figure/unnamed-chunk-111-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-111-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-111-1.pdf  used on input line 756
-0.
-(pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package xcolor Warning: Incompatible color definition on input line 7571.
-
-<figure/unnamed-chunk-112-1.pdf, id=2214, 505.89pt x 867.24pt>
+<figure/unnamed-chunk-112-1.pdf, id=2213, 505.89pt x 867.24pt>
 File: figure/unnamed-chunk-112-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-112-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-112-1.pdf  used on input line 757
-3.
+Package pdftex.def Info: figure/unnamed-chunk-112-1.pdf  used on input line 756
+5.
 (pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7598.
+Package xcolor Warning: Incompatible color definition on input line 7576.
+
+<figure/unnamed-chunk-113-1.pdf, id=2214, 505.89pt x 867.24pt>
+File: figure/unnamed-chunk-113-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-113-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-113-1.pdf  used on input line 757
+8.
+(pdftex.def)             Requested size: 441.02388pt x 585.30882pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7628.
+Package xcolor Warning: Incompatible color definition on input line 7603.
 
-<figure/unnamed-chunk-115-1.pdf, id=2216, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-115-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-115-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-115-1.pdf  used on input line 763
-0.
+
+Package xcolor Warning: Incompatible color definition on input line 7633.
+
+<figure/unnamed-chunk-116-1.pdf, id=2216, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-116-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-116-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-116-1.pdf  used on input line 763
+5.
 (pdftex.def)             Requested size: 441.01773pt x 441.02388pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 7644.
+Package xcolor Warning: Incompatible color definition on input line 7649.
 
 [179
 
@@ -2693,12 +2683,12 @@ Package xcolor Warning: Incompatible color definition on input line 7644.
 
 
 
-] [180 <./figure/unnamed-chunk-111-1.pdf>] [181 <./figure/unnamed-chunk-112-1.p
-df>] [182 <./figure/unnamed-chunk-115-1.pdf>]
+] [180 <./figure/unnamed-chunk-112-1.pdf>] [181 <./figure/unnamed-chunk-113-1.p
+df>] [182 <./figure/unnamed-chunk-116-1.pdf>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7665 \end{tabular}}
+l.7670 \end{tabular}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2706,7 +2696,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.7665 \end{tabular}}
+l.7670 \end{tabular}}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2716,18 +2706,18 @@ my insertion and my current dilemma will both disappear.
 
 [183]
 
-Package xcolor Warning: Incompatible color definition on input line 7677.
+Package xcolor Warning: Incompatible color definition on input line 7682.
 
-<figure/unnamed-chunk-117-1.pdf, id=2256, 505.89pt x 578.16pt>
-File: figure/unnamed-chunk-117-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-117-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-117-1.pdf  used on input line 767
-9.
+<figure/unnamed-chunk-118-1.pdf, id=2256, 505.89pt x 578.16pt>
+File: figure/unnamed-chunk-118-1.pdf Graphic file (type pdf)
+<use figure/unnamed-chunk-118-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-118-1.pdf  used on input line 768
+4.
 (pdftex.def)             Requested size: 441.01773pt x 504.02731pt.
 [184
 
 
- <./figure/unnamed-chunk-117-1.pdf>] (Tesis.bbl [185
+ <./figure/unnamed-chunk-118-1.pdf>] (Tesis.bbl [185
 
 ] [186] [187]) [188]
 (Tesis.aux
@@ -2743,12 +2733,12 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  14849 strings out of 480237
- 231313 string characters out of 2888548
- 2463831 words of memory out of 3000000
+ 231398 string characters out of 2888548
+ 2464851 words of memory out of 3000000
  30332 multiletter control sequences out of 15000+200000
  588994 words of font info for 150 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,18n,85p,1700b,674s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 80i,18n,85p,1719b,674s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Cristian\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi6
 00\tcit1000.pk> <C:\Users\Cristian\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkn
 appen/ec/dpi600\tctt1000.pk> <C:\Users\Cristian\AppData\Local\MiKTeX\2.9\fonts/
@@ -2767,7 +2757,7 @@ iles/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plri8a.pfb>
-Output written on Tesis.pdf (204 pages, 19530630 bytes).
+Output written on Tesis.pdf (204 pages, 19531634 bytes).
 PDF statistics:
  2674 PDF objects out of 2984 (max. 8388607)
  596 named destinations out of 1000 (max. 500000)

@@ -1,6 +1,6 @@
 \subsection{Algoritmos de Agrupamiento}
 
-Una vez que se determina la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre parejas de series), y luego se usa un algoritmo de agrupamiento convencional para formar los clústers (grupos) con las series. De hecho, la mayoría de los enfoques de agrupamiento de series de tiempo desarrollados por autores como \citeauthor{liao2005clustering} \citeyear{liao2005clustering} son variaciones de procedimientos generales como por ejemplo: K-Means, K-Medoids, PAM, CLARA \citeauthor{kaufman1986clustering} \citeyear{kaufman1986clustering} o de Clúster jerárquico, que utilizan una gama de disimilitudes específicamente diseñadas para tratar con series de tiempo y algunas de sus características. A continuación detallamos dos de los algoritmos que usaremos en nuestro análisis.
+Una vez que se determina la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre parejas de series), y luego se usa un algoritmo de agrupamiento convencional para formar los clústers (grupos) con las series. De hecho, la mayoría de los enfoques de agrupamiento de series de tiempo desarrollados por autores como \citeauthor{liao2005clustering} \citeyear{liao2005clustering} son variaciones de procedimientos generales como por ejemplo: K-Means, K-Medoids, PAM, CLARA \citeauthor{kaufman1986clustering} \citeyear{kaufman1986clustering} o de Clúster jerárquico, que utilizan una gama de disimilitudes específicamente diseñadas para tratar con series de tiempo y algunas de sus características. A continuación se detallan dos de los algoritmos que se usarán en nuestro análisis.
 
 \subsubsection{Particionamiento alrededor de Medoides (PAM)}
 
@@ -36,27 +36,27 @@ se obtiene un agrupamiento inicial mediante la selección sucesiva de objetos re
 
 \begin{enumerate}
 
-\item  Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Luego supongamos que $O_j$ es más parecido a $O_{k}$ que $O_h$. Así, si reemplazamos $O_i$ por $O_h$ como medoide del grupo, entonces $O_j$ pertenecería al grupo representado por $O_{k}$. Por lo tanto el costo de intercambio de medoides respecto de $O_j$ es :
+\item  Supóngase que $O_j$ pertenece al grupo representado por el medoide $O_i$. Luego suponiendo que $O_j$ es más parecido a $O_{k}$ que $O_h$. Así, si se reemplaza $O_i$ por $O_h$ como medoide del grupo, entonces $O_j$ pertenecería al grupo representado por $O_{k}$. Por lo tanto el costo de intercambio de medoides respecto de $O_j$ es :
 
 $$C_{j}(i,h)= d(O_j,O_{k})-d(O_j,O_i)$$
 
-Notemos que $C_{j}(i,h)\geq 0$ 
+Nótese que $C_{j}(i,h)\geq 0$ 
 
-\item Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Pero esta vez $O_j$ es menos parecido a $O_{k}$ que $O_h$. Así, el costo de  reemplazar $O_i$ por $O_h$ viene dado por:
+\item Supóngase que $O_j$ pertenece al grupo representado por el medoide $O_i$. Pero esta vez $O_j$ es menos parecido a $O_{k}$ que $O_h$. Así, el costo de  reemplazar $O_i$ por $O_h$ viene dado por:
 
 $$C_{j}(i,h)= d(O_j,O_{h})-d(O_j,O_i)$$
 
 En este caso $C_{j}(i,h)$ puede ser positivo o negativo.
 
-\item Supongamos que $O_j$ pertenece a un grupo distinto al representado por el medoide $O_i$ . Sea $O_{k}$ el medoide de ese grupo. Luego supongamos que $O_j$ es más similar a $O_{k}$ que a $O_h$, entonces:
+\item Supóngase que $O_j$ pertenece a un grupo distinto al representado por el medoide $O_i$ . Sea $O_{k}$ el medoide de ese grupo. Luego suponiendo que $O_j$ es más similar a $O_{k}$ que a $O_h$, entonces:
 
 $$C_{j}(i,h)= 0$
 
-\item Supongamos que $O_j$ pertenece al grupo representado por el medoide $O_i$. Entonces reeplazar $O_i$ con $O_h$ provocaría que $O_j$ pase del grupo representado por $O_h$ al grupo representado por $O_k$. Así, el costo viene dado por:
+\item Supóngase que $O_j$ pertenece al grupo representado por el medoide $O_i$. Entonces reeplazar $O_i$ con $O_h$ provocaría que $O_j$ pase del grupo representado por $O_h$ al grupo representado por $O_k$. Así, el costo viene dado por:
 
 $$C_{j}(i,h) = d(O_j,O_{h})-d(O_j,O_k)$$
 
-Notemos que $C_{j}(i,h)<0$
+Nótese que $C_{j}(i,h)<0$
 
 \item Finalmente el costo total de reemplazar $O_i$ por $O_h$ está dado por:
 
@@ -93,7 +93,7 @@ CLARA (Clustering Large Aplications) es un método desarrollado por \citeauthor{
 \item Realizar $L$ veces lo siguiente:
 \item Tomar una muestra aleatoria de $m$ de los $n$ objetos , y ejecutar el algoritmo PAM para hallar los $k$ medoides de esta muestra.
 \item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cual de los $k$ medoides es el más similar a $O_j$.
-\item Calcular la disimilitud promedio del grupo obtenido en el paso anterior. Si este valor es menor al mínimo anterior, actualizamos el valor mínimo y guardamos los $k$ medoides del paso 2 como los mejores medoides obtenidos hasta el momento.
+\item Calcular la disimilitud promedio del grupo obtenido en el paso anterior. Si este valor es menor al mínimo anterior, se actualiza el valor mínimo y se guarda los $k$ medoides del paso 2 como los mejores medoides obtenidos hasta el momento.
 
 \end{enumerate}
 
@@ -113,17 +113,17 @@ La implementación en el lenguaje de programación R, tanto del algoritmo PAM co
 Una etapa adicional dentro del análisis clúster consiste en determinar la cantidad de clústers que es más apropiada para los datos. Idealmente, los clústers resultantes no solo deberían tener buenas propiedades estadísticas (compactas, bien separadas, conectadas y estables), sino también resultados relevantes. Se han propuesto una variedad de medidas y métodos para validar los resultados de un análisis clúster y determinar tanto el número de clústers, así como identificar qué algoritmo de agrupamiento ofrece el mejor rendimiento, algunas de estas ellas pueden encontrarse en \citeauthor{fraley1998many} \citeyear{fraley1998many}, \citeauthor{duda2001pattern} \citeyear{duda2001pattern}, \citeauthor{salvador2004determining} \citeayear{salvador2004determining}, y \citeauthor{kerr2001bootstrapping} \citeyear{kerr2001bootstrapping}. 
 
 
-A continuación, mostramos un estadístico llamado GAP, desarrollado por \citeauthor{tibshirani2001estimating} \citeyear{tibshirani2001estimating}, mismo que considera la dispersión en y entre clústers, que por su versatilidad y fácil estimación puede usarse en la elección del número de clústers para cualquier algoritmo de agrupamiento.
+A continuación, se muestra un estadístico llamado GAP, desarrollado por \citeauthor{tibshirani2001estimating} \citeyear{tibshirani2001estimating}, mismo que considera la dispersión en y entre clústers, que por su versatilidad y fácil estimación puede usarse en la elección del número de clústers para cualquier algoritmo de agrupamiento.
 
 \subsubsection{Estadístico GAP}
 
-Supongamos que a partir de $n$ objetos hemos creado $k$ clústers $C_1,\dots,C_k$, cada clúster $C_r$ posee $n_r$ objetos, y definamos:
+Supóngase que a partir de $n$ objetos se crean $k$ clústers $C_1,\dots,C_k$, cada clúster $C_r$ posee $n_r$ objetos, y se define:
 
 \[
 D_r = \sum_{O_i,O_j\in C_r} \delta_{ij} 
 \]
 
-La suma de las distancias dos a dos de todos los objetos del clúster $r$. Luego, consideremos 
+La suma de las distancias dos a dos de todos los objetos del clúster $r$. Luego, considerando: 
 
 \[
 W_k = \sum_{r=1}^k \frac{1}{2n_r}D_r

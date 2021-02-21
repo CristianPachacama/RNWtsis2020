@@ -17,11 +17,11 @@ El análisis de Conglomerados o Clúster es una rama de métodos que tienen el o
 \subsection{Métricas y Funciones de Disimilitud}
 
 Desde un punto de vista general el término proximidad indica el concepto de cercanía en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matemático, ese término hace referencia al concepto de disimilitud o similaridad entre dos elementos. 
-Sea O un conjunto finito o infinito de elementos (individuos, estímulos, sujetos u objetos sobre los que queremos definir una proximidad).
+Sea O un conjunto finito o infinito de elementos (individuos, estímulos, sujetos u objetos sobre los que se quiere definir una proximidad).
 
 
 \begin{defin}
-Dados $O_i, O_j \in O$ y $\delta$ es una función real de $O \times O \rightarrow \mathbb{R}$, con $\delta_{ij}:=\delta(O_i,O_j)$. Diremos que $\delta$ es una disimilitud o función de disimilitud si verifica las siguientes condiciones:
+Dados $O_i, O_j \in O$ y $\delta$ es una función real de $O \times O \rightarrow \mathbb{R}$, con $\delta_{ij}:=\delta(O_i,O_j)$. Se dirá que $\delta$ es una disimilitud o función de disimilitud si verifica las siguientes condiciones:
 \begin{itemize}
 \item $\delta_{ij}=\delta_{ji}$, $\forall i,j$
 \item $\delta_{ii} \leq \delta_{ij}$, $\forall i,j$
@@ -31,7 +31,7 @@ Dados $O_i, O_j \in O$ y $\delta$ es una función real de $O \times O \rightarro
 
 La primera condición podría eliminarse, aunque resulta necesaria si se desea comparar con una distancia. No obstante, esa condición suele violarse cuando la disimilitud proviene de juicios emitidos por sujetos, ya que éstos no siempre califican igual al par $(O_i,O_j)$ que al par $(O_j,O_i)$. Las condiciones segunda y tercera suelen establecerse igualmente para $\delta_o=0$, aunque también es conocido que cuando a un individuo le son presentados dos objetos idénticos, éste tiende a asignarles algún valor de disimilitud no nulo y generalmente positivo, y además no siempre se define $c \geq 0$ ya que, si por ejemplo las disimilitud provienen de una transformación, éstas podrían ser negativas.
 
-Existen diferentes medidas para el cálculo de disimilitud entre un par de variables o individuos. Si consideramos una matriz de datos $X=(x_{tj})_{n\times p}$, obtenida de $n$ objetos sobre $p$ vatiables, algunos ejemplos de medidas son:
+Existen diferentes medidas para el cálculo de disimilitud entre un par de variables o individuos. Si se considera una matriz de datos $X=(x_{tj})_{n\times p}$, obtenida de $n$ objetos sobre $p$ vatiables, algunos ejemplos de medidas son:
 
 \begin{itemize}
 \item \textit{Distancia euclídea ponderada}
@@ -46,10 +46,10 @@ $$ \delta_{ts}=1-\frac{\sum_{j=1}^p x_{tj}x_{sj}}{(\sum_j x_{tj}^2 \sum_j x_{sj}
 
 \subsection{Métricas para Series de Tiempo}
 \label{sec:metrica}
-El problema de medir similitudes o diferencias entre datos asociados a series de tiempo ha sido estudiado ampliamente por autores como \citeauthor{johnson2004multivariate} \citeyear{johnson2004multivariate}, además de \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propusieron comparar las funciones de autocorrelación de las series, \citeauthor{diggle1991nonparametric} \citeyear{diggle1991nonparametric} con enfoques no paramétricos comparó el espectro de las series,  \citeauthor{piccolo1990distance} \citeyear{piccolo1990distance} dió una métrica basada en modelos ARIMA, \citeauthor{diggle1997spectral} \citeyear{diggle1997spectral} desarrolló métodos basados en análisis espectral, y \citeauthor{maharaj2000cluster} \citeyear{maharaj2000cluster} comparó dos series estacionarias basándose en sus parámetros autoregresivos . A continuación se detallan dos de las métricas que utilizaremos en nuestro análisis.
+El problema de medir similitudes o diferencias entre datos asociados a series de tiempo ha sido estudiado ampliamente por autores como \citeauthor{johnson2004multivariate} \citeyear{johnson2004multivariate}, además de \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propusieron comparar las funciones de autocorrelación de las series, \citeauthor{diggle1991nonparametric} \citeyear{diggle1991nonparametric} con enfoques no paramétricos comparó el espectro de las series,  \citeauthor{piccolo1990distance} \citeyear{piccolo1990distance} dió una métrica basada en modelos ARIMA, \citeauthor{diggle1997spectral} \citeyear{diggle1997spectral} desarrolló métodos basados en análisis espectral, y \citeauthor{maharaj2000cluster} \citeyear{maharaj2000cluster} comparó dos series estacionarias basándose en sus parámetros autoregresivos . A continuación se detallan dos de las métricas que se utilizan en nuestro análisis.
 
 \begin{itemize}
-\item  \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propone una métrica que se basa en la estimación de la función de autocorrelación de las series. Sean $(X_t, t\in\Z)$, $(Y_t, t\in\Z)$ dos series de tiempo, y $\hat\rho_x$, $\hat\rho_y$  sus vectores de coeficientes de autocorrelación estimados hasta el retardo $k$ (que supondremos es el mayor retardo significativo). Así, se define la distancia como sigue:
+\item  \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate} propone una métrica que se basa en la estimación de la función de autocorrelación de las series. Sean $(X_t, t\in\Z)$, $(Y_t, t\in\Z)$ dos series de tiempo, y $\hat\rho_x$, $\hat\rho_y$  sus vectores de coeficientes de autocorrelación estimados hasta el retardo $k$ (que se supondrá, es el mayor retardo significativo). Así, se define la distancia como sigue:
 
 $$d_{ACF}(X_t,Y_t) = \sqrt{(\hat\rho_x - \hat\rho_y)'\Omega (\hat\rho_x - \hat\rho_y)}$$
 Donde $\Omega$ es una matriz de pesos, simétrica y semidefinida positiva (usualmente $\Omega=I_k$), que se puede utilizar para dar ponderaciones a los coeficientes que decrecen según el retardo. Esta métrica está relacionada con el enfoque paramétrico, ya que los parámetros de la aproximación autorregresiva de las series se calculan a partir de los coeficientes de autocorrelación de las mismas.
@@ -81,7 +81,7 @@ Cabe mencionar que la distancia $d_{PIC}$ no toma en cuenta la varianza del ruid
 \subsection{Escalonamiento Multidimensional (MDS)}
 
 
-El escalamiento multidimensional, conocido como MDS por sus siglas en inglés, engloba un conjunto de técnicas multivariantes desarrolladas en el ámbito del comportamiento, que persiguen el estudio de la estructura subyacente de un conjunto de objetos, es decir, que pretende representar un conjunto de objetos en un espacio de baja dimensionalidad. La palabra objeto es muy genérica y se refiere, en realidad, a cualquier entidad que se desee comparar, en nuestro caso particular consideraremos a una series de tiempo. Los modelos y métodos de construcción de escalas multidimensionales fueron desarrollados en la mitad del siglo XX, entre los que cabe citar los trabajos de \citeauthor{stevens1946theory} \citeyear{stevens1946theory}, \citeauthor{coombs1950psychological} \citeyear{coombs1950psychological}, \citeauthor{torgerson1958theory} \citeyear{torgerson1958theory}, \citeauthor{kruskal1964multidimensional} \citeyear{kruskal1964multidimensional}, y \citeauthor{guttman1968general} \citeyear{guttman1968general}, que constituyen los antecedentes de los modelos y métodos más modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
+El escalamiento multidimensional, conocido como MDS por sus siglas en inglés, engloba un conjunto de técnicas multivariantes desarrolladas en el ámbito del comportamiento, que persiguen el estudio de la estructura subyacente de un conjunto de objetos, es decir, que pretende representar un conjunto de objetos en un espacio de baja dimensionalidad. La palabra objeto es muy genérica y se refiere, en realidad, a cualquier entidad que se desee comparar, en este caso particular se considera a una series de tiempo. Los modelos y métodos de construcción de escalas multidimensionales fueron desarrollados en la mitad del siglo XX, entre los que cabe citar los trabajos de \citeauthor{stevens1946theory} \citeyear{stevens1946theory}, \citeauthor{coombs1950psychological} \citeyear{coombs1950psychological}, \citeauthor{torgerson1958theory} \citeyear{torgerson1958theory}, \citeauthor{kruskal1964multidimensional} \citeyear{kruskal1964multidimensional}, y \citeauthor{guttman1968general} \citeyear{guttman1968general}, que constituyen los antecedentes de los modelos y métodos más modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
 
 
 
@@ -92,11 +92,11 @@ En términos generales, el Escalamiento Multidimensional permite representar en 
 % El escalamiento multidimensional opera sobre una matriz, cuyos elementos representan  disimilitudes entre un conjunto de objetos, con el objetivo de construir coordenadas de puntos, en un número predeterminado de dimensiones ($\R^2$ usualmente), de tal manera que la matriz de distancias entre estos puntos es aproximadamente la misma que la matriz de disimilitudes.
 % Los modelos y métodos de construcción de escalas unidimensionales fueron desarrollados en la primera mitad del siglo XX, entre los que cabe citar a Thurstone, Likert, Guttman o Coombs, constituyen los antecedentes de los modelos y métodos más modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
 
-A continuación mostramos el plantemiento de está técnica en un contexto general, no profundizaremos en ella ya que la usaremos unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medición de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta técnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
+A continuación se muestra el plantemiento de está técnica en un contexto general, no se profundiza en ella ya que se usará unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medición de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta técnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
 
 \subsubsection{Modelo General MDS }
 
-De modo general, podemos decir que el MDS toma como entrada una matriz de proximidades $\mathcal{D} \in M_{n \times n}$ (disimilitudes entre objetos), donde $n$ es el número de objetos. Cada elemento $\delta_{ij}$ de $\mathcal{D}$ representa la disimilitud entre un objeto $O_i$ y el objeto $O_j$.
+De modo general, se puede decir que el MDS toma como entrada una matriz de proximidades $\mathcal{D} \in M_{n \times n}$ (disimilitudes entre objetos), donde $n$ es el número de objetos. Cada elemento $\delta_{ij}$ de $\mathcal{D}$ representa la disimilitud entre un objeto $O_i$ y el objeto $O_j$.
 
 $$ \mathcal{D} = \begin{pmatrix}
 \delta_{11} & \delta_{12} & \cdots & \delta_{1n} \\
@@ -105,7 +105,7 @@ $$ \mathcal{D} = \begin{pmatrix}
 \delta_{n1} & \delta_{n2} & \cdots & \delta_{nn} \\
 \end{pmatrix} $$
 
-A partir de esta matriz de proximidades, el MDS nos proporciona como resultado una matriz $X \in M_{n \times m}$, representación $m$-dimensional de los $n$ objetos. Cada valor $X_{ik}$ representa la coordenada $k$ del objeto $i$, para $i=1,2,...,n$. 
+A partir de esta matriz de proximidades, el MDS proporciona como resultado una matriz $X \in M_{n \times m}$, representación $m$-dimensional de los $n$ objetos. Cada valor $X_{ik}$ representa la coordenada $k$ del objeto $i$, para $i=1,2,...,n$. 
 
 $$ X= \begin{pmatrix}
 X_{11} & X_{12} & \cdots & X_{1m} \\
@@ -120,7 +120,7 @@ La matriz $X$ se busca de tal manera que su matriz de distancias $D(X) = (d_{ij}
 $$ d_{ij}:=\left[\displaystyle \sum_{k=1}^m (X_{ik}-X_{jk})^2 \right]^{1/2} \text{ , para } i,j=1,2,...,m$$
 
 
-Existen distintos enfoques desde los cuales se puede hallar $X$, uno de ellos consiste de hallar valores y vectores propios de una matriz asociada a $D(X)$. Resumimos el método para hallar $X$ en el siguiente algoritmo:
+Existen distintos enfoques desde los cuales se puede hallar $X$, uno de ellos consiste de hallar valores y vectores propios de una matriz asociada a $D(X)$. Se resume el método para hallar $X$ en el siguiente algoritmo:
 
 \begin{enumerate}
 

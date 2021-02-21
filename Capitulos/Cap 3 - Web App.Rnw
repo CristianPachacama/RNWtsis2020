@@ -1,7 +1,7 @@
 \chapter{Aplicación Web}
 \label{chp:webapp}
 
-A continuación, mostramos una guía de uso de la aplicación web que implementa la metodología antes descrita.
+A continuación, se muestra una guía de uso de la aplicación web que implementa la metodología antes descrita.
 
 
 \section{Módulo: Clustering}
