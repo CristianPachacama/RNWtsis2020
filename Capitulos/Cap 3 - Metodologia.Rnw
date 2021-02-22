@@ -16,7 +16,7 @@ En este capítulo se describe a detalle la metodología utilizada en la construc
 
 \begin{enumerate}
 \item Una opción consiste en agregar la información de las series de tiempo que componen el clúster considerando la media funcinal, considerando las series como trayectorias de un mismo proceso, esta nueva serie resume el comportamiento de todos los miembros del clúster. Hecho esto, se modela la media funcional que representa el clúster mediante un modelo SARIMA. Así, se obtiene un modelo por cada clúster.
-\item La segunda opción consiste de identificar a la serie de tiempo más \textit{central} del clúster, es decir, se halla la serie más cercana, en términos de la métrica elegida, a todas las series del clúster. Identificada esta serie, se procede a modelarla mediante un modelo SARIMAX, que incluye variables exógenas, para ello se consideran las series temporales asociadas a datos de clima (precipitación, temperaturas máxima y mínima y humedad relativa) de la estación de medición más cercana. Por lo tanto de este paso se obtiene también un modelo por clúster.
+\item La segunda opción consiste de identificar a la serie de tiempo más \textit{central} del clúster, es decir, se halla la serie más cercana, en términos de la métrica elegida, a todas las series del clúster. Identificada esta serie, se procede a modelarla mediante un modelo SARIMAX, que incluye variables exógenas, para ello se consideran las series temporales asociadas a datos de clima (precipitación, temperatura máxima y mínima y humedad relativa) de la estación de medición más cercana. Por lo tanto de este paso se obtiene también un modelo por clúster.
 \item Ahora se puede comparar este par de modelos y optar por aquel que produzca mejores resultados en, términos generales, considerando criterios como la cantidad de Información, y el poder predictivo.
 
 \end{enumerate}
@@ -1823,7 +1823,7 @@ Tras probar varias combinaciones de parámetros y con la ayuda de las funciones 
 \end{itemize}
 
 
-Estimando los coeficientes de este modelo se obtienen los resultados de la tabla \ref{tab:sarimax_estim3}. Como se puede observar, para este modelo se obtiene que todos los coeficientes son significativos. 
+Estimando los coeficientes de este modelo se obtienen los resultados de la tabla \ref{tab:sarimax_estim3}. Como se puede observar, para este modelo se tienen todos los coeficientes significativos. 
 
 
 <<fig.pos="H">>=
@@ -1834,7 +1834,7 @@ Cff = round(as.numeric(mod_tr$coef),digits = 3)
 
 
 
-Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarimax_estim3}), se tiene que los P-valores del estadístico de Ljung-Box son mayores que 0.05, por lo que se puede aceptar que sus residuos son independientes. Así, este es el modelo que representará el Clúster 1. Finalmente se puede representar este modelo mediante la siguiente ecuación:
+Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarimax_estim3}), se tiene que los P-valores del estadístico de Ljung-Box son mayores que 0.05, por lo que se puede aceptar que sus residuos son independientes. Así, este es el modelo que representará el Clúster 1. Se puede representar este modelo mediante la siguiente ecuación:
 
 
 \begin{eqnarray} \label{eq:sarimax}

@@ -263,7 +263,7 @@ Particularmente importante en la última década ha sido la explosión de docume
 Una pregunta crucial en el Análisis Clúster es establecer lo que se quiere decir con objetos ``similares'', es decir, determinar una medida de similitud (o disimilitud) adecuada entre dos objetos. En el contexto específico de los datos asociados a series de tiempo, el concepto de disimilitud es particularmente complejo debido al carácter dinámico de las series de tiempo. Las diferencias generalmente consideradas en la agrupación convencional no podrían funcionar adecuadamente con los datos dependientes del tiempo porque ignoran la relación de interdependencia entre los valores. De esta manera, diferentes enfoques para definir una función de disimilitud entre series de tiempo han sido propuestos en la literatura, pero esta investigación se centrará en aquellas medidas asociadas a la autocorrelación (simple, e inversa), correlación cruzada y periodograma de las series propuestos en \citeauthor{struzik1999haar} \citeyear{struzik1999haar}, \citeauthor{galeano2000multivariate} \citeyear{galeano2000multivariate}, \citeauthor{caiado2006periodogram} \citeyear{caiado2006periodogram}, \citeauthor{chouakria2007adaptive} \citeyear{chouakria2007adaptive} . Estos enfoques basados en características tienen como objetivo representar la estructura dinámica de cada serie mediante un vector de características de menor dimensión, lo que permite una reducción de dimensionalidad (las series temporales son esencialmente datos de alta dimensionalidad) y un ahorro significativo en el tiempo de cálculo, además de que ayudan a alcanzar el objetivo central por el que se utilizará el Análisis Clúster que es el de la modelización de series de tiempo.
 
 
-Una vez que se determina adecuadamente la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre todas las parejas de series), y luego se usa un algoritmo de agrupamiento adecuado para formar los clústers (grupos) con las series. De hecho, la mayoría de los enfoques de agrupamiento de series de tiempo revisados por  \citeauthor{liao2005clustering}  \citeyear{liao2005clustering} son variaciones de algoritmos de particionamiento, por ejemplo: K-Means, K-Medoids, PAM, CLARA \citeauthor{kaufman1986clustering} \citeyear{kaufman1986clustering}  o de Clúster jerárquico que sirven en una gama de disimilitudes específicamente diseñadas para tratar con series de tiempo y algunas de sus características. 
+Una vez que se determina adecuadamente la medida de disimilitud, se obtiene una matriz de disimilitud inicial (que contiene la disimilitud entre todas las parejas de series), y luego se usa un algoritmo de agrupamiento adecuado para formar los clústers (grupos) con las series. De hecho, la mayoría de los enfoques de agrupamiento de series de tiempo revisados por  \citeauthor{liao2005clustering}  \citeyear{liao2005clustering} son variaciones de algoritmos de particionamiento, por ejemplo: K-Means, K-Medoids, PAM desarrollado por \citeauthor{kaufman1986clustering} \citeyear{kaufman1986clustering}, o de Clúster jerárquico, que sirven en una gama de disimilitudes específicamente diseñadas para tratar con series de tiempo y algunas de sus características. 
 %CLARA
 En particular se analizará el algoritmo de particionamiento CLARA desarrollado por  \citeauthor{kaufman1990finding} \citeyear{kaufman1990finding} con el principal objetivo de analizar grandes conjuntos de datos.
 
@@ -274,11 +274,11 @@ Una etapa adicional dentro del análisis clúster consiste en determinar la cant
 
 
 % ANALISIS DE COMPONENTES PRINCIPALES FUNCIONAl
-Finalizado Análisis Clúster de las Series de Tiempo y su validación, se propone una etapa que consiste en la agregación de la información de las series de tiempo contenidas en los clústers identificados en la etapa anterior, esto con la finalidad de resumir en una sola serie de tiempo el comportamiento del grupo de series pertenecientes a determinado clúster.
-%pasamos una etapa en la que pretendemos resumir y agrear la información de las series de tiempo contenidas en los grupos que formamos, 
-Para ello se considera el Análisis de Componentes Principales (ACP) desarrollado por \citeauthor{pearson1901liii} \citeyear{pearson1901liii} y de manera independiente por \citeauthor{hotelling1933analysis} \citeyear{hotelling1933analysis}, y posteriormente estudiado a profundidad en  \citeauthor{anderson2003multivariate}\citeyear{anderson2003multivariate}, \citeauthor{jolliffe2011principal}\citeyear{jolliffe2011principal}, qué como se ve más adelante es una técnica multivariante usada generalmente para reducir la dimensionalidad de los datos, y también como un complemento de los modelos lineales de regresión.
-En particular se usa una variante del ACP desarrollada específicamente para datos funcionales \citeauthor{rao1958some}\citeyear{rao1958some}, \citeauthor{tucker1958determination}\citeyear{tucker1958determination}, el Análisis de Componentes Principales Funcional (ACPF) que es la técnica más adecuada para tratar con datos asociados a series de tiempo. 
-  \citeauthor{ramsey1997functional}  \citeyear{ramsey1997functional} ofrecen una introducción al tema orientada a la aplicación, mientras que las propiedades asintóticas de consistencia de los estimadores están dispersas en varios artículos de diferentes autores en diferentes contextos: reducción de dimensión  \citeauthor{dauxois1982asymptotic}\citeyear{dauxois1982asymptotic}, \citeauthor{hall2006properties}\citeyear{hall2006properties}, \citeauthor{hall2009theory}\citeyear{hall2009theory}, modelado lineal funcional \citeauthor{cardot1999functional}\citeyear{cardot1999functional}, \citeauthor{cardot2003spline}\citeyear{cardot2003spline}, \citeauthor{hall2007methodology}\citeyear{hall2007methodology}, análisis de series de tiempo \citeauthor{bosq2012linear}\citeyear{bosq2012linear}, por nombrar algunos. 
+% Finalizado Análisis Clúster de las Series de Tiempo y su validación, se propone una etapa que consiste en la agregación de la información de las series de tiempo contenidas en los clústers identificados en la etapa anterior, esto con la finalidad de resumir en una sola serie de tiempo el comportamiento del grupo de series pertenecientes a determinado clúster.
+% %pasamos una etapa en la que pretendemos resumir y agrear la información de las series de tiempo contenidas en los grupos que formamos, 
+% Para ello se considera el Análisis de Componentes Principales (ACP) desarrollado por \citeauthor{pearson1901liii} \citeyear{pearson1901liii} y de manera independiente por \citeauthor{hotelling1933analysis} \citeyear{hotelling1933analysis}, y posteriormente estudiado a profundidad en  \citeauthor{anderson2003multivariate}\citeyear{anderson2003multivariate}, \citeauthor{jolliffe2011principal}\citeyear{jolliffe2011principal}, qué como se ve más adelante es una técnica multivariante usada generalmente para reducir la dimensionalidad de los datos, y también como un complemento de los modelos lineales de regresión.
+% En particular se usa una variante del ACP desarrollada específicamente para datos funcionales \citeauthor{rao1958some}\citeyear{rao1958some}, \citeauthor{tucker1958determination}\citeyear{tucker1958determination}, el Análisis de Componentes Principales Funcional (ACPF) que es la técnica más adecuada para tratar con datos asociados a series de tiempo. 
+%   \citeauthor{ramsey1997functional}  \citeyear{ramsey1997functional} ofrecen una introducción al tema orientada a la aplicación, mientras que las propiedades asintóticas de consistencia de los estimadores están dispersas en varios artículos de diferentes autores en diferentes contextos: reducción de dimensión  \citeauthor{dauxois1982asymptotic}\citeyear{dauxois1982asymptotic}, \citeauthor{hall2006properties}\citeyear{hall2006properties}, \citeauthor{hall2009theory}\citeyear{hall2009theory}, modelado lineal funcional \citeauthor{cardot1999functional}\citeyear{cardot1999functional}, \citeauthor{cardot2003spline}\citeyear{cardot2003spline}, \citeauthor{hall2007methodology}\citeyear{hall2007methodology}, análisis de series de tiempo \citeauthor{bosq2012linear}\citeyear{bosq2012linear}, por nombrar algunos. 
 
 
 
@@ -288,7 +288,7 @@ En particular se usa una variante del ACP desarrollada específicamente para dat
 % SARIMA del indicador ACP
 
 Pues bien, en este punto se tiene un indicador temporal (serie de tiempo) por clúster, que resume el comportamiento del caudal de los ríos en las estaciones que lo componen, a partir de este, se desea obtener un modelo para el clúster, para ello se propone modelar este indicador usando la metodología \citeauthor{box1970time} \citeyear{box1970time} que se conoce por su rigurosidad para la identificación, estimación y diagnóstico de modelos dinámicos para analizar series temporales, que además es una de las metodologías más usadas hasta la actualidad.
-En este caso particular se propone el uso de modelos SARIMA (Seasonal Autorregresive Integrated Movile Average) que son una extensión de los modelos ARIMA desarrollados amplimente en \citeauthor{box2015time} \citeyear{box2015time}, que además de ajustar el componente cíclico de la serie, pueden modelar su componente estacional propio de una serie de tiempo asociada al caudal de un río, cuyo comportamiento depende evidentemente de condiciones climáticas. Cabe mencionar que estos modelos se caracterizan por ser fáciles de estimar e interpretar ya que no requieren de otras variables ni de estructuras complejas.
+En este caso particular se propone el uso de modelos SARIMA (Seasonal Autoregressive Integrated Moving Average) que son una extensión de los modelos ARIMA desarrollados ampliamente en \citeauthor{box2015time} \citeyear{box2015time}, que además de ajustar el componente cíclico de la serie, pueden modelar su componente estacional propio de una serie de tiempo asociada al caudal de un río, cuyo comportamiento depende evidentemente de condiciones climáticas. Cabe mencionar que estos modelos se caracterizan por ser fáciles de estimar e interpretar ya que no requieren de otras variables ni de estructuras complejas.
 
 %De la etapa anterior, y obtenida una serie de tiempo por clúster, pasamos a la etapa de modelamiento de estás series. En 1970,  \citeauthor{box1970time} propusieron una metodología rigurosa para la identificación, estimación y diagnóstico de modelos dinámicos para analizar series temporales, que se convirtió en una de las metodologías más usadas hasta la actualidad.
 %En nuestro caso particular proponemos el uso de modelos SARIMA (Seasonal Autorregresive Integrated Movile Average) que son una extensión de los modelos ARIMA desarrollados amplimente en \cite{box2015time}, que además de ajustar el componente cíclico de la serie, pueden modelar su componente estacional propio de una serie de tiempo asociada al caudal de un río, cuyo comportamiento depende evidentemente de condiciones climáticas. Cabe mencionar que estos modelos se caracterizan por ser fáciles de estimar e interpretar ya que no requieren de otras variables ni de estructuras complejas.
@@ -306,7 +306,7 @@ Por lo que se usan como variables exógenas de este modelo a las variables de cl
 
 % Modelamiento Individual SARIMAX
 
-Finalmente, obtenidos un modelo SARIMA y SARIMAX por clúster, se propone reciclar la información de estos modelos para usarla en el modelamiento de todas las series de caudales (179 en todo Brasil). %Recordemos que cada serie de tiempo está asociada a una estación de medición del caudal de un río. 
+Luego, obtenidos un modelo SARIMA y SARIMAX por clúster, se propone reciclar la información de estos modelos para usarla en el modelamiento de todas las series de caudales (179 en todo Brasil). %Recordemos que cada serie de tiempo está asociada a una estación de medición del caudal de un río. 
 %Recordemos además, que estos modelos  explican el comportamiento temporal de la serie representante del clúster, y por lo tanto, podrían guardar información respecto del comportamiento en retardos de las series. 
 Como se verá en la sección \ref{sec:metrica}, para la formación de los clústers que contienen estás series se considera una métrica que permita comparar las funciones de autocorrelación de dichas series, estás funciones son uno de las principales herramientas en la especificación de un modelo en retardos (aunque no en escala) como lo son los modelo SARIMA y SARIMAX. 
 %Dicho esto, formulamos la hipótesis siguiente: Las series de un mismo clúster pueden modelarse adecuadamente con la información del modelo SARIMA (o SARIMAX) del clúster al que pertenece.
@@ -314,7 +314,7 @@ Partiendo de esto, se propone modelar las 179 series de tiempo usando ambos mode
 
 
 
-Obtenidos los modelos, tanto SARIMA como SARIMAX, para cada una de las 179 series, se comparan a fin de evaluar cual de los dos produce mejores resultados en términos generales, considerando criterios como la cantidad de información (AIC, BIC, Hannan-Quinn), y el poder predictivo (MAPE, RMSE).
+Finalmente, se comparan los modelos SARIMA y SARIMAX, de cada una de las 179 series, a fin de evaluar cuál de los dos produce mejores resultados en términos generales, considerando criterios como la cantidad de información (AIC, BIC, Hannan-Quinn), y el poder predictivo (MAPE, RMSE).
 
 
 \section{Descripción de los Datos}
@@ -323,7 +323,7 @@ Para está investigación, se recopilaron datos de dos fuentes primarias:
 
 \begin{enumerate}
 
-\item Primero, datos correspondientes a Caudales, de frecuencia mensual, disponibles desde enero de 1930 a diciembre de 2015. Estás series fueron obtenidas de la página web de \href{http://www.ons.org.br/}{Operador Nacional do Sistema Elétrico (ONS)} mismas que corresponden a series de tiempo de 179 estaciones georeferenciadas. El link de descarga de esta base de datos es:
+\item Primero, datos correspondientes a Caudales, de frecuencia mensual, disponibles desde enero de 1930 a diciembre de 2015. Estás series fueron obtenidas de la página web del \href{http://www.ons.org.br/}{Operador Nacional do Sistema Eléctrico (ONS)} mismas que corresponden a series de tiempo de 179 estaciones georeferenciadas. El link de descarga de esta base de datos es:
 
 \url{http://www.ons.org.br/download/operacao/hidrologia/Vaz%C3%B5es_Di%C3%A1rias_1931_2015.xls}
 
@@ -338,7 +338,7 @@ Se muestra en la figura \ref{fig:mapa_vaz} la disposición de las estaciones de 
 
 
 
-\item Por otro lado, se tienen variables relacionadas al Clima, de frecuencia mensual, disponibles desde enero de 2000, hasta enero de 2017. Obtenidas del \href{http://www.inmet.gov.br/portal/}{Instituto Nacional de Meteorologia (INMET)}. Se cuenta con observaciones de 4 variables siguientes en 265 estaciones georeferenciadas.
+\item Por otro lado, se tienen variables relacionadas al Clima, de frecuencia mensual, disponibles desde enero de 2000, hasta enero de 2017. Obtenidas del \href{http://www.inmet.gov.br/portal/}{Instituto Nacional de Meteorología (INMET)}. Se cuenta con observaciones de 4 variables siguientes en 265 estaciones georreferenciadas.
 
 \begin{itemize}
 
@@ -1347,7 +1347,7 @@ En este capítulo se describe a detalle la metodología utilizada en la construc
 
 \begin{enumerate}
 \item Una opción consiste en agregar la información de las series de tiempo que componen el clúster considerando la media funcinal, considerando las series como trayectorias de un mismo proceso, esta nueva serie resume el comportamiento de todos los miembros del clúster. Hecho esto, se modela la media funcional que representa el clúster mediante un modelo SARIMA. Así, se obtiene un modelo por cada clúster.
-\item La segunda opción consiste de identificar a la serie de tiempo más \textit{central} del clúster, es decir, se halla la serie más cercana, en términos de la métrica elegida, a todas las series del clúster. Identificada esta serie, se procede a modelarla mediante un modelo SARIMAX, que incluye variables exógenas, para ello se consideran las series temporales asociadas a datos de clima (precipitación, temperaturas máxima y mínima y humedad relativa) de la estación de medición más cercana. Por lo tanto de este paso se obtiene también un modelo por clúster.
+\item La segunda opción consiste de identificar a la serie de tiempo más \textit{central} del clúster, es decir, se halla la serie más cercana, en términos de la métrica elegida, a todas las series del clúster. Identificada esta serie, se procede a modelarla mediante un modelo SARIMAX, que incluye variables exógenas, para ello se consideran las series temporales asociadas a datos de clima (precipitación, temperatura máxima y mínima y humedad relativa) de la estación de medición más cercana. Por lo tanto de este paso se obtiene también un modelo por clúster.
 \item Ahora se puede comparar este par de modelos y optar por aquel que produzca mejores resultados en, términos generales, considerando criterios como la cantidad de Información, y el poder predictivo.
 
 \end{enumerate}
@@ -2760,7 +2760,7 @@ Tras probar varias combinaciones de parámetros y con la ayuda de las funciones 
 \end{itemize}
 
 
-Estimando los coeficientes de este modelo se obtienen los resultados de la tabla \ref{tab:sarimax_estim3}. Como se puede observar, para este modelo se obtiene que todos los coeficientes son significativos. 
+Estimando los coeficientes de este modelo se obtienen los resultados de la tabla \ref{tab:sarimax_estim3}. Como se puede observar, para este modelo se tienen todos los coeficientes significativos. 
 
 
 \begin{knitrout}
@@ -2796,7 +2796,7 @@ HumedadRelativa-MA0 & -7.3258 & 4.3291 & -1.692 & 0.0906 & .\\
 
 
 
-Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarimax_estim3}), se tiene que los P-valores del estadístico de Ljung-Box son mayores que 0.05, por lo que se puede aceptar que sus residuos son independientes. Así, este es el modelo que representará el Clúster 1. Finalmente se puede representar este modelo mediante la siguiente ecuación:
+Y tras analizar los residuos asociados a este modelo (ver figura \ref{fig:sarimax_estim3}), se tiene que los P-valores del estadístico de Ljung-Box son mayores que 0.05, por lo que se puede aceptar que sus residuos son independientes. Así, este es el modelo que representará el Clúster 1. Se puede representar este modelo mediante la siguiente ecuación:
 
 
 \begin{eqnarray} \label{eq:sarimax}
@@ -2941,6 +2941,7 @@ Este módulo se compone de dos secciones, la primera (ver \ref{fig:modulo_sarima
 
 \chapter{Resultados}
 \label{chap:resultados}
+
 En el presente capítulo se analizan los modelos SARIMA (ver \ref{eq:sarima}) y SARIMAX (ver \ref{eq:sarimax}) estimados para cada una de las series de tiempo asociadas a Caudales medidos en las estaciones que componen el clúster 1. 
 
 
@@ -3174,7 +3175,7 @@ En cuanto al modelamiento basado en la metodología Box y Jenkins se observó qu
 
 Otro aporte importante del uso de modelos SARIMAX es que permitió identificar y medir la incidencia de factores climáticos a nivel local que interaccionan y afectan el comportamiento temporal de los caudales, factores como la precipitación, la humedad relativa y temperatura.
 % Conclusion en terminos de POLITICAS
-Conocido el comportamiento temporal de los caudales, a partir de las predicciones arrojadas por los modelos planteados, que podrían hacerse con una alta precisión para un horizonte de tiempo considerablemente grande (de varios años al futuro), dicho de otra manera, se puede calcular anticipadamente la oferta energética generada por el sector hidroeléctrico del país, que a la postre permitiría establecer una planificación del uso de energía hidroelectrica y también de energías alternativas (eólica, nuclear, solar) para cubrir la demanda interna y externa del país, ya que Brasil exporta energía eléctrica a países como Argentina.
+Conocido el comportamiento temporal de los caudales, a partir de las predicciones arrojadas por los modelos planteados, que podrían hacerse con una alta precisión para un horizonte de tiempo considerablemente grande (de varios años al futuro), dicho de otra manera, se puede calcular anticipadamente la oferta energética generada por el sector hidroeléctrico del país, que a la postre permitiría establecer una planificación del uso de energía hidroeléctrica  y también de energías alternativas (eólica, nuclear, solar) para cubrir la demanda interna y externa del país, ya que Brasil exporta energía eléctrica a países como Argentina.
 
 
 % Coclucion 4
@@ -3182,7 +3183,7 @@ Conocido el comportamiento temporal de los caudales, a partir de las prediccione
 % 4. Automatizar la descomposición y Análisis Clúster de series de tiempo de Caudales a
 % través de la utilización de software estadístico y programación.
 
-Finalmente, la implementacion y automatización de la metodología aquí propuesta que dieron paso a rutinas generales ejemplificadas en la Aplicación web creada para este estudio, dan muestra de la fácil reproducibilidad de esta metodología en una variedad de contextos distintos a los aquí abordados y abren la puerta a una variedad de análisis de datos de origen geográfico y temporal. 
+Finalmente, la implementación y automatización de la metodología aquí propuesta que dieron paso a rutinas generales ejemplificadas en la Aplicación web creada para este estudio, dan muestra de la fácil reproducibilidad de esta metodología en una variedad de contextos distintos a los aquí abordados y abren la puerta a una variedad de análisis de datos de origen geográfico y temporal. 
 % RECOMENDACIONES
 Así mismo, cabe la posibilidad de extender este estudio a una escala mucho mayor ya sea considerando series de mayor frecuencia, o mayor cantidad de series, teniendo en cuenta algunas barreras en cuanto a la eficiencia de los algoritmos utilizados versus los recursos de hardware disponibles. A modo de ejemplo, en pruebas preliminares al desarrollo de este estudio, se consideraron series de frecuencia diaria, donde se encontraron cuellos de botella principalmente en el cálculo de la matriz de distancias (o disimilitudes) de la primera etapa, donde el tiempo de cálculo llegó a tomar un par de horas, en contraste con los tres minutos que tomó este proceso para series mensuales. Hay que notar que el tiempo de cálculo depende tanto del número de series de tiempo así como del número de observaciones que posee cada una, así, el tiempo de cálculo de la matriz crece al menos cuadráticamente cuando crecen estos dos factores. Por lo tanto, si el objetivo es escalar está metodología a un contexto por ejemplo de Big Data, es necesario considerar, por una parte, la necesidad de implementar algoritmos aún más eficientes que los expuestos aquí, por ejemplo, paralelizando el cálculo de la matriz de distancias, y también de la distancia persé, otra mejora posible es la de usar el algoritmo de agrupamiento CLARANS que es una extensión más eficiente del algoritmo CLARA. Por otro lado, hay que considerar el uso de otros recursos de hardware necesarios para dicha implementación, es decir, vía Computación distribuida o vía Computación de alto rendimiento (\textit{High performance Computing, HPC}).
 %%% 

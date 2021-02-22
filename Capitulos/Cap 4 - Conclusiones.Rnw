@@ -1,5 +1,6 @@
 \chapter{Resultados}
 \label{chap:resultados}
+
 En el presente capítulo se analizan los modelos SARIMA (ver \ref{eq:sarima}) y SARIMAX (ver \ref{eq:sarimax}) estimados para cada una de las series de tiempo asociadas a Caudales medidos en las estaciones que componen el clúster 1. 
 
 <<>>=
@@ -122,7 +123,7 @@ En cuanto al modelamiento basado en la metodología Box y Jenkins se observó qu
 
 Otro aporte importante del uso de modelos SARIMAX es que permitió identificar y medir la incidencia de factores climáticos a nivel local que interaccionan y afectan el comportamiento temporal de los caudales, factores como la precipitación, la humedad relativa y temperatura.
 % Conclusion en terminos de POLITICAS
-Conocido el comportamiento temporal de los caudales, a partir de las predicciones arrojadas por los modelos planteados, que podrían hacerse con una alta precisión para un horizonte de tiempo considerablemente grande (de varios años al futuro), dicho de otra manera, se puede calcular anticipadamente la oferta energética generada por el sector hidroeléctrico del país, que a la postre permitiría establecer una planificación del uso de energía hidroelectrica y también de energías alternativas (eólica, nuclear, solar) para cubrir la demanda interna y externa del país, ya que Brasil exporta energía eléctrica a países como Argentina.
+Conocido el comportamiento temporal de los caudales, a partir de las predicciones arrojadas por los modelos planteados, que podrían hacerse con una alta precisión para un horizonte de tiempo considerablemente grande (de varios años al futuro), dicho de otra manera, se puede calcular anticipadamente la oferta energética generada por el sector hidroeléctrico del país, que a la postre permitiría establecer una planificación del uso de energía hidroeléctrica  y también de energías alternativas (eólica, nuclear, solar) para cubrir la demanda interna y externa del país, ya que Brasil exporta energía eléctrica a países como Argentina.
 
 
 % Coclucion 4
@@ -130,7 +131,7 @@ Conocido el comportamiento temporal de los caudales, a partir de las prediccione
 % 4. Automatizar la descomposición y Análisis Clúster de series de tiempo de Caudales a
 % través de la utilización de software estadístico y programación.
 
-Finalmente, la implementacion y automatización de la metodología aquí propuesta que dieron paso a rutinas generales ejemplificadas en la Aplicación web creada para este estudio, dan muestra de la fácil reproducibilidad de esta metodología en una variedad de contextos distintos a los aquí abordados y abren la puerta a una variedad de análisis de datos de origen geográfico y temporal. 
+Finalmente, la implementación y automatización de la metodología aquí propuesta que dieron paso a rutinas generales ejemplificadas en la Aplicación web creada para este estudio, dan muestra de la fácil reproducibilidad de esta metodología en una variedad de contextos distintos a los aquí abordados y abren la puerta a una variedad de análisis de datos de origen geográfico y temporal. 
 % RECOMENDACIONES
 Así mismo, cabe la posibilidad de extender este estudio a una escala mucho mayor ya sea considerando series de mayor frecuencia, o mayor cantidad de series, teniendo en cuenta algunas barreras en cuanto a la eficiencia de los algoritmos utilizados versus los recursos de hardware disponibles. A modo de ejemplo, en pruebas preliminares al desarrollo de este estudio, se consideraron series de frecuencia diaria, donde se encontraron cuellos de botella principalmente en el cálculo de la matriz de distancias (o disimilitudes) de la primera etapa, donde el tiempo de cálculo llegó a tomar un par de horas, en contraste con los tres minutos que tomó este proceso para series mensuales. Hay que notar que el tiempo de cálculo depende tanto del número de series de tiempo así como del número de observaciones que posee cada una, así, el tiempo de cálculo de la matriz crece al menos cuadráticamente cuando crecen estos dos factores. Por lo tanto, si el objetivo es escalar está metodología a un contexto por ejemplo de Big Data, es necesario considerar, por una parte, la necesidad de implementar algoritmos aún más eficientes que los expuestos aquí, por ejemplo, paralelizando el cálculo de la matriz de distancias, y también de la distancia persé, otra mejora posible es la de usar el algoritmo de agrupamiento CLARANS que es una extensión más eficiente del algoritmo CLARA. Por otro lado, hay que considerar el uso de otros recursos de hardware necesarios para dicha implementación, es decir, vía Computación distribuida o vía Computación de alto rendimiento (\textit{High performance Computing, HPC}).
 %%% 
