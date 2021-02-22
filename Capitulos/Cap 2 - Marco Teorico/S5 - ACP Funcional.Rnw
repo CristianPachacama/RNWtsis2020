@@ -89,7 +89,7 @@ sujetos a la condición de que $||\phi_m||^2 = 1$ y las $m-1$ condiciones de ort
 
 \end{enumerate}
 
-La motivación para el primer paso es que al maximizar el cuadrado medio, estamos identificando el modo de variación más fuerte y más importante en las variables. La restricción de suma de cuadrados de unidades en los pesos es esencial para que el problema esté bien definido; sin él, los cuadrados medios de los valores de combinación lineal podrían hacerse arbitrariamente grandes. En los pasos segundo y subsiguientes, buscamos nuevamente los modos de variación más importantes, pero requerimos que los pesos que los definen sean ortogonales a los identificados anteriormente, de modo que indiquen algo nuevo. Por supuesto, la cantidad de variación medida en términos de $\frac{1}{n}\sum_{t}f_{tm}^2$ decrece en cada iteración \cite{ramsay2005functional2}.
+La motivación para el primer paso es que al maximizar el cuadrado medio, estamos identificando el modo de variación más fuerte y más importante en las variables. La restricción de suma de cuadrados de unidades en los pesos es esencial para que el problema esté bien definido; sin él, los cuadrados medios de los valores de combinación lineal podrían hacerse arbitrariamente grandes. En los pasos dos, tres y subsiguientes, buscamos nuevamente los modos de variación más importantes, pero requerimos que los pesos que los definen sean ortogonales a los identificados anteriormente, de modo que indiquen algo nuevo. Por supuesto, la cantidad de variación medida en términos de $\frac{1}{n}\sum_{t}f_{tm}^2$ decrece en cada iteración \cite{ramsay2005functional2}.
 
 Los coeficientes de las combinaciones lineales $f_{tm}$ se las conoce como \textit{scores} de la componente principal y son útiles en el sentido que indican cuanto de la variabilidad en los datos proviene de la componente principal asociada.
 
@@ -142,7 +142,7 @@ donde $v$ es la función de covarianza dada por
 v(s,t) = \frac{1}{N} \sum_{i=1}^N  x_i(s)x_i(t)
 \]
 
-Notemos que el lado izquierdo de la ecuación (\ref{ecu:acpf1}) puede expresarse como una transformación integral digamos $V$ definida por:
+Notemos que el lado izquierdo de la ecuación (\ref{ecu:acpf1}) puede expresarse como una transformación integral digamos $V$, definida por:
 \[
 V\phi = \int v(.,t)\phi(t) \text{dt}
 \] 

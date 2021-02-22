@@ -16,7 +16,7 @@ El análisis de Conglomerados o Clúster es una rama de métodos que tienen el o
 
 \subsection{Métricas y Funciones de Disimilitud}
 
-Desde un punto de vista general el término proximidad indica el concepto de cercanía en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matemático, ese término hace referencia al concepto de disimilitud o similaridad entre dos elementos. 
+Desde un punto de vista general el término proximidad indica el concepto de cercanía en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matemático, ese término hace referencia al concepto de disimilitud o similitud entre dos elementos. 
 Sea O un conjunto finito o infinito de elementos (individuos, estímulos, sujetos u objetos sobre los que se quiere definir una proximidad).
 
 
@@ -86,13 +86,13 @@ El escalamiento multidimensional, conocido como MDS por sus siglas en inglés, e
 
 
 
-En términos generales, el Escalamiento Multidimensional permite representar en un espacio geométrico las proximidades entre pares de objetos a través de distancias (o disimilitudes) en función de un determinado número de dimensiones. Así, el MDS cumple su objetivo en dos etapas. En primer lugar, determina las dimensiones subyacentes más relevantes (normalmente entre 2 y 4). En segundo lugar, construye una representación geométrica de los datos a través de las distancias entre los mismos en las dimensiones relevantes.  De esta forma, el MDS asume un paralelismo entre el concepto psicológico de similaridad y el concepto geométrico de distancia.
+En términos generales, el Escalamiento Multidimensional permite representar en un espacio geométrico las proximidades entre pares de objetos a través de distancias (o disimilitudes) en función de un determinado número de dimensiones. Así, el MDS cumple su objetivo en dos etapas. En primer lugar, determina las dimensiones subyacentes más relevantes (normalmente entre 2 y 4). En segundo lugar, construye una representación geométrica de los datos a través de las distancias entre los mismos en las dimensiones relevantes.  De esta forma, el MDS asume un paralelismo entre el concepto psicológico de similitud y el concepto geométrico de distancia.
 
 
 % El escalamiento multidimensional opera sobre una matriz, cuyos elementos representan  disimilitudes entre un conjunto de objetos, con el objetivo de construir coordenadas de puntos, en un número predeterminado de dimensiones ($\R^2$ usualmente), de tal manera que la matriz de distancias entre estos puntos es aproximadamente la misma que la matriz de disimilitudes.
 % Los modelos y métodos de construcción de escalas unidimensionales fueron desarrollados en la primera mitad del siglo XX, entre los que cabe citar a Thurstone, Likert, Guttman o Coombs, constituyen los antecedentes de los modelos y métodos más modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
 
-A continuación se muestra el plantemiento de está técnica en un contexto general, no se profundiza en ella ya que se usará unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medición de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta técnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
+A continuación se muestra el plantemiento de esta técnica en un contexto general, no se profundiza en ella ya que se usará unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medición de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta técnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
 
 \subsubsection{Modelo General MDS }
 
@@ -132,7 +132,7 @@ $$a_{i*} = \frac{1}{n} \sum_{j=1}^n a_{ij}  $$
 $$a_{*j} = \frac{1}{n} \sum_{i=1}^n a_{ij}  $$
 $$a_{**} = \frac{1}{n^2} \sum_{j=1}^n  \sum_{i=1}^n  a_{ij}  $$
 
-\item Hallar los valores propios de $B$, $\lambda_1, \lambda_2, \dots , \lambda_{n-1}$ y sus respectivos vectores propios $v_1, v_2, \dots, v_{n-1}$ normalizados de tal manera que $v_k' v_k = \lambda_k$ para $k=1,\dots,n-1$. Si $B$ no es semidefinida positiva (posee algun valor propio negativo), se puede ignorar los valores negativos e ir al siguiente paso, o bien, definir adecuadamente una constante $c$, reemplazar los valores de la matriz de proximidades por $\delta'_{ij} := \delta_{ij} + c(1-\delta_{ij}) $ de tal manera que esta nueva matriz sea semidefinida positiva y volver al paso 1.
+\item Hallar los valores propios de $B$, $\lambda_1, \lambda_2, \dots , \lambda_{n-1}$ y sus respectivos vectores propios $v_1, v_2, \dots, v_{n-1}$ normalizados de tal manera que $v_k' v_k = \lambda_k$ para $k=1,\dots,n-1$. Si $B$ no es semidefinida positiva (posee algún valor propio negativo), se puede ignorar los valores negativos e ir al siguiente paso, o bien, definir adecuadamente una constante $c$, reemplazar los valores de la matriz de proximidades por $\delta'_{ij} := \delta_{ij} + c(1-\delta_{ij}) $ de tal manera que esta nueva matriz sea semidefinida positiva y volver al paso 1.
 
 \item Elegir el número de dimensiones $m$ en las que se desea representar los objetos. Para ello puede considerar, como criterio de elección, el porcentaje que aportan las $m$ mayores valores propios.
 

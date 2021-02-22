@@ -61,7 +61,7 @@
 \director{Uquillas Andrade Adriana, Ph.D.}
 \correodirector{\url{adriana.uquillas@epn.edu.ec}}
 
-\fecha{Noviembre 2020}
+\fecha{Febrero 2021}
 
 %-------------------------------------------------------------------
 %--------------------  INICIO DE DOCUMENTO  ------------------------

@@ -1,7 +1,7 @@
 
 % Intro del Capitulo (Marco Teorico)
 
-En el presente capítulo, se definen las nociones y conceptos teóricos necesarios para comprender la metodología utilizada en la construcción de los modelos que proponemos para analizar los caudales de los ríos. Se empieza describiendo algunas estructuras de datos y sus respectivos objetos matemáticos asociados. Luego se muestra una propuesta para la limpieza de de datos asociados a series de tiempo basada en una técnica de descomposición conocida como STL-Loess. Luego se muestran definiciones que permitirán llevar acabo de manera adecuada el Análisis Clúster, es decir, la elección de la función de disimilitud y algoritmos de agrupamiento. Al final se muestra la metodología Box y Jenkins que se utilizará en la identificación y estimación de los modelos SARIMA y SARIMAX.
+En el presente capítulo, se definen las nociones y conceptos teóricos necesarios para comprender la metodología utilizada en la construcción de los modelos que proponemos para analizar los caudales de los ríos. Se empieza describiendo algunas estructuras de datos y sus respectivos objetos matemáticos asociados. Luego se muestra una propuesta para la limpieza de datos asociados a series de tiempo basada en una técnica de descomposición conocida como STL-Loess. Luego se muestran definiciones que permitirán llevar acabo de manera adecuada el Análisis Clúster, es decir, la elección de la función de disimilitud y algoritmos de agrupamiento. Al final se muestra la metodología Box y Jenkins que se utilizará en la identificación y estimación de los modelos SARIMA y SARIMAX.
 
 
 \section{Series de Tiempo}

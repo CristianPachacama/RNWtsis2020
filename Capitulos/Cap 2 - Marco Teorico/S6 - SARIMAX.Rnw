@@ -75,7 +75,7 @@ Donde, $\phi (z)$, $\theta (z)$, $\Phi (z)$ y $\Theta (z)$ son polinomios con ra
 \end{definicion}
 
 Cabe mencionar que se puede usar la metodología Box y Jenkins también en los procesos SARIMA, considerando que en las etapas de identificación es necesario escoger en lugar tripletas, arreglos de 7 parámetros $(p,d,q,s,P,D,Q)$. 
-Los 4 parámetros extras corresponden a los ordenes de los polinomios asociados a la parte estacional del modelo: 
+Los 4 parámetros extras corresponden a los órdenes de los polinomios asociados a la parte estacional del modelo: 
 
 \begin{itemize}
 \item $\Phi $ es un polinomio de grado $P$,
@@ -238,7 +238,7 @@ Por lo tanto la relación anterior se reescribe como:
 $$n_t^{*} = y_t -\alpha_t$$
 Es decir, se calcula $n_t^{*}$, y luego se busca un modelo SARMA, para esta serie, es decir, con polinomios estacionales, pero sin diferencias. 
 
-Luego la estructura para el modelo final consistira de las estructuras SARMA de $n_t^{*}$ como la hallada en el paso 3, es decir, los polinomios de retardos de la ecuación \ref{eq:nt_eps}.
+Luego la estructura para el modelo final consistirá de las estructuras SARMA de $n_t^{*}$ como la hallada en el paso 3, es decir, los polinomios de retardos de la ecuación \ref{eq:nt_eps}.
 
 \item Identificados tanto la función de transferencia asociada a $x_t$, como el modelo SARMA de $n_t$, el siguiente paso es validar el modelo y de ser necesario corregirlo. Para que el modelo sea aceptado, los residuos $\varepsilon_t$ deberían comportarse como un ruido blanco, es decir, su función de autocorrelación debe ser estadísticamente nula. De igual manera la función de correlación cruzada entre $\varepsilon_t$ y $\alpha_t$ (o equivalentemente con $x_t$), no debe ser significativamente distinta de cero. Para lo cual, hay que considerar que los intervalos de confianza para la correlación cruzada en general vienen dados por:
 
@@ -251,4 +251,4 @@ De igual manera las correcciones se realizan en función de lo observado en las 
 \end{enumerate}
 
 
-\paragraph{Observación.} Un caso más general del modelo SARIMAX antes expuesto, es considerar más de una variable exógena, autores como \citeauthor{pankratz2012forecasting} \citeyear{pankratz2012forecasting} abordan ampliamente el problema de identificación de esta clase de modelos, que resulta análoga a la metodología aquí expuesta. También desarrolla un análisis detallado de las funciones de respuesta al impulso, los patrones que siguen los coeficientes $v_j$ gráficamente, según el órden de los polinomios que los componen.
+\paragraph{Observación.} Un caso más general del modelo SARIMAX antes expuesto, es considerar más de una variable exógena, autores como \citeauthor{pankratz2012forecasting} \citeyear{pankratz2012forecasting} abordan ampliamente el problema de identificación de esta clase de modelos, que resulta análoga a la metodología aquí expuesta. También desarrolla un análisis detallado de las funciones de respuesta al impulso, los patrones que siguen los coeficientes $v_j$ gráficamente, según el orden de los polinomios que los componen.

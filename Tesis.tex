@@ -111,7 +111,7 @@
 \director{Uquillas Andrade Adriana, Ph.D.}
 \correodirector{\url{adriana.uquillas@epn.edu.ec}}
 
-\fecha{Noviembre 2020}
+\fecha{Febrero 2021}
 
 %-------------------------------------------------------------------
 %--------------------  INICIO DE DOCUMENTO  ------------------------
@@ -246,13 +246,13 @@ Hay que destacar que el modelamiento de caudales juega un rol trascendental en l
 En ese contexto, se vuelve plausible la posibilidad de disminuir la dimensión del problema del modelamiento de todas estas series a través de la identificación de grupos o zonas representativas (no necesariamente geográficas) que resuman el comportamiento temporal que poseen los caudales de los ríos. Esto en términos de modelamiento se traduce en pasar del problema de modelar el nivel de caudal en cada una de las 179 estaciones, al problema de modelar únicamente una serie por cada grupo.
 
 
-%Ya que el problema se basa en identificar grupos de ríos cuyos Caudales se comportan de manera similar en el tiempo, se propone la utilización de el ``Análisis Clúster'' (Ver  \cite{rousseeuw1990finding}), que está compuesto por un conjunto de técnicas que buscan agrupar objetos, en este caso series de tiempo, considerando para ello una función de disimilitud entre dichos objetos \citep{caiado2006periodogram}, está función mide que tan distintos son una pareja de objetos y a partir de esta medida crea grupos. Al elegir adecuadamente la función de disimilitud (diseñada para series de tiempo) es posible agrupar a los ríos en grupos basados en el comportamiento temporal de sus caudales. Esto con la finalidad de lidiar con la complejidad que supone analizar y modelar esta enorme cantidad de series de tiempo de caudales, pasando de analizar alrededor de 179 series a unas pocas (una serie por Clúster), sin dejar de lado la estructura y comportamiento estacional de cada una de ellas, partiendo de una adecuada elección de la función de disimilitud. 
+%Ya que el problema se basa en identificar grupos de ríos cuyos Caudales se comportan de manera similar en el tiempo, se propone la utilización del ``Análisis Clúster'' (Ver  \cite{rousseeuw1990finding}), que está compuesto por un conjunto de técnicas que buscan agrupar objetos, en este caso series de tiempo, considerando para ello una función de disimilitud entre dichos objetos \citep{caiado2006periodogram}, está función mide que tan distintos son una pareja de objetos y a partir de esta medida crea grupos. Al elegir adecuadamente la función de disimilitud (diseñada para series de tiempo) es posible agrupar a los ríos en grupos basados en el comportamiento temporal de sus caudales. Esto con la finalidad de lidiar con la complejidad que supone analizar y modelar esta enorme cantidad de series de tiempo de caudales, pasando de analizar alrededor de 179 series a unas pocas (una serie por Clúster), sin dejar de lado la estructura y comportamiento estacional de cada una de ellas, partiendo de una adecuada elección de la función de disimilitud. 
 
 
 
 % Intro Analisis Cluster
 
-Ya que el problema se basa en identificar grupos de ríos cuyos caudales se comportan de manera similar en el tiempo, se propone la utilización de el Análisis Clúster, que es una técnica de aprendizaje no supervisada que tiene como objetivo dividir un conjunto de objetos en grupos homogéneos (clústers). La partición se realiza de tal manera que los objetos en el mismo clúster son más similares entre sí que los objetos en diferentes grupos según un criterio definido. 
+Ya que el problema se basa en identificar grupos de ríos cuyos caudales se comportan de manera similar en el tiempo, se propone la utilización del Análisis Clúster, que es una técnica de aprendizaje no supervisada que tiene como objetivo dividir un conjunto de objetos en grupos homogéneos (clústers). La partición se realiza de tal manera que los objetos en el mismo clúster son más similares entre sí que los objetos en diferentes grupos según un criterio definido. 
 
 En muchas aplicaciones reales, el análisis de clúster debe realizarse con datos asociados a series de tiempo. 
 De hecho, los problemas de agrupamiento de series de tiempo surgen de manera natural en una amplia variedad de campos, incluyendo economía, finanzas, medicina, ecología, estudios ambientales, ingeniería y muchos otros. Con frecuencia, la agrupación de series de tiempo desempeña un papel central en el problema estudiado. Estos argumentos motivan el creciente interés en la literatura sobre la agrupación de series de tiempo, especialmente en las últimas dos décadas, donde se ha proporcionado una gran cantidad de contribuciones sobre este tema. En  \citeauthor{liao2005clustering} \citeyear{liao2005clustering} se puede encontrar un excelente estudio sobre la agrupación de series de tiempo, aunque posteriormente se han realizado nuevas contribuciones significativas. 
@@ -323,7 +323,7 @@ Para está investigación, se recopilaron datos de dos fuentes primarias:
 
 \begin{enumerate}
 
-\item Primero, datos correspondientes a Caudales, de frecuencia mensual, disponibles desde enero de 1930 a diciembre de 2015. Estás series fueron obtenidas de la página web del \href{http://www.ons.org.br/}{Operador Nacional do Sistema Eléctrico (ONS)} mismas que corresponden a series de tiempo de 179 estaciones georeferenciadas. El link de descarga de esta base de datos es:
+\item Primero, datos correspondientes a Caudales, de frecuencia mensual, disponibles desde enero de 1930 a diciembre de 2015. Estás series fueron obtenidas de la página web del \href{http://www.ons.org.br/}{Operador Nacional do Sistema Eléctrico (ONS)} mismas que corresponden a series de tiempo de 179 estaciones georreferenciadas. El link de descarga de esta base de datos es:
 
 \url{http://www.ons.org.br/download/operacao/hidrologia/Vaz%C3%B5es_Di%C3%A1rias_1931_2015.xls}
 
@@ -369,7 +369,7 @@ Se muestra en la figura \ref{fig:mapa_clm} la disposición de las estaciones de 
 
 \paragraph{Observación.} Para el modelamiento de las series de caudales se considera el periodo enero de 2000 a diciembre de 2015, ya que en este periodo se poseen datos tanto de caudales como de condiciones climáticas, mismas que se incluirán en un modelo SARIMAX como variables regresoras.
 
-Cabe mencionar además que existen otras fuentes de datos, como \href{http://climexp.knmi.nl/start.cgi?id=someone@somewhere}{Climate Explorer}, en donde se puede encontrar información mensual (inclusive diaria) de índices globales de clima. Sin embargo, estas variables al no estar georeferenciadas, no se las incluye en el modelo planteado en capítulos posteriores.
+Cabe mencionar además que existen otras fuentes de datos, como \href{http://climexp.knmi.nl/start.cgi?id=someone@somewhere}{Climate Explorer}, en donde se puede encontrar información mensual (inclusive diaria) de índices globales de clima. Sin embargo, estas variables al no estar georreferenciadas, no se las incluye en el modelo planteado en capítulos posteriores.
 
 
 
@@ -383,7 +383,7 @@ Cabe mencionar además que existen otras fuentes de datos, como \href{http://cli
 
 % Intro del Capitulo (Marco Teorico)
 
-En el presente capítulo, se definen las nociones y conceptos teóricos necesarios para comprender la metodología utilizada en la construcción de los modelos que proponemos para analizar los caudales de los ríos. Se empieza describiendo algunas estructuras de datos y sus respectivos objetos matemáticos asociados. Luego se muestra una propuesta para la limpieza de de datos asociados a series de tiempo basada en una técnica de descomposición conocida como STL-Loess. Luego se muestran definiciones que permitirán llevar acabo de manera adecuada el Análisis Clúster, es decir, la elección de la función de disimilitud y algoritmos de agrupamiento. Al final se muestra la metodología Box y Jenkins que se utilizará en la identificación y estimación de los modelos SARIMA y SARIMAX.
+En el presente capítulo, se definen las nociones y conceptos teóricos necesarios para comprender la metodología utilizada en la construcción de los modelos que proponemos para analizar los caudales de los ríos. Se empieza describiendo algunas estructuras de datos y sus respectivos objetos matemáticos asociados. Luego se muestra una propuesta para la limpieza de datos asociados a series de tiempo basada en una técnica de descomposición conocida como STL-Loess. Luego se muestran definiciones que permitirán llevar acabo de manera adecuada el Análisis Clúster, es decir, la elección de la función de disimilitud y algoritmos de agrupamiento. Al final se muestra la metodología Box y Jenkins que se utilizará en la identificación y estimación de los modelos SARIMA y SARIMAX.
 
 
 \section{Series de Tiempo}
@@ -545,13 +545,13 @@ Suponiendo que cada observación $(x_i,y_i)$ tiene un peso $\rho_i$ que expresa 
 
 \subsubsection{El diseño general.}
 
-STL consiste de dos procedimientos recursivos: un bucle interno anidado dentro de un bucle externo. En cada uno de los pasos del bucle interno, las componentes de tendencia y estacionalidad son actualizadas una vez; cada recorrido completo del bucle interno consiste de $n_{(i)}$ iteraciones. Cada paso del bucle externo consiste del bucle interno seguido por el cálculo de pesos de robustez; estos pesos son usados en la siguiente corrida del bucle interno para reducir la influencia del comportamiento transitorio y aberrante en las componentes de tendencia y  estacionalidad. Un paso inicial del bucle externo se realiza con todos los pesos de robustez iguales a 1, y luego $n_{(0)}$ pasos del bucle externo se llevan acabo. Las elecciones de $n_{(i)}$ y $n_{(0)}$ se discutirán más adelante. 
+STL consiste de dos procedimientos recursivos: un bucle interno anidado dentro de un bucle externo. En cada uno de los pasos del bucle interno, las componentes de tendencia y estacionalidad son actualizadas una vez; cada recorrido completo del bucle interno consiste de $n_{(i)}$ iteraciones. Cada paso del bucle externo consiste del bucle interno seguido por el cálculo de pesos de robustez; estos pesos son usados en la siguiente corrida del bucle interno para reducir la influencia del comportamiento transitorio y aberrante en las componentes de tendencia y  estacionalidad. Un paso inicial del bucle externo se realiza con todos los pesos de robustez iguales a 1, y luego $n_{(0)}$ pasos del bucle externo se llevan a cabo. Las elecciones de $n_{(i)}$ y $n_{(0)}$ se discutirán más adelante. 
 
-Suponiendo que el número de observaciones en cada periodo, o ciclo, de la componente estacional es $n_{(p)}$. Por ejemplo, si la serie es mensual con un año de periodicidad, entonces $n_{(p)}=12$. Es necesario poder referirnos a la subserie de valores en cada posición del ciclo estacional. Por ejemplo, para una serie mensual con $n_{(p)}=12$, la primera subserie contiene los valores de Enero, la segunda tiene los valores de Febrero, y así sucesivamente. Se referiran a cada una de estas $n_{(p)}$ subseries como \textit{subserie-ciclo}.
+Suponiendo que el número de observaciones en cada periodo, o ciclo, de la componente estacional es $n_{(p)}$. Por ejemplo, si la serie es mensual con un año de periodicidad, entonces $n_{(p)}=12$. Es necesario poder referirnos a la subserie de valores en cada posición del ciclo estacional. Por ejemplo, para una serie mensual con $n_{(p)}=12$, la primera subserie contiene los valores de Enero, la segunda tiene los valores de Febrero, y así sucesivamente. Se referirán a cada una de estas $n_{(p)}$ subseries como \textit{subserie-ciclo}.
 
 \subsection{Bucle Interno}
 
-Cada paso de el bucle interno consiste de un suavizado estacional que actualiza la componente estacional, seguida por suavizado de tendencia que actualiza la componente de tendencia. Suponiendo $S_v^{(k)}$ y $T_v^{(k)}$ para $v=1,2,...,N$ son las componentes estacional y de tendencia al final del \textit{k-ésimo} paso; estas dos componentes se definen para todos los tiempos $v=1,2,...,N$, inclusive donde $Y_v$ es un valor perdido. Las actualizaciones de el $(k+1)$ paso, $S_v^{(k+1)}$ y $T_v^{(k+1)}$, son calculadas de la siguiente manera:
+Cada paso del bucle interno consiste de un suavizado estacional que actualiza la componente estacional, seguida por suavizado de tendencia que actualiza la componente de tendencia. Suponiendo $S_v^{(k)}$ y $T_v^{(k)}$ para $v=1,2,...,N$ son las componentes estacional y de tendencia al final del \textit{k-ésimo} paso; estas dos componentes se definen para todos los tiempos $v=1,2,...,N$, inclusive donde $Y_v$ es un valor perdido. Las actualizaciones del $(k+1)$ paso, $S_v^{(k+1)}$ y $T_v^{(k+1)}$, son calculadas de la siguiente manera:
 
 \subsubsection{Paso 1.} \textit{Quitar Tendencia.-}
 \label{sbsec:paso1}
@@ -563,7 +563,7 @@ Cada subserie-ciclo de la serie sin tendencia es suavizado mediante Loess consid
 
 \subsubsection{Paso 3.} \textit{Paso-bajo Filtro de Suavizado de Subseries Ciclo.-}
 \label{sbsec:paso3}
-Un filtro paso-bajo es aplicado a $C_v^{(k+1)}$. El filtro consiste de una media móvil de longitud $n_{(p)}$, seguido por otra media móvil de longitud $n_{(p)}$, seguida de una media móvil de longitud $3$, seguida de un suavizado Loess con $d=1$ y $q=n_{(l)}$. La salida. $L_v^{(k+1)}$, esta definida en las posiciones $v=1$ hasta $N$ porque las tres medias móviles no pueden extenderse hasta el final. El suavizado estacional \ref{sbsec:paso2}  fue extendido $n_{(p)}$ posiciones en cada final en anticipación de esta pérdida.
+Un filtro paso-bajo es aplicado a $C_v^{(k+1)}$. El filtro consiste de una media móvil de longitud $n_{(p)}$, seguido por otra media móvil de longitud $n_{(p)}$, seguida de una media móvil de longitud $3$, seguida de un suavizado Loess con $d=1$ y $q=n_{(l)}$. La salida. $L_v^{(k+1)}$, está definida en las posiciones $v=1$ hasta $N$ porque las tres medias móviles no pueden extenderse hasta el final. El suavizado estacional \ref{sbsec:paso2}  fue extendido $n_{(p)}$ posiciones en cada final en anticipación de esta pérdida.
 
 \subsubsection{Paso 4.} \textit{Quitar tendencia de las Subseries Ciclo suavizadas.-}
 \label{sbsec:paso4}
@@ -772,7 +772,7 @@ El análisis de Conglomerados o Clúster es una rama de métodos que tienen el o
 
 \subsection{Métricas y Funciones de Disimilitud}
 
-Desde un punto de vista general el término proximidad indica el concepto de cercanía en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matemático, ese término hace referencia al concepto de disimilitud o similaridad entre dos elementos. 
+Desde un punto de vista general el término proximidad indica el concepto de cercanía en espacio, tiempo o cualquier otro contexto. Desde un punto de vista matemático, ese término hace referencia al concepto de disimilitud o similitud entre dos elementos. 
 Sea O un conjunto finito o infinito de elementos (individuos, estímulos, sujetos u objetos sobre los que se quiere definir una proximidad).
 
 
@@ -842,13 +842,13 @@ El escalamiento multidimensional, conocido como MDS por sus siglas en inglés, e
 
 
 
-En términos generales, el Escalamiento Multidimensional permite representar en un espacio geométrico las proximidades entre pares de objetos a través de distancias (o disimilitudes) en función de un determinado número de dimensiones. Así, el MDS cumple su objetivo en dos etapas. En primer lugar, determina las dimensiones subyacentes más relevantes (normalmente entre 2 y 4). En segundo lugar, construye una representación geométrica de los datos a través de las distancias entre los mismos en las dimensiones relevantes.  De esta forma, el MDS asume un paralelismo entre el concepto psicológico de similaridad y el concepto geométrico de distancia.
+En términos generales, el Escalamiento Multidimensional permite representar en un espacio geométrico las proximidades entre pares de objetos a través de distancias (o disimilitudes) en función de un determinado número de dimensiones. Así, el MDS cumple su objetivo en dos etapas. En primer lugar, determina las dimensiones subyacentes más relevantes (normalmente entre 2 y 4). En segundo lugar, construye una representación geométrica de los datos a través de las distancias entre los mismos en las dimensiones relevantes.  De esta forma, el MDS asume un paralelismo entre el concepto psicológico de similitud y el concepto geométrico de distancia.
 
 
 % El escalamiento multidimensional opera sobre una matriz, cuyos elementos representan  disimilitudes entre un conjunto de objetos, con el objetivo de construir coordenadas de puntos, en un número predeterminado de dimensiones ($\R^2$ usualmente), de tal manera que la matriz de distancias entre estos puntos es aproximadamente la misma que la matriz de disimilitudes.
 % Los modelos y métodos de construcción de escalas unidimensionales fueron desarrollados en la primera mitad del siglo XX, entre los que cabe citar a Thurstone, Likert, Guttman o Coombs, constituyen los antecedentes de los modelos y métodos más modernos de escalamiento multidimensional que pueden considerarse como generalizaciones de los primeros.
 
-A continuación se muestra el plantemiento de está técnica en un contexto general, no se profundiza en ella ya que se usará unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medición de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta técnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
+A continuación se muestra el plantemiento de esta técnica en un contexto general, no se profundiza en ella ya que se usará unicamente para representar sobre un plano bidimensional a las series de tiempo asociadas a estaciones de medición de caudales, a partir de su matriz de disimilitudes. Se puede encontrar esta técnica, sus variantes y extensiones detalladas en trabajos como los de \citeauthor{borg2003modern} \citeyear{borg2003modern} y \citeauthor{cox2000multidimensional} \citeyear{cox2000multidimensional}.
 
 \subsubsection{Modelo General MDS }
 
@@ -888,7 +888,7 @@ $$a_{i*} = \frac{1}{n} \sum_{j=1}^n a_{ij}  $$
 $$a_{*j} = \frac{1}{n} \sum_{i=1}^n a_{ij}  $$
 $$a_{**} = \frac{1}{n^2} \sum_{j=1}^n  \sum_{i=1}^n  a_{ij}  $$
 
-\item Hallar los valores propios de $B$, $\lambda_1, \lambda_2, \dots , \lambda_{n-1}$ y sus respectivos vectores propios $v_1, v_2, \dots, v_{n-1}$ normalizados de tal manera que $v_k' v_k = \lambda_k$ para $k=1,\dots,n-1$. Si $B$ no es semidefinida positiva (posee algun valor propio negativo), se puede ignorar los valores negativos e ir al siguiente paso, o bien, definir adecuadamente una constante $c$, reemplazar los valores de la matriz de proximidades por $\delta'_{ij} := \delta_{ij} + c(1-\delta_{ij}) $ de tal manera que esta nueva matriz sea semidefinida positiva y volver al paso 1.
+\item Hallar los valores propios de $B$, $\lambda_1, \lambda_2, \dots , \lambda_{n-1}$ y sus respectivos vectores propios $v_1, v_2, \dots, v_{n-1}$ normalizados de tal manera que $v_k' v_k = \lambda_k$ para $k=1,\dots,n-1$. Si $B$ no es semidefinida positiva (posee algún valor propio negativo), se puede ignorar los valores negativos e ir al siguiente paso, o bien, definir adecuadamente una constante $c$, reemplazar los valores de la matriz de proximidades por $\delta'_{ij} := \delta_{ij} + c(1-\delta_{ij}) $ de tal manera que esta nueva matriz sea semidefinida positiva y volver al paso 1.
 
 \item Elegir el número de dimensiones $m$ en las que se desea representar los objetos. Para ello puede considerar, como criterio de elección, el porcentaje que aportan las $m$ mayores valores propios.
 
@@ -1018,8 +1018,8 @@ CLARA (Clustering Large Aplications) es un método desarrollado por \citeauthor{
 
 \begin{enumerate}
 \item Realizar $L$ veces lo siguiente:
-\item Tomar una muestra aleatoria de $m$ de los $n$ objetos , y ejecutar el algoritmo PAM para hallar los $k$ medoides de esta muestra.
-\item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cual de los $k$ medoides es el más similar a $O_j$.
+\item Tomar una muestra aleatoria de $m$ de los $n$ objetos, y ejecutar el algoritmo PAM para hallar los $k$ medoides de esta muestra.
+\item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cuál de los $k$ medoides es el más similar a $O_j$.
 \item Calcular la disimilitud promedio del grupo obtenido en el paso anterior. Si este valor es menor al mínimo anterior, se actualiza el valor mínimo y se guarda los $k$ medoides del paso 2 como los mejores medoides obtenidos hasta el momento.
 
 \end{enumerate}
@@ -1056,7 +1056,7 @@ La suma de las distancias dos a dos de todos los objetos del clúster $r$. Luego
 W_k = \sum_{r=1}^k \frac{1}{2n_r}D_r
 \]
 
-Así $W_k$ es la suma de cuadrados dentro del clúster, alrededor de los centro del Clúster. Luego, se estandariza  $log(W_k)$ comparandolo con su esperanza bajo una distribución nula de referencia de los datos.
+Así $W_k$ es la suma de cuadrados dentro del clúster, alrededor de los centro del Clúster. Luego, se estandariza  $log(W_k)$ comparándolo con su esperanza bajo una distribución nula de referencia de los datos.
 
 \[
 \text{Gap}_n(k) = E_n^*(log(W_k))-log(W_k)
@@ -1147,7 +1147,7 @@ Donde, $\phi (z)$, $\theta (z)$, $\Phi (z)$ y $\Theta (z)$ son polinomios con ra
 \end{definicion}
 
 Cabe mencionar que se puede usar la metodología Box y Jenkins también en los procesos SARIMA, considerando que en las etapas de identificación es necesario escoger en lugar tripletas, arreglos de 7 parámetros $(p,d,q,s,P,D,Q)$. 
-Los 4 parámetros extras corresponden a los ordenes de los polinomios asociados a la parte estacional del modelo: 
+Los 4 parámetros extras corresponden a los órdenes de los polinomios asociados a la parte estacional del modelo: 
 
 \begin{itemize}
 \item $\Phi $ es un polinomio de grado $P$,
@@ -1310,7 +1310,7 @@ Por lo tanto la relación anterior se reescribe como:
 $$n_t^{*} = y_t -\alpha_t$$
 Es decir, se calcula $n_t^{*}$, y luego se busca un modelo SARMA, para esta serie, es decir, con polinomios estacionales, pero sin diferencias. 
 
-Luego la estructura para el modelo final consistira de las estructuras SARMA de $n_t^{*}$ como la hallada en el paso 3, es decir, los polinomios de retardos de la ecuación \ref{eq:nt_eps}.
+Luego la estructura para el modelo final consistirá de las estructuras SARMA de $n_t^{*}$ como la hallada en el paso 3, es decir, los polinomios de retardos de la ecuación \ref{eq:nt_eps}.
 
 \item Identificados tanto la función de transferencia asociada a $x_t$, como el modelo SARMA de $n_t$, el siguiente paso es validar el modelo y de ser necesario corregirlo. Para que el modelo sea aceptado, los residuos $\varepsilon_t$ deberían comportarse como un ruido blanco, es decir, su función de autocorrelación debe ser estadísticamente nula. De igual manera la función de correlación cruzada entre $\varepsilon_t$ y $\alpha_t$ (o equivalentemente con $x_t$), no debe ser significativamente distinta de cero. Para lo cual, hay que considerar que los intervalos de confianza para la correlación cruzada en general vienen dados por:
 
@@ -1323,7 +1323,7 @@ De igual manera las correcciones se realizan en función de lo observado en las 
 \end{enumerate}
 
 
-\paragraph{Observación.} Un caso más general del modelo SARIMAX antes expuesto, es considerar más de una variable exógena, autores como \citeauthor{pankratz2012forecasting} \citeyear{pankratz2012forecasting} abordan ampliamente el problema de identificación de esta clase de modelos, que resulta análoga a la metodología aquí expuesta. También desarrolla un análisis detallado de las funciones de respuesta al impulso, los patrones que siguen los coeficientes $v_j$ gráficamente, según el órden de los polinomios que los componen.
+\paragraph{Observación.} Un caso más general del modelo SARIMAX antes expuesto, es considerar más de una variable exógena, autores como \citeauthor{pankratz2012forecasting} \citeyear{pankratz2012forecasting} abordan ampliamente el problema de identificación de esta clase de modelos, que resulta análoga a la metodología aquí expuesta. También desarrolla un análisis detallado de las funciones de respuesta al impulso, los patrones que siguen los coeficientes $v_j$ gráficamente, según el orden de los polinomios que los componen.
 
 
 
@@ -3185,7 +3185,7 @@ Conocido el comportamiento temporal de los caudales, a partir de las prediccione
 
 Finalmente, la implementación y automatización de la metodología aquí propuesta que dieron paso a rutinas generales ejemplificadas en la Aplicación web creada para este estudio, dan muestra de la fácil reproducibilidad de esta metodología en una variedad de contextos distintos a los aquí abordados y abren la puerta a una variedad de análisis de datos de origen geográfico y temporal. 
 % RECOMENDACIONES
-Así mismo, cabe la posibilidad de extender este estudio a una escala mucho mayor ya sea considerando series de mayor frecuencia, o mayor cantidad de series, teniendo en cuenta algunas barreras en cuanto a la eficiencia de los algoritmos utilizados versus los recursos de hardware disponibles. A modo de ejemplo, en pruebas preliminares al desarrollo de este estudio, se consideraron series de frecuencia diaria, donde se encontraron cuellos de botella principalmente en el cálculo de la matriz de distancias (o disimilitudes) de la primera etapa, donde el tiempo de cálculo llegó a tomar un par de horas, en contraste con los tres minutos que tomó este proceso para series mensuales. Hay que notar que el tiempo de cálculo depende tanto del número de series de tiempo así como del número de observaciones que posee cada una, así, el tiempo de cálculo de la matriz crece al menos cuadráticamente cuando crecen estos dos factores. Por lo tanto, si el objetivo es escalar está metodología a un contexto por ejemplo de Big Data, es necesario considerar, por una parte, la necesidad de implementar algoritmos aún más eficientes que los expuestos aquí, por ejemplo, paralelizando el cálculo de la matriz de distancias, y también de la distancia persé, otra mejora posible es la de usar el algoritmo de agrupamiento CLARANS que es una extensión más eficiente del algoritmo CLARA. Por otro lado, hay que considerar el uso de otros recursos de hardware necesarios para dicha implementación, es decir, vía Computación distribuida o vía Computación de alto rendimiento (\textit{High performance Computing, HPC}).
+Así mismo, cabe la posibilidad de extender este estudio a una escala mucho mayor ya sea considerando series de mayor frecuencia, o mayor cantidad de series, teniendo en cuenta algunas barreras en cuanto a la eficiencia de los algoritmos utilizados versus los recursos de hardware disponibles. A modo de ejemplo, en pruebas preliminares al desarrollo de este estudio, se consideraron series de frecuencia diaria, donde se encontraron cuellos de botella principalmente en el cálculo de la matriz de distancias (o disimilitudes) de la primera etapa, donde el tiempo de cálculo llegó a tomar un par de horas, en contraste con los tres minutos que tomó este proceso para series mensuales. Hay que notar que el tiempo de cálculo depende tanto del número de series de tiempo así como del número de observaciones que posee cada una, así, el tiempo de cálculo de la matriz crece al menos cuadráticamente cuando crecen estos dos factores. Por lo tanto, si el objetivo es escalar está metodología a un contexto por ejemplo de Big Data, es necesario considerar, por una parte, la necesidad de implementar algoritmos aún más eficientes que los expuestos aquí, por ejemplo, paralelizando el cálculo de la matriz de distancias, y también de la distancia per se, otra mejora posible es la de usar el algoritmo de agrupamiento CLARANS que es una extensión más eficiente del algoritmo CLARA. Por otro lado, hay que considerar el uso de otros recursos de hardware necesarios para dicha implementación, es decir, vía Computación distribuida o vía Computación de alto rendimiento (\textit{High performance Computing, HPC}).
 %%% 
 
 

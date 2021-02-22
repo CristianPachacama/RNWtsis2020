@@ -91,8 +91,8 @@ CLARA (Clustering Large Aplications) es un método desarrollado por \citeauthor{
 
 \begin{enumerate}
 \item Realizar $L$ veces lo siguiente:
-\item Tomar una muestra aleatoria de $m$ de los $n$ objetos , y ejecutar el algoritmo PAM para hallar los $k$ medoides de esta muestra.
-\item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cual de los $k$ medoides es el más similar a $O_j$.
+\item Tomar una muestra aleatoria de $m$ de los $n$ objetos, y ejecutar el algoritmo PAM para hallar los $k$ medoides de esta muestra.
+\item Para cada objeto $O_j$ en la data completa (no solo en la muestra), determinar cuál de los $k$ medoides es el más similar a $O_j$.
 \item Calcular la disimilitud promedio del grupo obtenido en el paso anterior. Si este valor es menor al mínimo anterior, se actualiza el valor mínimo y se guarda los $k$ medoides del paso 2 como los mejores medoides obtenidos hasta el momento.
 
 \end{enumerate}
@@ -129,7 +129,7 @@ La suma de las distancias dos a dos de todos los objetos del clúster $r$. Luego
 W_k = \sum_{r=1}^k \frac{1}{2n_r}D_r
 \]
 
-Así $W_k$ es la suma de cuadrados dentro del clúster, alrededor de los centro del Clúster. Luego, se estandariza  $log(W_k)$ comparandolo con su esperanza bajo una distribución nula de referencia de los datos.
+Así $W_k$ es la suma de cuadrados dentro del clúster, alrededor de los centro del Clúster. Luego, se estandariza  $log(W_k)$ comparándolo con su esperanza bajo una distribución nula de referencia de los datos.
 
 \[
 \text{Gap}_n(k) = E_n^*(log(W_k))-log(W_k)
