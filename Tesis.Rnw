@@ -55,13 +55,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titulo{Análisis Clúster para series de tiempo estacionales y modelización de caudales de ríos del Brasil.}
 %esta bien escribir esas palabras con mayúsculas
-\carrera{Ingeniería Matemática}
+\carrera{Ingeniero Matemático}
 \autor{Cristian David Pachacama Simbaña}
 \correoautor{\url{cristian.pachacama01@epn.edu.ec}}
 \director{Uquillas Andrade Adriana, Ph.D.}
 \correodirector{\url{adriana.uquillas@epn.edu.ec}}
 
-\fecha{Febrero 2021}
+\fecha{Quito, Febrero 2021}
 
 %-------------------------------------------------------------------
 %--------------------  INICIO DE DOCUMENTO  ------------------------

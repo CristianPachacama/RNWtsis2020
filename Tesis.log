@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.28)  22 FEB 2021 00:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.28)  24 FEB 2021 14:44
 entering extended mode
 **./Tesis.tex
 (Tesis.tex
@@ -2756,7 +2756,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14835 strings out of 480237
  231071 string characters out of 2888548
- 2464691 words of memory out of 3000000
+ 2463696 words of memory out of 3000000
  30318 multiletter control sequences out of 15000+200000
  588994 words of font info for 150 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2779,7 +2779,7 @@ iles/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plri8a.pfb>
-Output written on Tesis.pdf (204 pages, 19524308 bytes).
+Output written on Tesis.pdf (204 pages, 19524313 bytes).
 PDF statistics:
  2643 PDF objects out of 2984 (max. 8388607)
  596 named destinations out of 1000 (max. 500000)
